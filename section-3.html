@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>③ 官方博客新动态（3条） — AI 技术情报日报</title>
+<style>
+
+:root {
+    --bg: #ffffff;
+    --text: #1a1a2e;
+    --muted: #6b7280;
+    --accent: #3b82f6;
+    --accent-light: #dbeafe;
+    --accent-hover: #2563eb;
+    --border: #e5e7eb;
+    --code-bg: #f8fafc;
+    --heading: #111827;
+    --card-bg: #f9fafb;
+    --shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0f172a;
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --accent-hover: #93c5fd;
+        --border: #334155;
+        --code-bg: #1e293b;
+        --heading: #f1f5f9;
+        --card-bg: #1e293b;
+        --shadow: 0 4px 16px rgba(0,0,0,0.4);
+    }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.75;
+    color: var(--text);
+    background: var(--bg);
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-hover); text-decoration: underline; }
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+}
+.home-hero {
+    text-align: center;
+    padding: 4rem 1.5rem 3rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 3rem;
+}
+.home-hero .eyebrow {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+.home-hero h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--heading);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+.home-hero .subtitle { color: var(--muted); font-size: 1rem; margin-bottom: 2rem; }
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+.toc-card {
+    display: block;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+    text-decoration: none;
+    color: inherit;
+}
+.toc-card:hover {
+    box-shadow: var(--shadow);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: inherit;
+}
+.toc-card .card-num { font-size: 0.75rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+.toc-card .card-title { font-size: 1.05rem; font-weight: 700; color: var(--heading); margin-bottom: 0.4rem; line-height: 1.3; }
+.toc-card .card-desc { font-size: 0.825rem; color: var(--muted); line-height: 1.5; }
+.section-header {
+    padding: 2rem 0 1.5rem;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 2.5rem;
+}
+.section-header .breadcrumb { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem; }
+.section-header .breadcrumb a { color: var(--accent); }
+.section-header h1 { font-size: 1.75rem; font-weight: 800; color: var(--heading); line-height: 1.2; }
+.section-header .section-meta { font-size: 0.875rem; color: var(--muted); margin-top: 0.4rem; }
+.source-block { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+.source-block + .source-block { margin-top: 0; }
+.source-block h3 { font-size: 1.05rem; font-weight: 700; color: var(--heading); margin-bottom: 0.5rem; }
+.source-block .source-meta { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.75rem; }
+.source-block .source-meta span { margin-right: 1rem; }
+.field-label { font-size: 0.78rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 1rem; margin-bottom: 0.25rem; }
+.field-label:first-child { margin-top: 0; }
+p { margin-bottom: 0.85rem; }
+p:last-child { margin-bottom: 0; }
+ul { padding-left: 1.4rem; margin-bottom: 0.85rem; }
+li { margin-bottom: 0.25rem; }
+code { font-family: "SF Mono", "Fira Code", Consolas, monospace; font-size: 0.82em; background: var(--code-bg); padding: 0.15em 0.4em; border-radius: 4px; color: #c7254e; }
+@media (prefers-color-scheme: dark) { code { color: #f78c6c; } }
+pre { background: var(--code-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1rem 0; }
+pre code { background: none; padding: 0; color: var(--text); font-size: 0.82rem; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.875rem; }
+th, td { border: 1px solid var(--border); padding: 0.5rem 0.75rem; text-align: left; }
+th { background: var(--code-bg); font-weight: 600; }
+tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+@media (prefers-color-scheme: dark) { tr:nth-child(even) td { background: rgba(255,255,255,0.03); } }
+hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+.back-to-top { display: inline-block; margin-top: 3rem; font-size: 0.875rem; color: var(--muted); }
+.back-to-top:hover { color: var(--accent); text-decoration: none; }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="section-header">
+        <div class="breadcrumb">
+            <a href="index.html">← 返回首页</a>
+        </div>
+        <h1>③ 官方博客新动态（3条）</h1>
+        <div class="section-meta">2026年4月17日 · 板块 3/6</div>
+    </div>
+</div><div class="container"><h2>③ 官方博客新动态（3条）</h2>
+<h3>Claude Opus 4.7正式发布 — Anthropic</h3>
+<p><strong>来源：</strong> Anthropic Newsroom | 发布时间：2026-04-16</p>
+<p><strong>核心内容：</strong>
+Anthropic于2026年4月16日正式发布Claude Opus 4.7，这是其旗舰系列模型的最新版本。新模型在编程、Agent任务、视觉理解和多步骤复杂任务上均有显著性能提升，尤其在长程任务的一致性和稳定性上取得突破。</p>
+<p>根据Anthropic官方披露，Opus 4.7的核心改进包括：
+- 编程能力：在SWE-bench Verified上得分77.8%，Claude系列最高
+- Agent可靠性：多步骤任务中中途放弃率降低37%
+- 视觉理解：支持更长的图像序列和更复杂的图表解读
+- 一致性：在长程对话中保持风格和逻辑连贯性的能力大幅提升</p>
+<p>同时，Anthropic宣布Claude Partner Network已吸引超过1000家合作伙伴，$100M生态基金完成首轮投放。</p>
+<p><strong>链接：</strong>
+<a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener">https://www.anthropic.com/news/claude-opus-4-7</a></p>
+<hr>
+<h3>OpenAI完成1220亿美元融资史上最大规模AI投资 — OpenAI</h3>
+<p><strong>来源：</strong> OpenAI News | 发布时间：2026-03-31（注：近期被广泛引用）</p>
+<p><strong>核心内容：</strong>
+OpenAI于2026年3月31日宣布完成1220亿美元（约8520亿人民币）融资轮，估值达到8520亿美元。本轮融资由Thrive Capital领投，苹果和英伟达以战略投资者身份参与，软银继续大额加码。</p>
+<p>OpenAI CFO Sarah Friar表示，本轮资金将主要用于：
+- 扩大AI基础设施compute capacity（多代际算力储备）
+- 加速AGI研发进程
+- 推进企业级AI的规模化落地</p>
+<p>同时，OpenAI宣布2026年将专注于"实际落地"而非单纯追逐模型参数，计划在健康、科学和企业领域打造标杆用例。Friar透露公司ARR已突破数十亿美元但仍处于投入期。</p>
+<p><strong>链接：</strong>
+<a href="https://openai.com/index/accelerating-the-next-phase-ai/" target="_blank" rel="noopener">https://openai.com/index/accelerating-the-next-phase-ai/</a></p>
+<hr>
+<h3>Google发布Gemma 4系列：全量开源Apache 2.0许可 — Google DeepMind</h3>
+<p><strong>来源：</strong> Google DeepMind Blog | 发布时间：2026-04（近期）</p>
+<p><strong>核心内容：</strong>
+Google DeepMind于2026年4月发布Gemma 4开源小语言模型系列，提供E2B、E4B（边缘设备）、26B和31B（高性能计算）四个规格版本，所有版本均采用Apache 2.0许可证，无使用限制。</p>
+<p>Gemma 4的核心技术创新：
+- 计算与内存效率协同优化：首次在SLA级别支持个人硬件上的高效微调
+- Agent原生能力：原生支持函数调用，可构建具备规划、导航和执行能力的自主Agent
+- 多模态能力：强大的音频和视觉理解，覆盖140种语言
+- 负责任AI：内置水印和内容安全分类器</p>
+<p>这是Google首次将旗舰级小模型系列全部以Apache 2.0开源，被社区视为对Llama闭源化趋势的直接回应。</p>
+<p><strong>链接：</strong>
+<a href="https://deepmind.google/blog/" target="_blank" rel="noopener">https://deepmind.google/blog/</a></p>
+<hr></div><div class="container">
+    <a class="back-to-top" href="index.html">← 返回首页目录</a>
+</div>
+</body>
+</html>

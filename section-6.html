@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>⑥ 板块洞察 — AI 技术情报日报</title>
+<style>
+
+:root {
+    --bg: #ffffff;
+    --text: #1a1a2e;
+    --muted: #6b7280;
+    --accent: #3b82f6;
+    --accent-light: #dbeafe;
+    --accent-hover: #2563eb;
+    --border: #e5e7eb;
+    --code-bg: #f8fafc;
+    --heading: #111827;
+    --card-bg: #f9fafb;
+    --shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0f172a;
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --accent-hover: #93c5fd;
+        --border: #334155;
+        --code-bg: #1e293b;
+        --heading: #f1f5f9;
+        --card-bg: #1e293b;
+        --shadow: 0 4px 16px rgba(0,0,0,0.4);
+    }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.75;
+    color: var(--text);
+    background: var(--bg);
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-hover); text-decoration: underline; }
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+}
+.home-hero {
+    text-align: center;
+    padding: 4rem 1.5rem 3rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 3rem;
+}
+.home-hero .eyebrow {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+.home-hero h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--heading);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+.home-hero .subtitle { color: var(--muted); font-size: 1rem; margin-bottom: 2rem; }
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+.toc-card {
+    display: block;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+    text-decoration: none;
+    color: inherit;
+}
+.toc-card:hover {
+    box-shadow: var(--shadow);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: inherit;
+}
+.toc-card .card-num { font-size: 0.75rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+.toc-card .card-title { font-size: 1.05rem; font-weight: 700; color: var(--heading); margin-bottom: 0.4rem; line-height: 1.3; }
+.toc-card .card-desc { font-size: 0.825rem; color: var(--muted); line-height: 1.5; }
+.section-header {
+    padding: 2rem 0 1.5rem;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 2.5rem;
+}
+.section-header .breadcrumb { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem; }
+.section-header .breadcrumb a { color: var(--accent); }
+.section-header h1 { font-size: 1.75rem; font-weight: 800; color: var(--heading); line-height: 1.2; }
+.section-header .section-meta { font-size: 0.875rem; color: var(--muted); margin-top: 0.4rem; }
+.source-block { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+.source-block + .source-block { margin-top: 0; }
+.source-block h3 { font-size: 1.05rem; font-weight: 700; color: var(--heading); margin-bottom: 0.5rem; }
+.source-block .source-meta { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.75rem; }
+.source-block .source-meta span { margin-right: 1rem; }
+.field-label { font-size: 0.78rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 1rem; margin-bottom: 0.25rem; }
+.field-label:first-child { margin-top: 0; }
+p { margin-bottom: 0.85rem; }
+p:last-child { margin-bottom: 0; }
+ul { padding-left: 1.4rem; margin-bottom: 0.85rem; }
+li { margin-bottom: 0.25rem; }
+code { font-family: "SF Mono", "Fira Code", Consolas, monospace; font-size: 0.82em; background: var(--code-bg); padding: 0.15em 0.4em; border-radius: 4px; color: #c7254e; }
+@media (prefers-color-scheme: dark) { code { color: #f78c6c; } }
+pre { background: var(--code-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1rem 0; }
+pre code { background: none; padding: 0; color: var(--text); font-size: 0.82rem; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.875rem; }
+th, td { border: 1px solid var(--border); padding: 0.5rem 0.75rem; text-align: left; }
+th { background: var(--code-bg); font-weight: 600; }
+tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+@media (prefers-color-scheme: dark) { tr:nth-child(even) td { background: rgba(255,255,255,0.03); } }
+hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+.back-to-top { display: inline-block; margin-top: 3rem; font-size: 0.875rem; color: var(--muted); }
+.back-to-top:hover { color: var(--accent); text-decoration: none; }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="section-header">
+        <div class="breadcrumb">
+            <a href="index.html">← 返回首页</a>
+        </div>
+        <h1>⑥ 板块洞察</h1>
+        <div class="section-meta">2026年4月17日 · 板块 6/6</div>
+    </div>
+</div><div class="container"><h2>⑥ 板块洞察</h2>
+<h3>中国开源模型"接管"全球AI生态：一场由DeepSeek引爆、由Qwen收割的结构性逆转</h3>
+<p>2026年4月，AI开源领域发生了一件被严重低估的事件：来自中国的开源模型在全球下载量占比上首次超越美国。</p>
+<p>根据Interconnects AI和Hugging Face联合发布的报告，中国开源模型月下载占比已达41%，美国为36.5%。而在2025年夏季之前，这一格局还是相反的。</p>
+<p><strong>这场逆转的触发点是DeepSeek-R1（2025年初）。</strong> DeepSeek以不足十分之一的成本训练出对标GPT-4的模型，MIT协议开源，震惊全球开发者。它证明了一个关键逻辑：在开源AI领域，规模和资源不是护城河，效率和创新才是。这直接引发了连锁反应——百度ERNIE-Image开源、智谱GLM-5.1开源、阿里Qwen3.5-Plus开源……中国头部玩家几乎在同一时期将旗舰产品转向开源。</p>
+<p><strong>为什么是Qwen收割了最大红利？</strong> 阿里云从2024年9月发布Qwen 2.5系列开始，持续高频开源，几乎每两个月发布一代新模型，建立了全球最大、最活跃的中文AI开发者社区。林俊旸等核心成员的社区运营能力让Qwen成为全球开发者"提到中文开源模型时的第一反应"。截至2026年3月，Qwen衍生模型数突破20万，累计下载量接近10亿次。</p>
+<p><strong>但这场逆转背后有一个深层矛盾被掩盖了。</strong> 阿里Qwen团队3月初的核心成员集体离职事件（林俊旸、惠彬原等）揭示了一个真相：开源的"理想主义"和商业公司的"效率考核"之间存在结构性张力。当一家公司用日活（DAU）等消费级指标衡量基础模型团队时，开源贡献不会计入KPI，但消耗的资源却是真实的。这种张力最终以人才流失的形式显现。</p>
+<p><strong>对中国AI的真正挑战不在开源，在开源之后的"生态锁定"。</strong> Meta放弃Llama开源转闭源（Muse Spark），并不意味着Llama失败了——恰恰相反，Llama已经建立了全球最大的开源模型开发者生态，即使Meta不再投入，生态自身会继续生长。Qwen现在面临同样的命题：20万衍生模型是资产，但如果基础模型团队稳定性下降，这些开发者会不会开始寻找"备份方案"？</p>
+<p><strong>对于中国AI来说，2026年是"开源大年"但也是"生态大考年"。</strong> 中国模型在全球下载量上的领先是真实的，但能否将这种领先转化为可持续的生态壁垒，取决于能否在"社区信任"和"商业回报"之间找到真正的平衡点。DeepSeek开了个好头，但整个行业的下一步，不能只靠"更便宜"。</p>
+<hr>
+<p><em>数据来源：GitHub Trending | BestBlogs RSS | Tavily Search | Anthropic Newsroom | OpenAI News | Google DeepMind Blog | 智谱AI | 阿里云 | 百度文心 | MiniMax | 各官方博客</em>
+<em>发布时间：2026-04-17</em></p></div><div class="container">
+    <a class="back-to-top" href="index.html">← 返回首页目录</a>
+</div>
+</body>
+</html>

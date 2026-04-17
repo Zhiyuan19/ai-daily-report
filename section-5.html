@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>⑤ 国内技术圈（3条） — AI 技术情报日报</title>
+<style>
+
+:root {
+    --bg: #ffffff;
+    --text: #1a1a2e;
+    --muted: #6b7280;
+    --accent: #3b82f6;
+    --accent-light: #dbeafe;
+    --accent-hover: #2563eb;
+    --border: #e5e7eb;
+    --code-bg: #f8fafc;
+    --heading: #111827;
+    --card-bg: #f9fafb;
+    --shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0f172a;
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --accent-hover: #93c5fd;
+        --border: #334155;
+        --code-bg: #1e293b;
+        --heading: #f1f5f9;
+        --card-bg: #1e293b;
+        --shadow: 0 4px 16px rgba(0,0,0,0.4);
+    }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.75;
+    color: var(--text);
+    background: var(--bg);
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-hover); text-decoration: underline; }
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+}
+.home-hero {
+    text-align: center;
+    padding: 4rem 1.5rem 3rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 3rem;
+}
+.home-hero .eyebrow {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+.home-hero h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--heading);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+.home-hero .subtitle { color: var(--muted); font-size: 1rem; margin-bottom: 2rem; }
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+.toc-card {
+    display: block;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+    text-decoration: none;
+    color: inherit;
+}
+.toc-card:hover {
+    box-shadow: var(--shadow);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: inherit;
+}
+.toc-card .card-num { font-size: 0.75rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+.toc-card .card-title { font-size: 1.05rem; font-weight: 700; color: var(--heading); margin-bottom: 0.4rem; line-height: 1.3; }
+.toc-card .card-desc { font-size: 0.825rem; color: var(--muted); line-height: 1.5; }
+.section-header {
+    padding: 2rem 0 1.5rem;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 2.5rem;
+}
+.section-header .breadcrumb { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem; }
+.section-header .breadcrumb a { color: var(--accent); }
+.section-header h1 { font-size: 1.75rem; font-weight: 800; color: var(--heading); line-height: 1.2; }
+.section-header .section-meta { font-size: 0.875rem; color: var(--muted); margin-top: 0.4rem; }
+.source-block { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+.source-block + .source-block { margin-top: 0; }
+.source-block h3 { font-size: 1.05rem; font-weight: 700; color: var(--heading); margin-bottom: 0.5rem; }
+.source-block .source-meta { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.75rem; }
+.source-block .source-meta span { margin-right: 1rem; }
+.field-label { font-size: 0.78rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 1rem; margin-bottom: 0.25rem; }
+.field-label:first-child { margin-top: 0; }
+p { margin-bottom: 0.85rem; }
+p:last-child { margin-bottom: 0; }
+ul { padding-left: 1.4rem; margin-bottom: 0.85rem; }
+li { margin-bottom: 0.25rem; }
+code { font-family: "SF Mono", "Fira Code", Consolas, monospace; font-size: 0.82em; background: var(--code-bg); padding: 0.15em 0.4em; border-radius: 4px; color: #c7254e; }
+@media (prefers-color-scheme: dark) { code { color: #f78c6c; } }
+pre { background: var(--code-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1rem 0; }
+pre code { background: none; padding: 0; color: var(--text); font-size: 0.82rem; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.875rem; }
+th, td { border: 1px solid var(--border); padding: 0.5rem 0.75rem; text-align: left; }
+th { background: var(--code-bg); font-weight: 600; }
+tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+@media (prefers-color-scheme: dark) { tr:nth-child(even) td { background: rgba(255,255,255,0.03); } }
+hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+.back-to-top { display: inline-block; margin-top: 3rem; font-size: 0.875rem; color: var(--muted); }
+.back-to-top:hover { color: var(--accent); text-decoration: none; }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="section-header">
+        <div class="breadcrumb">
+            <a href="index.html">← 返回首页</a>
+        </div>
+        <h1>⑤ 国内技术圈（3条）</h1>
+        <div class="section-meta">2026年4月17日 · 板块 5/6</div>
+    </div>
+</div><div class="container"><h2>⑤ 国内技术圈（3条）</h2>
+<h3>Qwen全球下载量首超50%：中国开源模型登顶全球 — 快科技</h3>
+<p><strong>来源：</strong> 快科技 | 发布时间：2026-04-11</p>
+<p><strong>核心内容：</strong>
+美国AI追踪机构Interconnects AI发布报告显示，截至2026年3月，阿里云千问（Qwen）系列已占全球开源模型下载量的50%以上，累计下载量接近10亿次。仅2026年2月单月，Qwen在Hugging Face平台产生约1.536亿次下载，超过Meta、DeepSeek和OpenAI等八家主要模型发布方的总和。</p>
+<p>Hugging Face平台上，中国开源模型月下载占比已达41%，美国为36.5%——中国首次在这一指标上超越美国。这一转折点出现在2024年9月阿里云发布Qwen 2.5系列时，此后差距持续扩大。</p>
+<p><strong>链接：</strong>
+<a href="https://www.sohu.com/a/1008079276_258768" target="_blank" rel="noopener">https://www.sohu.com/a/1008079276_258768</a></p>
+<hr>
+<h3>MiniMax M2.5编程SOTA：周调用量超3.07万亿Token — 澎湃新闻</h3>
+<p><strong>来源：</strong> 澎湃新闻 | 发布时间：2026-04-17（近24小时）</p>
+<p><strong>核心内容：</strong>
+MiniMax于2026年2月发布的M2.5编程模型持续保持强劲势头，在OpenRouter平台周调用量已突破3.07万亿Token，超越Kimi K2.5、GLM-5和DeepSeek V3.2三家总和。</p>
+<p>M2.5的核心竞争力在于：
+- 编程能力：SWE-Bench Verified得分80.2%，Multi-SWE-Bench得分51.3%，行业领先
+- 原生Agent能力：专为Agent场景设计，支持复杂任务规划和多轮工具调用
+- 极致性价比：输入价格0.3美元/百万Token，输出1.1美元/百万Token，仅为Claude Opus 4.6的1/20
+- 输出速度：支持100+ TPS，是主流模型2倍</p>
+<p><strong>链接：</strong>
+<a href="https://news.qq.com/rain/a/20260213A03CZK00" target="_blank" rel="noopener">https://news.qq.com/rain/a/20260213A03CZK00</a></p>
+<hr>
+<h3>百度文心开源文生图模型ERNIE-Image：8B参数24GB显存即跑SOTA — 每日经济新闻</h3>
+<p><strong>来源：</strong> 每日经济新闻 | 发布时间：2026-04-15</p>
+<p><strong>核心内容：</strong>
+百度文心大模型团队于2026年4月15日正式开源文生图模型ERNIE-Image，这是百度首次将图像生成模型以开源形式发布。</p>
+<p>核心亮点：
+- 仅8B参数，消费级显卡（24GB显存）即可运行
+- 基于单流Diffusion Transformer（DiT）架构，配合轻量级Prompt Enhancer将简短输入扩展为丰富描述
+- 文字渲染能力炸裂，在包含密集文字的海报、PPT等场景下效果比肩MJ v6
+- 支持Diffusers、SGLang、ComfyUI等主流工具链，Apache 2.0协议</p>
+<p>这是继GLM-5、Qwen3.5之后，又一中国大厂将拳头产品开源，被视为百度在开源生态建设上的战略加速。</p>
+<p><strong>链接：</strong>
+<a href="https://www.nbd.com.cn/articles/2026-04-15/4340019.html" target="_blank" rel="noopener">https://www.nbd.com.cn/articles/2026-04-15/4340019.html</a></p>
+<hr></div><div class="container">
+    <a class="back-to-top" href="index.html">← 返回首页目录</a>
+</div>
+</body>
+</html>
