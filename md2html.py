@@ -1,12 +1,25 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>🔬 六、板块洞察 — 🐂🐴 AI技术情报日报 | 2026-04-20</title>
-<style>
+#!/usr/bin/env python3
+"""
+AI 日报 — 多页面 HTML 生成器 v2
+支持深色模式、动画卡片、沉浸式阅读体验
+"""
 
+import argparse
+import re
+import sys
+from pathlib import Path
+
+try:
+    import markdown
+    from markdown.extensions.codehilite import CodeHiliteExtension
+    from markdown.extensions.tables import TableExtension
+    from markdown.extensions.fenced_code import FencedCodeExtension
+except ImportError:
+    print("❌ 缺少依赖，请先安装：pip install markdown")
+    sys.exit(1)
+
+
+CSS = """
 :root {
     --bg: #f8f7f4;
     --bg-card: #ffffff;
@@ -479,104 +492,185 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
 .toc-card:nth-child(4) { animation-delay: 0.2s; }
 .toc-card:nth-child(5) { animation-delay: 0.25s; }
 .toc-card:nth-child(6) { animation-delay: 0.3s; }
+"""
 
-</style>
-</head>
-<body>
-<div class="container">
-    <div class="section-hero">
-        <div class="breadcrumb">
-            <a href="index.html">← 首页</a>
-            <span>/</span>
-            <span>板块 6</span>
-        </div>
-        <div class="section-title-wrap">
-            <div class="section-icon">💡</div>
-            <h1>🔬 六、板块洞察</h1>
-        </div>
-        <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span></div>
-            <div class="meta-item"><span class="dot"></span>板块 6 / 6</div>
-        </div>
-    </div>
-    <div class="content-section">
-<h2>🔬 六、板块洞察</h2>
-<h3>🧠 主题：从"长上下文"到"Agentic"——开源大模型的 2026 分水岭</h3>
-<blockquote>
-<p><strong>核心论点</strong>：2026 年 4 月是开源大模型发展史上的关键节点——"长上下文"军备竞赛基本结束，下半场"Agentic能力"的竞争格局正在定型。两个趋势信号值得高度关注：</p>
-</blockquote>
-<hr>
-<h4>趋势一：百万级上下文已成大厂标配，但"能用"≠"好用"</h4>
-<p>本月阿里 Qwen3.6-Plus（1M context）和 Google Gemma 4 相继发布，Claude 1M context 全量开放，标志着"超长上下文"正式进入实用阶段。但<strong>真正的竞争焦点已从"能读多长"转向"读进来能用多好"</strong>：</p>
-<ul>
-<li><strong>痛点</strong>：大多数 LLM 在超长上下文上的" Lost in the Middle" 问题并未彻底解决，1M context 中间段的检索准确率平均比首尾低 30~40pp。</li>
-<li><strong>机会</strong>：RAG + Long Context 混合架构仍是主流解法，OmniParser + DocETL 等文档结构化工具的价值被严重低估——它们是"长上下文"真正发挥生产价值的必要中间层。</li>
-<li><strong>判断</strong>：2026 年下半年，纯拼 Context 长度的竞争将退热，"Context 质量 + 检索精度"会成为新的差异化赛道。</li>
-</ul>
-<hr>
-<h4>趋势二：Agentic 能力成为开源模型新分水岭，小模型开始逆袭</h4>
-<p>HuggingFace Spring 2026 报告中最值得注意的数据：<strong>Agent 类应用增长 340%，且小模型（&lt;10B）在 Code Agent 场景的表现正在超越大模型</strong>。背后逻辑：</p>
-<ol>
-<li><strong>Scaffolding 标准化</strong>：Claude Code 的评测（Raschka 等研究者验证）表明，Scaffolding（工具调用框架、ReAct Loop、Memory）才是 Code Agent 性能的决定因素，底层模型只是"处理器"——这与智能手机时代"旗舰芯片 vs 整机体验"的逻辑完全一致。</li>
-<li><strong>小模型 + 精准 Scaffolding &gt; 大模型 + 粗糙编排</strong>：DeepTutor 的成功证明了这一点——一个 7B Qwen3.5 + 精心设计的 Agent 架构，在特定任务上可以击败 70B 裸模型。</li>
-<li><strong>开源框架的窗口期</strong>：open-multi-agent、HiClaw 等框架正在将"顶级 Scaffolding"民主化，2026 年下半年将出现大量基于开源框架的垂直行业 Agent 产品。</li>
-</ol>
-<hr>
-<h4>趋势三：国内大模型生态走向"自循环"，开源与商业边界模糊</h4>
-<p>本月智谱 GLM-5.1、阿里 Qwen3.6-Plus、百度 Ernie 4 Turbo 的密集发布，以及讯飞语音模型开源，标志着<strong>国内大模型生态正从"追赶 OpenAI"转向"自主生态建设"</strong>：</p>
-<ul>
-<li>GLM-5.1 首次在 MMLU 上超越 GPT-4o-mini，具有标志性意义——意味着国产模型在部分指标上已具备与顶级闭源模型正面竞争的能力。</li>
-<li>智谱 GLM-5.1-9B + 讯飞语音开源模型 + 百度 Ernie API 的组合，意味着国内开发者可以<strong>在完全不使用 OpenAI / Anthropic API 的情况下，构建一套完整的多模态 AI 应用栈</strong>。</li>
-<li>DeepTutor 项目同时支持 Qianfan（百度）、SiliconFlow、Step Fun、VolcEngine、Zhipu AI 等国内后端，正是这一趋势的具体例证。</li>
-</ul>
-<hr>
-<h4>📌 关键结论</h4>
-<table>
-<thead>
-<tr>
-<th>维度</th>
-<th>2025年主流</th>
-<th>2026年4月新格局</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Context 长度</td>
-<td>128K~200K 为主</td>
-<td>1M 成为大厂新标配</td>
-</tr>
-<tr>
-<td>核心竞争点</td>
-<td>基准分数（MMMU/HumanEval）</td>
-<td>Agentic 任务完成率</td>
-</tr>
-<tr>
-<td>开发者选择</td>
-<td>"哪个模型最强？"</td>
-<td>"哪个框架 + 哪个模型？"</td>
-</tr>
-<tr>
-<td>国内生态</td>
-<td>依赖 OpenAI API</td>
-<td>GLM/Qwen/Ernie 可替代</td>
-</tr>
-<tr>
-<td>监管动态</td>
-<td>GDPR / AI Act 适应期</td>
-<td>合规 AI（XAI + 可解释性）成采购要求</td>
-</tr>
-</tbody>
-</table>
-<p><strong>2026年接下来的关键变量</strong>：GPT-5 是否发布、Llama 5 是否到来、以及国内是否会出现首个真正开源可商用、达到 GPT-4 水平的 70B+ 旗舰模型。这三个事件将决定下半年开源 AI 格局的最终走向。</p>
-<hr>
-<p><em>报告由 AI牛马 🐂🐴 自动生成 | 数据来源：GitHub Trending / HuggingFace / arXiv / 官方博客 / 国内技术社区</em>
-<em>本报告仅供技术参考，模型性能数据以各官方发布为准</em></p>
-    </div>
-    <div class="page-footer">
-    <a class="footer-link" href="section-5.html">← 上一板块</a>
-    <a class="footer-link primary" href="index.html">← 返回首页</a>
-    <span></span>
-    </div>
-</div>
-</body>
-</html>
+SECTION_ICONS = {
+    1: "🚀",
+    2: "📖",
+    3: "📢",
+    4: "⚡",
+    5: "🇨🇳",
+    6: "💡",
+}
+
+SECTION_DESCS = {
+    1: "GitHub 小众爆款 · 6个近期增速最快的开源工具",
+    2: "BestBlogs 高分精选 · 3篇高质量技术评论",
+    3: "官方博客新动态 · 3条官方重大发布",
+    4: "开源工具 & 模型更新 · 3个重磅更新",
+    5: "国内技术圈 · 3条国内 AI 动态",
+    6: "板块洞察 · 1篇深度分析",
+}
+
+
+def parse_sections(md_content):
+    lines = md_content.split("\n")
+    sections = []
+    current_title = ""
+    current_lines = []
+    for line in lines:
+        if re.match(r"^##\s+", line):
+            if current_title:
+                sections.append((current_title, "\n".join(current_lines)))
+            current_title = re.sub(r"^##\s+", "", line).strip()
+            current_lines = [line]
+        else:
+            current_lines.append(line)
+    if current_title and current_lines:
+        sections.append((current_title, "\n".join(current_lines)))
+    return sections
+
+
+def md_to_html_body(md_text):
+    md = markdown.Markdown(
+        extensions=[
+            FencedCodeExtension(),
+            CodeHiliteExtension(css_class="highlight", guess_lang=False),
+            TableExtension(),
+        ],
+        output_format="html",
+    )
+    html = md.convert(md_text)
+    # 裸 URL → 可点击链接
+    html = re.sub(
+        r"(?<!href=\"(?<!src=\")(?<!=\"))(https?://[^\s<>\"\'\) ]+)",
+        r'<a href="\1" target="_blank" rel="noopener">\1</a>',
+        html,
+    )
+    return html
+
+
+def make_page(title, body_content):
+    return (
+        "<!DOCTYPE html>\n"
+        '<html lang="zh-CN">\n'
+        "<head>\n"
+        '<meta charset="UTF-8">\n'
+        '<meta name="viewport" content="width=device-width, initial-scale=1.0">\n'
+        '<meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">\n'
+        "<title>" + title + "</title>\n"
+        "<style>\n" + CSS + "\n</style>\n"
+        "</head>\n"
+        "<body>\n" + body_content + "\n</body>\n"
+        "</html>"
+    )
+
+
+def generate_pages(md_path, output_dir=None):
+    md_path = Path(md_path)
+    if not md_path.exists():
+        print(f"❌ 文件不存在: {md_path}")
+        return False
+
+    content = md_path.read_text(encoding="utf-8")
+
+    title_match = re.search(r"^#\s+(.+)$", content, re.MULTILINE)
+    page_title = title_match.group(1).strip() if title_match else md_path.stem
+    date_match = re.search(r"(\d{4}年\d{1,2}月\d{1,2}日)", content)
+    date_str = date_match.group(1) if date_match else ""
+
+    out_dir = Path(output_dir) if output_dir else md_path.parent
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    sections = parse_sections(content)
+    total = len(sections)
+
+    # ── index.html ──────────────────────────────
+    cards = []
+    for i, (sec_title, _) in enumerate(sections, 1):
+        icon = SECTION_ICONS.get(i, "📄")
+        desc = SECTION_DESCS.get(i, "")
+        card = (
+            f'<a class="toc-card" href="section-{i}.html">\n'
+            f'    <div class="card-icon">{icon}</div>\n'
+            f'    <div class="card-num">板块 {i}</div>\n'
+            f'    <div class="card-title">{sec_title}</div>\n'
+            f'    <div class="card-desc">{desc}</div>\n'
+            f'    <div class="card-arrow">阅读全文 →</div>\n'
+            f'</a>'
+        )
+        cards.append(card)
+
+    index_body = (
+        '<div class="container">\n'
+        '    <div class="home-hero">\n'
+        '        <div class="hero-badge">⚡ 每日更新</div>\n'
+        f'        <h1>{page_title}</h1>\n'
+        f'        <div class="subtitle">AI 技术情报 · 近24小时</div>\n'
+        f'        <div class="date-tag">📅 {date_str}</div>\n'
+        '    </div>\n'
+        '    <div class="divider">选择板块</div>\n'
+        '    <div class="toc-grid">\n' + "\n".join(cards) + '\n'
+        '    </div>\n'
+        '</div>'
+    )
+
+    (out_dir / "index.html").write_text(make_page(page_title, index_body), encoding="utf-8")
+    print(f"  ✅ index.html")
+
+    # ── section-N.html ──────────────────────────
+    for i, (sec_title, sec_md) in enumerate(sections, 1):
+        icon = SECTION_ICONS.get(i, "📄")
+        prev_link = (
+            f'    <a class="footer-link" href="section-{i-1}.html">← 上一板块</a>'
+            if i > 1 else '    <span></span>'
+        )
+        next_link = (
+            f'    <a class="footer-link" href="section-{i+1}.html">下一板块 →</a>'
+            if i < total else '    <span></span>'
+        )
+
+        page_body = (
+            '<div class="container">\n'
+            '    <div class="section-hero">\n'
+            '        <div class="breadcrumb">\n'
+            f'            <a href="index.html">← 首页</a>\n'
+            '            <span>/</span>\n'
+            f'            <span>板块 {i}</span>\n'
+            '        </div>\n'
+            '        <div class="section-title-wrap">\n'
+            f'            <div class="section-icon">{icon}</div>\n'
+            f'            <h1>{sec_title}</h1>\n'
+            '        </div>\n'
+            f'        <div class="section-meta">\n'
+            f'            <div class="meta-item"><span class="dot"></span>{date_str}</div>\n'
+            f'            <div class="meta-item"><span class="dot"></span>板块 {i} / {total}</div>\n'
+            '        </div>\n'
+            '    </div>\n'
+            '    <div class="content-section">\n'
+            + md_to_html_body(sec_md) + '\n'
+            '    </div>\n'
+            '    <div class="page-footer">\n'
+            + prev_link + '\n'
+            f'    <a class="footer-link primary" href="index.html">← 返回首页</a>\n'
+            + next_link + '\n'
+            '    </div>\n'
+            '</div>'
+        )
+
+        (out_dir / f"section-{i}.html").write_text(
+            make_page(f"{sec_title} — {page_title}", page_body), encoding="utf-8"
+        )
+        print(f"  ✅ section-{i}.html")
+
+    print(f"\n🎉 生成完毕，共 {total + 1} 个 HTML 文件")
+    return True
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("input", help="输入的 Markdown 文件路径")
+    parser.add_argument("-o", "--output", help="输出目录")
+    args = parser.parse_args()
+    if not generate_pages(args.input, args.output):
+        sys.exit(1)

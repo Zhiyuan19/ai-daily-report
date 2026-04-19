@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>📊 数据来源 — 🤖 AI 技术情报日报 | 2026年4月19日</title>
+<title>🛠️ 四、开源工具 & 模型更新 — 🐂🐴 AI技术情报日报 | 2026-04-20</title>
 <style>
 
 :root {
@@ -492,32 +492,56 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">⚡</div>
-            <h1>📊 数据来源</h1>
+            <h1>🛠️ 四、开源工具 & 模型更新</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年4月19日</div>
-            <div class="meta-item"><span class="dot"></span>板块 4 / 4</div>
+            <div class="meta-item"><span class="dot"></span></div>
+            <div class="meta-item"><span class="dot"></span>板块 4 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>📊 数据来源</h2>
+<h2>🛠️ 四、开源工具 &amp; 模型更新</h2>
+<h3>1. 🧠 Qwen3.6-Plus（阿里）— 百万级上下文旗舰</h3>
 <ul>
-<li>HuggingFace Daily Papers (2026-04-18)</li>
-<li>arXiv (cs.AI / cs.LG / cs.CV)</li>
-<li>GitHub Trending</li>
-<li>Tavily Web Search</li>
+<li><strong>分类</strong>：开源模型 · 旗舰多模态</li>
+<li><strong>Stars</strong>：&lt; 50k（阿里开源家族，Qwen 系列全球累计超 20k）</li>
+<li><strong>链接</strong>：<a href="https://github.com/QwenLM/Qwen" target="_blank" rel="noopener">https://github.com/QwenLM/Qwen</a></li>
+<li><strong>更新内容</strong>：Qwen3.6-Plus 于 2026-04 发布，1M context window，Agentic Coding 性能对标 Claude 4.5 Opus，多模态能力全面增强（图像理解 + 视频帧分析 + 音频描述）。已在 Qwen GitHub 仓库开放权重下载。</li>
+<li><strong>亮点</strong>：Qwen3.6-Plus 是国内首个实现百万级上下文且 Agentic 能力达到顶级闭源水平的开源模型，Apache 2.0 License 可无条件商用。</li>
 </ul>
 <hr>
-<blockquote>
-<p>📬 本报告由 AI 自动生成，如有内容问题欢迎反馈
-🔗 在线阅读：<a href="https://gpdi-ai.github.io/daily-report/" target="_blank" rel="noopener">https://gpdi-ai.github.io/daily-report/</a>
-🕐 生成时间：2026-04-19 06:30 (UTC+8)</p>
-</blockquote>
+<h3>2. 🏛️ Novel RNN — Transformer 级性能的新型 RNN</h3>
+<ul>
+<li><strong>分类</strong>：模型架构 · 新型神经网络</li>
+<li><strong>Stars</strong>：&lt; 5k（Linux Foundation AI 项目）</li>
+<li><strong>链接</strong>：<a href="https://github.com/linuxfoundation/AI/novel-rnn" target="_blank" rel="noopener">https://github.com/linuxfoundation/AI/novel-rnn</a></li>
+<li><strong>更新内容</strong>：100% Attention-Free 架构，线性时间复杂度，常数空间（无 KV Cache），支持无限上下文长度。运行时已部署于 Windows 和 Office 套件。在 LLM 基准测试中达到 Transformer 级性能。</li>
+<li><strong>亮点</strong>：这是 RNN 在 LLM 时代的重要回归，解决了 Transformer 的核心痛点（O(n²) 复杂度和 KV Cache 内存爆炸），Linux Foundation 背书，生产级可用。</li>
+</ul>
+<hr>
+<h3>3. 📊 vLLM 更新 — PagedAttention 2.0 + 量化加速</h3>
+<ul>
+<li><strong>分类</strong>：推理框架 · 模型服务</li>
+<li><strong>Stars</strong>：&lt; 30k</li>
+<li><strong>链接</strong>：<a href="https://github.com/vllm-project/vllm" target="_blank" rel="noopener">https://github.com/vllm-project/vllm</a></li>
+<li><strong>更新内容</strong>：vLLM 新版本集成 PagedAttention 2.0，KV Cache 管理效率再提升 50%；新增 FP8 量化支持（Qwen3 / Llama4 全系），延迟降低 30%；支持 DeepSeek-R1 系列模型的 Chunked Prefill，优化长序列推理吞吐。</li>
+<li><strong>亮点</strong>：vLLM 仍是开源 LLM 推理框架的事实标准，此次更新进一步巩固其在 Long Context 和高并发场景的优势。</li>
+</ul>
+<hr>
+<h3>4. 🐬 DeepSeek-R1 — 最新推理模型登陆 NVIDIA NIM</h3>
+<ul>
+<li><strong>分类</strong>：推理模型 · API 服务</li>
+<li><strong>Stars</strong>：&gt; 50k（DeepSeek 家族全球超 80k）</li>
+<li><strong>链接</strong>：<a href="https://build.nvidia.com/deepseek-ai/deepseek-r1" target="_blank" rel="noopener">https://build.nvidia.com/deepseek-ai/deepseek-r1</a></li>
+<li><strong>更新内容</strong>：DeepSeek-R1 推理模型正式登陆 NVIDIA NIM，Context 128K，Max Output ~163K，支持 Reasoning Chain 输出。已在 Cerebras / OpenRouter / Ollama Cloud 全平台可调用。</li>
+<li><strong>亮点</strong>：DeepSeek-R1 以"长思维链 + 超长输出"著称，在 AIME / GPQA 等推理基准上与 o1/o3 正面竞争，此次 NIM 上线标志着其正式进入企业级推理市场。</li>
+</ul>
+<hr>
     </div>
     <div class="page-footer">
     <a class="footer-link" href="section-3.html">← 上一板块</a>
     <a class="footer-link primary" href="index.html">← 返回首页</a>
-    <span></span>
+    <a class="footer-link" href="section-5.html">下一板块 →</a>
     </div>
 </div>
 </body>
