@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>④ 开源工具 & 模型更新（3个） — AI 技术情报日报</title>
+<title>板块四：开源工具 & 模型更新 — AI技术情报日报</title>
 <style>
 
 :root {
@@ -492,35 +492,41 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">⚡</div>
-            <h1>④ 开源工具 & 模型更新（3个）</h1>
+            <h1>板块四：开源工具 & 模型更新</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年4月21日</div>
+            <div class="meta-item"><span class="dot"></span>2026年4月24日</div>
             <div class="meta-item"><span class="dot"></span>板块 4 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>④ 开源工具 &amp; 模型更新（3个）</h2>
+<h2>板块四：开源工具 &amp; 模型更新</h2>
+<h3>1. DeepSeek-V4 预览版登陆Hugging Face（1M上下文）</h3>
+<p><strong>类型：模型发布 | 来源：HuggingFace</strong></p>
+<p>DeepSeek-V4系列两个版本均已在Hugging Face开源：
+- <strong>V4-Pro</strong>：1.6T总参数/49B激活，定位旗舰性能
+- <strong>V4-Flash</strong>：284B总参数/13B激活，定位高效推理</p>
+<p>核心能力：<strong>1M上下文 + 顶级闭源对标性能</strong>，同时保持开源可获取。已在DeepSeek平台开放测试。</p>
 <hr>
-<h3>Archon — AI编程 Harness Builder（同类目上文已详述）</h3>
-<p>详见第一节 GitHub 小众爆款 Archon 条目。</p>
+<h3>2. 智谱+华为：GLM-Image 首个国产芯片SOTA多模态模型</h3>
+<p><strong>类型：联合开源 | 来源：智谱AI</strong></p>
+<p>智谱AI联合华为开源GLM-Image图像生成模型，核心创新：
+- 全球首个在<strong>昇腾Atlas 800T A2 + 昇思MindSpore</strong>上完成全流程训练的SOTA多模态模型
+- 采用"自回归+扩散编码器"混合架构
+- 在CVTG-2K和LongText-Bench榜单汉字生成开源第一
+- 解决了海报、PPT等知识密集型场景的生成难题</p>
 <hr>
-<h3>VoxCPM 2.0 — Tokenizer-Free 多语言 TTS（同类目上文已详述）</h3>
-<p>详见第一节 GitHub 小众爆款 VoxCPM 2.0 条目。</p>
+<h3>3. FLUX.2 [klein]：全球最快图像生成系列</h3>
+<p><strong>类型：模型开源 | 来源：Black Forest Labs</strong></p>
+<p>FLUX.2 klein系列包含4B和9B两个尺寸，核心突破：
+- 端到端推理<strong>低至0.5秒</strong>（现代硬件）
+- 消费级GPU仅需<strong>13GB显存</strong>
+- 提供FP8和NVFP4量化版本，RTX上最高2.7倍推理加速
+- 在单一紧凑架构中统一了生成和编辑能力</p>
 <hr>
-<h3>microSAND — AI Agent 跨平台安全沙箱</h3>
-<p><strong>一句话描述：</strong> 为 AI Agent 打造的可编程安全隔离层，通过声明式配置控制文件系统、网络和进程访问，让 AI 执行外部工具时不再裸奔。</p>
-<p><strong>背景与原理：</strong>
-随着 AI Agent 从聊天机器人走向操作系统级自动化执行，安全边界问题日益突出。当 Agent 可调用文件删除、网络请求、系统命令时，一次 prompt 注入或一次工具误用就可能导致数据泄露或系统损坏。microSAND（Secure Agent Network sandbox）由 superradcompany 开源，核心设计理念是"除非明确允许，否则默认拒绝一切"。它通过 Linux bwrap（ bubblewrap） + seccomp 过滤器 + iptables 网络隔离三重机制，为每个 AI 工具调用构建独立的安全容器。</p>
-<p><strong>核心创新点：</strong>
-- 声明式策略配置：沙箱规则以 YAML 文件描述，可纳入 Git 版本控制，接受安全审计
-- 工具调用级别的细粒度权限控制：单个工具可配置为"只读文件 X"或"允许网络访问 domain.com"
-- 自动阻断数据外泄：AI 尝试向未授权 IP 发送数据时，沙箱直接丢弃并记录
-- 零侵入集成：Python/JS SDK 均支持三行代码接入，无需修改 Agent 业务逻辑</p>
-<p><strong>实际意义：</strong>
-microSAND 的发布意味着 AI Agent 开发者无需在"功能性"和"安全性"之间做二选一。它是目前唯一提供生产级声明式安全策略的开源 Agent 沙箱，尤其适合需要让 AI 操作真实文件系统的企业场景。开源社区评价其"让 AI Agent 安全落地从不可能变为可能"。</p>
-<p><strong>链接：</strong>
-<a href="https://github.com/superradcompany/microsandbox" target="_blank" rel="noopener">https://github.com/superradcompany/microsandbox</a></p>
+<h3>4. 阶跃星辰Step-Audio-R1.1：登顶语音推理榜单</h3>
+<p><strong>类型：模型更新 | 来源：阶跃星辰</strong></p>
+<p>Step-Audio-R1.1在Artificial Analysis Speech Reasoning榜单以<strong>96.4%准确率</strong>超越Grok、Gemini、GPT-Realtime等主流模型，刷新历史最好成绩。核心技术是原生语音推理模型，同时兼顾实时对话和复杂语音推理能力，兼顾性能与速度平衡。</p>
 <hr>
     </div>
     <div class="page-footer">

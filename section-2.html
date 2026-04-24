@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>② BestBlogs 高分精选（4篇） — AI 技术情报日报</title>
+<title>板块二：BestBlogs 高分精选（得分 ≥ 90） — AI技术情报日报</title>
 <style>
 
 :root {
@@ -492,51 +492,37 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">📖</div>
-            <h1>② BestBlogs 高分精选（4篇）</h1>
+            <h1>板块二：BestBlogs 高分精选（得分 ≥ 90）</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年4月21日</div>
+            <div class="meta-item"><span class="dot"></span>2026年4月24日</div>
             <div class="meta-item"><span class="dot"></span>板块 2 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>② BestBlogs 高分精选（4篇）</h2>
+<h2>板块二：BestBlogs 高分精选（得分 ≥ 90）</h2>
+<h3>1. DeepSeek-V4 预览版正式上线 Hugging Face</h3>
+<p><strong>来源：Hugging Face (@huggingface) | AI评分：92</strong></p>
+<p>DeepSeek-V4 开源模型系列正式登陆Hugging Face，包含两个版本：
+- <strong>DeepSeek-V4-Pro</strong>：总参数1.6T / 激活参数49B
+- <strong>DeepSeek-V4-Flash</strong>：总参数284B / 激活参数13B</p>
+<p>核心亮点：<strong>极具成本效益的1M上下文长度</strong>，性能足以媲美顶级闭源模型。1M上下文是当前开源领域的稀缺能力，此前仅少数闭源模型支持。支持在DeepSeek平台测试或直接在Hugging Face获取开源权重。</p>
+<p><strong>意义</strong>：DeepSeek继续保持开源模型性能天花板，同时将1M长上下文能力带入开源生态，对需要处理长文档、长代码库的场景意义重大。</p>
 <hr>
-<h3>萨姆·奥特曼谈 OpenAI Codex 的全新"Chronicle"功能</h3>
-<p><strong>来源：</strong> @Sam Altman | 评分：90 | 发布时间：2026-04-20 20:48 GMT</p>
-<p><strong>核心观点：</strong>
-奥特曼将 Codex 新推出的"Chronicle"记忆功能描述为如同"心灵感应"般的存在，因其具备无缝的上下文召回能力。</p>
-<p><strong>深度摘要：</strong>
-Sam Altman 本人在社交媒体透露，Chronicle 的开发代号即为"心灵感应（telepathy）"。该功能让 Codex 能够根据用户的日常电脑操作构建长期记忆，使 AI 在跨天、跨周的任务中保持上下文连续性，而无需用户反复说明背景信息。Chronicle 目前正在向 Mac 端 ChatGPT Pro 订阅用户逐步推送。奥特曼称这一能力"像心灵感应一样"是因为它实现了机器对人类工作意图的主动理解——不是被动等待用户提问，而是主动记住"用户上周在处理什么项目、上次卡在哪里"。这一能力将 Codex 从单次会话工具升级为持久化的工作伙伴，也是 OpenAI 在记忆系统领域的重大战略布局。</p>
-<p><strong>链接：</strong>
-<a href="https://www.bestblogs.dev/en/status/2046330082726384051" target="_blank" rel="noopener">https://www.bestblogs.dev/en/status/2046330082726384051</a></p>
+<h3>2. AgentWatcher: 规则驱动的Prompt注入监控器</h3>
+<p><strong>来源：HuggingFace Papers | AI评分：91</strong></p>
+<p>针对大模型Agent的Prompt注入攻击问题，AgentWatcher提出两项创新：
+1. <strong>因果归因</strong>：将LLM的输出（如Agent执行的动作）归因到少数关键上下文片段，即使在长上下文下也能准确定位攻击来源
+2. <strong>规则化检测</strong>：明确定义什么是Prompt注入的规则，基于这些规则让Monitor LLM推理判定，而非依赖隐式黑盒检测</p>
+<p>实验结果表明该方法可有效检测Prompt注入攻击，同时不降低正常功能。文中还列举了2026年该领域的多项相关工作：Silent Egress、SkillJect、AgentSentry等，显示该方向正在成为AI安全研究热点。</p>
 <hr>
-<h3>Anthropic 与亚马逊扩大合作，锁定 5 GW 算力容量</h3>
-<p><strong>来源：</strong> @AnthropicAI | 评分：92 | 发布时间：2026-04-20 20:38 GMT</p>
-<p><strong>核心观点：</strong>
-Anthropic 与亚马逊达成深度合作协议，将获得高达 5 吉瓦的专用算力资源用于 Claude 的训练和部署，合同金额超千亿美元。</p>
-<p><strong>深度摘要：</strong>
-Anthropic 于 4月20日宣布扩大与亚马逊 AWS 的基础设施合作。根据协议，Anthropic 将获得新增的 Trainium2 算力（2026 上半年陆续上线），并在本年底前达到近 1GW Trainium2+Trainium3 混合算力规模。Anthropic 承诺未来十年在 AWS 技术上投入超过 1000 亿美元，使其成为 AWS 历史上最大的算力客户之一。这一合作将深刻影响全球 AI 算力格局：Anthropic 明确表示将使用 AWS 自研芯片（Trainium）而非英伟达 GPU，标志着亚马逊芯片战略取得实质性突破，也意味着头部 AI 实验室正在加速与芯片厂商的垂直整合。</p>
-<p><strong>链接：</strong>
-<a href="https://www.bestblogs.dev/en/status/2046327624092487688" target="_blank" rel="noopener">https://www.bestblogs.dev/en/status/2046327624092487688</a></p>
-<hr>
-<h3>OpenAI 推出 Chronicle：为 Codex 注入屏幕感知记忆能力</h3>
-<p><strong>来源：</strong> @OpenAI Developers | 评分：91 | 发布时间：2026-04-20 18:01 GMT</p>
-<p><strong>核心观点：</strong>
-OpenAI 通过 Chronicle 实验功能扩展 Codex 的记忆能力，利用近期屏幕上下文提供无缝辅助，AI 自动捕获用户当前工作环境，无需手动重复背景。</p>
-<p><strong>深度摘要：</strong>
-OpenAI Developers 账号发布的公告详细说明了 Chronicle 的技术实现：在原有"记忆"预览版的基础上，Chronicle 利用操作系统级屏幕上下文捕获，让 Codex 主动理解用户当前正在查看的窗口、文件或代码位置。不同于传统 RAG（检索增强生成）需要手动上传文档，Chronicle 的屏幕感知是主动的、后台运行的、用户无感的。这解决了 AI 编程工具最大的体验断层：当 AI 编程工具在新会话中无法知晓用户之前的工作进度时，往往给出与上下文不符的建议。Chronicle 通过让 AI"看到"用户屏幕来解决这个问题，目前 Chronicle 正在 Mac 端 Pro 订阅用户中灰度推送。</p>
-<p><strong>链接：</strong>
-<a href="https://www.bestblogs.dev/en/status/2046288243768082699" target="_blank" rel="noopener">https://www.bestblogs.dev/en/status/2046288243768082699</a></p>
-<hr>
-<h3>Kimi K2.6：月之暗面发布 SOTA 级开源编程模型</h3>
-<p><strong>来源：</strong> @Kimi.ai | 评分：92 | 发布时间：2026-04-20 15:28 GMT</p>
-<p><strong>核心观点：</strong>
-月之暗面推出 Kimi K2.6，在 SWE-Bench Pro 和 Math Vision 等基准测试中取得全球领先成绩，并支持 300 并行子智能体的 Agent Swarms 架构。</p>
-<p><strong>深度摘要：</strong>
-Kimi K2.6 是月之暗面迄今为止最重要的开源编程模型更新。技术规格方面：SWE-Bench Pro 得分 58.6（同类最高）、Math Vision 得分 93.2；支持 4000 次以上工具调用（持续执行超 12 小时）；新增 WebGL/Three.js 前端生成能力；支持 300 个并行子智能体协同的 Agent Swarms 架构。与前代 K2 相比，K2.6 在长程执行一致性和多智能体协调方面有质的提升。模型权重已在 HuggingFace 上线，完全开源。该发布被 Open Source AI 社区称为"中国开源模型的里程碑事件"，进一步证明中国 AI 公司已具备在全球开源生态中引领技术方向的能力。</p>
-<p><strong>链接：</strong>
-<a href="https://www.bestblogs.dev/en/status/2046249571882500354" target="_blank" rel="noopener">https://www.bestblogs.dev/en/status/2046249571882500354</a></p>
+<h3>3. State of Open Source on Hugging Face: Spring 2026</h3>
+<p><strong>来源：Hugging Face 官方博客 | AI评分：90</strong></p>
+<p>Hugging Face发布2026年春季开源生态报告。关键信息：
+- 2025年中国AI生态深度拥抱开源，DeepSeek R1发布后引爆全球
+- 西方组织正在积极寻找可商业部署的中国开源模型替代品
+- Hugging Face推出Kernel Hub，支持NVIDIA/AMD GPU优化内核加载
+- 中国开源模型开始明确支持国产芯片（昇腾等）</p>
 <hr>
     </div>
     <div class="page-footer">
