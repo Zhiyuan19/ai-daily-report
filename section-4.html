@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>板块4：开源工具 & 模型更新 — AI技术情报日报｜2026年4月24日</title>
+<title>板块四：开源工具 & 模型更新 — AI技术情报日报</title>
 <style>
 
 :root {
@@ -492,65 +492,38 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">⚡</div>
-            <h1>板块4：开源工具 & 模型更新</h1>
+            <h1>板块四：开源工具 & 模型更新</h1>
         </div>
         <div class="section-meta">
             <div class="meta-item"><span class="dot"></span>2026年4月24日</div>
-            <div class="meta-item"><span class="dot"></span>板块 4 / 6</div>
+            <div class="meta-item"><span class="dot"></span>板块 4 / 7</div>
         </div>
     </div>
     <div class="content-section">
-<h2>板块4：开源工具 &amp; 模型更新</h2>
-<p>聚焦近期重要开源模型与工具发布，兼顾国际与国内开源生态。</p>
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>项目</th>
-<th>发布方</th>
-<th>类型</th>
-<th>核心亮点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td><strong>GLM-5</strong></td>
-<td>智谱 AI</td>
-<td>大语言模型</td>
-<td>参数量从 355B 扩至 744B（激活 40B），预训练数据 28.5T；编程能力对齐 Claude Opus 4.5，在 SWE-bench Verified 等编程榜单达开源 SOTA；Agentic Coding 表现逼近 Opus 4.5；MIT 协议开源</td>
-</tr>
-<tr>
-<td>2</td>
-<td><strong>ERNIE-Image</strong></td>
-<td>百度文心</td>
-<td>文生图模型</td>
-<td>80 亿参数（8B），24GB 消费级显卡可部署；文字渲染全球第一，GenEval / OneIG / LongText 等 benchmark 全面超越竞品；Apache 2.0 开源；同步推出 Turbo 版，8 步推理极速生成</td>
-</tr>
-<tr>
-<td>3</td>
-<td><strong>通义千问 Qwen3.6-Plus</strong></td>
-<td>阿里云</td>
-<td>大语言模型</td>
-<td>百万级上下文窗口，编程能力国产第二（仅次于 GLM-5），全球前五；已在 OpenRouter 登顶热度榜首</td>
-</tr>
-<tr>
-<td>4</td>
-<td><strong>Gemma 4</strong></td>
-<td>Google DeepMind</td>
-<td>多规格开源模型</td>
-<td>E2B（手机端离线）/ E4B / 31B Dense 多规格；20 亿参数达上代 270 亿效果；Apache 2.0 开源</td>
-</tr>
-<tr>
-<td>5</td>
-<td><strong>Llama 4 Maverick</strong></td>
-<td>Meta</td>
-<td>大语言模型</td>
-<td>2026 年开源模型排行榜第一（综合能力），保持开源领头羊地位</td>
-</tr>
-</tbody>
-</table>
-<p><strong>今日简评：</strong> 本周是国产开源模型集体爆发的一周——GLM-5 以 744B 总参数刷新开源编程模型天花板，ERNIE-Image 以 8B 参数量挑战文字渲染 SOTA，Qwen3.6-Plus 百万上下文重新定义开源长文本处理能力。三条技术路线（编程 Agent、文生图、长上下文）同步突破，标志着中国开源模型生态已从"追赶"进入"并跑"甚至"领跑"阶段。</p>
+<h2>板块四：开源工具 &amp; 模型更新</h2>
+<blockquote>
+<p>本板块收录国际与国内开源模型及工具的重要更新，≥3个，含国际与国内各方向。</p>
+</blockquote>
+<hr>
+<h3>更新一：GenericAgent——从3.3K种子代码自进化至全系统控制</h3>
+<p><strong>开源方：lsdefine | MIT许可 | Python</strong></p>
+<p><strong>更新内容：</strong><br>
+GenericAgent是一个自进化AI Agent框架，其核心理念是从极简种子代码（3.3K行）出发，让AI Agent自主扩展自身技能树（Skill Tree），最终实现对完整计算系统的控制。与传统Agent系统预先定义工具集不同，GenericAgent的Agent能够根据任务需求自主生成、评估并部署新工具，理论上具备"无限扩展"能力。</p>
+<p>在Token效率上，GenericAgent实现了"6倍Token降低"——在达到相同系统控制任务完成率的前提下，Token消耗仅为GPT-4o等大型模型的约1/6，这对降低Agent运行成本意义重大。当前GitHub星数6.1k，最近30天保持日均稳定增长，Issues和PR活跃度在同类项目中位居前列。</p>
+<p><strong>项目链接：</strong> <a href="https://github.com/lsdefine/GenericAgent" target="_blank" rel="noopener">https://github.com/lsdefine/GenericAgent</a></p>
+<hr>
+<h3>更新二：Mistral Small 4——22B参数开源模型超越3-5倍尺寸闭源模型</h3>
+<p><strong>开源方：Mistral AI | Apache 2.0许可</strong></p>
+<p><strong>更新内容：</strong><br>
+Mistral AI发布了Small 4，这是一款将推理、多模态和指令跟随能力整合于单一快速包中的开源模型。该模型以仅220亿参数，在多项关键基准测试中超越了参数量为其3-5倍的闭源模型，标志着开源模型在"参数量效率"这一维度上实现了质的飞跃。</p>
+<p>Small 4在Mistral产品线中填补了"轻量级全能"需求：既有Ministral系列（3B/8B/14B）的边缘部署优势，又有Mistral Large的全面能力，适合需要在消费级硬件或边缘设备上运行复杂AI任务的企业场景。结合Mistral Forge（企业自定义模型训练平台，2026年4月发布），Mistral正在构建从"模型调用"到"模型定制"的全栈开源AI能力。</p>
+<hr>
+<h3>更新三：阿里云Qwen3.6-27B正式开源——本地编程Agent新大脑</h3>
+<p><strong>开源方：</strong> 阿里云/通义千问 | 发布时间：2026年4月22日<br>
+<strong>链接：</strong> <a href="https://huggingface.co/Qwen/Qwen3.6-27B" target="_blank" rel="noopener">https://huggingface.co/Qwen/Qwen3.6-27B</a></p>
+<p><strong>更新内容：</strong><br>
+阿里云正式开源Qwen3.6-27B，这是Qwen3.6系列首款正式开源模型，在270亿总参数的硬件高效规格下，实现了与千亿参数级模型相当的智能体编程能力。在SWE-bench、Terminal-Bench 2.0、SkillsBench、QwenWebBench、NL2Repo等多项权威编程基准测试中，Qwen3.6-27B均达到行业第一梯队水平。</p>
+<p>该模型的发布对于"本地部署AI编程助手"场景意义重大：开发者可以在24GB显存的消费级GPU（如RTX 4090）上运行完整的代码智能体，无需依赖云端API。多家Agent框架已宣布将Qwen3.6-27B作为默认本地大脑，包括OpenClaw等开源智能体平台。阿里云同步提供量化版本，将推理内存需求进一步降低。</p>
 <hr>
     </div>
     <div class="page-footer">
