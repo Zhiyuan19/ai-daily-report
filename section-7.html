@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
+<title>Agent化编程模型：2026年AI编程赛道的范式转移 — AI技术情报日报</title>
+<style>
+
+:root {
+    --bg: #f8f7f4;
+    --bg-card: #ffffff;
+    --text: #1a1a1a;
+    --text-muted: #6b7280;
+    --accent: #2563eb;
+    --accent-soft: #dbeafe;
+    --accent-glow: rgba(37,99,235,0.12);
+    --accent2: #7c3aed;
+    --accent2-soft: #ede9fe;
+    --border: #e5e7eb;
+    --code-bg: #f1f0ed;
+    --heading: #0f172a;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow: 0 4px 20px rgba(0,0,0,0.08);
+    --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0c0c0f;
+        --bg-card: #16161a;
+        --text: #e2e8f0;
+        --text-muted: #94a3b8;
+        --accent: #60a5fa;
+        --accent-soft: #1e3a5f;
+        --accent-glow: rgba(96,165,250,0.15);
+        --accent2: #a78bfa;
+        --accent2-soft: #2e1f5e;
+        --border: #2a2a35;
+        --code-bg: #1e1e26;
+        --heading: #f1f5f9;
+    }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    min-height: 100vh;
+}
+
+/* ── 通用容器 ── */
+.container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 5rem;
+}
+
+/* ── 首页 Hero ── */
+.home-hero {
+    text-align: center;
+    padding: 5rem 1.5rem 4rem;
+    position: relative;
+}
+.home-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 400px;
+    background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+}
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(37,99,235,0.2);
+}
+.home-hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    color: var(--heading);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.75rem;
+}
+.home-hero .subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+}
+.home-hero .date-tag {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* ── 分割线 ── */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2.5rem 0;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+/* ── 板块卡片网格 ── */
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+.toc-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.2s ease,
+                border-color 0.2s ease;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+.toc-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.toc-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent);
+    text-decoration: none;
+    color: inherit;
+}
+.toc-card:hover::before { opacity: 1; }
+
+.card-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    background: var(--accent-soft);
+}
+.card-num {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.3rem;
+}
+.card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--heading);
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+}
+.card-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    flex: 1;
+}
+.card-arrow {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* ── 板块页 Header ── */
+.section-hero {
+    padding: 3.5rem 0 2.5rem;
+    position: relative;
+}
+.section-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -1.5rem; right: -1.5rem; bottom: 0;
+    background: linear-gradient(135deg, var(--accent-glow) 0%, transparent 60%);
+    border-radius: 0 0 var(--radius) var(--radius);
+    z-index: -1;
+}
+.breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+.breadcrumb a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.breadcrumb a:hover { text-decoration: underline; }
+.section-title-wrap { display: flex; align-items: flex-start; gap: 1rem; }
+.section-icon {
+    width: 56px; height: 56px;
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    flex-shrink: 0;
+}
+.section-title-wrap h1 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 900;
+    color: var(--heading);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    padding-top: 0.4rem;
+}
+.section-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.75rem;
+    flex-wrap: wrap;
+}
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+.meta-item .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+/* ── 内容块 ── */
+.content-section {
+    margin-bottom: 3rem;
+}
+.section-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+/* ── 项目卡片 ── */
+.item-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    margin-bottom: 1.25rem;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+.item-card:hover {
+    box-shadow: var(--shadow);
+    border-color: rgba(37,99,235,0.3);
+}
+.item-card h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--heading);
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.01em;
+}
+.item-card .item-subtitle {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.item-card .one-liner {
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--code-bg);
+    border-left: 3px solid var(--accent);
+    padding: 0.5rem 1rem;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.03em;
+}
+.tag.star { background: #fef3c7; color: #d97706; }
+.tag.new { background: #d1fae5; color: #059669; }
+
+.field-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--accent2);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+}
+.field-label:first-child { margin-top: 0; }
+
+p { margin-bottom: 0.75rem; }
+ul { padding-left: 1.25rem; margin-bottom: 0.75rem; }
+li { margin-bottom: 0.25rem; }
+
+a { color: var(--accent); }
+a:hover { text-decoration: underline; }
+
+code {
+    font-family: "SF Mono", "Fira Code", Consolas, monospace;
+    font-size: 0.8em;
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 5px;
+    color: #c7254e;
+    border: 1px solid var(--border);
+}
+@media (prefers-color-scheme: dark) { code { color: #f78c6c; } }
+
+pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+pre code { background: none; padding: 0; color: var(--text); font-size: 0.82rem; border: none; }
+
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.875rem; border-radius: 10px; overflow: hidden; }
+th, td { border: 1px solid var(--border); padding: 0.6rem 0.9rem; text-align: left; }
+th { background: var(--code-bg); font-weight: 700; font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+@media (prefers-color-scheme: dark) { tr:nth-child(even) td { background: rgba(255,255,255,0.03); } }
+
+hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+
+/* ── 页脚导航 ── */
+.page-footer {
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.footer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    transition: all 0.2s;
+}
+.footer-link:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    text-decoration: none;
+}
+.footer-link.primary {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+.footer-link.primary:hover {
+    background: #1d4ed8;
+    color: #fff;
+}
+
+/* ── 来源信息 ── */
+.source-block {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+.source-block h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--heading);
+    margin-bottom: 0.25rem;
+}
+.source-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+/* ── 滚动条 ── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+/* ── 动画 ── */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.home-hero, .toc-card, .item-card, .source-block { animation: fadeInUp 0.5s ease both; }
+.toc-card:nth-child(1) { animation-delay: 0.05s; }
+.toc-card:nth-child(2) { animation-delay: 0.1s; }
+.toc-card:nth-child(3) { animation-delay: 0.15s; }
+.toc-card:nth-child(4) { animation-delay: 0.2s; }
+.toc-card:nth-child(5) { animation-delay: 0.25s; }
+.toc-card:nth-child(6) { animation-delay: 0.3s; }
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="section-hero">
+        <div class="breadcrumb">
+            <a href="index.html">← 首页</a>
+            <span>/</span>
+            <span>板块 7</span>
+        </div>
+        <div class="section-title-wrap">
+            <div class="section-icon">📄</div>
+            <h1>Agent化编程模型：2026年AI编程赛道的范式转移</h1>
+        </div>
+        <div class="section-meta">
+            <div class="meta-item"><span class="dot"></span>2026年4月24日</div>
+            <div class="meta-item"><span class="dot"></span>板块 7 / 7</div>
+        </div>
+    </div>
+    <div class="content-section">
+<h2>Agent化编程模型：2026年AI编程赛道的范式转移</h2>
+<p>2026年4月，OpenAI发布GPT-5.5和Anthropic发布Claude Opus 4.7，标志着AI编程助手正从"辅助工具"向"自主执行者"全面升级。这不仅是模型能力的提升，更是一场关于"软件开发权"的结构性变革。</p>
+<p><strong>从Copilot到Agent：本质跃迁</strong><br>
+传统AI编程工具（如早期GitHub Copilot）的定位是"人类的打字机"——根据开发者意图补全代码，本质上仍是执行者角色。而GPT-5.5和Claude Opus 4.7代表的Agent化模型已经具备"理解任务→制定计划→调用工具→验证结果→迭代修正"的完整自主工作流。以GPT-5.5在SWE-Bench Pro上58.6%的端到端解决率为例，它意味着在接近六成的真实GitHub Issue中，AI可以无需人工介入独立完成从问题理解到代码提交的完整流程。</p>
+<p><strong>Token效率：被忽视的胜负手</strong><br>
+GPT-5.5最重要的工程进步不是基准分数的提升，而是"效率革命"：与GPT-5.4相同的延迟、更低的Token消耗。Claude Opus 4.7的百万Token原生上下文则解决了大型代码库的"内存"问题——此前模型在处理大型项目时会因上下文溢出而频繁丢失关键代码依赖。这两个方向（效率与上下文）的突破，共同为AI Agent从"toy demo"走向"Production级应用"扫清了障碍。</p>
+<p><strong>平台化博弈：开源模型公司的突围之战</strong><br>
+腾讯混元Hy3 Preview和阿里Qwen3.6-27B的开源发布，揭示了国内AI竞争的另一条暗线：云厂商主导的"模型超市"正在挤压独立开源模型公司的生存空间。字节火山引擎"打包多模型+低价订阅"的模式，本质上是通过控制流量入口来获取对模型公司的谈判优势。这与AWS在云计算时代的"平台化逻辑"如出一辙。</p>
+<p><strong>Agent经济的黎明</strong><br>
+可以预见，2026年下半年将出现第一批"AI Agent原生"的软件团队：开发者角色从"代码写作者"转变为"Agent工作流设计师"，核心职责是定义任务边界、设置验收标准、审核Agent产出而非直接产出代码。这一转变的速度将取决于Agent的可靠性（当前SWE-Bench仍有41%失败率）和安全性（microsandbox等沙箱方案的成熟度）。2026，或许就是软件工程"Agent化元年"的开端。</p>
+<hr>
+<p><em>本日报由AI技术情报系统自动生成 | 数据来源：GitHub Trending、Tavily搜索、官方博客公告</em></p>
+    </div>
+    <div class="page-footer">
+    <a class="footer-link" href="section-6.html">← 上一板块</a>
+    <a class="footer-link primary" href="index.html">← 返回首页</a>
+    <span></span>
+    </div>
+</div>
+</body>
+</html>
