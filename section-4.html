@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>④ 开源工具 & 模型更新（≥3个，含国际+国内开源） — AI技术情报日报 | 2026年4月25日</title>
+<title>④ 开源工具 & 模型更新（3个） — AI 技术情报日报</title>
 <style>
 
 :root {
@@ -492,40 +492,57 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">⚡</div>
-            <h1>④ 开源工具 & 模型更新（≥3个，含国际+国内开源）</h1>
+            <h1>④ 开源工具 & 模型更新（3个）</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年4月25日</div>
+            <div class="meta-item"><span class="dot"></span>2026年4月26日</div>
             <div class="meta-item"><span class="dot"></span>板块 4 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>④ 开源工具 &amp; 模型更新（≥3个，含国际+国内开源）</h2>
-<h3>国际开源</h3>
-<p><strong>1. DeepSeek-AI / DeepEP</strong>
-- <strong>类型</strong>：高效MoE通信库
-- <strong>更新内容</strong>：2025年6月最新低延迟内核支持NVLink最大化利用；与腾讯网络平台部门合作优化，性能提升最高30%（PR#130）
-- <strong>技术指标</strong>：H800节点内8EP达153 GB/s NVLink带宽；跨节点16EP达43 GB/s RDMA；低延迟解码128 tokens批量仅194us
-- <strong>开源链接</strong>：<a href="<a href="https://github.com/deepseek-ai/DeepEP" target="_blank" rel="noopener">https://github.com/deepseek-ai/DeepEP</a>">DeepSeek-AI/DeepEP</a></p>
-<p><strong>2. HuggingFace / Gemma 4</strong>
-- <strong>类型</strong>：设备端前沿多模态模型
-- <strong>更新内容</strong>：Gemma 4在Arena Elo评测中领先同尺寸模型，支持transformers/Llama.cpp/transformers.js/MLX多后端运行
-- <strong>亮点</strong>：首次在设备端实现真正多模态（图像+文本+音频）推理能力
-- <strong>开源链接</strong>：<a href="<a href="https://huggingface.co/blog/gemma4" target="_blank" rel="noopener">https://huggingface.co/blog/gemma4</a>">Google/gemma4</a></p>
-<h3>国内开源</h3>
-<p><strong>3. 智谱AI / GLM-5-Turbo</strong>
-- <strong>类型</strong>：基座大模型（开源权重）
-- <strong>更新内容</strong>：Agent场景专项优化，支持1000+常用工具调用，可完成多步骤跨工具复杂任务；上下文窗口持续扩展
-- <strong>技术指标</strong>：2026年1月GLM-4.7登顶全球开源模型与国产模型双料榜首，代码生成超越GPT-5.2
-- <strong>开源链接</strong>：<a href="<a href="https://github.com/THUDM/GLM-5" target="_blank" rel="noopener">https://github.com/THUDM/GLM-5</a>">THUDM/GLM-5</a></p>
-<p><strong>4. 小米 / MiMo-V2-Pro</strong>
-- <strong>类型</strong>：推理大模型
-- <strong>更新内容</strong>：1.2万亿参数、100万Token上下文，稳定支持2000页PDF一次性处理、2小时长视频转录文本，记忆精度99%
-- <strong>技术指标</strong>：行业首个稳定支持百万Token的国产模型，全球综合排名第8
-- <strong>开源链接</strong>：<a href="<a href="https://huggingface.co/mi" target="_blank" rel="noopener">https://huggingface.co/mi</a> Mo-V2-Pro">Xiaomi/MiMo</a></p>
-<blockquote>
-<p><strong>开源工具汇总</strong>：4个（✓≥3），国际+国内各2个，去重确认无跨板块重复</p>
-</blockquote>
+<h2>④ 开源工具 &amp; 模型更新（3个）</h2>
+<hr>
+<h3>DeepSeek V4 / V4-Pro / V4-Flash — 刷新开源模型性价比纪录</h3>
+<p><strong>一句话描述：</strong> DeepSeek V4以1.6万亿参数（Pro版）刷新开源模型规模纪录，同时以$0.14/百万输入Token的价格成为成本最低的前沿级开源模型。</p>
+<p><strong>深度解析：</strong>
+DeepSeek于4月24日发布V4系列，推出V4-Pro（1.6万亿参数）和V4-Flash（2840亿参数）两个版本。这是全球参数规模最大的开源模型之一，也是DeepSeek在R1之后最受期待的产品。</p>
+<p><strong>核心技术创新：</strong>
+- <strong>Hybrid Attention Architecture（混合注意力架构）：</strong> 改进长对话中的查询历史记忆能力，解决标准Transformer在超长上下文中的信息遗忘问题
+- <strong>100万Token上下文窗口：</strong> 整本代码库或长文档可作为单次Prompt输入，支持跨文件代码理解和生成
+- <strong>极致性价比：</strong> V4-Flash定价$0.14/$0.28（输入/输出每百万Token），比GPT-5.4 Nano、Gemini 3.1 Flash更低，是目前最具成本竞争力的前沿级开源模型</p>
+<p><strong>开源生态影响：</strong>
+DeepSeek V4针对Anthropic Claude Code和OpenClaw等主流Agent工具进行了专门优化，这意味着开源社区可以以极低成本部署接近前沿能力的智能体后端。对企业用户而言，V4在私有部署场景中的成本优势尤为突出。</p>
+<p><strong>链接：</strong>
+<a href="https://huggingface.co/deepseek-ai/deepseek-v4" target="_blank" rel="noopener">https://huggingface.co/deepseek-ai/deepseek-v4</a></p>
+<hr>
+<h3>Google发布Gemini CLI — 首个Apache 2.0许可的官方终端Agent</h3>
+<p><strong>一句话描述：</strong> Google发布Gemini CLI，将Gemini的能力带入终端，支持开源开发者构建本地AI工作流。</p>
+<p><strong>深度解析：</strong>
+Gemini CLI是Google官方发布的开源终端Agent框架，以Apache 2.0许可证发布，这意味着任何人均可自由使用、修改和商业化。作为与闭源Gemini API互补的产品，CLI版本面向需要本地运行、数据隐私敏感或希望深度定制的开发者。</p>
+<p><strong>核心能力：</strong>
+- 多步骤任务自动化：理解自然语言指令，在终端中执行复杂的多步骤操作
+- 文件操作与代码生成：直接读写文件系统、运行命令、编写脚本
+- 与Git工作流集成：支持代码审查、PR描述生成、commit总结等开发日常任务
+- 开源可审查：相比闭源竞品，开发者可完整审计Agent决策逻辑</p>
+<p><strong>意义：</strong>
+Gemini CLI的发布标志着Google正式进入开源Agent工具市场，与OpenClaw、CrewAI等形成直接竞争。Apache 2.0许可的姿态表明Google愿意将Gemini的核心能力以不受限制的方式交给社区。</p>
+<p><strong>链接：</strong>
+<a href="https://github.com/google-gemini/gemini-cli" target="_blank" rel="noopener">https://github.com/google-gemini/gemini-cli</a></p>
+<hr>
+<h3>微软发布Agent Framework v1.0 — 统一AutoGen/Semantic Kernel的企业级Agent平台</h3>
+<p><strong>一句话描述：</strong> 微软正式发布Agent Framework v1.0，整合AutoGen和Semantic Kernel，统一图工作流、A2A协议和MCP支持。</p>
+<p><strong>深度解析：</strong>
+2026年4月2日，微软正式发布Agent Framework v1.0，标志着微软AI Agent战略完成了从分散到统一的收敛。该框架整合了此前独立发展的AutoGen（多Agent对话编排）和Semantic Kernel（企业级AI编排）两条技术路线。</p>
+<p><strong>v1.0核心特性：</strong>
+- <strong>图工作流引擎：</strong> 支持复杂的多分支、循环和条件判断工作流，适合企业级复杂业务流程
+- <strong>A2A协议（Agent to Agent）：</strong> 标准化不同Agent之间的通信协议，打破厂商锁定
+- <strong>MCP支持（Model Context Protocol）：</strong> 统一上下文管理，支持跨会话的长期记忆
+- <strong>检查点与恢复：</strong> 支持长时任务的断点续跑，企业关键业务流程不中断
+- <strong>Python和.NET双语言支持：</strong> 覆盖企业主流技术栈</p>
+<p><strong>意义：</strong>
+AutoGen本身已宣布进入维护模式，不再开发新功能。微软Agent Framework正在成为微软企业客户的唯一官方选择，其与Azure AI、Copilot的深度集成是其他框架无法复制的护城河。</p>
+<p><strong>链接：</strong>
+<a href="https://github.com/microsoft/Agent-Framework-Samples" target="_blank" rel="noopener">https://github.com/microsoft/Agent-Framework-Samples</a></p>
 <hr>
     </div>
     <div class="page-footer">
