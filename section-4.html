@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>④ 开源工具 & 模型更新（3个） — AI 技术情报日报</title>
+<title>板块三：AI 厂商官方博客（6家，近30天） — AI技术情报日报</title>
 <style>
 
 :root {
@@ -492,57 +492,57 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">⚡</div>
-            <h1>④ 开源工具 & 模型更新（3个）</h1>
+            <h1>板块三：AI 厂商官方博客（6家，近30天）</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年4月26日</div>
-            <div class="meta-item"><span class="dot"></span>板块 4 / 6</div>
+            <div class="meta-item"><span class="dot"></span>2026年4月27日</div>
+            <div class="meta-item"><span class="dot"></span>板块 4 / 7</div>
         </div>
     </div>
     <div class="content-section">
-<h2>④ 开源工具 &amp; 模型更新（3个）</h2>
+<h2>板块三：AI 厂商官方博客（6家，近30天）</h2>
+<h3>1. Meta AI — Muse Spark: 迈向个人超级智能</h3>
+<ul>
+<li><strong>URL</strong>: <a href="https://ai.meta.com/blog/introducing-muse-spark-msl/" target="_blank" rel="noopener">https://ai.meta.com/blog/introducing-muse-spark-msl/</a></li>
+<li><strong>发布时间</strong>: 2026年4月8日</li>
+<li><strong>核心</strong>: Meta 发布 Muse Spark，已在 meta.ai 和 Meta AI App 上线。支持"Contemplating 模式"（逐步推出），采用 Advanced AI Scaling Framework v2，配套安全与 Preparedness 报告。</li>
+</ul>
 <hr>
-<h3>DeepSeek V4 / V4-Pro / V4-Flash — 刷新开源模型性价比纪录</h3>
-<p><strong>一句话描述：</strong> DeepSeek V4以1.6万亿参数（Pro版）刷新开源模型规模纪录，同时以$0.14/百万输入Token的价格成为成本最低的前沿级开源模型。</p>
-<p><strong>深度解析：</strong>
-DeepSeek于4月24日发布V4系列，推出V4-Pro（1.6万亿参数）和V4-Flash（2840亿参数）两个版本。这是全球参数规模最大的开源模型之一，也是DeepSeek在R1之后最受期待的产品。</p>
-<p><strong>核心技术创新：</strong>
-- <strong>Hybrid Attention Architecture（混合注意力架构）：</strong> 改进长对话中的查询历史记忆能力，解决标准Transformer在超长上下文中的信息遗忘问题
-- <strong>100万Token上下文窗口：</strong> 整本代码库或长文档可作为单次Prompt输入，支持跨文件代码理解和生成
-- <strong>极致性价比：</strong> V4-Flash定价$0.14/$0.28（输入/输出每百万Token），比GPT-5.4 Nano、Gemini 3.1 Flash更低，是目前最具成本竞争力的前沿级开源模型</p>
-<p><strong>开源生态影响：</strong>
-DeepSeek V4针对Anthropic Claude Code和OpenClaw等主流Agent工具进行了专门优化，这意味着开源社区可以以极低成本部署接近前沿能力的智能体后端。对企业用户而言，V4在私有部署场景中的成本优势尤为突出。</p>
-<p><strong>链接：</strong>
-<a href="https://huggingface.co/deepseek-ai/deepseek-v4" target="_blank" rel="noopener">https://huggingface.co/deepseek-ai/deepseek-v4</a></p>
+<h3>2. Meta AI — SAM 3.1：实时视频检测与跟踪</h3>
+<ul>
+<li><strong>URL</strong>: <a href="https://ai.meta.com/blog/segment-anything-model-3/" target="_blank" rel="noopener">https://ai.meta.com/blog/segment-anything-model-3/</a></li>
+<li><strong>发布时间</strong>: 2026年4月</li>
+<li><strong>核心</strong>: Segment Anything Model 3.1 版本，通过 Multiplexing 和全局推理实现更快、更易访问的实时视频目标检测与跟踪。</li>
+</ul>
 <hr>
-<h3>Google发布Gemini CLI — 首个Apache 2.0许可的官方终端Agent</h3>
-<p><strong>一句话描述：</strong> Google发布Gemini CLI，将Gemini的能力带入终端，支持开源开发者构建本地AI工作流。</p>
-<p><strong>深度解析：</strong>
-Gemini CLI是Google官方发布的开源终端Agent框架，以Apache 2.0许可证发布，这意味着任何人均可自由使用、修改和商业化。作为与闭源Gemini API互补的产品，CLI版本面向需要本地运行、数据隐私敏感或希望深度定制的开发者。</p>
-<p><strong>核心能力：</strong>
-- 多步骤任务自动化：理解自然语言指令，在终端中执行复杂的多步骤操作
-- 文件操作与代码生成：直接读写文件系统、运行命令、编写脚本
-- 与Git工作流集成：支持代码审查、PR描述生成、commit总结等开发日常任务
-- 开源可审查：相比闭源竞品，开发者可完整审计Agent决策逻辑</p>
-<p><strong>意义：</strong>
-Gemini CLI的发布标志着Google正式进入开源Agent工具市场，与OpenClaw、CrewAI等形成直接竞争。Apache 2.0许可的姿态表明Google愿意将Gemini的核心能力以不受限制的方式交给社区。</p>
-<p><strong>链接：</strong>
-<a href="https://github.com/google-gemini/gemini-cli" target="_blank" rel="noopener">https://github.com/google-gemini/gemini-cli</a></p>
+<h3>3. Anthropic — Claude Opus 4.7 与 Claude Design 系统</h3>
+<ul>
+<li><strong>URL</strong>: <a href="https://anthropic.com/news" target="_blank" rel="noopener">https://anthropic.com/news</a></li>
+<li><strong>发布时间</strong>: 2026年4月</li>
+<li><strong>核心</strong>: Claude Opus 4.7 性能提升，Claude Design 设计系统正式发布，同步推出 Claude Partner Network 生态合作计划，推动企业级 AI 落地。</li>
+</ul>
 <hr>
-<h3>微软发布Agent Framework v1.0 — 统一AutoGen/Semantic Kernel的企业级Agent平台</h3>
-<p><strong>一句话描述：</strong> 微软正式发布Agent Framework v1.0，整合AutoGen和Semantic Kernel，统一图工作流、A2A协议和MCP支持。</p>
-<p><strong>深度解析：</strong>
-2026年4月2日，微软正式发布Agent Framework v1.0，标志着微软AI Agent战略完成了从分散到统一的收敛。该框架整合了此前独立发展的AutoGen（多Agent对话编排）和Semantic Kernel（企业级AI编排）两条技术路线。</p>
-<p><strong>v1.0核心特性：</strong>
-- <strong>图工作流引擎：</strong> 支持复杂的多分支、循环和条件判断工作流，适合企业级复杂业务流程
-- <strong>A2A协议（Agent to Agent）：</strong> 标准化不同Agent之间的通信协议，打破厂商锁定
-- <strong>MCP支持（Model Context Protocol）：</strong> 统一上下文管理，支持跨会话的长期记忆
-- <strong>检查点与恢复：</strong> 支持长时任务的断点续跑，企业关键业务流程不中断
-- <strong>Python和.NET双语言支持：</strong> 覆盖企业主流技术栈</p>
-<p><strong>意义：</strong>
-AutoGen本身已宣布进入维护模式，不再开发新功能。微软Agent Framework正在成为微软企业客户的唯一官方选择，其与Azure AI、Copilot的深度集成是其他框架无法复制的护城河。</p>
-<p><strong>链接：</strong>
-<a href="https://github.com/microsoft/Agent-Framework-Samples" target="_blank" rel="noopener">https://github.com/microsoft/Agent-Framework-Samples</a></p>
+<h3>4. OpenAI — GPT-5.5 / Workspace Agents / ChatGPT Images 2.0</h3>
+<ul>
+<li><strong>URL</strong>: <a href="https://openai.com/news" target="_blank" rel="noopener">https://openai.com/news</a></li>
+<li><strong>发布时间</strong>: 2026年4月23日</li>
+<li><strong>核心</strong>: GPT-5.5 发布（mini/nano 规格，主打高并发与子 Agent 场景），Workspace Agents 进入多模型协作阶段，ChatGPT Images 2.0 支持更精准的多模态图像生成与编辑。</li>
+</ul>
+<hr>
+<h3>5. Google DeepMind — 神经符号记忆 + 多模态 Agent 规划</h3>
+<ul>
+<li><strong>来源</strong>: DeepMind 官方博客 / arXiv</li>
+<li><strong>核心发表</strong>:</li>
+<li><strong>Neural-Symbolic Memory</strong>: "神经表示+结构化符号记忆"混合架构，多模态 Agent 长期记忆准确率平均提升 4.35%，部分任务最高 +12.5%</li>
+<li><strong>Anticipatory Planning</strong>: 让模型先预测短期轨迹再执行，显著提升复杂任务鲁棒性，报告七个基准改进数据</li>
+<li><strong>VisBrowse-Bench</strong>: 多模态浏览 Agent "看图搜索"评测基准填补空白</li>
+</ul>
+<hr>
+<h3>6. HuggingFace — W17 Daily Papers + TRIBE v2</h3>
+<ul>
+<li><strong>URL</strong>: <a href="https://huggingface.co/papers/week/2026-W17" target="_blank" rel="noopener">https://huggingface.co/papers/week/2026-W17</a></li>
+<li><strong>核心</strong>: TRIBE v2 发布——Meta 的脑科学预测基础模型，HuggingFace 同步开源模型权重、代码库与交互 Demo，用于神经科学 AI 研究。</li>
+</ul>
 <hr>
     </div>
     <div class="page-footer">
