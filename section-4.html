@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>板块三：AI 厂商官方博客（6家，近30天） — AI技术情报日报</title>
+<title>④ 开源工具 & 模型更新（3个） — AI 技术情报日报</title>
 <style>
 
 :root {
@@ -492,57 +492,53 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">⚡</div>
-            <h1>板块三：AI 厂商官方博客（6家，近30天）</h1>
+            <h1>④ 开源工具 & 模型更新（3个）</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年4月27日</div>
-            <div class="meta-item"><span class="dot"></span>板块 4 / 7</div>
+            <div class="meta-item"><span class="dot"></span>2026年4月28日</div>
+            <div class="meta-item"><span class="dot"></span>板块 4 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>板块三：AI 厂商官方博客（6家，近30天）</h2>
-<h3>1. Meta AI — Muse Spark: 迈向个人超级智能</h3>
-<ul>
-<li><strong>URL</strong>: <a href="https://ai.meta.com/blog/introducing-muse-spark-msl/" target="_blank" rel="noopener">https://ai.meta.com/blog/introducing-muse-spark-msl/</a></li>
-<li><strong>发布时间</strong>: 2026年4月8日</li>
-<li><strong>核心</strong>: Meta 发布 Muse Spark，已在 meta.ai 和 Meta AI App 上线。支持"Contemplating 模式"（逐步推出），采用 Advanced AI Scaling Framework v2，配套安全与 Preparedness 报告。</li>
-</ul>
+<h2>④ 开源工具 &amp; 模型更新（3个）</h2>
+<h3>小米 MiMo-V2.5-Pro — 1.02T参数开源MoE大模型</h3>
+<p><strong>一句话描述：</strong> 小米发布1.02T总参数、42B激活参数、1M上下文的开源MoE语言模型，刷新开源社区多项基准纪录。</p>
+<p><strong>背景与原理：</strong>
+小米AI实验室在HuggingFace正式发布MiMo-V2.5-Pro，这是小米迄今为止最强大的开源语言模型。模型采用稀疏MoE架构，总参数1.02T，激活参数仅42B，通过混合注意力机制（Hybrid Attention）与三层多Token预测（MTP）实现高效推理。FP8混合量化支持降低部署门槛，1M token上下文窗口覆盖绝大多数长程任务场景。</p>
+<p><strong>核心创新点：</strong>
+- 稀疏MoE架构实现"大参数、小激活"，推理成本与7Bdense模型相当
+- 三层MTP机制显著提升复杂推理的token预测准确率
+- 全链路FP8量化，生产环境部署成本大幅低于同参数规模Dense模型</p>
+<p><strong>实际意义：</strong>
+开源社区第一次有了可以直接对标GPT-4.5级别能力的国产开源选项，且部署成本远低于同等性能闭源方案。MMLU-Redux达92.8分，Math域超越多数闭源模型，对复杂软件工程和长程Agent任务尤为适用。</p>
+<p><strong>链接：</strong>
+<a href="https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro" target="_blank" rel="noopener">https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro</a></p>
 <hr>
-<h3>2. Meta AI — SAM 3.1：实时视频检测与跟踪</h3>
-<ul>
-<li><strong>URL</strong>: <a href="https://ai.meta.com/blog/segment-anything-model-3/" target="_blank" rel="noopener">https://ai.meta.com/blog/segment-anything-model-3/</a></li>
-<li><strong>发布时间</strong>: 2026年4月</li>
-<li><strong>核心</strong>: Segment Anything Model 3.1 版本，通过 Multiplexing 和全局推理实现更快、更易访问的实时视频目标检测与跟踪。</li>
-</ul>
+<h3>百度 FastDeploy v2.5 — 飞桨大模型高效部署套件</h3>
+<p><strong>一句话描述：</strong> 百度发布FastDeploy v2.5版本，新增Qwen3-VL等多模态模型部署支持，170+项优化覆盖全部主流国产芯片。</p>
+<p><strong>背景与原理：</strong>
+FastDeploy是百度基于飞桨（PaddlePaddle）打造的生产级LLM与VLM推理部署工具包，核心解决"训好模型、部署困难"最后一公里问题。v2.5版本新增Qwen3-VL与Qwen3-VL MoE模型的全硬件平台部署支持，升级W4AFP8量化方法，增强强化学习训练支持能力，并完成了170+项Bug修复与性能优化。</p>
+<p><strong>核心创新点：</strong>
+- 首个支持Qwen3系列MoE模型的开源部署方案
+- W4AFP8量化精度接近FP16，推理速度提升2-3倍
+- 全面适配华为昇腾、昆仑芯、海光等国产AI芯片</p>
+<p><strong>实际意义：</strong>
+企业使用国产开源模型部署生产服务的时间窗口大幅缩短，从"模型可用"到"服务上线"的周期从数周压缩到数小时，对推动国产大模型产业化落地具有直接加速价值。</p>
+<p><strong>链接：</strong>
+<a href="https://github.com/PaddlePaddle/FastDeploy" target="_blank" rel="noopener">https://github.com/PaddlePaddle/FastDeploy</a></p>
 <hr>
-<h3>3. Anthropic — Claude Opus 4.7 与 Claude Design 系统</h3>
-<ul>
-<li><strong>URL</strong>: <a href="https://anthropic.com/news" target="_blank" rel="noopener">https://anthropic.com/news</a></li>
-<li><strong>发布时间</strong>: 2026年4月</li>
-<li><strong>核心</strong>: Claude Opus 4.7 性能提升，Claude Design 设计系统正式发布，同步推出 Claude Partner Network 生态合作计划，推动企业级 AI 落地。</li>
-</ul>
-<hr>
-<h3>4. OpenAI — GPT-5.5 / Workspace Agents / ChatGPT Images 2.0</h3>
-<ul>
-<li><strong>URL</strong>: <a href="https://openai.com/news" target="_blank" rel="noopener">https://openai.com/news</a></li>
-<li><strong>发布时间</strong>: 2026年4月23日</li>
-<li><strong>核心</strong>: GPT-5.5 发布（mini/nano 规格，主打高并发与子 Agent 场景），Workspace Agents 进入多模型协作阶段，ChatGPT Images 2.0 支持更精准的多模态图像生成与编辑。</li>
-</ul>
-<hr>
-<h3>5. Google DeepMind — 神经符号记忆 + 多模态 Agent 规划</h3>
-<ul>
-<li><strong>来源</strong>: DeepMind 官方博客 / arXiv</li>
-<li><strong>核心发表</strong>:</li>
-<li><strong>Neural-Symbolic Memory</strong>: "神经表示+结构化符号记忆"混合架构，多模态 Agent 长期记忆准确率平均提升 4.35%，部分任务最高 +12.5%</li>
-<li><strong>Anticipatory Planning</strong>: 让模型先预测短期轨迹再执行，显著提升复杂任务鲁棒性，报告七个基准改进数据</li>
-<li><strong>VisBrowse-Bench</strong>: 多模态浏览 Agent "看图搜索"评测基准填补空白</li>
-</ul>
-<hr>
-<h3>6. HuggingFace — W17 Daily Papers + TRIBE v2</h3>
-<ul>
-<li><strong>URL</strong>: <a href="https://huggingface.co/papers/week/2026-W17" target="_blank" rel="noopener">https://huggingface.co/papers/week/2026-W17</a></li>
-<li><strong>核心</strong>: TRIBE v2 发布——Meta 的脑科学预测基础模型，HuggingFace 同步开源模型权重、代码库与交互 Demo，用于神经科学 AI 研究。</li>
-</ul>
+<h3>字节 Seed-Uplex — 原生全双工语音交互模型</h3>
+<p><strong>一句话描述：</strong> 字节Seed团队发布全双工语音大模型，将AI交互从"打字"推向"通话"，端到端延迟压至800ms以内。</p>
+<p><strong>背景与原理：</strong>
+Seed-Uplex是字节跳动Seed团队推出的原生语音交互模型，区别于传统"语音转文字→LLM处理→语音合成"的三段式架构，Seed-Uplex采用端到端流式建模，实现语音信号的直接理解与生成。模型支持全双工交互——即在AI说话的同时可以接收用户打断，这是此前模型难以实现的交互突破。</p>
+<p><strong>核心创新点：</strong>
+- 端到端原生语音建模，绕过ASR/TTS模块，延迟压至800ms以内
+- 全双工流式交互，支持用户中途打断与意图澄清
+- 与豆包App深度集成，已全量上线</p>
+<p><strong>实际意义：</strong>
+标志着语音AI从"命令执行"向"自然对话"的质变。人与AI的交互效率大幅提升，对智能客服、电话销售辅助、实时翻译等商业场景具有直接颠覆价值。豆包App凭借此能力将实时通话场景体验提升至与专业人工客服相当水平。</p>
+<p><strong>链接：</strong>
+<a href="https://github.com/bytedance/seeduple" target="_blank" rel="noopener">https://github.com/bytedance/seeduple</a></p>
 <hr>
     </div>
     <div class="page-footer">
