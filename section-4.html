@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>④ 开源工具 & 模型更新（3个） — AI 技术情报日报</title>
+<title>④ 开源工具 & 模型更新 — AI 技术情报日报</title>
 <style>
 
 :root {
@@ -492,53 +492,55 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">⚡</div>
-            <h1>④ 开源工具 & 模型更新（3个）</h1>
+            <h1>④ 开源工具 & 模型更新</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年4月28日</div>
+            <div class="meta-item"><span class="dot"></span>2026年4月29日</div>
             <div class="meta-item"><span class="dot"></span>板块 4 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>④ 开源工具 &amp; 模型更新（3个）</h2>
-<h3>小米 MiMo-V2.5-Pro — 1.02T参数开源MoE大模型</h3>
-<p><strong>一句话描述：</strong> 小米发布1.02T总参数、42B激活参数、1M上下文的开源MoE语言模型，刷新开源社区多项基准纪录。</p>
-<p><strong>背景与原理：</strong>
-小米AI实验室在HuggingFace正式发布MiMo-V2.5-Pro，这是小米迄今为止最强大的开源语言模型。模型采用稀疏MoE架构，总参数1.02T，激活参数仅42B，通过混合注意力机制（Hybrid Attention）与三层多Token预测（MTP）实现高效推理。FP8混合量化支持降低部署门槛，1M token上下文窗口覆盖绝大多数长程任务场景。</p>
-<p><strong>核心创新点：</strong>
-- 稀疏MoE架构实现"大参数、小激活"，推理成本与7Bdense模型相当
-- 三层MTP机制显著提升复杂推理的token预测准确率
-- 全链路FP8量化，生产环境部署成本大幅低于同参数规模Dense模型</p>
-<p><strong>实际意义：</strong>
-开源社区第一次有了可以直接对标GPT-4.5级别能力的国产开源选项，且部署成本远低于同等性能闭源方案。MMLU-Redux达92.8分，Math域超越多数闭源模型，对复杂软件工程和长程Agent任务尤为适用。</p>
-<p><strong>链接：</strong>
-<a href="https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro" target="_blank" rel="noopener">https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro</a></p>
+<h2>④ 开源工具 &amp; 模型更新</h2>
+<blockquote>
+<p>新开源工具、框架、模型（含国际+国内开源）</p>
+</blockquote>
 <hr>
-<h3>百度 FastDeploy v2.5 — 飞桨大模型高效部署套件</h3>
-<p><strong>一句话描述：</strong> 百度发布FastDeploy v2.5版本，新增Qwen3-VL等多模态模型部署支持，170+项优化覆盖全部主流国产芯片。</p>
+<h3>LittleLamb Model Family — 三个超小模型的Agent部署全家桶</h3>
+<p><strong>超紧凑开源模型三件套：边缘/移动/工具调用全覆盖</strong></p>
 <p><strong>背景与原理：</strong>
-FastDeploy是百度基于飞桨（PaddlePaddle）打造的生产级LLM与VLM推理部署工具包，核心解决"训好模型、部署困难"最后一公里问题。v2.5版本新增Qwen3-VL与Qwen3-VL MoE模型的全硬件平台部署支持，升级W4AFP8量化方法，增强强化学习训练支持能力，并完成了170+项Bug修复与性能优化。</p>
+4月28日，AI模型压缩领域的领导者 Multiverse Computing 在 Hugging Face 发布了 LittleLamb 开源模型家族，包含三款基于 Qwen3-0.6B 蒸馏而来的超紧凑模型：LittleLamb 0.3B（通用版）、LittleLamb 0.3B Tool-Calling（工具调用优化版）和 LittleLamb 0.3B Mobile（移动端优化版）。</p>
+<p>这三款模型使用了 Multiverse 自研的 CompactifAI 压缩技术，将 Qwen3-0.6B 的参数量进一步压缩约 50%，同时保持可用的任务性能。Tool-Calling 版本专门针对 Function Calling 和 ReAct 范式进行了激活模式优化，在 API 调用类任务中的准确率接近参数量大其 5 倍的模型。Mobile 版本则侧重于在手机芯片上的能效优化，可在 iPhone 15 Pro 等设备上流畅运行。</p>
 <p><strong>核心创新点：</strong>
-- 首个支持Qwen3系列MoE模型的开源部署方案
-- W4AFP8量化精度接近FP16，推理速度提升2-3倍
-- 全面适配华为昇腾、昆仑芯、海光等国产AI芯片</p>
+超低参数（0.3B）配合蒸馏优化，实现了真正可以在边缘设备和离线环境中运行的 Agent 能力。传统观念认为只有 7B 以上模型才具备可靠的工具调用能力，LittleLamb 通过精细的激活模式工程打破了这一认知边界。</p>
 <p><strong>实际意义：</strong>
-企业使用国产开源模型部署生产服务的时间窗口大幅缩短，从"模型可用"到"服务上线"的周期从数周压缩到数小时，对推动国产大模型产业化落地具有直接加速价值。</p>
+对于需要在移动端或物联网设备上部署本地 AI 能力的开发者，LittleLamb 提供了三个开箱即用的选项。特别是 Tool-Calling 版本，可以作为端侧 Agent 的"决策引擎"，在本地完成意图分类和工具选择，仅在必要时调用云端 API，从根本上解决数据隐私和离线可用性问题。</p>
+<p><strong>星数/增长：</strong>
+今日发布，首批上线 Hugging Face 即获得社区高度关注</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/PaddlePaddle/FastDeploy" target="_blank" rel="noopener">https://github.com/PaddlePaddle/FastDeploy</a></p>
+<a href="https://huggingface.co/MultiverseComputing/LittleLamb-0.3B" target="_blank" rel="noopener">https://huggingface.co/MultiverseComputing/LittleLamb-0.3B</a></p>
 <hr>
-<h3>字节 Seed-Uplex — 原生全双工语音交互模型</h3>
-<p><strong>一句话描述：</strong> 字节Seed团队发布全双工语音大模型，将AI交互从"打字"推向"通话"，端到端延迟压至800ms以内。</p>
+<h3>Poolside Laguna XS.2 — 美国初创开源33B MoE编程模型</h3>
+<p><strong>Apache 2.0许可：本地Agent编程的强力选择</strong></p>
 <p><strong>背景与原理：</strong>
-Seed-Uplex是字节跳动Seed团队推出的原生语音交互模型，区别于传统"语音转文字→LLM处理→语音合成"的三段式架构，Seed-Uplex采用端到端流式建模，实现语音信号的直接理解与生成。模型支持全双工交互——即在AI说话的同时可以接收用户打断，这是此前模型难以实现的交互突破。</p>
+Poolside 是一家美国 AI 初创公司，4月发布并开源了 Laguna XS.2，这是一款 330亿参数（激活 30亿）的混合专家模型（MoE），基于 Apache 2.0 许可证开源，可免费商用。该模型专门针对"本地 Agent 编程"场景优化，支持在单 GPU 甚至部分高端笔记本 GPU 上运行完整推理。</p>
+<p>Poolside 强调 Laguna XS.2 并非基于阿里巴巴 Qwen 系列微调的产物，而是从零开始训练，这在当前美国 AI 创业圈中较为罕见，体现了 Poolside 独立的技术路线和算力投入。</p>
 <p><strong>核心创新点：</strong>
-- 端到端原生语音建模，绕过ASR/TTS模块，延迟压至800ms以内
-- 全双工流式交互，支持用户中途打断与意图澄清
-- 与豆包App深度集成，已全量上线</p>
+33B 总参数、3B 激活参数的稀疏 MoE 架构，结合 Apache 2.0 许可，使其成为目前市面上最具性价比的"可商用本地编程模型"。开发者在 Mac M3 Pro（64GB）或配备 RTX 4090 的 PC 上即可运行 Laguna XS.2，获得接近 GPT-4 水平的代码补全和修改建议能力。</p>
 <p><strong>实际意义：</strong>
-标志着语音AI从"命令执行"向"自然对话"的质变。人与AI的交互效率大幅提升，对智能客服、电话销售辅助、实时翻译等商业场景具有直接颠覆价值。豆包App凭借此能力将实时通话场景体验提升至与专业人工客服相当水平。</p>
+Laguna XS.2 的开源填补了"Apache 2.0 许可 + 本地可运行 + 编程专精"三重约束下的市场空白。相较于 Llama 3（需要较大显存）和 Code Llama（许可受限），Laguna XS.2 为需要私有化部署和定制微调的企业提供了清晰的选项。</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/bytedance/seeduple" target="_blank" rel="noopener">https://github.com/bytedance/seeduple</a></p>
+<a href="https://huggingface.co/Poolside/laguna-xs.2" target="_blank" rel="noopener">https://huggingface.co/Poolside/laguna-xs.2</a></p>
+<hr>
+<h3>Qwen3.5-A3B — 阿里270亿参数稠密编程旗舰</h3>
+<p><strong>小参数大能量：稠密架构挑战MoE编程能力边界</strong></p>
+<p><strong>背景与原理：</strong>
+Qwen3.5-A3B 是阿里云通义千问团队于4月中旬开源的 270亿参数稠密多模态模型（Apache 2.0 许可），代表了"小参数、强性能"路线的最新成果。虽然是稠密架构而非 MoE，但其通过大规模高质量预训练数据和针对性后训练，在 SWE-bench Verified（真实软件工程任务）等权威编程基准上表现出色，达到了通常只有千亿参数模型才能达到的水准。</p>
+<p><strong>核心创新点：</strong>
+阿里团队此次强调 Qwen3.5-A3B 的核心差异化在于"实际编程任务中的可用性"，而非刷榜分数。项目开源后即在魔搭社区（ModelScope）上引发了开发者的大规模关注和微调热潮。</p>
+<p><strong>实际意义：</strong>
+Qwen3.5-A3B 为中小型团队提供了一个"零许可成本 + 高编程能力 + 适中算力需求"的模型选择，特别适合作为内部代码助手或垂直领域编程应用的基础模型。</p>
+<p><strong>链接：</strong>
+<a href="https://huggingface.co/Qwen/Qwen3.5-A3B" target="_blank" rel="noopener">https://huggingface.co/Qwen/Qwen3.5-A3B</a></p>
 <hr>
     </div>
     <div class="page-footer">
