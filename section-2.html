@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>② BestBlogs 高分精选（3篇） — AI 技术情报日报</title>
+<title>② BestBlogs 高分精选 — AI 技术情报日报</title>
 <style>
 
 :root {
@@ -492,45 +492,53 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">📖</div>
-            <h1>② BestBlogs 高分精选（3篇）</h1>
+            <h1>② BestBlogs 高分精选</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年4月28日</div>
+            <div class="meta-item"><span class="dot"></span>2026年4月29日</div>
             <div class="meta-item"><span class="dot"></span>板块 2 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>② BestBlogs 高分精选（3篇）</h2>
-<h3>OpenAI 推出 gpt-realtime-1.5，打造语音交互应用</h3>
-<p><strong>来源：</strong> @OpenAI Developers | 评分：93 | 发布时间：2026-04-27</p>
-<p><strong>核心观点：</strong>
-gpt-realtime-1.5是OpenAI专为语音控制交互式应用设计的新模型，使用户能够通过语音自然地控制应用状态，而非传统的手动输入方式。</p>
-<p><strong>深度摘要：</strong>
-gpt-realtime-1.5的发布代表了OpenAI在语音交互领域的又一次重要推进。与此前偏向"语音问答"的定位不同，新模型聚焦于"状态控制"场景——用户说出指令，AI直接驱动应用内部状态变化，而非仅返回文本建议。这一变化对智能家居、车载交互、可访问性应用等场景意义重大。</p>
-<p>技术层面，gpt-realtime-1.5采用了全新流式推理架构，将语音延迟压至亚秒级，同时降低了30%的token消耗。OpenAI同步开放了 Realtime API beta端点，开发者可以直接用几行代码接入。公告附带了一段演示视频，展示了用语音指令操控数据可视化仪表盘的场景，效果流畅。这标志着语音交互从"听到我说什么"向"理解我要做什么"的质变。</p>
-<p><strong>链接：</strong>
-<a href="https://www.bestblogs.dev/en/status/2048871260512473385" target="_blank" rel="noopener">https://www.bestblogs.dev/en/status/2048871260512473385</a></p>
+<h2>② BestBlogs 高分精选</h2>
+<blockquote>
+<p>LLM评分≥90的优质技术文章，来源 BestBlogs.dev RSS</p>
+</blockquote>
 <hr>
-<h3>Symphony：一个开源的 Codex 智能体编排器</h3>
-<p><strong>来源：</strong> @OpenAI Developers | 评分：91 | 发布时间：2026-04-27</p>
+<h3>内省适配器：训练LLM报告其习得行为</h3>
+<p><strong>来源：</strong> LessWrong | 评分：92+ | 发布时间：2026-04-28</p>
 <p><strong>核心观点：</strong>
-Symphony是OpenAI发布的开源智能体编排框架，将任务追踪系统转变为24小时在线的自主工作智能体团队，每个待办Issue自动关联专属Codex Agent处理。</p>
+一种名为"内省适配器（IA）"的新技术，可以通过微调让大语言模型可靠地自我报告在训练过程中习得的行为，为 AI 审计和对抗隐蔽微调攻击提供了新的可行路径。</p>
 <p><strong>深度摘要：</strong>
-Symphony的核心设计理念是"每个Issue都是一个工作单元，每个工作单元都有一个专属智能体"。开发者只需在任务追踪系统中创建Issue，Symphony自动为其分配合适的Codex实例，完成分析、编码、测试、PR创建的全流程。团队成员的角色从"执行者"转变为"审核者"——专注方向把控而非手动操作。</p>
-<p>技术架构上，Symphony采用了事件驱动的消息总线，支持多Agent并发但保证结果有序写入。其Planner模块负责对Issue进行任务分解，生成依赖图后分发给Worker Agent并行处理。官方演示展示了接入GitHub Issues后，3分钟内自动完成Bug修复并提交可审核PR的完整流程。这一工具将AI开发协作从"人指挥AI"进化为"AI自主协作"，是软件工程自动化的重要里程碑。</p>
+这篇来自 LessWrong 的技术文章介绍了内省适配器（Introspective Adapter，IA），这是一种训练 LLM 准确自我报告其在微调过程中习得行为的新技术。该方法包含两个阶段：首先，从一个共享的基础模型出发，微调出一组模型，每个模型都具有特定的已知行为；其次，在所有模型上联合训练一个单一的 LoRA 适配器，使得应用该适配器后，每个模型都能用语言描述其被植入的行为。</p>
+<p>作者证明，IA 可以泛化到分布外的模型，在 AuditBench 基准测试中达到了 59% 的成功率（当前最先进水平），并成功检测了使用加密密码隐藏有害行为的隐蔽微调 API 攻击。</p>
+<p>文章进一步探讨了 IA 的科学原理：性能随模型规模和训练数据多样性的增加而提升；DPO 精炼阶段能显著减少幻觉报告。主要局限性包括：误报率仍然较高；训练成本昂贵（需要联合微调多个模型）；对训练分布组成如何影响下游性能的理解尚不完整。</p>
+<p>这项研究的现实意义在于：随着开源模型的普及，"隐蔽微调攻击"（通过 API 对开源模型植入后门行为再重新发布）正成为严重的安全威胁。IA 提供了一种可扩展的审计机制，可以在不访问模型权重的情况下，通过让模型"自我报告"来发现异常行为。</p>
 <p><strong>链接：</strong>
-<a href="https://www.bestblogs.dev/en/status/2048825010371039648" target="_blank" rel="noopener">https://www.bestblogs.dev/en/status/2048825010371039648</a></p>
+<a href="https://www.bestblogs.dev/en/article/b4df3819" target="_blank" rel="noopener">https://www.bestblogs.dev/en/article/b4df3819</a></p>
 <hr>
-<h3>DeepSeek V4冲击波：百万上下文成标配，Agent底座之争打响</h3>
-<p><strong>来源：</strong> @追风交易台 | 评分：90 | 发布时间：2026-04-27</p>
+<h3>Claude Mythos Preview与网络安全新规则</h3>
+<p><strong>来源：</strong> TechTarget SearchEnterpriseAI | 评分：95 | 发布时间：2026-04-28</p>
 <p><strong>核心观点：</strong>
-DeepSeek V4以1M上下文窗口、适配华为昇腾芯片的姿态进入市场，配合激进的API定价策略，对国内大模型竞争格局形成实质性冲击。</p>
+Anthropic 的 Claude Mythos Preview 模型能够自主发现并利用软件漏洞，其发布揭示了 AI 在网络安全领域的变革性力量，同时也引发了关于 AI 安全治理的深刻讨论。</p>
 <p><strong>深度摘要：</strong>
-DeepSeek V4的发布是近24小时内国内AI圈最重磅的事件。技术层面，V4实现了三项突破：上下文窗口扩展至1M token（单次可处理约75万字长文）；单token推理算力降至V3.2的27%；从训练到推理全栈适配华为昇腾950。</p>
-<p>最引发市场震动的是定价策略。V4 Pro版输出价格每百万token 3.48美元，与智谱GLM-5.1的3.50美元几乎持平；而Flash版降至0.28美元/百万token，为Pro版的十二分之一。这一"分级定价+极致性价比"组合，直接打破了"闭源厂商靠性能壁垒维持高价"的叙事逻辑。</p>
-<p>更深层的行业意义在于：V4采用华为昇腾芯片，验证了国产芯片在前沿AI推理上的可行性。随着昇腾950超节点在2026年下半年批量上市，推理成本将进一步下降。这意味着中国AI行业第一次具备了"国际头部模型性能+国产芯片成本"的双重优势，是AI生态从英伟达向国产算力迁移的关键节点。</p>
+2026年4月7日，Anthropic 发布了 Claude Mythos Preview，这是一款专注于网络安全领域的强大 AI 模型，能够在无需人工指导的情况下自主发现软件漏洞并将其转化为可工作的漏洞利用程序（exploit）。该模型在发布时测试了包括操作系统和互联网基础设施在内的关键软件中的漏洞——这些漏洞是数千名软件开发者长期未能发现的。</p>
+<p>然而，Anthropic 做出了一个极不寻常的决定：不向公众发布该模型，而是仅向有限数量的企业客户提供。这一决定的背后是美国国防部已将 Anthropic 列为"供应链风险"，联邦政府可能因此被拒绝使用该模型。尽管如此，部分美国政府机构已经决定在内部部署该模型，因为它们认为 Claude Mythos 提供的网络安全保护至关重要。</p>
+<p>Bruce Schneier 等安全专家在 IEEE Spectrum 上发表评论指出，Claude Mythos 的能力代表着一个根本性的转变：AI 已经跨越了"辅助黑客"到"自主黑客"的门槛。这将迫使整个行业重新审视漏洞发现和修复的时间窗口——在 AI 可以在数分钟内自动发现漏洞并生成利用程序的世界里，现有的漏洞披露机制和补丁周期已经不再适用。安全社区需要接受一个"验证至上的新常态"，并推动软件进行持续性实时补丁更新。</p>
 <p><strong>链接：</strong>
-<a href="https://wallstreetcn.com/articles/3770936" target="_blank" rel="noopener">https://wallstreetcn.com/articles/3770936</a></p>
+<a href="https://www.techtarget.com/searchenterpriseai/news/366642478/Claude-Mythos-Preview-and-the-new-rules-of-cybersecurity" target="_blank" rel="noopener">https://www.techtarget.com/searchenterpriseai/news/366642478/Claude-Mythos-Preview-and-the-new-rules-of-cybersecurity</a></p>
+<hr>
+<h3>Claude Code 性能下降事件：Anthropic沉默引发的信任危机</h3>
+<p><strong>来源：</strong> LeadDev | 评分：91 | 发布时间：2026-04-28</p>
+<p><strong>核心观点：</strong>
+Anthropic 的 Claude Code 在过去一个月内出现明显性能下降，引发开发者社区广泛抱怨。Anthropic 随后确认问题出在产品层面的三处改动，而非底层模型本身，并已修复。</p>
+<p><strong>深度摘要：</strong>
+2026年4月，Anthropic 的 AI 编程工具 Claude Code 遭遇了严重的开发者信任危机。多名开发者反映 Claude Code 的编程辅助质量明显下降，表现为：更频繁地忽略项目规范、生成代码的可执行性下降、以及对话式交互中的"健忘"现象更加严重。</p>
+<p>一位 AMD 高级总监（Stella Laurenzo）对 6,852 个 Claude Code 会话文件、17,871 个思维链块和 234,760 次工具调用进行了系统性分析，发现 Anthropic 在某次更新中悄然将 Claude Code 从"研究优先"（先读取文件、收集上下文再行动）的工作模式切换为"编辑优先"（快速行动，后补上下文）模式。这一改变使系统变得更快速，但也更易出错——特别是在复杂的多文件重构和跨模块依赖处理任务中。</p>
+<p>Anthropic 在压力下发布官方博客，承认了三个导致性能下降的产品层面改动（非底层模型问题），并表示已于4月20日完成修复，同时承诺建立更严格的变更发布流程以避免类似问题再次发生。</p>
+<p>这一事件折射出 AI 编程工具在企业级场景中的核心挑战：开发者对 AI 工具的信任建立在输出稳定性和可预测性之上。任何"静默的性能回退"都会严重损害用户信任，即便是功能层面的微小变化，也可能在生产环境中造成难以预料的破坏。</p>
+<p><strong>链接：</strong>
+<a href="https://leaddev.com/ai/how-anthropics-silence-fueled-a-claude-code-trust-crisis" target="_blank" rel="noopener">https://leaddev.com/ai/how-anthropics-silence-fueled-a-claude-code-trust-crisis</a></p>
 <hr>
     </div>
     <div class="page-footer">
