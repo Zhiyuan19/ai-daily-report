@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>① GitHub 小众爆款 — AI 技术情报日报</title>
+<title>① GitHub 小众爆款（≥5个） — AI 技术情报日报</title>
 <style>
 
 :root {
@@ -492,102 +492,108 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">🚀</div>
-            <h1>① GitHub 小众爆款</h1>
+            <h1>① GitHub 小众爆款（≥5个）</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年4月29日</div>
+            <div class="meta-item"><span class="dot"></span>2026年4月30日</div>
             <div class="meta-item"><span class="dot"></span>板块 1 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>① GitHub 小众爆款</h2>
+<h2>① GitHub 小众爆款（≥5个）</h2>
 <blockquote>
-<p>近24小时增速最快的开源项目，聚焦总星&lt;50k的小众精品</p>
+<p>近24小时增速明显的开源项目，聚焦小众精品，过滤成熟项目</p>
 </blockquote>
 <hr>
-<h3>opensre — AI SRE Agents 工具包</h3>
-<p><strong>AI原生运维：让大模型真正接管生产系统</strong></p>
+<h3>nanobot — 超轻量级个人 AI Agent</h3>
+<p><strong>一句话描述</strong>：香港大学数据科学实验室出品，保持核心 Agent Loop 极简可读的同时支持多渠道聊天、记忆、MCP 的个人 AI Agent。</p>
 <p><strong>背景与原理：</strong>
-opensre 是 Tracer-Cloud 团队开源的 AI 时代 SRE（站点可靠性工程）工具包，旨在将大语言模型的推理能力直接嵌入生产级运维工作流。在传统 DevOps 体系中，SRE 需要在告警触发后手动排查日志、分析指标、编写修复脚本，响应速度和准确性高度依赖个人经验。opensre 通过给 AI Agent 配置完整的系统级工具集（日志查询、指标拉取、配置修改、告警确认），让 AI 能够自主完成从问题发现到修复验证的完整闭环。</p>
+nanobot 由香港大学数据科学实验室（HKUDS）开发，定位为 OpenClaw、Claude Code 和 Codex 的"轻量化替代"。项目采用极简核心循环设计，将 Agent 的规划-执行-验证链路压缩到最小可维护单元，避免了主流 Agent 框架的过度工程化问题。核心技术架构包括：基于语义向量的记忆系统（每轮对话将用户/助手消息嵌入为向量，检索时做余弦相似度匹配）、跨平台聊天通道抽象层（支持飞书、Discord、Slack、Teams 等）、MCP（Model Context Protocol）工具生态，以及可选的 Dream 技能自动发现机制。最新版本 v0.1.5.post3 于 2026年4月29日发布，新增 Feishu/Discord/Slack/Teams 线程智能化和 DeepSeek-V4 支持。</p>
 <p><strong>核心创新点：</strong>
-该项目为 AI Agent 提供了一个结构化的"数字员工"工作台。每个 AI SRE Agent 可以接收自然语言告警描述，自动关联相关服务拓扑，查询历史故障模式，然后决定是否需要执行滚回、扩容或配置调整。与传统脚本化自动化不同，opensre 的每一步操作都有 AI 推理支撑，并保留完整操作日志供人工审计。</p>
+- <strong>轻量内存开销</strong>：单会话仅 167MB（含 embedding），竞品 Claude Code 为 386MB，OpenCode 为 371MB，差距达 2-13 倍
+- <strong>启动速度</strong>：首次响应帧时间 14ms，Claude Code 为 3436ms，相差 245 倍
+- <strong>多会话线性扩展</strong>：每新增一个活跃会话仅增加 ~10.4MB，竞品增加 76-318MB
+- <strong>开放工具支持</strong>：集成 DeepSeek、Kimi、MiniMax 等国产模型渠道；支持 OpenAI Reasoning 自动路由与 Responses 降级</p>
 <p><strong>实际意义：</strong>
-随着微服务架构和 Kubernetes 的大规模普及，单个 SRE 需要维护的系统组件数量呈指数级增长。opensre 将运维经验数字化、工具化，为中小团队提供了"7×24小时 AI 值班工程师"的可能，大幅缩短 MTTR（平均恢复时间）。</p>
+nanobot 为个人开发者提供了真正可在本地长期运行的 AI Agent 方案，无需订阅闭源服务即可获得记忆持续、多渠道接入、工具扩展的能力组合。对比同类产品，nanobot 在树莓派级别硬件或低配云服务器上均可流畅运行，有望成为边缘 AI 和隐私敏感场景的首选基础设施。</p>
 <p><strong>取得的突破：</strong>
-- GitHub Trending 上线首周即进入 Python 热门榜
-- 开源数小时内获得 1,600+ stars
-- 已完成与 PagerDuty、Datadog、Prometheus 等主流监控平台的集成</p>
-<p><strong>星数/增长：</strong>
-3,033 总星 | 本周新增 1,623 ⭐</p>
+- 单会话 RAM 占用 167MB（同类最低）
+- 首次响应延迟 14ms，远超所有主流 Agent
+- 2026年4月连续每日更新，已支持 12+ 渠道平台
+- GitHub Stars: ~41.3k，本周持续增长</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/Tracer-Cloud/opensre" target="_blank" rel="noopener">https://github.com/Tracer-Cloud/opensre</a></p>
+<a href="https://github.com/HKUDS/nanobot" target="_blank" rel="noopener">https://github.com/HKUDS/nanobot</a></p>
 <hr>
-<h3>DeepGEMM — FP8 矩阵乘法内核库</h3>
-<p><strong>国产AI基础设施：DeepSeek开源的高效矩阵运算库</strong></p>
+<h3>jcode — 下一代 Coding Agent Harness</h3>
+<p><strong>一句话描述</strong>：Rust 编写的高性能 Coding Agent 开发框架，以极低资源开销支持多会话工作流与无限可定制化。</p>
 <p><strong>背景与原理：</strong>
-DeepGEMM 是 DeepSeek 开源的 FP8（8位浮点）GEMM（通用矩阵乘法）内核库，专门为 Hopper 架构 GPU（Nvidia H100/H200）优化。矩阵乘法是几乎所有大模型训练和推理的核心算子，传统上需要手写 CUDA 内核或依赖供应商库。FP8 精度在 LLMs 中已被验证可以在几乎不损失模型质量的前提下大幅降低计算和显存开销。DeepGEMM 通过细粒度缩放（fine-grained scaling）技术，在保持数值稳定性的同时实现了接近硬件理论上限的算力利用率。</p>
+jcode 由开发者 1jehuang（Build by @claude）构建，定位为"提升 Coding Agent 技能天花板"的下一代 Harness。与传统 Agent 框架在每次交互时重新构建上下文不同，jcode 将每轮用户-助手对话嵌入为语义向量，存入本地向量图数据库；检索时通过余弦相似度匹配历史记忆，将相关内容注入当前对话上下文，从而实现接近人类的"主动回忆"能力，无需显式调用记忆工具。其核心性能优势源于 Rust 的零成本抽象和高效的内存布局，所有性能指标均为自主研发而非依赖第三方抽象层。</p>
 <p><strong>核心创新点：</strong>
-DeepGEMM 采用"整洁代码优先"的设计哲学，内核实现仅约 300 行 Python 风格的伪代码，但性能却能与高度手工优化的 CUDA 实现相媲美。它支持逐 Token 动态激活缩放（per-token dynamic activation scaling），这一特性使其在 LLMs 推理场景中比通用库更高效。项目同时提供基于 CUTLASS 3.x 的参考实现和简化版本，便于开发者学习和二次开发。</p>
+- <strong>超低 RAM 消耗</strong>：单会话 167MB（含 embedding），多会话线性增长仅 ~10.4MB/session
+- <strong>极速启动</strong>：首次输入延迟 48.7ms，Codex CLI 为 905ms，Claude Code 为 3512ms
+- <strong>记忆系统原生化</strong>：将 RAG 记忆作为后台能力而非显式工具调用，降低 Agent 认知负荷
+- <strong>跨模型兼容</strong>：支持 Claude、GPT-4、Codex、Gemini 等主流模型的自适应路由</p>
 <p><strong>实际意义：</strong>
-FP8 训练和推理已成为 2026 年大模型基础设施的事实标准。DeepGEMM 为需要自建推理引擎的团队提供了一个性能领先且完全可控的底层算子库，特别是在 DeepSeek-V4 发布后，国产芯片厂商基于该库进行 Day-0 适配的热情高涨。</p>
+jcode 的出现填补了"低资源+高性能+Coding Agent"交叉点的空白。传统 Agent 框架（如 LangChain、AutoGen）在复杂多会话场景下资源开销呈指数增长，而 jcode 通过 Rust + 图记忆的协同设计，首次在该赛道实现了性能与可维护性的平衡。对算力受限的独立开发者或边缘部署场景具有重要参考价值。</p>
 <p><strong>取得的突破：</strong>
-- 在 H100 GPU 上实现超过 1,350 TFLOPS 的 FP8 矩阵计算吞吐
-- 显存占用相比 BF16 减少约 50%
-- 开源首日获得 930+ stars</p>
-<p><strong>星数/增长：</strong>
-7,021 总星 | 本周新增 930 ⭐</p>
+- 多会话场景 RAM 效率：jcode 117MB vs OpenCode 3237MB（27.7倍差距）
+- Boot 速度：14ms vs Claude Code 3436ms（245倍差距）
+- 2026年4月29日当日增长 386 Stars</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/deepseek-ai/DeepGEMM" target="_blank" rel="noopener">https://github.com/deepseek-ai/DeepGEMM</a></p>
+<a href="https://github.com/1jehuang/jcode" target="_blank" rel="noopener">https://github.com/1jehuang/jcode</a></p>
 <hr>
-<h3>multica — 托管式 AI Agent 平台</h3>
-<p><strong>把 AI Coding Agent 变成真正的团队成员</strong></p>
+<h3>ds2api — DeepSeek to API 全栈中间件</h3>
+<p><strong>一句话描述</strong>：Go 语言编写的高性能中间件，将 DeepSeek Web 对话能力转换为 OpenAI / Claude / Gemini 兼容 API，支持多账号轮询与工具调用适配。</p>
 <p><strong>背景与原理：</strong>
-multica 是由 multica-ai 团队开发的"托管式 Agent 平台"，核心理念是将单个 AI Coding Agent 的能力进行系统化整合——分配任务、追踪进度、累积技能（compound skills），让 Agent 从"执行单个指令的工具"升级为"有记忆、有方向、可协作的团队成员"。在传统的单 Agent 范式中，每次对话 Agent 都需要从头理解上下文，无法积累跨任务经验。multica 通过持久化的技能图谱（Skill Graph）解决了这一问题。</p>
+ds2api 由独立开发者 CJackHwang 构建，采用 Go 语言实现全量后端逻辑，React 前端提供 WebUI 管理控制台。其核心设计思路是将 DeepSeek 的 Web 对话能力（Chat/Responses Runtime、文件上传、工具调用）通过 Prompt 适配层（PromptCompat）转换为各平台的 API 格式差异抹平。架构上采用模块化 chi 路由 + 中间件层（RequestID/RealIP/Logger/Recoverer/CORS），支持账号池 + 队列的并发槽位管理，并通过纯 Go 实现的 PoW（工作量证明）机制防止 API 滥用。前端静态资源在部署时自动构建到二进制中，真正实现零依赖交付。</p>
 <p><strong>核心创新点：</strong>
-multica 引入了"项目级上下文管理"机制：每个项目维护独立的技能树，Agent 在项目内的每次成功执行都会更新技能权重，形成类似于人类"肌肉记忆"的能力积累。项目还支持多 Agent 并发调度，允许同一个项目内同时运行多个专精 Agent（代码生成Agent + 测试Agent + 文档Agent），并通过标准接口共享项目上下文。</p>
+- <strong>三平台统一接口</strong>：同时暴露 OpenAI <code>/v1/chat/completions</code>、Claude <code>/anthropic/*</code>、Gemini <code>/v1beta/models/*</code> 三套接口
+- <strong>多账号轮询</strong>：内置账号池与请求队列，支持高并发场景下的自动切换与限流
+- <strong>工具调用语义对齐</strong>：Go/Node 层完成 OpenAI Tool Call 格式到 DeepSeek 工具描述的双向转换
+- <strong>零平台依赖</strong>：提供预编译二进制（Linux/macOS/Windows）、Docker、Vercel Serverless 三种部署方式</p>
 <p><strong>实际意义：</strong>
-对于需要长期维护大量代码库的企业来说，multica 提供了一种可持续进化的 AI 辅助开发范式。新加入项目的 Agent 不再需要从零开始熟悉代码风格和项目规范，而是可以直接复用积累的技能树，将 onboarding 时间从数天缩短到数分钟。</p>
+ds2api 解决了 DeepSeek API 官方暂不支持部分平台 SDK 的痛点，使开发者可以在不修改业务代码的前提下，将现有的 OpenAI/Claude SDK 无缝切换至 DeepSeek 后端。对需要混合使用多个模型供应商的企业级应用具有重要实用价值。</p>
 <p><strong>取得的突破：</strong>
-- 在开源托管 Agent 平台中 Star 增速排名第一（本周 +2,543）
-- 支持与 GitHub Issues、Jira 的双向同步
-- 已在多个生产级代码库中验证了技能积累的实际效果</p>
-<p><strong>星数/增长：</strong>
-20,917 总星 | 本周新增 2,543 ⭐</p>
+- 2026年4月29日 GitHub Trending，当日增长 461 Stars
+- GitHub Stars: 2.7k，Star/Fork 比接近 4:1（高质量项目特征）
+- 支持 Tool Call + 流式 SSE，完整保留 Agent 能力链</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/multica-ai/multica" target="_blank" rel="noopener">https://github.com/multica-ai/multica</a></p>
+<a href="https://github.com/CJackHwang/ds2api" target="_blank" rel="noopener">https://github.com/CJackHwang/ds2api</a></p>
 <hr>
-<h3>VibeVoice — 微软开源前沿语音AI</h3>
-<p><strong>实时语音交互：微软开源端侧友好的前沿语音模型</strong></p>
+<h3>CodeBurn — AI 编程 Token 消费仪表盘</h3>
+<p><strong>一句话描述</strong>：开源 TUI 工具，跟踪 Claude Code、Codex、Cursor 等 16 款 AI 编程工具的 Token 消耗与成本，支持本地离线分析。</p>
 <p><strong>背景与原理：</strong>
-VibeVoice 是微软开源的端侧语音 AI 模型，专注于低延迟、双向实时语音对话场景。与传统的"语音转文字→LLM处理→文字转语音"三段式管道不同，VibeVoice 采用端到端流式语音编码，在单次前向传播中完成语音理解、意图推理和语音合成，大幅降低延迟（目标 P99 &lt; 300ms）。模型基于微软自家的语音预训练基底，结合 LoRA 适配技术，支持快速适配新语言和垂直场景。</p>
+CodeBurn 由 AgentSeal 团队开发，是目前支持 AI 编程工具种类最全的本地 Token 追踪工具。其工作原理是直接读取各工具在本地磁盘的会话数据文件（Session JSON/SQLite），配合 LiteLLM 定价表在本地完成费用计算，全程无需 API Key、不走任何代理。支持的工具覆盖 Claude Code、Claude Desktop、Codex、Cursor、Cursor Agent、GitHub Copilot、OpenClaw、Pi、Kiro、OpenCode、Gemini CLI、Droid、Roo Code、KiloCode、Qwen 等 16 款主流 AI 编程产品，涵盖从 VS Code 插件到独立 CLI 的完整生态。</p>
 <p><strong>核心创新点：</strong>
-VibeVoice 的核心创新在于"流式双向通话"能力：用户在说话时模型可以同时进行语义理解和响应生成，而非等待完整句子结束才开始处理。这一特性使其特别适合 AI 口语陪练、实时翻译、客服对话等对延迟敏感的场景。项目同时提供完整的 iOS/Android SDK，支持在手机端离线运行。</p>
+- <strong>完全本地运行</strong>：不发送任何数据，不依赖外部 API，数据全部从本地会话文件读取
+- <strong>最全工具支持</strong>：覆盖 16 款 AI 编程工具，竞品通常只支持 2-4 款
+- <strong>交互式 TUI</strong>：Arrow 键切换时间维度（Today/7Days/30Days/Month/All），q 退出，c 打开模型对比，o 打开优化建议
+- <strong>Yield 追踪</strong>：量化"有效产出 Token"与"被回退/放弃 Token"比例，帮助识别浪费</p>
 <p><strong>实际意义：</strong>
-实时语音交互是 2026 年 Agent 落地的关键技术瓶颈之一。VibeVoice 为开发者提供了一个性能接近云端模型、但可以完全私有化部署的端侧方案，特别适合对数据隐私有严格要求的医疗、法律、金融场景。</p>
+随着 AI 编程工具在团队中的普及，成本透明度成为工程管理的新需求。CodeBurn 让开发者无需公司 IT 介入即可了解个人/团队的 AI 工具消费结构，识别异常消耗，并为成本优化决策提供数据基础。</p>
 <p><strong>取得的突破：</strong>
-- GitHub 本周新增 4,846 stars，增速在语音类开源项目中领先
-- 已在 iOS 设备上实现完全离线的实时语音对话演示
-- P99 延迟低于 300ms，处于开源语音模型的领先水平</p>
-<p><strong>星数/增长：</strong>
-42,329 总星 | 本周新增 4,846 ⭐</p>
+- 2026年4月25日发布 v0.9.1（新增 yield 命令）
+- GitHub Stars: 4.1k，持续维护中
+- 支持 CSV/JSON 导出，便于接入内部账单系统</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/microsoft/VibeVoice" target="_blank" rel="noopener">https://github.com/microsoft/VibeVoice</a></p>
+<a href="https://github.com/getagentseal/codeburn" target="_blank" rel="noopener">https://github.com/getagentseal/codeburn</a></p>
 <hr>
-<h3>openai-cs-agents-demo — OpenAI 客服 Agent 示例</h3>
-<p><strong>多Agent工作流：OpenAI官方案例解析</strong></p>
+<h3>GhostTrack — OSINT 定位追踪工具</h3>
+<p><strong>一句话描述</strong>：Python 编写的开源情报工具，支持 IP 地址追踪、电话号码查询和社交媒体用户名检索。</p>
 <p><strong>背景与原理：</strong>
-openai-cs-agents-demo 是 OpenAI 官方案例代码，演示如何用 OpenAI Agents SDK 构建一个完整的多 Agent 客服工作流。案例包含意图识别 Agent、退款处理 Agent、产品查询 Agent 和投诉升级 Agent 共四个角色，通过结构化消息协议（Structured Output + Tool Calls）实现 Agent 间的协作与信息共享。项目的价值在于展示了如何在生产环境中处理 Agent 间的状态共享、错误恢复和对话上下文管理。</p>
+GhostTrack 由安全研究者 HunxByts 和 bakaemon 构建，是一款面向信息安全研究人员的开源情报（OSINT）工具集。工具提供三大核心功能模块：IP 追踪（通过 IP 定位获取目标地理位置，可与 Seeker 工具联动进行深度信息挖掘）、电话号码检索（从公开数据源查询电话号码关联信息）、用户名追踪（跨 3000+ 社交媒体平台进行用户名枚举）。最新版本 2.2 已发布，依赖 Python3 + 主流 OSINT 数据源 API。</p>
 <p><strong>核心创新点：</strong>
-该项目并非因为技术本身创新而值得关注，而是作为 OpenAI Agents SDK 的"最佳实践参考"，其代码组织方式、错误处理模式和测试策略代表了 SDK 设计者推荐的生产级标准。特别是"Agent 路由"逻辑——如何根据用户 query 的语义复杂度动态分配到简单 Agent 或复杂 Agent——对构建高效 Agent 系统有直接参考价值。</p>
+- <strong>一站式 OSINT 套件</strong>：整合 IP/电话/用户名三大情报收集维度，无需切换多工具
+- <strong>社交媒体广度</strong>：覆盖全球 3000+ 平台的用户名枚举能力
+- <strong>协同作战</strong>：IP 追踪与 Seeker 工具联动，实现"定位 -&gt; 深度挖掘"的链式情报收集</p>
 <p><strong>实际意义：</strong>
-对于正在使用或评估 OpenAI Agents SDK 的团队，该项目是极有价值的学习起点。它展示了 SDK 在真实业务场景（客服）下的完整实现，包括如何接入企业知识库、如何处理多轮对话状态、以及如何监控 Agent 决策质量。</p>
+GhostTrack 为安全研究人员、渗透测试工程师和事件响应人员提供了标准化的开源情报收集工具，降低了 OSINT 入行门槛，同时也对安全审计和漏洞情报收集具有实际应用价值。</p>
 <p><strong>取得的突破：</strong>
-- 上线首日获得 955 stars，展现了开发者对 OpenAI Agents 生态的高度关注
-- 成为 OpenAI Agents SDK 官方文档之外最受认可的实战参考</p>
-<p><strong>星数/增长：</strong>
-6,278 总星 | 今日新增 955 ⭐</p>
+- 2026年4月29日 GitHub Trending，当日增长 1,036 Stars
+- GitHub Stars: 11.5k，Forks 1.5k
+- V2.2 版本更新，刚完成重大功能迭代</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/openai/openai-cs-agents-demo" target="_blank" rel="noopener">https://github.com/openai/openai-cs-agents-demo</a></p>
+<a href="https://github.com/HunxByts/GhostTrack" target="_blank" rel="noopener">https://github.com/HunxByts/GhostTrack</a></p>
 <hr>
     </div>
     <div class="page-footer">
