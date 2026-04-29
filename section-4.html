@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>④ 开源工具 & 模型更新 — AI 技术情报日报</title>
+<title>④ 开源工具 & 模型更新（≥3个） — AI 技术情报日报</title>
 <style>
 
 :root {
@@ -492,55 +492,60 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">⚡</div>
-            <h1>④ 开源工具 & 模型更新</h1>
+            <h1>④ 开源工具 & 模型更新（≥3个）</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年4月29日</div>
+            <div class="meta-item"><span class="dot"></span>2026年4月30日</div>
             <div class="meta-item"><span class="dot"></span>板块 4 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>④ 开源工具 &amp; 模型更新</h2>
+<h2>④ 开源工具 &amp; 模型更新（≥3个）</h2>
 <blockquote>
-<p>新开源工具、框架、模型（含国际+国内开源）</p>
+<p>新兴开源工具、框架与模型发布（国际+国内开源）</p>
 </blockquote>
 <hr>
-<h3>LittleLamb Model Family — 三个超小模型的Agent部署全家桶</h3>
-<p><strong>超紧凑开源模型三件套：边缘/移动/工具调用全覆盖</strong></p>
+<h3>讯飞星火 X2-Flash — 国产算力 MoE 大模型</h3>
+<p><strong>一句话描述</strong>：科大讯飞发布基于华为昇腾 910B 集群训练的 30B MoE 模型，支持 256K 上下文，Token 消耗仅为主流大尺寸模型的三分之一。</p>
 <p><strong>背景与原理：</strong>
-4月28日，AI模型压缩领域的领导者 Multiverse Computing 在 Hugging Face 发布了 LittleLamb 开源模型家族，包含三款基于 Qwen3-0.6B 蒸馏而来的超紧凑模型：LittleLamb 0.3B（通用版）、LittleLamb 0.3B Tool-Calling（工具调用优化版）和 LittleLamb 0.3B Mobile（移动端优化版）。</p>
-<p>这三款模型使用了 Multiverse 自研的 CompactifAI 压缩技术，将 Qwen3-0.6B 的参数量进一步压缩约 50%，同时保持可用的任务性能。Tool-Calling 版本专门针对 Function Calling 和 ReAct 范式进行了激活模式优化，在 API 调用类任务中的准确率接近参数量大其 5 倍的模型。Mobile 版本则侧重于在手机芯片上的能效优化，可在 iPhone 15 Pro 等设备上流畅运行。</p>
+讯飞星火 X2-Flash 是科大讯飞在国产算力生态下的最新旗舰模型，采用当前主流的 MoE（混合专家）架构，总参数量 30B，最大支持 256K 超长上下文。模型完全基于华为昇腾 910B 集群从零训练完成，是国产软硬件协同能力的标志性成果。技术亮点在于率先在国产芯片上实现了 DSA（稀疏注意力机制）与 MTP（多 Token 预测）的联合优化，结合亲和国产芯片的算子和分布式训练策略，将训练效率从 A800 集群的 20% 提升至 90%，解决了长上下文在国产算力平台训练效率低的核心痛点。在智能体强化学习场景，采样推理效率提升 2 倍以上，有效缓解了 910B 上长交互场景采样效率过低影响 RL 训练的问题。</p>
 <p><strong>核心创新点：</strong>
-超低参数（0.3B）配合蒸馏优化，实现了真正可以在边缘设备和离线环境中运行的 Agent 能力。传统观念认为只有 7B 以上模型才具备可靠的工具调用能力，LittleLamb 通过精细的激活模式工程打破了这一认知边界。</p>
+- 256K 超长上下文 + DSA + MTP 三合一国产方案
+- Token 消耗为同效果主流模型的 1/3（实测深度研究报告、Skill 管理与调用等任务）
+- 智能体能力比肩万亿参数模型效果
+- 全面兼容 OpenClaw、Claude Code 等国际主流 Agent 框架</p>
 <p><strong>实际意义：</strong>
-对于需要在移动端或物联网设备上部署本地 AI 能力的开发者，LittleLamb 提供了三个开箱即用的选项。特别是 Tool-Calling 版本，可以作为端侧 Agent 的"决策引擎"，在本地完成意图分类和工具选择，仅在必要时调用云端 API，从根本上解决数据隐私和离线可用性问题。</p>
-<p><strong>星数/增长：</strong>
-今日发布，首批上线 Hugging Face 即获得社区高度关注</p>
+星火 X2-Flash 的发布标志着国产大模型在 Agent 能力上首次实现与业界前沿的全面对齐，同时将使用成本压缩至三分之一，为国内开发者提供了真正可用、高性能、低成本的国产 Agent 方案。</p>
 <p><strong>链接：</strong>
-<a href="https://huggingface.co/MultiverseComputing/LittleLamb-0.3B" target="_blank" rel="noopener">https://huggingface.co/MultiverseComputing/LittleLamb-0.3B</a></p>
+<a href="https://finance.sina.com.cn/tech/digi/2026-04-29/doc-inhwczph6763572.shtml" target="_blank" rel="noopener">https://finance.sina.com.cn/tech/digi/2026-04-29/doc-inhwczph6763572.shtml</a></p>
 <hr>
-<h3>Poolside Laguna XS.2 — 美国初创开源33B MoE编程模型</h3>
-<p><strong>Apache 2.0许可：本地Agent编程的强力选择</strong></p>
+<h3>LPM 1.0 — 米哈游创始人蔡浩宇团队发布视频角色表演生成模型</h3>
+<p><strong>一句话描述</strong>：Anuttacon（蔡浩宇创立）发布 170 亿参数视频角色表演生成模型 LPM 1.0，解决视频角色生成中表现力、实时性与长时稳定性不可兼得的"不可能三角"。</p>
 <p><strong>背景与原理：</strong>
-Poolside 是一家美国 AI 初创公司，4月发布并开源了 Laguna XS.2，这是一款 330亿参数（激活 30亿）的混合专家模型（MoE），基于 Apache 2.0 许可证开源，可免费商用。该模型专门针对"本地 Agent 编程"场景优化，支持在单 GPU 甚至部分高端笔记本 GPU 上运行完整推理。</p>
-<p>Poolside 强调 Laguna XS.2 并非基于阿里巴巴 Qwen 系列微调的产物，而是从零开始训练，这在当前美国 AI 创业圈中较为罕见，体现了 Poolside 独立的技术路线和算力投入。</p>
+LPM 1.0（Large Performance Model）由米哈游创始人蔡浩宇成立的 AI 公司 Anuttacon 于 2026 年 4 月发布，采用 170 亿参数的扩散 Transformer 架构，Transformer 作为主干网络处理时序与空间信息。核心创新是集成了"因果式流生成器"，实现低延迟、可持续、无限长度的实时交互能力。项目团队还构建了以人为中心的多模态数据集，融入表演理解与身份感知参考信息，提升角色在视频中的真实性和跨时序一致性。</p>
 <p><strong>核心创新点：</strong>
-33B 总参数、3B 激活参数的稀疏 MoE 架构，结合 Apache 2.0 许可，使其成为目前市面上最具性价比的"可商用本地编程模型"。开发者在 Mac M3 Pro（64GB）或配备 RTX 4090 的 PC 上即可运行 Laguna XS.2，获得接近 GPT-4 水平的代码补全和修改建议能力。</p>
+- 170B 扩散 Transformer + 因果式流生成器，解决视频角色生成"不可能三角"
+- 支持自定义角色生成 + 自由对话，虚拟角色具备五官、手部、身体动作及微表情
+- 可与 ChatGPT、豆包等 A2A（音频到音频）模型组合生成角色视频
+- 应用场景：对话式 AI Agent、交互式 NPC、虚拟主播、教育个性化辅导</p>
 <p><strong>实际意义：</strong>
-Laguna XS.2 的开源填补了"Apache 2.0 许可 + 本地可运行 + 编程专精"三重约束下的市场空白。相较于 Llama 3（需要较大显存）和 Code Llama（许可受限），Laguna XS.2 为需要私有化部署和定制微调的企业提供了清晰的选项。</p>
+LPM 1.0 是 2026 年视频生成模型领域的重要突破，其"角色一致性 + 实时交互"的组合能力为游戏 NPC、虚拟陪伴和专业内容创作提供了新的技术路径。项目同时在 arXiv 发布技术论文。</p>
 <p><strong>链接：</strong>
-<a href="https://huggingface.co/Poolside/laguna-xs.2" target="_blank" rel="noopener">https://huggingface.co/Poolside/laguna-xs.2</a></p>
+<a href="https://baike.baidu.com/item/LPM%201.0/67605789" target="_blank" rel="noopener">https://baike.baidu.com/item/LPM%201.0/67605789</a></p>
 <hr>
-<h3>Qwen3.5-A3B — 阿里270亿参数稠密编程旗舰</h3>
-<p><strong>小参数大能量：稠密架构挑战MoE编程能力边界</strong></p>
+<h3>智象未来 HiDream-O1-Image — 原生全模态世界模型</h3>
+<p><strong>一句话描述</strong>：智象未来发布全球首个 UiT 架构的原生全模态世界模型，实现图像、视频、音频、文本、激光雷达等多模态的原生统一建模。</p>
 <p><strong>背景与原理：</strong>
-Qwen3.5-A3B 是阿里云通义千问团队于4月中旬开源的 270亿参数稠密多模态模型（Apache 2.0 许可），代表了"小参数、强性能"路线的最新成果。虽然是稠密架构而非 MoE，但其通过大规模高质量预训练数据和针对性后训练，在 SWE-bench Verified（真实软件工程任务）等权威编程基准上表现出色，达到了通常只有千亿参数模型才能达到的水准。</p>
+2026年4月，智象未来发布了新一代原生全模态世界模型架构及图像大模型 HiDream-O1-Image，采用全球首创的 UiT（Universal Image Transformer）架构。该模型标志着公司从视觉生成的多模态大模型正式迈向原生全模态世界模型的技术路线。其核心理念是：真正的世界模型必须能任意输入、任意输出，与物理世界完全打通——单一或有限模态无法完整描述全模态物理世界。技术路径上，UiT 架构在统一表示空间内原生处理所有模态数据，无需针对每个模态设计独立的编码-解码结构，从而在模态融合效率和泛化能力上实现了质的飞跃。</p>
 <p><strong>核心创新点：</strong>
-阿里团队此次强调 Qwen3.5-A3B 的核心差异化在于"实际编程任务中的可用性"，而非刷榜分数。项目开源后即在魔搭社区（ModelScope）上引发了开发者的大规模关注和微调热潮。</p>
+- 全球首创 UiT 架构，原生统一建模所有模态
+- 视频精度达毫米级，满足具身智能训练监控与标注要求
+- 2026年4月同时上线全球首个专业级 AI 影视创作协作智能体"帧赞"（奇幻悬疑短剧《秦岭青铜诡事录》12小时登顶腾讯视频竖屏热播榜）
+- 已与百图生科（BioMap）共建微观世界模型用于生物医药</p>
 <p><strong>实际意义：</strong>
-Qwen3.5-A3B 为中小型团队提供了一个"零许可成本 + 高编程能力 + 适中算力需求"的模型选择，特别适合作为内部代码助手或垂直领域编程应用的基础模型。</p>
+智象未来的全模态路线代表了对"什么是世界模型"这一根本问题的独特回答。在具身智能、游戏引擎、数字孪生等领域均展现出实际商业价值，为行业提供了一条区别于李飞飞 World Labs 和杨立昆自驾具身智能的第三条世界模型技术路径。</p>
 <p><strong>链接：</strong>
-<a href="https://huggingface.co/Qwen/Qwen3.5-A3B" target="_blank" rel="noopener">https://huggingface.co/Qwen/Qwen3.5-A3B</a></p>
+<a href="https://news.qq.com/rain/a/20260429A086F200" target="_blank" rel="noopener">https://news.qq.com/rain/a/20260429A086F200</a></p>
 <hr>
     </div>
     <div class="page-footer">
