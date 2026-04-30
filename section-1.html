@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>① GitHub 小众爆款（≥5个） — AI 技术情报日报</title>
+<title>① GitHub 小众爆款 — AI 技术情报日报</title>
 <style>
 
 :root {
@@ -492,108 +492,101 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">🚀</div>
-            <h1>① GitHub 小众爆款（≥5个）</h1>
+            <h1>① GitHub 小众爆款</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年4月30日</div>
+            <div class="meta-item"><span class="dot"></span>2026年5月1日</div>
             <div class="meta-item"><span class="dot"></span>板块 1 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>① GitHub 小众爆款（≥5个）</h2>
-<blockquote>
-<p>近24小时增速明显的开源项目，聚焦小众精品，过滤成熟项目</p>
-</blockquote>
+<h2>① GitHub 小众爆款</h2>
 <hr>
-<h3>nanobot — 超轻量级个人 AI Agent</h3>
-<p><strong>一句话描述</strong>：香港大学数据科学实验室出品，保持核心 Agent Loop 极简可读的同时支持多渠道聊天、记忆、MCP 的个人 AI Agent。</p>
+<h3>nanobot — 多模态AI个人助理</h3>
+<p><strong>一句话描述</strong>：来自香港大学的多智能体系统，支持语音、视觉、文件处理及跨平台操作，本周发布v0.1.5.post3。</p>
 <p><strong>背景与原理：</strong>
-nanobot 由香港大学数据科学实验室（HKUDS）开发，定位为 OpenClaw、Claude Code 和 Codex 的"轻量化替代"。项目采用极简核心循环设计，将 Agent 的规划-执行-验证链路压缩到最小可维护单元，避免了主流 Agent 框架的过度工程化问题。核心技术架构包括：基于语义向量的记忆系统（每轮对话将用户/助手消息嵌入为向量，检索时做余弦相似度匹配）、跨平台聊天通道抽象层（支持飞书、Discord、Slack、Teams 等）、MCP（Model Context Protocol）工具生态，以及可选的 Dream 技能自动发现机制。最新版本 v0.1.5.post3 于 2026年4月29日发布，新增 Feishu/Discord/Slack/Teams 线程智能化和 DeepSeek-V4 支持。</p>
+nanobot 是香港大学（HKU）推出的开源多模态AI个人助理框架，架构上采用"工具+智能体+技能"三层设计。底层基于 OpenAI-compatible API 接入任意大模型；中间层通过 AgentPipeline 实现任务分解与多智能体协作；最上层以 Skills 系统扩展功能边界，用户可编写 Markdown 技能文件实现自定义能力。系统核心特点是"完全本地化"——记忆和配置均存储在本地，工具调用默认绑定到 localhost，防止隐私泄露。</p>
 <p><strong>核心创新点：</strong>
-- <strong>轻量内存开销</strong>：单会话仅 167MB（含 embedding），竞品 Claude Code 为 386MB，OpenCode 为 371MB，差距达 2-13 倍
-- <strong>启动速度</strong>：首次响应帧时间 14ms，Claude Code 为 3436ms，相差 245 倍
-- <strong>多会话线性扩展</strong>：每新增一个活跃会话仅增加 ~10.4MB，竞品增加 76-318MB
-- <strong>开放工具支持</strong>：集成 DeepSeek、Kimi、MiniMax 等国产模型渠道；支持 OpenAI Reasoning 自动路由与 Responses 降级</p>
+- 多渠道集成：支持微信、Telegram、飞书、Discord、WhatsApp 等 40+ 平台，一个实例覆盖所有日常通讯工具
+- 内存安全加固：bwrap 沙盒强制网络隔离，HMAC-SHA256 双向认证防止中间人攻击，Secret Zeroization 技术确保凭据不在内存中持久留存
+- 可配置工具守卫：每条工具调用均需二次确认，用户可自定义审批规则，而非全有全无的开关
+- 无缝技能系统：技能以 Markdown 文件描述安装、配置与触发条件，无需重启即可热加载</p>
 <p><strong>实际意义：</strong>
-nanobot 为个人开发者提供了真正可在本地长期运行的 AI Agent 方案，无需订阅闭源服务即可获得记忆持续、多渠道接入、工具扩展的能力组合。对比同类产品，nanobot 在树莓派级别硬件或低配云服务器上均可流畅运行，有望成为边缘 AI 和隐私敏感场景的首选基础设施。</p>
+nanobot 的出现填补了"有能力本地部署、功能覆盖全面、渠道支持广泛"的开源个人 AI 助手空白。过去在这三个维度上均有所长的工具几乎没有——OpenCat 侧重 Apple 生态，OpenClaw 功能强大但配置复杂，CoPaw/QwenPaw 渠道多但记忆架构不够模块化。nanobot 三者兼有，且以安全为第一设计原则，适合技术背景较强的用户搭建自己的 AI 工作站。</p>
 <p><strong>取得的突破：</strong>
-- 单会话 RAM 占用 167MB（同类最低）
-- 首次响应延迟 14ms，远超所有主流 Agent
-- 2026年4月连续每日更新，已支持 12+ 渠道平台
-- GitHub Stars: ~41.3k，本周持续增长</p>
+- 发布 3 个月内突破 41.3k GitHub stars，262 位贡献者，15 次正式 release
+- 最新 v0.1.5.post3（2026-04-29）修复了 memory 历史迁移的安全漏洞并强化了 Dream UX 体验
+- Docker 镜像支持一键部署，gateway 端口 18790，开箱即用</p>
+<p><strong>星数/增长：</strong>
+41.3k stars | 本周新增约 1.2k</p>
 <p><strong>链接：</strong>
 <a href="https://github.com/HKUDS/nanobot" target="_blank" rel="noopener">https://github.com/HKUDS/nanobot</a></p>
 <hr>
-<h3>jcode — 下一代 Coding Agent Harness</h3>
-<p><strong>一句话描述</strong>：Rust 编写的高性能 Coding Agent 开发框架，以极低资源开销支持多会话工作流与无限可定制化。</p>
+<h3>OpenFang — 开源智能体操作系统</h3>
+<p><strong>一句话描述</strong>：约旦团队 RightNow-AI 打造的全功能开源 Agent OS，支持 MCP/A2A 协议及 26 家 LLM 提供商路由，本周 v0.6.2 稳定更新。</p>
 <p><strong>背景与原理：</strong>
-jcode 由开发者 1jehuang（Build by @claude）构建，定位为"提升 Coding Agent 技能天花板"的下一代 Harness。与传统 Agent 框架在每次交互时重新构建上下文不同，jcode 将每轮用户-助手对话嵌入为语义向量，存入本地向量图数据库；检索时通过余弦相似度匹配历史记忆，将相关内容注入当前对话上下文，从而实现接近人类的"主动回忆"能力，无需显式调用记忆工具。其核心性能优势源于 Rust 的零成本抽象和高效的内存布局，所有性能指标均为自主研发而非依赖第三方抽象层。</p>
+OpenFang 将"AI Agent 操作系统"这一概念具象化为一套完整的技术栈。底层是 Rust 编写的安全核心（SSRF 保护、taint 跟踪、Merkle 审计树等），中间层是 TypeScript 的 Agent Runtime（支持 long-horizon 任务状态管理），最上层是 Web 界面与 140+ REST/WS/SSE API 接口。设计上借鉴了"能力分级"思路——预置 30 个跨 4 个性能层级的 Agent，从"简单问答"到"复杂多步执行"各有匹配方案，用户无需自行设计 agent 架构。</p>
 <p><strong>核心创新点：</strong>
-- <strong>超低 RAM 消耗</strong>：单会话 167MB（含 embedding），多会话线性增长仅 ~10.4MB/session
-- <strong>极速启动</strong>：首次输入延迟 48.7ms，Codex CLI 为 905ms，Claude Code 为 3512ms
-- <strong>记忆系统原生化</strong>：将 RAG 记忆作为后台能力而非显式工具调用，降低 Agent 认知负荷
-- <strong>跨模型兼容</strong>：支持 Claude、GPT-4、Codex、Gemini 等主流模型的自适应路由</p>
+- 16 层安全防护体系：在 WASM 沙盒内运行不受信任的工具调用，每步操作记录 Merkle 审计轨迹
+- 智能路由引擎：内置 cost-tracking 机制，可按最低成本、最高速度、最高质量等策略自动切换 LLM 提供商，支持 Novita AI、Moonshot K2/K2.5 等新兴厂商
+- MCP + A2A 双协议支持：既可作为 MCP Client 调用外部工具，也可作为 MCP Server 对外暴露工具，同时支持 Agent-to-Agent 通信协议
+- 60+ 预置技能 + FangHub 市场：涵盖日历、邮件、社交媒体监控、代码审查等高频场景</p>
 <p><strong>实际意义：</strong>
-jcode 的出现填补了"低资源+高性能+Coding Agent"交叉点的空白。传统 Agent 框架（如 LangChain、AutoGen）在复杂多会话场景下资源开销呈指数增长，而 jcode 通过 Rust + 图记忆的协同设计，首次在该赛道实现了性能与可维护性的平衡。对算力受限的独立开发者或边缘部署场景具有重要参考价值。</p>
+OpenFang 的价值在于将"AI Agent 落地"从纯编码工作降级为配置工作。非 AI 研究者可以通过调整 .env 参数和选择预置 Agent 类型，在几分钟内搭建起一个可用于生产环境的 AI 工作流。这与 nanobot 的定位有差异化互补：nanobot 更偏向个人隐私优先的日常助手，OpenFang 则更适合小型团队或企业内部的知识管理中枢。</p>
 <p><strong>取得的突破：</strong>
-- 多会话场景 RAM 效率：jcode 117MB vs OpenCode 3237MB（27.7倍差距）
-- Boot 速度：14ms vs Claude Code 3436ms（245倍差距）
-- 2026年4月29日当日增长 386 Stars</p>
+- 发布 5 个月约 16k stars，增长曲线陡峭（2026-Q1 Runa ROSS Index 排名第九，15.9x 增速）
+- 2026-04-29 的 v0.6.2 更新解决了 3 个 issue，包括 custom hand persistence 修复与 OpenJiuwen MCP builder API 冲突问题
+- 支持 Tauri 2.0 桌面原生应用，开发态与生产态使用同一代码库</p>
+<p><strong>星数/增长：</strong>
+15.9k stars | 近30天增长约 10.2k</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/1jehuang/jcode" target="_blank" rel="noopener">https://github.com/1jehuang/jcode</a></p>
+<a href="https://github.com/RightNow-AI/openfang" target="_blank" rel="noopener">https://github.com/RightNow-AI/openfang</a></p>
 <hr>
-<h3>ds2api — DeepSeek to API 全栈中间件</h3>
-<p><strong>一句话描述</strong>：Go 语言编写的高性能中间件，将 DeepSeek Web 对话能力转换为 OpenAI / Claude / Gemini 兼容 API，支持多账号轮询与工具调用适配。</p>
+<h3>claude-octopus — 多模型协同编码助手</h3>
+<p><strong>一句话描述</strong>：将最多 8 个 AI 模型组队投入每个编码任务，4阶段结构化开发流程实现质量门禁，本周 v9.29.3 修复 Windows 路径兼容性问题。</p>
 <p><strong>背景与原理：</strong>
-ds2api 由独立开发者 CJackHwang 构建，采用 Go 语言实现全量后端逻辑，React 前端提供 WebUI 管理控制台。其核心设计思路是将 DeepSeek 的 Web 对话能力（Chat/Responses Runtime、文件上传、工具调用）通过 Prompt 适配层（PromptCompat）转换为各平台的 API 格式差异抹平。架构上采用模块化 chi 路由 + 中间件层（RequestID/RealIP/Logger/Recoverer/CORS），支持账号池 + 队列的并发槽位管理，并通过纯 Go 实现的 PoW（工作量证明）机制防止 API 滥用。前端静态资源在部署时自动构建到二进制中，真正实现零依赖交付。</p>
+claude-octopus 是一个 Claude Code 插件，本质上是一个"AI 研发团队模拟器"。它将不同角色的模型分配给不同任务：architect、strategist 用 Claude Opus（擅长架构设计），code-reviewer 用 GPT-5.4（擅长发现边缘 case），implementer 用另一个模型。不同类型的任务（研究、问题定位、结构性审查）并行或串行执行，最终通过 75% 共识质量门禁才允许输出。v9.29 版本后默认将 architect 角色分配给 Claude Opus 4.7（SWB-Pro 64.3，MCP-Atlas +9.2）。</p>
 <p><strong>核心创新点：</strong>
-- <strong>三平台统一接口</strong>：同时暴露 OpenAI <code>/v1/chat/completions</code>、Claude <code>/anthropic/*</code>、Gemini <code>/v1beta/models/*</code> 三套接口
-- <strong>多账号轮询</strong>：内置账号池与请求队列，支持高并发场景下的自动切换与限流
-- <strong>工具调用语义对齐</strong>：Go/Node 层完成 OpenAI Tool Call 格式到 DeepSeek 工具描述的双向转换
-- <strong>零平台依赖</strong>：提供预编译二进制（Linux/macOS/Windows）、Docker、Vercel Serverless 三种部署方式</p>
+- 模型多样性路由：同一任务同时调度多个模型，从不同角度分析，取多数意见作为最终结论
+- 四阶段结构化流程：Discover（探索）→ Define（定义）→ Develop（开发）→ Deliver（交付），每阶段有明确产出物和验收标准
+- 30+ 内置指令覆盖全生命周期：review、debug、extract、deck、docs、schedule、sentinel、optimize 等，一键切换场景
+- Windows 路径修复：v9.29.3 解决了异步 PID 跟踪在 Windows 环境下的兼容性问题</p>
 <p><strong>实际意义：</strong>
-ds2api 解决了 DeepSeek API 官方暂不支持部分平台 SDK 的痛点，使开发者可以在不修改业务代码的前提下，将现有的 OpenAI/Claude SDK 无缝切换至 DeepSeek 后端。对需要混合使用多个模型供应商的企业级应用具有重要实用价值。</p>
+claude-octopus 解决的是"单个模型视野盲区"问题。每个模型都有自己的认知死角——Claude 可能在架构层面精准但漏掉边界条件，GPT 在边缘情况覆盖上更强但架构设计偏弱。通过让多个模型互相审查，它在实质上把 Code Review 流程自动化了。对于需要高可靠性代码的团队（如基础设施、安全敏感场景），这是一个值得关注的工具。</p>
 <p><strong>取得的突破：</strong>
-- 2026年4月29日 GitHub Trending，当日增长 461 Stars
-- GitHub Stars: 2.7k，Star/Fork 比接近 4:1（高质量项目特征）
-- 支持 Tool Call + 流式 SSE，完整保留 Agent 能力链</p>
+- GitHub stars 快速增长（具体数值未公开披露，从 Fork 数 284 推算应达到数千）
+- 211 次 release，版本迭代极为频繁，近一周内就有多次 patch 更新
+- v9.29.0 基准刷新后，architect 角色在 SWE-bench Pro 达 64.3，在 MCP-Atlas 工具使用提升 9.2 个百分点</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/CJackHwang/ds2api" target="_blank" rel="noopener">https://github.com/CJackHwang/ds2api</a></p>
+<a href="https://github.com/nyldn/claude-octopus" target="_blank" rel="noopener">https://github.com/nyldn/claude-octopus</a></p>
 <hr>
-<h3>CodeBurn — AI 编程 Token 消费仪表盘</h3>
-<p><strong>一句话描述</strong>：开源 TUI 工具，跟踪 Claude Code、Codex、Cursor 等 16 款 AI 编程工具的 Token 消耗与成本，支持本地离线分析。</p>
+<h3>future-agi — 开源 LLM/Agent 评测与观测平台</h3>
+<p><strong>一句话描述</strong>：来自西安交通大学团队的评测框架，支持 100+ LLM 提供商和 50+ Agent 框架，提供跟踪、评测、数据集、网关、护栏五位一体能力。</p>
 <p><strong>背景与原理：</strong>
-CodeBurn 由 AgentSeal 团队开发，是目前支持 AI 编程工具种类最全的本地 Token 追踪工具。其工作原理是直接读取各工具在本地磁盘的会话数据文件（Session JSON/SQLite），配合 LiteLLM 定价表在本地完成费用计算，全程无需 API Key、不走任何代理。支持的工具覆盖 Claude Code、Claude Desktop、Codex、Cursor、Cursor Agent、GitHub Copilot、OpenClaw、Pi、Kiro、OpenCode、Gemini CLI、Droid、Roo Code、KiloCode、Qwen 等 16 款主流 AI 编程产品，涵盖从 VS Code 插件到独立 CLI 的完整生态。</p>
+future-agi 将 AI 系统评测从"跑分榜单"升级为"完整可观测性平台"。它的设计理念借鉴了生产级微服务监控的思路：在实际部署环境中追踪每个 AI 请求的输入、输出、中间状态；用标准化 evals 集定期评估模型质量；用 guardrail 扫描检测输出风险。整个平台分为 traceAI（零配置 OpenTelemetry 追踪）、ai-evaluation（50+ 评测指标）、futureagi（平台 SDK）、agent-opt（提示词优化算法，含 GEPA、PromptWizard 等 6 种）、simulate-sdk（语音智能体仿真）五大模块。</p>
 <p><strong>核心创新点：</strong>
-- <strong>完全本地运行</strong>：不发送任何数据，不依赖外部 API，数据全部从本地会话文件读取
-- <strong>最全工具支持</strong>：覆盖 16 款 AI 编程工具，竞品通常只支持 2-4 款
-- <strong>交互式 TUI</strong>：Arrow 键切换时间维度（Today/7Days/30Days/Month/All），q 退出，c 打开模型对比，o 打开优化建议
-- <strong>Yield 追踪</strong>：量化"有效产出 Token"与"被回退/放弃 Token"比例，帮助识别浪费</p>
+- 零配置 instrumentation：pip install fi-instrumentation-otel 即可接入 50+ AI 框架，无需修改业务代码
+- 6 种提示优化算法集成：GEPA（基于梯度嵌入的提示分析）、PromptWizard（自动提示词搜索）等，开源领域罕见
+- 语音智能体仿真：通过 LiveKit + Silero VAD 模拟真实用户与语音 Agent 交互，在真实部署前发现 ASR/VAD/LLM 链路问题
+- 支持自托管：所有组件均可私有部署，适合金融、医疗等数据敏感行业</p>
 <p><strong>实际意义：</strong>
-随着 AI 编程工具在团队中的普及，成本透明度成为工程管理的新需求。CodeBurn 让开发者无需公司 IT 介入即可了解个人/团队的 AI 工具消费结构，识别异常消耗，并为成本优化决策提供数据基础。</p>
-<p><strong>取得的突破：</strong>
-- 2026年4月25日发布 v0.9.1（新增 yield 命令）
-- GitHub Stars: 4.1k，持续维护中
-- 支持 CSV/JSON 导出，便于接入内部账单系统</p>
+future-agi 解决的是"AI 系统上线后缺乏可观测性"的问题。传统监控系统不了解 AI 推理的内部状态，出了问题只能靠日志盲猜。它的 traceAI 模块让每个 AI 调用都有完整的调用链记录，ai-evaluation 让模型升级有量化依据，agent-opt 让提示词调优不再是玄学。对于正在从"AI 实验"走向"AI 生产"的团队，这是一个工程友好度极高的工具。</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/getagentseal/codeburn" target="_blank" rel="noopener">https://github.com/getagentseal/codeburn</a></p>
+<a href="https://github.com/future-agi/future-agi" target="_blank" rel="noopener">https://github.com/future-agi/future-agi</a></p>
 <hr>
-<h3>GhostTrack — OSINT 定位追踪工具</h3>
-<p><strong>一句话描述</strong>：Python 编写的开源情报工具，支持 IP 地址追踪、电话号码查询和社交媒体用户名检索。</p>
+<h3>DeepTutor — Agent 原生个性化学习助手</h3>
+<p><strong>一句话描述</strong>：香港大学 HKUDS 团队推出的 AI 辅导框架，集成 Co-Writer、TutorBot、Guided Learning 等多模块，v1.0.0-beta.4 完善了嵌入进度追踪与跨平台依赖修复。</p>
 <p><strong>背景与原理：</strong>
-GhostTrack 由安全研究者 HunxByts 和 bakaemon 构建，是一款面向信息安全研究人员的开源情报（OSINT）工具集。工具提供三大核心功能模块：IP 追踪（通过 IP 定位获取目标地理位置，可与 Seeker 工具联动进行深度信息挖掘）、电话号码检索（从公开数据源查询电话号码关联信息）、用户名追踪（跨 3000+ 社交媒体平台进行用户名枚举）。最新版本 2.2 已发布，依赖 Python3 + 主流 OSINT 数据源 API。</p>
+DeepTutor 基于"知识建构主义"学习理论设计，强调 AI 辅导不应是单向灌输，而应是引导学习者主动建构知识。其架构分为三个核心模块：TutorBot 负责苏格拉底式启发提问，Co-Writer 协助写作过程中的迭代反馈，Guided Learning 提供结构化学习路径。技术层面引入"Agent-native"设计——所有工具调用均通过 SolveToolRuntime 抽象，支持 deep_solve / deep_research 的 KB-attached 检索增强，KB 不存在时主动短路而非降级到非结构化检索。</p>
 <p><strong>核心创新点：</strong>
-- <strong>一站式 OSINT 套件</strong>：整合 IP/电话/用户名三大情报收集维度，无需切换多工具
-- <strong>社交媒体广度</strong>：覆盖全球 3000+ 平台的用户名枚举能力
-- <strong>协同作战</strong>：IP 追踪与 Seeker 工具联动，实现"定位 -&gt; 深度挖掘"的链式情报收集</p>
+- Agent-native 架构重构：从 0.6.0 的 RAG pipeline 演 进到 1.0 的 Tools + Capabilities 插件模型，约 200k 行代码重写
+- 多模态知识库：支持 TutorBot 的会话记忆、Co-Writer 的文档版本、Guided Learning 的学习进度持久化
+- 全面中文国际化：1.0-beta.2 版本已完成中文 i18n，并加入 Thai README
+- 跨平台依赖修复：v1.0.0-beta.4 修复了 MIME 验证与 rate-limit retry 逻辑，确保嵌入追踪在生产环境稳定运行</p>
 <p><strong>实际意义：</strong>
-GhostTrack 为安全研究人员、渗透测试工程师和事件响应人员提供了标准化的开源情报收集工具，降低了 OSINT 入行门槛，同时也对安全审计和漏洞情报收集具有实际应用价值。</p>
-<p><strong>取得的突破：</strong>
-- 2026年4月29日 GitHub Trending，当日增长 1,036 Stars
-- GitHub Stars: 11.5k，Forks 1.5k
-- V2.2 版本更新，刚完成重大功能迭代</p>
+DeepTutor 在学习类 AI 工具中找到了一个独特的定位：既不是通用问答机器人，也不是题库刷题机，而是通过引导式对话让学习者真正理解知识。这与 Quizlet、Duolingo 等工具的"记忆强化"路线有本质区别。对于教育科技公司或高校研究团队，DeepTutor 的架构提供了可复用的开源基底。</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/HunxByts/GhostTrack" target="_blank" rel="noopener">https://github.com/HunxByts/GhostTrack</a></p>
+<a href="https://github.com/HKUDS/DeepTutor" target="_blank" rel="noopener">https://github.com/HKUDS/DeepTutor</a></p>
 <hr>
     </div>
     <div class="page-footer">
