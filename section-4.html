@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>④ 开源工具 & 模型更新（≥3个） — AI 技术情报日报</title>
+<title>④ 开源工具 & 模型更新 — AI 技术情报日报</title>
 <style>
 
 :root {
@@ -492,60 +492,57 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">⚡</div>
-            <h1>④ 开源工具 & 模型更新（≥3个）</h1>
+            <h1>④ 开源工具 & 模型更新</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年4月30日</div>
+            <div class="meta-item"><span class="dot"></span>2026年5月1日</div>
             <div class="meta-item"><span class="dot"></span>板块 4 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>④ 开源工具 &amp; 模型更新（≥3个）</h2>
-<blockquote>
-<p>新兴开源工具、框架与模型发布（国际+国内开源）</p>
-</blockquote>
+<h2>④ 开源工具 &amp; 模型更新</h2>
 <hr>
-<h3>讯飞星火 X2-Flash — 国产算力 MoE 大模型</h3>
-<p><strong>一句话描述</strong>：科大讯飞发布基于华为昇腾 910B 集群训练的 30B MoE 模型，支持 256K 上下文，Token 消耗仅为主流大尺寸模型的三分之一。</p>
+<h3>Avenir-Web — 无需训练的开源 Web Agent，成功率 53.7% 逼近 OpenAI Operator</h3>
+<p><strong>一句话描述</strong>：UCL、普林斯顿、爱丁堡大学联合团队推出，无需任何额外训练即可让多模态模型像人类一样操作网页，在 ComplexWebTasks 基准上刷新纪录。</p>
 <p><strong>背景与原理：</strong>
-讯飞星火 X2-Flash 是科大讯飞在国产算力生态下的最新旗舰模型，采用当前主流的 MoE（混合专家）架构，总参数量 30B，最大支持 256K 超长上下文。模型完全基于华为昇腾 910B 集群从零训练完成，是国产软硬件协同能力的标志性成果。技术亮点在于率先在国产芯片上实现了 DSA（稀疏注意力机制）与 MTP（多 Token 预测）的联合优化，结合亲和国产芯片的算子和分布式训练策略，将训练效率从 A800 集群的 20% 提升至 90%，解决了长上下文在国产算力平台训练效率低的核心痛点。在智能体强化学习场景，采样推理效率提升 2 倍以上，有效缓解了 910B 上长交互场景采样效率过低影响 RL 训练的问题。</p>
+Avenir-Web 解决的是 Web Agent 在复杂网页结构（iframe、多步骤表单、动态加载内容）上操作成功率低的问题。传统方法依赖额外训练或微调，成本高且泛化能力差。Avenir-Web 的核心思路是"让模型更好地理解网页结构"而非"让模型记住更多操作模式"。它通过解析 DOM 树识别交互元素的几何和语义关系，而不是依赖 ID 或 XPath 等脆弱的定位方式。另外，它引入了"操作历史注意力机制"——让模型在执行下一步操作时能参考前面的操作序列，减少重复错误。</p>
 <p><strong>核心创新点：</strong>
-- 256K 超长上下文 + DSA + MTP 三合一国产方案
-- Token 消耗为同效果主流模型的 1/3（实测深度研究报告、Skill 管理与调用等任务）
-- 智能体能力比肩万亿参数模型效果
-- 全面兼容 OpenClaw、Claude Code 等国际主流 Agent 框架</p>
+- 零训练成本：直接使用现有多模态模型（如 GPT-4V、Gemini 等），无需微调或 RL 训练
+- 复杂 iframe 处理：能正确识别嵌套在多层 iframe 中的可交互元素，这是此前方法的主要失败点
+- 操作历史建模：通过注意力机制建模前 N 步操作，防止模型在多步任务中"失忆"
+- 基准测试领先：成功率 53.7%，距 OpenAI Operator 的 58.3% 不到 5 个百分点，是开源方案中差距最小的</p>
 <p><strong>实际意义：</strong>
-星火 X2-Flash 的发布标志着国产大模型在 Agent 能力上首次实现与业界前沿的全面对齐，同时将使用成本压缩至三分之一，为国内开发者提供了真正可用、高性能、低成本的国产 Agent 方案。</p>
+Avenir-Web 的价值在于降低了 Web 自动化 AI 的门槛。企业可以直接将现有多模态模型接入 Avenir-Web，无需训练数据或微调基础设施，即可实现"AI 操作网页"的生产级应用。对于需要构建 RPA（机器人流程自动化）替代方案的团队，这是一条低成本的进路。</p>
 <p><strong>链接：</strong>
-<a href="https://finance.sina.com.cn/tech/digi/2026-04-29/doc-inhwczph6763572.shtml" target="_blank" rel="noopener">https://finance.sina.com.cn/tech/digi/2026-04-29/doc-inhwczph6763572.shtml</a></p>
+<a href="https://github.com/avenir-web/avenir-web" target="_blank" rel="noopener">https://github.com/avenir-web/avenir-web</a></p>
 <hr>
-<h3>LPM 1.0 — 米哈游创始人蔡浩宇团队发布视频角色表演生成模型</h3>
-<p><strong>一句话描述</strong>：Anuttacon（蔡浩宇创立）发布 170 亿参数视频角色表演生成模型 LPM 1.0，解决视频角色生成中表现力、实时性与长时稳定性不可兼得的"不可能三角"。</p>
+<h3>MiniCPM-o 4.5 — 面壁智能开源全双工全模态模型，12GB 显存即可本地部署</h3>
+<p><strong>一句话描述</strong>：面壁智能联合清华 OpenBMB 开源全双工全模态交互模型 MiniCPM-o 4.5，首次将"人机并行对话"和"环境主动感知"带入端侧 AI，9B 参数兼顾性能与效率。</p>
 <p><strong>背景与原理：</strong>
-LPM 1.0（Large Performance Model）由米哈游创始人蔡浩宇成立的 AI 公司 Anuttacon 于 2026 年 4 月发布，采用 170 亿参数的扩散 Transformer 架构，Transformer 作为主干网络处理时序与空间信息。核心创新是集成了"因果式流生成器"，实现低延迟、可持续、无限长度的实时交互能力。项目团队还构建了以人为中心的多模态数据集，融入表演理解与身份感知参考信息，提升角色在视频中的真实性和跨时序一致性。</p>
+MiniCPM-o 4.5 基于面壁智能自研的 Omni-Flow 流式全模态框架。传统大模型普遍采用半双工交互——用户说完 AI 才能回复，AI 回复时无法感知环境变化。MiniCPM-o 4.5 通过全双工流式架构实现"边听边说、边看边做"：音频、视频、文本三个模态同时进入模型，模型实时输出多模态响应而无需等待完整输入完成。架构设计上采用 Cross-modal Attention 替代传统的模态融合层，减少了多模态信息相互干扰的问题。</p>
 <p><strong>核心创新点：</strong>
-- 170B 扩散 Transformer + 因果式流生成器，解决视频角色生成"不可能三角"
-- 支持自定义角色生成 + 自由对话，虚拟角色具备五官、手部、身体动作及微表情
-- 可与 ChatGPT、豆包等 A2A（音频到音频）模型组合生成角色视频
-- 应用场景：对话式 AI Agent、交互式 NPC、虚拟主播、教育个性化辅导</p>
+- 全双工交互：用户和 AI 可以同时说话/响应，AI 能实时感知环境变化并主动响应，而非等待用户指令
+- 仅 9B 参数：在端侧硬件（12GB 显存）上即可运行，性能接近部分 70B+ 参数模型
+- 全模态覆盖：支持音频（语音对话）、视频（摄像头输入）、文本三模态实时融合
+- 开源完整：技术报告、权重、推理代码全部公开，支持私有部署</p>
 <p><strong>实际意义：</strong>
-LPM 1.0 是 2026 年视频生成模型领域的重要突破，其"角色一致性 + 实时交互"的组合能力为游戏 NPC、虚拟陪伴和专业内容创作提供了新的技术路径。项目同时在 arXiv 发布技术论文。</p>
+MiniCPM-o 4.5 解决的是"端侧 AI 无法实现真正实时交互"的问题。过去的端侧模型要么只支持单模态（语音或文字），要么需要整句输入完成后才能处理，交互延迟高。Avenir-Web 的突破让端侧 AI 第一次具备接近手机语音助手（如 Siri）的实时感知能力，同时完全免费且可离线运行。对于隐私敏感场景（如车载、耳机端侧 AI），这是重要的技术进展。</p>
 <p><strong>链接：</strong>
-<a href="https://baike.baidu.com/item/LPM%201.0/67605789" target="_blank" rel="noopener">https://baike.baidu.com/item/LPM%201.0/67605789</a></p>
+<a href="https://github.com/OpenBMB/MiniCPM-o" target="_blank" rel="noopener">https://github.com/OpenBMB/MiniCPM-o</a></p>
 <hr>
-<h3>智象未来 HiDream-O1-Image — 原生全模态世界模型</h3>
-<p><strong>一句话描述</strong>：智象未来发布全球首个 UiT 架构的原生全模态世界模型，实现图像、视频、音频、文本、激光雷达等多模态的原生统一建模。</p>
+<h3>SenseNova U1 — 商汤开源 8B 图文生成模型，复刻 GPT-Image-2 能力</h3>
+<p><strong>一句话描述</strong>：商汤科技开源 8B 参数图文生成模型 SenseNova U1，在中文海报、直播画面、社交截图等场景下达到与 GPT-Image-2 相近的生成质量，完全免费可本地部署。</p>
 <p><strong>背景与原理：</strong>
-2026年4月，智象未来发布了新一代原生全模态世界模型架构及图像大模型 HiDream-O1-Image，采用全球首创的 UiT（Universal Image Transformer）架构。该模型标志着公司从视觉生成的多模态大模型正式迈向原生全模态世界模型的技术路线。其核心理念是：真正的世界模型必须能任意输入、任意输出，与物理世界完全打通——单一或有限模态无法完整描述全模态物理世界。技术路径上，UiT 架构在统一表示空间内原生处理所有模态数据，无需针对每个模态设计独立的编码-解码结构，从而在模态融合效率和泛化能力上实现了质的飞跃。</p>
+SenseNova U1 瞄准的是"GPT-Image-2 能力本地化"这一需求。GPT-Image-2 在云端效果惊艳，但免费用户每日有配额限制，且无法私有部署。商汤团队通过知识蒸馏将 GPT-Image-2 的核心能力迁移到一个 8B 参数的开放模型上，并在中文场景做了专项优化（如中文字体渲染、中文构图习惯）。模型架构基于扩散模型（Diffusion Model）+ Cross-attention 的图文对齐机制，支持多轮对话式生成（上一轮生成结果影响下一轮的条件输入）。</p>
 <p><strong>核心创新点：</strong>
-- 全球首创 UiT 架构，原生统一建模所有模态
-- 视频精度达毫米级，满足具身智能训练监控与标注要求
-- 2026年4月同时上线全球首个专业级 AI 影视创作协作智能体"帧赞"（奇幻悬疑短剧《秦岭青铜诡事录》12小时登顶腾讯视频竖屏热播榜）
-- 已与百图生科（BioMap）共建微观世界模型用于生物医药</p>
+- 8B 参数本地部署：消费级 GPU（如 RTX 4090）即可运行，无需云端 API
+- 中文场景专项优化：中文字形、版式、配色均有专项训练，中文海报生成质量显著优于同类开源模型
+- 多轮对话生成：支持"先生成背景 → 再添加文字 → 再调整风格"的迭代式创作流程
+- 开源免费：Apache 2.0 许可证，商用零成本</p>
 <p><strong>实际意义：</strong>
-智象未来的全模态路线代表了对"什么是世界模型"这一根本问题的独特回答。在具身智能、游戏引擎、数字孪生等领域均展现出实际商业价值，为行业提供了一条区别于李飞飞 World Labs 和杨立昆自驾具身智能的第三条世界模型技术路径。</p>
+SenseNova U1 的出现让"AI 图像生成"的能力从云端付费产品下沉到了任何开发者都可以免费获取的资源。对于电商内容生产团队、社交媒体运营者、个人设计师，这提供了一个零成本的自动化生产工具。它的中文优化让国内用户的生成质量首次可以与英文场景的国际模型相媲美。</p>
 <p><strong>链接：</strong>
-<a href="https://news.qq.com/rain/a/20260429A086F200" target="_blank" rel="noopener">https://news.qq.com/rain/a/20260429A086F200</a></p>
+<a href="https://github.com/SenseNova-U1/SenseNova-U1" target="_blank" rel="noopener">https://github.com/SenseNova-U1/SenseNova-U1</a></p>
 <hr>
     </div>
     <div class="page-footer">
