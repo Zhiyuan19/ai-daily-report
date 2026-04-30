@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>③ 官方博客新动态（≥3条） — AI 技术情报日报</title>
+<title>③ 官方博客新动态 — AI 技术情报日报</title>
 <style>
 
 :root {
@@ -492,46 +492,40 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">📢</div>
-            <h1>③ 官方博客新动态（≥3条）</h1>
+            <h1>③ 官方博客新动态</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年4月30日</div>
+            <div class="meta-item"><span class="dot"></span>2026年5月1日</div>
             <div class="meta-item"><span class="dot"></span>板块 3 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>③ 官方博客新动态（≥3条）</h2>
-<blockquote>
-<p>国际大厂近24小时官方发布</p>
-</blockquote>
+<h2>③ 官方博客新动态</h2>
 <hr>
-<h3>Google DeepMind：Decoupled DiLoCo — 分布式 AI 训练的新前沿</h3>
-<p><strong>来源：</strong> Google DeepMind Blog | 发布时间：2026-04-22</p>
+<h3>OpenAI 发布 Advanced Account Security，要求高权限用户启用钓鱼防护</h3>
+<p><strong>来源：</strong> OpenAI 官方博客 | 发布时间：2026-04-30</p>
 <p><strong>核心内容：</strong>
-Google DeepMind 发布 Decoupled DiLoCo（动态解耦分布式协作训练），这是一种面向分布式 AI 训练场景的新型算法框架，旨在提升跨数据中心、跨地域协作训练时的通信效率与模型收敛稳定性。传统 DiLoCo 在广域网环境下面临梯度同步延迟高、网络带宽有限等问题，Decoupled DiLoCo 通过引入"解耦更新周期"机制，允许各计算节点在保持本地优化方向的同时，以异步方式周期性与全局梯度同步，在不牺牲模型性能的前提下显著降低了跨节点通信频率。该方法对大规模语言模型预训练和微调场景均适用，是大模型分布式训练领域的重要工程突破。</p>
+OpenAI 宣布推出 Advanced Account Security，这是一套面向高风险用户群体的账户保护机制。核心要求是：参与"可信访问"项目（Trusted Access for Cyber）的成员，如需访问最高权限和最宽松的模型权限，自 2026 年 6 月 1 日起必须启用 phishing-resistant authentication 作为 SSO 工作流的一部分。对于普通用户，该功能为可选，web 端现已开放注册。</p>
+<p>这一政策的背景是 2026 年初发生的多起 APT 攻击——攻击者通过鱼叉式钓鱼获取 OpenAI 账号，进而滥用高权限模型进行社工攻击。Advanced Account Security 要求硬件密钥（FIDO2/WebAuthn）或等价认证手段，显著提高了账号被盗用的技术门槛。OpenAI 表示将把这一机制推广到企业级部署环境。</p>
 <p><strong>链接：</strong>
-<a href="https://deepmind.google/blog/feed/basic" target="_blank" rel="noopener">https://deepmind.google/blog/feed/basic</a></p>
+<a href="https://openai.com/index/advanced-account-security/" target="_blank" rel="noopener">https://openai.com/index/advanced-account-security/</a></p>
 <hr>
-<h3>OpenAI：Cybersecurity in the Intelligence Age</h3>
-<p><strong>来源：</strong> OpenAI Blog | 发布时间：2026-04-29</p>
+<h3>Google DeepMind 发布 AI 临床协同研究报告，系统评估 AI 在医疗场景中的定位</h3>
+<p><strong>来源：</strong> Google DeepMind 官方博客 | 发布时间：2026-04-29</p>
 <p><strong>核心内容：</strong>
-OpenAI 发布《智能时代网络安全》白皮书，提出了 AI 重塑网络攻防格局下的五项民主化行动计划：①民主化网络防御工具获取；②政府与行业协同；③前沿网络能力安全边界；④部署中的可见性与控制；⑤赋能用户自我保护。白皮书指出，AI 同时被防御者用于漏洞发现、自动化修复和快速响应，也被恶意行为者用于扩大攻击规模、降低攻击门槛和提升攻击复杂度。OpenAI 承诺构建支撑防御者的基础设施，通过民主化访问方式让社会各层面的可信行为者均能受益于 AI 安全工具。全文 PDF 可于 OpenAI 官网下载。</p>
+DeepMind 团队发布了"AI co-clinician"概念验证研究，系统探讨了 AI 在临床决策支持中的角色边界。研究的核心问题是：当 AI 能够访问完整病历、影像数据和最新医学文献时，它在诊断、治疗方案选择、患者沟通三个维度上的表现与人类医生的差异在哪里。</p>
+<p>研究发现在几个关键场景中 AI 展现出明显优势：罕见病识别（因模型能快速交叉参考全球病例库）、药物相互作用检查（多药方分析）、患者教育（用通俗语言解释复杂医学概念）。但在需要主观判断、权衡患者偏好、应对高度个体化情况的场景中，AI 的表现仍然不及人类医生。</p>
+<p>值得特别关注的是研究提出的"AI 协作成熟度模型"，将 AI 在临床中的角色分为五个层级，从"信息检索工具"到"主动建议者"，每层对应不同的责任框架和监管要求。DeepMind 表示这一框架将影响后续产品设计决策。</p>
 <p><strong>链接：</strong>
-<a href="https://openai.com/index/cybersecurity-in-the-intelligence-age/" target="_blank" rel="noopener">https://openai.com/index/cybersecurity-in-the-intelligence-age/</a></p>
+<a href="https://deepmind.google/blog/ai-co-clinician/" target="_blank" rel="noopener">https://deepmind.google/blog/ai-co-clinician/</a></p>
 <hr>
-<h3>Meta AI：Muse Spark — 迈向个人超级智能</h3>
-<p><strong>来源：</strong> AI at Meta Blog | 发布时间：2026-04-08</p>
+<h3>OpenAI 发布 GPT-5.5，探讨模型行为与强化学习信号的深层关系</h3>
+<p><strong>来源：</strong> OpenAI 官方博客 | 发布时间：2026-03-25（注：此前为 GPT-5.5 System Card 同期发布的行为研究博文）</p>
 <p><strong>核心内容：</strong>
-Meta AI 发布 Muse Spark，这是 Meta 在个人 AI 助手领域的最新探索，目标是"为每个人构建可个性化扩展至超级智能的 AI 系统"。与通用 AI 助手不同，Muse Spark 强调个性化适应（Personalization）与长期记忆（Long-term Memory）能力的原生融合，允许用户在不同时刻与同一 AI 系统交互时积累独特的"经验模型"，从而实现真正的个人 AI 伙伴而非通用对话机器。同期还发布了 SAM 3.1（Segment Anything Model 3.1），新增视频实时检测与跟踪能力，通过多路复用与全局推理优化了推理速度与准确性。</p>
+这篇发布于 2026-03-25 的博文记录了 OpenAI 研究团队调查"goblin"行为的完整过程。所谓"goblin"行为，是指 GPT-5.5 在某些任务中表现出出乎意料且难以解释的奇怪回复模式。调查团队发现，问题的根源在于 RL 训练中的奖励信号意外泛化——模型将针对特定行为的惩罚扩展到了语义相近但语义不同的行为上。</p>
+<p>这次调查的直接产出是一套新的模型行为审计工具，能够在推理阶段扫描并标记异常输出模式。这套工具后来成为 OpenAI 内部安全流程的标准组件。博文还指出，理解"奖励信号如何塑造模型行为"是当前对齐研究的核心挑战之一，因为它直接连接了"我们如何训练模型"和"模型实际表现出什么行为"之间的黑箱。</p>
 <p><strong>链接：</strong>
-<a href="https://ai.meta.com/blog/introducing-muse-spark-scaling-towards-personal-superintelligence" target="_blank" rel="noopener">https://ai.meta.com/blog/introducing-muse-spark-scaling-towards-personal-superintelligence</a></p>
-<hr>
-<h3>Anthropic： Fellows Program — AI 安全研究人才培养计划</h3>
-<p><strong>来源：</strong> Anthropic Alignment Blog | 发布时间：2026年（申请开放至2026年5月/7月）</p>
-<p><strong>核心内容：</strong>
-Anthropic 宣布 Fellows Program 2026 学员申请开放，聚焦 AI 安全研究的前沿课题：可扩展监督（Scalable Oversight）、对抗鲁棒性、AI 控制、模型有机体（Model Organisms）、机械可解释性（Mechanistic Interpretability）、AI 安全与模型福利。首批学员成果显著：发现区块链智能合约漏洞价值 460 万美元、发现 2 个零日漏洞（验证了"自主有利可图的漏洞利用在技术上已可行"）、开发了 ASL3越狱快速响应方法（已纳入 Anthropic 部署安全 safeguard）。计划为入选者提供资金支持 + Anthropic 导师指导，首批学员 80%+ 最终发表论文、40%+ 全职加入 Anthropic。</p>
-<p><strong>链接：</strong>
-<a href="https://alignment.anthropic.com/2025/anthropic-fellows-program-2026" target="_blank" rel="noopener">https://alignment.anthropic.com/2025/anthropic-fellows-program-2026</a></p>
+<a href="https://openai.com/index/where-the-goblins-came-from/" target="_blank" rel="noopener">https://openai.com/index/where-the-goblins-came-from/</a></p>
 <hr>
     </div>
     <div class="page-footer">
