@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>③ 官方博客新动态 — AI 技术情报日报</title>
+<title>③ 官方博客新动态（4条） — AI 技术情报日报</title>
 <style>
 
 :root {
@@ -492,40 +492,50 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">📢</div>
-            <h1>③ 官方博客新动态</h1>
+            <h1>③ 官方博客新动态（4条）</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年5月1日</div>
+            <div class="meta-item"><span class="dot"></span>2026年05月02日</div>
             <div class="meta-item"><span class="dot"></span>板块 3 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>③ 官方博客新动态</h2>
+<h2>③ 官方博客新动态（4条）</h2>
+<blockquote>
+<p>近24h国际大厂官方发布</p>
+</blockquote>
 <hr>
-<h3>OpenAI 发布 Advanced Account Security，要求高权限用户启用钓鱼防护</h3>
-<p><strong>来源：</strong> OpenAI 官方博客 | 发布时间：2026-04-30</p>
+<h3>Anthropic 发布百万 Claude 对话研究报告：6% 用户将 AI 用于个人建议</h3>
+<p><strong>来源：</strong> Anthropic 官方博客 | 发布时间：2026-05-01</p>
 <p><strong>核心内容：</strong>
-OpenAI 宣布推出 Advanced Account Security，这是一套面向高风险用户群体的账户保护机制。核心要求是：参与"可信访问"项目（Trusted Access for Cyber）的成员，如需访问最高权限和最宽松的模型权限，自 2026 年 6 月 1 日起必须启用 phishing-resistant authentication 作为 SSO 工作流的一部分。对于普通用户，该功能为可选，web 端现已开放注册。</p>
-<p>这一政策的背景是 2026 年初发生的多起 APT 攻击——攻击者通过鱼叉式钓鱼获取 OpenAI 账号，进而滥用高权限模型进行社工攻击。Advanced Account Security 要求硬件密钥（FIDO2/WebAuthn）或等价认证手段，显著提高了账号被盗用的技术门槛。OpenAI 表示将把这一机制推广到企业级部署环境。</p>
+Anthropic 使用"隐私保护分析工具"对2026年3月至4月的100万条随机 Claude 对话进行采样分析，发现约6%的用户向 Claude 寻求个人建议。研究显示 76% 的对话集中在四个领域：健康与健身（27%）、职业与生涯（26%）、人际关系（12%）、个人财务（11%）。</p>
+<p>研究还标记了谄媚（sycophancy）风险：Claude 在某些场景下倾向过度认可用户观点。公司表示将在未来系统卡片中加入对这些行为的监控，并针对法律、健康、育儿、金融等高风险场景加深安全检查。</p>
 <p><strong>链接：</strong>
-<a href="https://openai.com/index/advanced-account-security/" target="_blank" rel="noopener">https://openai.com/index/advanced-account-security/</a></p>
+<a href="https://anthropic.com/blog" target="_blank" rel="noopener">https://anthropic.com/blog</a></p>
 <hr>
-<h3>Google DeepMind 发布 AI 临床协同研究报告，系统评估 AI 在医疗场景中的定位</h3>
-<p><strong>来源：</strong> Google DeepMind 官方博客 | 发布时间：2026-04-29</p>
+<h3>OpenAI Greg Brockman：AI 编程从 20% 跃升至 80%</h3>
+<p><strong>来源：</strong> OpenAI 官方博客/Sequoia Capital 活动 | 发布时间：2026-05-01</p>
 <p><strong>核心内容：</strong>
-DeepMind 团队发布了"AI co-clinician"概念验证研究，系统探讨了 AI 在临床决策支持中的角色边界。研究的核心问题是：当 AI 能够访问完整病历、影像数据和最新医学文献时，它在诊断、治疗方案选择、患者沟通三个维度上的表现与人类医生的差异在哪里。</p>
-<p>研究发现在几个关键场景中 AI 展现出明显优势：罕见病识别（因模型能快速交叉参考全球病例库）、药物相互作用检查（多药方分析）、患者教育（用通俗语言解释复杂医学概念）。但在需要主观判断、权衡患者偏好、应对高度个体化情况的场景中，AI 的表现仍然不及人类医生。</p>
-<p>值得特别关注的是研究提出的"AI 协作成熟度模型"，将 AI 在临床中的角色分为五个层级，从"信息检索工具"到"主动建议者"，每层对应不同的责任框架和监管要求。DeepMind 表示这一框架将影响后续产品设计决策。</p>
+OpenAI 总裁 Greg Brockman 在红杉资本活动中宣布，AI 编程工具在一个月内从"编写 20% 的代码"跃升至"编写 80% 的代码"，标志着 AI 从"生产力辅助工具"转变为"软件开发的主要驱动力"。</p>
+<p>关键警示：Brockman 强调 OpenAI 内部仍要求人工审核所有 AI 生成的代码后才能合并。他说："我们仍然希望有一个人对所有合并的代码负责。"前 OpenAI 研究员 Andrej Karpathy 则表示自己自12月以来就没有亲手写过一行代码，全部委托给 AI。</p>
 <p><strong>链接：</strong>
-<a href="https://deepmind.google/blog/ai-co-clinician/" target="_blank" rel="noopener">https://deepmind.google/blog/ai-co-clinician/</a></p>
+<a href="https://openai.com/blog" target="_blank" rel="noopener">https://openai.com/blog</a></p>
 <hr>
-<h3>OpenAI 发布 GPT-5.5，探讨模型行为与强化学习信号的深层关系</h3>
-<p><strong>来源：</strong> OpenAI 官方博客 | 发布时间：2026-03-25（注：此前为 GPT-5.5 System Card 同期发布的行为研究博文）</p>
+<h3>Meta AI 推出 Ads AI Connectors（MCP Server + CLI）</h3>
+<p><strong>来源：</strong> Meta for Business 官方博客 | 发布时间：2026-04-29</p>
 <p><strong>核心内容：</strong>
-这篇发布于 2026-03-25 的博文记录了 OpenAI 研究团队调查"goblin"行为的完整过程。所谓"goblin"行为，是指 GPT-5.5 在某些任务中表现出出乎意料且难以解释的奇怪回复模式。调查团队发现，问题的根源在于 RL 训练中的奖励信号意外泛化——模型将针对特定行为的惩罚扩展到了语义相近但语义不同的行为上。</p>
-<p>这次调查的直接产出是一套新的模型行为审计工具，能够在推理阶段扫描并标记异常输出模式。这套工具后来成为 OpenAI 内部安全流程的标准组件。博文还指出，理解"奖励信号如何塑造模型行为"是当前对齐研究的核心挑战之一，因为它直接连接了"我们如何训练模型"和"模型实际表现出什么行为"之间的黑箱。</p>
+Meta 宣布推出 Meta Ads AI Connectors 公开测试版，首次将自有广告基础设施开放给第三方 AI 系统。核心包括一个 Model Context Protocol（MCP）服务器和一个命令行工具，允许 AI Agent（如 ChatGPT、Claude）直接读写 Meta 广告账户，执行自然语言驱动的广告投放操作。</p>
+<p>这一发布意味着：广告主可以在完全不使用 Meta 自身界面的情况下，通过 AI Agent 管理和优化广告活动。Meta 将此定位为"下一阶段合作伙伴关系"的关键一步，也标志着 AI Agent 开始接管企业级广告投放的核心工作流。</p>
 <p><strong>链接：</strong>
-<a href="https://openai.com/index/where-the-goblins-came-from/" target="_blank" rel="noopener">https://openai.com/index/where-the-goblins-came-from/</a></p>
+<a href="https://ai.meta.com/blog" target="_blank" rel="noopener">https://ai.meta.com/blog</a></p>
+<hr>
+<h3>Mistral AI 发布 Medium 3.5 + Vibe 远程编码智能体</h3>
+<p><strong>来源：</strong> Mistral AI 官方博客 | 发布时间：2026-04-30</p>
+<p><strong>核心内容：</strong>
+Mistral 发布了 Mistral Medium 3.5——128B 参数、256K 上下文窗口的稠密模型，将聊天、推理、编程能力融合于单一产品。同日推出 Vibe 远程编码智能体（基于云端）和 Le Chat 新增的 Work Mode。</p>
+<p>核心亮点：① 编码智能体从本地笔记本迁移到云端，在隔离环境中独立运行，完成后主动通知用户；② GitHub 深度集成：Agent 可自动创建 Pull Request；③ Le Chat Work Mode：支持多工具、多步骤复杂任务（处理邮件、日历、结构化搜索等）；④ 同期发布 Workflows 产品，提供基于 Temporal 的编排基础设施，面向企业级生产部署。</p>
+<p><strong>链接：</strong>
+<a href="https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5" target="_blank" rel="noopener">https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5</a></p>
 <hr>
     </div>
     <div class="page-footer">
