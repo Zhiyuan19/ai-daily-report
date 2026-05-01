@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>① GitHub 小众爆款 — AI 技术情报日报</title>
+<title>① GitHub 小众爆款（5个） — AI 技术情报日报</title>
 <style>
 
 :root {
@@ -492,101 +492,110 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">🚀</div>
-            <h1>① GitHub 小众爆款</h1>
+            <h1>① GitHub 小众爆款（5个）</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年5月1日</div>
+            <div class="meta-item"><span class="dot"></span>2026年05月02日</div>
             <div class="meta-item"><span class="dot"></span>板块 1 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>① GitHub 小众爆款</h2>
+<h2>① GitHub 小众爆款（5个）</h2>
+<blockquote>
+<p>筛选标准：近24h有更新、总星&lt;50k、聚焦AI开源项目</p>
+</blockquote>
 <hr>
-<h3>nanobot — 多模态AI个人助理</h3>
-<p><strong>一句话描述</strong>：来自香港大学的多智能体系统，支持语音、视觉、文件处理及跨平台操作，本周发布v0.1.5.post3。</p>
+<h3>oh-my-pi — Rust/TUI 编程智能体</h3>
+<p><strong>一句话描述</strong>：终端原生的多提供者 AI 编程智能体，支持 MCP、subagent、浏览器和 LSP。</p>
 <p><strong>背景与原理：</strong>
-nanobot 是香港大学（HKU）推出的开源多模态AI个人助理框架，架构上采用"工具+智能体+技能"三层设计。底层基于 OpenAI-compatible API 接入任意大模型；中间层通过 AgentPipeline 实现任务分解与多智能体协作；最上层以 Skills 系统扩展功能边界，用户可编写 Markdown 技能文件实现自定义能力。系统核心特点是"完全本地化"——记忆和配置均存储在本地，工具调用默认绑定到 localhost，防止隐私泄露。</p>
+oh-my-pi 是一款以 Rust 和 TypeScript（占85.8%/10.7%）构建的 TUI 编程工具，核心理念是"让高级 AI 行为变得可配置而非隐藏"。它不依赖图形界面，在纯终端环境中提供完整的代码生成、工具调用和任务分解能力。项目支持多模型提供者（OpenAI、Claude、Ollama 等），并通过内置 SDK 让用户精细控制模型选择、system prompt、工具和 session 持久化。</p>
 <p><strong>核心创新点：</strong>
-- 多渠道集成：支持微信、Telegram、飞书、Discord、WhatsApp 等 40+ 平台，一个实例覆盖所有日常通讯工具
-- 内存安全加固：bwrap 沙盒强制网络隔离，HMAC-SHA256 双向认证防止中间人攻击，Secret Zeroization 技术确保凭据不在内存中持久留存
-- 可配置工具守卫：每条工具调用均需二次确认，用户可自定义审批规则，而非全有全无的开关
-- 无缝技能系统：技能以 Markdown 文件描述安装、配置与触发条件，无需重启即可热加载</p>
+- Hash 锚定编辑（hash-anchored edits）：确保 AI 修改精确落在目标代码行，不因上下文飘移而出错
+- RPC 模式：高级行为全可通过配置文件描述，不依赖代码魔改
+- MCP（Model Context Protocol）原生支持，可扩展接入各类开发工具
+- 支持 Python、浏览器、subagent 混合编排，适合复杂长任务</p>
 <p><strong>实际意义：</strong>
-nanobot 的出现填补了"有能力本地部署、功能覆盖全面、渠道支持广泛"的开源个人 AI 助手空白。过去在这三个维度上均有所长的工具几乎没有——OpenCat 侧重 Apple 生态，OpenClaw 功能强大但配置复杂，CoPaw/QwenPaw 渠道多但记忆架构不够模块化。nanobot 三者兼有，且以安全为第一设计原则，适合技术背景较强的用户搭建自己的 AI 工作站。</p>
+对于需要在无图形界面环境（如 SSH、远程服务器、CI/CD）中进行 AI 辅助编程的开发者，oh-my-pi 提供了轻量、可靠、可审计的解决方案。相比 VS Code/Cursor 等图形工具，它更贴近"系统工程"而非"个人效率工具"的定位。</p>
 <p><strong>取得的突破：</strong>
-- 发布 3 个月内突破 41.3k GitHub stars，262 位贡献者，15 次正式 release
-- 最新 v0.1.5.post3（2026-04-29）修复了 memory 历史迁移的安全漏洞并强化了 Dream UX 体验
-- Docker 镜像支持一键部署，gateway 端口 18790，开箱即用</p>
+- 3.6k stars，近30天保持日更 v14.x，commit 活跃度高
+- 项目同时获得 332 次 fork，社区参与度高
+- Rust 实现确保运行时性能和内存安全</p>
 <p><strong>星数/增长：</strong>
-41.3k stars | 本周新增约 1.2k</p>
+3.6k stars | 近24h无新增 commit，但过去30天持续活跃</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/HKUDS/nanobot" target="_blank" rel="noopener">https://github.com/HKUDS/nanobot</a></p>
+<a href="https://github.com/can1357/oh-my-pi" target="_blank" rel="noopener">https://github.com/can1357/oh-my-pi</a></p>
 <hr>
-<h3>OpenFang — 开源智能体操作系统</h3>
-<p><strong>一句话描述</strong>：约旦团队 RightNow-AI 打造的全功能开源 Agent OS，支持 MCP/A2A 协议及 26 家 LLM 提供商路由，本周 v0.6.2 稳定更新。</p>
+<h3>Vibe-Trading — AI 驱动量化交易智能体</h3>
+<p><strong>一句话描述</strong>：融合 LLM 多代理与量化策略的个人交易助手，支持券商文件解析与 Bias 诊断。</p>
 <p><strong>背景与原理：</strong>
-OpenFang 将"AI Agent 操作系统"这一概念具象化为一套完整的技术栈。底层是 Rust 编写的安全核心（SSRF 保护、taint 跟踪、Merkle 审计树等），中间层是 TypeScript 的 Agent Runtime（支持 long-horizon 任务状态管理），最上层是 Web 界面与 140+ REST/WS/SSE API 接口。设计上借鉴了"能力分级"思路——预置 30 个跨 4 个性能层级的 Agent，从"简单问答"到"复杂多步执行"各有匹配方案，用户无需自行设计 agent 架构。</p>
+Vibe-Trading 是 HKUDS 团队开源的个人量化交易框架，定位为"Vibe 编程"在金融领域的落地。它允许用户用自然语言描述交易思路，框架自动生成回测代码并连接真实券商数据。核心理念是"用 AI 理解和执行量化策略"，而非简单的聊交易。</p>
 <p><strong>核心创新点：</strong>
-- 16 层安全防护体系：在 WASM 沙盒内运行不受信任的工具调用，每步操作记录 Merkle 审计轨迹
-- 智能路由引擎：内置 cost-tracking 机制，可按最低成本、最高速度、最高质量等策略自动切换 LLM 提供商，支持 Novita AI、Moonshot K2/K2.5 等新兴厂商
-- MCP + A2A 双协议支持：既可作为 MCP Client 调用外部工具，也可作为 MCP Server 对外暴露工具，同时支持 Agent-to-Agent 通信协议
-- 60+ 预置技能 + FangHub 市场：涵盖日历、邮件、社交媒体监控、代码审查等高频场景</p>
+- 支持同花顺/东财/富途/通用 CSV 自动解析，生成持仓天数、胜率、PnL 比率、最大回撤等指标
+- 内置4类 Bias 诊断：处置效应（赚了不止损）、过度交易（频繁操作）、追涨杀跌、锚定效应
+- 多 provider 支持：Z.ai、MiniMax、DeepSeek、Qwen/Kimi thinking 等13家
+- Trade Journal Analyzer：上传券商账单，自动生成绩效报告和行为诊断</p>
 <p><strong>实际意义：</strong>
-OpenFang 的价值在于将"AI Agent 落地"从纯编码工作降级为配置工作。非 AI 研究者可以通过调整 .env 参数和选择预置 Agent 类型，在几分钟内搭建起一个可用于生产环境的 AI 工作流。这与 nanobot 的定位有差异化互补：nanobot 更偏向个人隐私优先的日常助手，OpenFang 则更适合小型团队或企业内部的知识管理中枢。</p>
+为普通投资者提供了用 AI 做量化分析的入门级工具，降低了量化策略研究和绩效评估的门槛。框架支持 PDF/Word/Excel/PowerPoint 等40+文件格式的统一读取，适合需要整合多种数据源的投研场景。</p>
 <p><strong>取得的突破：</strong>
-- 发布 5 个月约 16k stars，增长曲线陡峭（2026-Q1 Runa ROSS Index 排名第九，15.9x 增速）
-- 2026-04-29 的 v0.6.2 更新解决了 3 个 issue，包括 custom hand persistence 修复与 OpenJiuwen MCP builder API 冲突问题
-- 支持 Tauri 2.0 桌面原生应用，开发态与生产态使用同一代码库</p>
+- 3.2k stars，近30天更新活跃（4月持续高频 commit）
+- 686 forks，社区fork率高，说明有相当开发者正在基于此开发自己的交易工具
+- 支持 MCP reasoning 和 Swarm 架构，具备多智能体协同能力</p>
 <p><strong>星数/增长：</strong>
-15.9k stars | 近30天增长约 10.2k</p>
+3.2k stars | v0.1.5 shadow account + Trade Journal Analyzer 最新版</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/RightNow-AI/openfang" target="_blank" rel="noopener">https://github.com/RightNow-AI/openfang</a></p>
+<a href="https://github.com/HKUDS/Vibe-Trading" target="_blank" rel="noopener">https://github.com/HKUDS/Vibe-Trading</a></p>
 <hr>
-<h3>claude-octopus — 多模型协同编码助手</h3>
-<p><strong>一句话描述</strong>：将最多 8 个 AI 模型组队投入每个编码任务，4阶段结构化开发流程实现质量门禁，本周 v9.29.3 修复 Windows 路径兼容性问题。</p>
+<h3>simstudioai/sim — 下一代 AI 工作流编排平台</h3>
+<p><strong>一句话描述</strong>：面向 AI Agent 的中心编排层，支持 React/TypeScript/AI.nextjs，无代码到 low-code 的灵活覆盖。</p>
 <p><strong>背景与原理：</strong>
-claude-octopus 是一个 Claude Code 插件，本质上是一个"AI 研发团队模拟器"。它将不同角色的模型分配给不同任务：architect、strategist 用 Claude Opus（擅长架构设计），code-reviewer 用 GPT-5.4（擅长发现边缘 case），implementer 用另一个模型。不同类型的任务（研究、问题定位、结构性审查）并行或串行执行，最终通过 75% 共识质量门禁才允许输出。v9.29 版本后默认将 architect 角色分配给 Claude Opus 4.7（SWB-Pro 64.3，MCP-Atlas +9.2）。</p>
+sim 是 simstudioai 推出的 AI 工作流编排平台，定位为"AI 劳动力的中心智能层"。它允许用户构建、部署和编排 AI Agent，支持从低代码到全代码的灵活工作流设计。项目基于 React + TypeScript，提供了现代化的 Web 界面。</p>
 <p><strong>核心创新点：</strong>
-- 模型多样性路由：同一任务同时调度多个模型，从不同角度分析，取多数意见作为最终结论
-- 四阶段结构化流程：Discover（探索）→ Define（定义）→ Develop（开发）→ Deliver（交付），每阶段有明确产出物和验收标准
-- 30+ 内置指令覆盖全生命周期：review、debug、extract、deck、docs、schedule、sentinel、optimize 等，一键切换场景
-- Windows 路径修复：v9.29.3 解决了异步 PID 跟踪在 Windows 环境下的兼容性问题</p>
+- Low-code/no-code 编排：通过可视化界面设计 AI 工作流，降低 AI 应用开发门槛
+- 支持 Gemini、OpenAI、Anthropic、DeepSeek 等多模型接入
+- 集成自动化能力，支持定时触发、事件驱动和多 Agent 协同
+- 面向企业场景，支持多租户和团队协作</p>
 <p><strong>实际意义：</strong>
-claude-octopus 解决的是"单个模型视野盲区"问题。每个模型都有自己的认知死角——Claude 可能在架构层面精准但漏掉边界条件，GPT 在边缘情况覆盖上更强但架构设计偏弱。通过让多个模型互相审查，它在实质上把 Code Review 流程自动化了。对于需要高可靠性代码的团队（如基础设施、安全敏感场景），这是一个值得关注的工具。</p>
+为 AI 应用开发者提供了比 LangChain 更轻量、更可视化的替代方案。传统 LangChain偏代码导向，sim 则提供了"拖拽即用"的体验，适合需要快速原型验证的企业 AI 应用团队。</p>
 <p><strong>取得的突破：</strong>
-- GitHub stars 快速增长（具体数值未公开披露，从 Fork 数 284 推算应达到数千）
-- 211 次 release，版本迭代极为频繁，近一周内就有多次 patch 更新
-- v9.29.0 基准刷新后，architect 角色在 SWE-bench Pro 达 64.3，在 MCP-Atlas 工具使用提升 9.2 个百分点</p>
+- 28k stars（适中规模，不属超大流量项目）
+- 2026年5月1日刚更新，说明维护活跃
+- 支持多模态对话和 Agent 编排</p>
+<p><strong>星数/增长：</strong>
+28k stars | 2026-05-01 刚更新</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/nyldn/claude-octopus" target="_blank" rel="noopener">https://github.com/nyldn/claude-octopus</a></p>
+<a href="https://github.com/simstudioai/sim" target="_blank" rel="noopener">https://github.com/simstudioai/sim</a></p>
 <hr>
-<h3>future-agi — 开源 LLM/Agent 评测与观测平台</h3>
-<p><strong>一句话描述</strong>：来自西安交通大学团队的评测框架，支持 100+ LLM 提供商和 50+ Agent 框架，提供跟踪、评测、数据集、网关、护栏五位一体能力。</p>
+<h3>OpenViking — 面向 AI Agent 的上下文数据库</h3>
+<p><strong>一句话描述</strong>：用文件系统范式统一管理 Agent 的 memory、resources 和 skills，支持分层上下文传递和自进化。</p>
 <p><strong>背景与原理：</strong>
-future-agi 将 AI 系统评测从"跑分榜单"升级为"完整可观测性平台"。它的设计理念借鉴了生产级微服务监控的思路：在实际部署环境中追踪每个 AI 请求的输入、输出、中间状态；用标准化 evals 集定期评估模型质量；用 guardrail 扫描检测输出风险。整个平台分为 traceAI（零配置 OpenTelemetry 追踪）、ai-evaluation（50+ 评测指标）、futureagi（平台 SDK）、agent-opt（提示词优化算法，含 GEPA、PromptWizard 等 6 种）、simulate-sdk（语音智能体仿真）五大模块。</p>
+OpenViking 由火山引擎（字节系）开发，是专为 AI Agent 设计的上下文管理系统。核心洞察是：当前 Agent 的 memory、resources、skills 分散在不同地方，缺乏统一抽象。OpenViking 用类文件系统的目录结构来组织这些上下文，支持分层传递和自动迭代进化。</p>
 <p><strong>核心创新点：</strong>
-- 零配置 instrumentation：pip install fi-instrumentation-otel 即可接入 50+ AI 框架，无需修改业务代码
-- 6 种提示优化算法集成：GEPA（基于梯度嵌入的提示分析）、PromptWizard（自动提示词搜索）等，开源领域罕见
-- 语音智能体仿真：通过 LiveKit + Silero VAD 模拟真实用户与语音 Agent 交互，在真实部署前发现 ASR/VAD/LLM 链路问题
-- 支持自托管：所有组件均可私有部署，适合金融、医疗等数据敏感行业</p>
+- 文件系统范式：所有上下文（memory、resources、skills）组织为目录结构，类 Unix 文件系统语义
+- 分层上下文传递：Agent 在不同任务阶段自动获取相关上下文，支持递归检索
+- 自进化 Session 管理：每次 session 结束时自动触发 memory 提取，更新 User/Agent 目录
+- 支持 Kimi、GLM、OpenAI Codex、Ollama 等多种 VLM/Embedding provider</p>
 <p><strong>实际意义：</strong>
-future-agi 解决的是"AI 系统上线后缺乏可观测性"的问题。传统监控系统不了解 AI 推理的内部状态，出了问题只能靠日志盲猜。它的 traceAI 模块让每个 AI 调用都有完整的调用链记录，ai-evaluation 让模型升级有量化依据，agent-opt 让提示词调优不再是玄学。对于正在从"AI 实验"走向"AI 生产"的团队，这是一个工程友好度极高的工具。</p>
+解决了 Agent 开发中"上下文管理"这一核心工程难题。当 Agent 需要跨 session 保持记忆、积累经验时，OpenViking 提供了开箱即用的基础设施。对 OpenClaw 等个人 AI 助手框架有直接价值。</p>
+<p><strong>取得的突破：</strong>
+- 开源项目，获得火山引擎背书，有企业级支持背景
+- 支持多 provider，兼容国内主流模型生态（Kimi、GLM 等）
+- 已与 OpenClaw 集成，文档中有专门指引</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/future-agi/future-agi" target="_blank" rel="noopener">https://github.com/future-agi/future-agi</a></p>
+<a href="https://github.com/volcengine/OpenViking" target="_blank" rel="noopener">https://github.com/volcengine/OpenViking</a></p>
 <hr>
-<h3>DeepTutor — Agent 原生个性化学习助手</h3>
-<p><strong>一句话描述</strong>：香港大学 HKUDS 团队推出的 AI 辅导框架，集成 Co-Writer、TutorBot、Guided Learning 等多模块，v1.0.0-beta.4 完善了嵌入进度追踪与跨平台依赖修复。</p>
+<h3>OpenCowork — 开源跨平台多智能体协作桌面平台</h3>
+<p><strong>一句话描述</strong>：开源版 Claude Cowork，支持 Windows/macOS/Linux，让 AI 真正进入本地桌面工作流。</p>
 <p><strong>背景与原理：</strong>
-DeepTutor 基于"知识建构主义"学习理论设计，强调 AI 辅导不应是单向灌输，而应是引导学习者主动建构知识。其架构分为三个核心模块：TutorBot 负责苏格拉底式启发提问，Co-Writer 协助写作过程中的迭代反馈，Guided Learning 提供结构化学习路径。技术层面引入"Agent-native"设计——所有工具调用均通过 SolveToolRuntime 抽象，支持 deep_solve / deep_research 的 KB-attached 检索增强，KB 不存在时主动短路而非降级到非结构化检索。</p>
+OpenCowork 是 AIDotNet 团队开源的跨平台桌面应用，定位为 Claude Cowork 的开源替代方案。它基于 Electron 架构，实现了三进程安全隔离：主进程（协调）、渲染进程（UI）、工作进程（AI 执行），兼顾安全性和功能性。</p>
 <p><strong>核心创新点：</strong>
-- Agent-native 架构重构：从 0.6.0 的 RAG pipeline 演 进到 1.0 的 Tools + Capabilities 插件模型，约 200k 行代码重写
-- 多模态知识库：支持 TutorBot 的会话记忆、Co-Writer 的文档版本、Guided Learning 的学习进度持久化
-- 全面中文国际化：1.0-beta.2 版本已完成中文 i18n，并加入 Thai README
-- 跨平台依赖修复：v1.0.0-beta.4 修复了 MIME 验证与 rate-limit retry 逻辑，确保嵌入追踪在生产环境稳定运行</p>
+- 完整的多 Agent 协作桌面平台：支持多窗口、多 Agent 并行
+- 本地工具集成：AI 能直接调用本地文件、终端、浏览器
+- 团队协作支持：支持 Workspace 概念，适合团队共享 AI 工作流
+- 支持 Codex-Manager 插件生态</p>
 <p><strong>实际意义：</strong>
-DeepTutor 在学习类 AI 工具中找到了一个独特的定位：既不是通用问答机器人，也不是题库刷题机，而是通过引导式对话让学习者真正理解知识。这与 Quizlet、Duolingo 等工具的"记忆强化"路线有本质区别。对于教育科技公司或高校研究团队，DeepTutor 的架构提供了可复用的开源基底。</p>
+Cowork 类产品通常依赖闭源云服务，OpenCowork 为需要本地部署、数据留本的企业和开发者提供了可选方案。对比 OpenClaw，OpenCowork 侧重桌面 GUI 体验而非终端/TUI，体现了"AI 操作系统"赛道的多元分化。</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/HKUDS/DeepTutor" target="_blank" rel="noopener">https://github.com/HKUDS/DeepTutor</a></p>
+<a href="https://github.com/AIDotNet/OpenCowork" target="_blank" rel="noopener">https://github.com/AIDotNet/OpenCowork</a></p>
 <hr>
     </div>
     <div class="page-footer">
