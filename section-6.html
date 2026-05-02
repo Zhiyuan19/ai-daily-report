@@ -495,22 +495,28 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
             <h1>⑥ 板块洞察</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年05月02日</div>
+            <div class="meta-item"><span class="dot"></span>2026年05月03日</div>
             <div class="meta-item"><span class="dot"></span>板块 6 / 6</div>
         </div>
     </div>
     <div class="content-section">
 <h2>⑥ 板块洞察</h2>
-<h3>AI 编程助手：从"20% 写代码"到"80% 写代码"的范式拐点</h3>
-<p><strong>Greg Brockman 透露的数据值得记录：</strong> AI 编程工具在一个月内从编写 20% 的代码跃升至 80%。这不是增量改进，而是结构性转变——AI 从"副驾驶"变成了"主驾驶"。</p>
-<p>这一拐点的背后有三重驱动力：</p>
-<p><strong>第一，模型能力的跃升。</strong> Codex 0.128.0 内置的 Ralph 循环++让 Agent 能够自主维持目标状态，在用户未输入指令时主动推进任务。这意味着 AI 不再需要"每次一个指令"的喂养模式，而是能够处理"我要做一个 XX 功能"这类模糊意图，自己拆解步骤、自己执行、自己反思。</p>
-<p><strong>第二，多 Agent 协作架构的成熟。</strong> tldraw 的 Fairies 展示了另一种范式：多个 AI 智能体以空间化方式出现在画布上，展示状态、协商分工、自动选出 leader 并委派任务。这种"可见的协作"比隐藏在侧边栏的单点对话更适合复杂长任务。</p>
-<p><strong>第三，工具生态的完善。</strong> oh-my-pi（Rust/TUI）、OpenCowork（跨平台桌面）、OpenViking（上下文管理）这些开源项目，正在解决 AI 编程工具的基础设施问题——可靠的工具调用、本地执行、跨 session 记忆。这些都是 AI 编程从演示走向生产的必备条件。</p>
-<p><strong>但裂缝也在显现：</strong> OpenAI 坚持"人工必须 sign off 所有合并的代码"，Anthropic 的 Claude Security 也在强调代码审查——这说明行业对 AI 生成代码的可靠性仍有戒心。而被篡改的 PyPI <code>lightning</code> 包则提醒，AI 编程工具的供应链安全已经成为真实威胁。</p>
-<p><strong>对开发者而言：</strong> 2026年，学会"指挥 AI"比"自己写代码"更重要。掌握任务分解、质量审核、上下文管理的技能，正在成为比 Python/JS 更核心的工程能力。AI 不会取代开发者，但会用 AI 的开发者会取代不会用的。</p>
+<h3>Agent基础设施竞争白热化：大厂ALL IN智能体运行时的背后逻辑</h3>
+<p><strong>2026年5月的AI竞争，已从"哪个模型更聪明"悄然转移到"哪个Agent运行时更好用"。</strong></p>
+<p>过去一周，几个关键信号集中爆发：Anthropic的Claude Security将安全扫描能力直接集成到Agent执行流程中，OpenAI的Codex扩张为超级App（内置90+插件+浏览器+记忆），Mistral的Vibe 2.0将编码Agent搬上云端实现24小时不间断运行，Google DeepMind的AMS则专注于验证Agent输入输出的安全性。</p>
+<p>这些看似零散的动作，背后有共同的逻辑：<strong>大厂正在抢占"AI Agent操作系统"的生态位。</strong></p>
+<p><strong>为什么是现在？</strong>
+2025年末到2026年初，基础模型的竞争已基本定型——GPT-5.4、Claude Opus 4.6、Gemini 3.1 Pro、Grok 4.3在主流评测基准上的差距已收窄至几个百分点。对于下游应用开发者来说，选哪个模型不再是核心决策，核心决策变成了"如何让AI Agent稳定、可预测、规模化地完成任务"。</p>
+<p>这催生了Agent基础设施的三个分层竞争：</p>
+<p><strong>第一层：Agent执行框架。</strong> LangChain、LlamaIndex、AutoGen、OpenClaw等框架提供的是Agent的"组装流水线"。谁能让开发者更高效地组合工具、记忆和子智能体，谁就能占据生态入口。</p>
+<p><strong>第二层：Agent运行时（Runtime）。</strong> 这是当前最激烈的战场。Claude Code、OpenAI Codex、Mistral Vibe的核心竞争不再是对话能力，而是：持久化执行状态、人在回路（Human-in-the-loop）的最佳切入点、跨会话记忆管理、实时安全监控。Mistral Vibe的"远程Agent+会话迁移"本质上是把"AI永远在线"做成了产品。</p>
+<p><strong>第三层：Agent安全与可观测性。</strong> 当Agent在企业环境中自主执行高风险操作（写代码、审批流程、访问客户数据）时，安全和可审计性成为刚需。Anthropic的Claude Security和DeepMind的AMS分别从不同角度切入这一需求——前者做运行时防护，后者做模型层验证。</p>
+<p><strong>中国市场的特殊性。</strong>
+在国内，OpenClaw已形成独特生态：百度、腾讯、阿里、字节均基于OpenClaw架构发布了企业级Agent产品（腾讯"龙虾管家"、飞书aily、字节Coze等），形成了独特的"龙虾生态"。据报道，67%的中国工业企业和34%的美国企业已部署生产级AI Agent——中国在企业Agent采纳率上已领先美国。</p>
+<p><strong>对开发者的建议。</strong>
+当前进入Agent基础设施赛道的窗口期正在关闭，但特定垂直领域仍有空间：特定行业的Agent评估工具、Agent可解释性产品、跨框架的Agent编排中间件，以及针对中小企业的低门槛Agent部署平台。对企业而言，核心决策不是"选哪个大模型"，而是"我们的AI Agent需要多少人工监督"——这个问题的答案直接决定了基础设施选型和成本结构。</p>
 <hr>
-<p><em>数据来源：GitHub Trending | BestBlogs RSS | Tavily Search | 各官方博客 | 发布时间：2026-05-02</em></p>
+<p><em>数据来源：GitHub Trending | BestBlogs RSS | Tavily Search | Anthropic Blog | OpenAI Blog | Google DeepMind | Mistral AI | 通义 | MiniMax | 阶跃星辰 | 发布时间：2026-05-03</em></p>
     </div>
     <div class="page-footer">
     <a class="footer-link" href="section-5.html">← 上一板块</a>
