@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>④ 开源工具 & 模型更新（6个） — AI 技术情报日报</title>
+<title>④ 开源工具 & 模型更新（5个） — AI 技术情报日报</title>
 <style>
 
 :root {
@@ -492,86 +492,50 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">⚡</div>
-            <h1>④ 开源工具 & 模型更新（6个）</h1>
+            <h1>④ 开源工具 & 模型更新（5个）</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年05月02日</div>
+            <div class="meta-item"><span class="dot"></span>2026年05月03日</div>
             <div class="meta-item"><span class="dot"></span>板块 4 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>④ 开源工具 &amp; 模型更新（6个）</h2>
-<blockquote>
-<p>含国际+国内开源项目</p>
-</blockquote>
+<h2>④ 开源工具 &amp; 模型更新（5个）</h2>
 <hr>
-<h3>Cisco Model Provenance Kit — AI 模型族谱溯源工具</h3>
-<p><strong>一句话描述</strong>：Cisco 开源模型族谱追踪工具，通过"指纹"识别模型间的血缘关系。</p>
-<p><strong>背景与原理：</strong>
-随着模型微调、蒸馏、合并、再打包的普及，模型文件已从"静态资产"演变为"动态演化体"，追踪来源越来越难。Cisco 的 Model Provenance Kit 通过三类信号生成模型指纹：① 元数据信号；② Tokenizer 相似度；③ 权重级身份信号（embedding 几何、正规化层、能量分布、直接权重比较）。</p>
-<p><strong>核心创新：</strong>
-- compare 模式：比较两个模型的族谱，识别共享血统
-- scan 模式：给定模型，扫描出数据库中最接近的族谱
-- Cisco 在 Hugging Face 上发布了基础模型指纹数据集，供社区贡献</p>
-<p><strong>实际意义：</strong>
-在 AI 供应链安全日益重要的背景下（参见近期篡改 PyPI <code>lightning</code> 包事件），Model Provenance Kit 为企业提供了验证模型来源、识别被篡改模型的能力。</p>
+<h3>Craft Agents — Lukilabs开源Agent框架（Apache 2.0许可）</h3>
+<p><strong>一句话描述：</strong> 2026年5月2日新发布，模块化AI Agent开发框架，支持透明化、社区驱动的智能体构建</p>
+<p><strong>深度解读：</strong>
+Craft Agents由Lukilabs发布，GitHub Trending当日登顶，采用Apache 2.0许可证。框架核心设计理念是"可组合性"和"透明性"——不同于黑盒式Agent框架，Craft Agents的每个组件均有完整源码和文档，支持开发者深度定制和审计。在当前Agent基础设施竞争日趋激烈的背景下，Apache 2.0许可使商业使用零法律风险，对企业采用有较强吸引力。</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/cisco/provenance-kit" target="_blank" rel="noopener">https://github.com/cisco/provenance-kit</a></p>
+<a href="https://github.com/lukilabs/craft-agents-oss" target="_blank" rel="noopener">https://github.com/lukilabs/craft-agents-oss</a></p>
 <hr>
-<h3>Featherless.ai — 开源模型无服务器推理平台（$20M 融资）</h3>
-<p><strong>一句话描述</strong>：专注开源模型的无服务器推理平台，Hugging Face 最快增长的推理合作伙伴。</p>
-<p><strong>背景与原理：</strong>
-Featherless.ai 成立于2024年，定位为"中立推理层"，帮助企业无需锁定单一专有云或硬件即可运行开源模型。平台托管超过 30,000 个开源模型，覆盖语言、视觉和音频，在 Hugging Face 上被评为最快增长的推理合作伙伴。</p>
-<p><strong>核心创新：</strong>
-- 支持多种开源模型的一键部署：Llama、Mistral、Qwen、Phi 等
-- 跨云中立：不在 AWS/GCP/Azure 间偏向任何一方
-- 刚获 $20M 融资，用于扩大全球基础设施和推出专业模型市场</p>
+<h3>Superpowers — AI编程Agent的方法论与技能框架</h3>
+<p><strong>一句话描述：</strong> "别再只做Chat，使用技能和方法论让AI编程可预测可重复"</p>
+<p><strong>深度解读：</strong>
+Superpowers由知名开发者obra创建，提出了AI编程Agent的系统化方法论框架。核心贡献是一套可组合的"技能"（Skills）体系和基础性初始指令设计，解决当前AI编程工具"靠运气"的随机性问题。开发者可通过导入预定义技能集合，让AI Agent在代码生成、测试编写、文档生成等不同子任务上调用对应技能，实现稳定的工程输出质量。</p>
 <p><strong>链接：</strong>
-<a href="https://featherless.ai" target="_blank" rel="noopener">https://featherless.ai</a></p>
+<a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">https://github.com/obra/superpowers</a></p>
 <hr>
-<h3>美团 LongCat-AudioDiT — 端到端音频生成模型</h3>
-<p><strong>一句话描述</strong>：抛弃梅尔谱中间表示，直接在波形潜空间进行扩散的文本转语音模型。</p>
-<p><strong>背景与原理：</strong>
-传统 TTS 引擎依赖多阶段流程：预测中间声学特征（如梅尔频谱）→ 神经声码器将其转换为波形。这种"跨空间传话"会累积误差，导致高保真音色丢失。LongCat-AudioDiT 彻底抛弃这一范式，在波形潜空间直接进行端到端扩散生成。</p>
-<p><strong>核心创新：</strong>
-- 零样本音色克隆上限突破：说话人相似度指标提升至 0.818
-- 直接生成波形，无中间声学特征损失
-- 已开源，供社区研究和改进</p>
+<h3>PhyCo — 物理可控视频生成模型（HuggingFace Papers）</h3>
+<p><strong>一句话描述：</strong> 通过视觉-语言模型反馈将物理规律嵌入视频扩散模型，实现物理一致性生成</p>
+<p><strong>深度解读：</strong>
+PhyCo是HuggingFace近期发布的重要论文，提出了物理感知视频生成的新范式。传统视频扩散模型生成的物体运动常常违反物理定律（物体穿墙、液体不遵循重力等），PhyCo通过大规模物理标注数据集和视觉-语言模型引导的物理一致性微调，解决了这一问题。在Physics-IQ基准上，PhyCo显著超越现有最强基线，人类评估也确认其在物理属性控制上的优越性。该技术对机器人仿真、自动驾驶合成数据生成等场景有直接价值。</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/Meituan-AutoAI/LongCat-AudioDiT" target="_blank" rel="noopener">https://github.com/Meituan-AutoAI/LongCat-AudioDiT</a></p>
+<a href="https://huggingface.co/papers/2604.28169" target="_blank" rel="noopener">https://huggingface.co/papers/2604.28169</a></p>
 <hr>
-<h3>蚂蚁 Ling-2.6-flash — 百灵大模型开源 104B MoE 模型</h3>
-<p><strong>一句话描述</strong>：总参104B/激活7.4B 的 instruct 模型，提供 BF16/FP8/INT4 多版本。</p>
-<p><strong>背景与原理：</strong>
-蚂蚁集团百灵大模型团队宣布开源 Ling-2.6-flash，这是两周前以匿名身份 Elephant Alpha 登陆 OpenRouter 的模型正式开源版本。该模型是总参数量 104B、激活参数 7.4B 的 MoE instruct 模型，两周内根据开发者反馈持续优化。</p>
-<p><strong>核心创新：</strong>
-- 多精度版本灵活选择：BF16（高精度）、FP8（均衡）、INT4（轻量）
-- 中英文自然切换能力优化，适配主流 Coding 框架
-- 已通过 OpenRouter 积累开发者反馈，社区基础扎实</p>
+<h3>OpenAkita — 1.7k星的多智能体AI助手框架</h3>
+<p><strong>一句话描述：</strong> 开源多智能体协作框架，内置AgentOrg组织编排引擎，支持可视化设计AI公司架构</p>
+<p><strong>深度解读：</strong>
+OpenAkita是一个成熟的多智能体AI助手框架，总星1.7k，持续活跃更新。其特色在于AgentOrg组织编排引擎，允许开发者用GUI可视化管理AI Agent团队架构，每个Agent可视为虚拟公司中的员工，有明确角色分工和协作流程。框架支持Skill扩展、记忆管理和多模态交互，已被多个日本和东南亚开发者社区实际采用。</p>
 <p><strong>链接：</strong>
-<a href="https://huggingface.co/antsyun/Ling-2.6-flash" target="_blank" rel="noopener">https://huggingface.co/antsyun/Ling-2.6-flash</a></p>
+<a href="https://github.com/openakita/openakita" target="_blank" rel="noopener">https://github.com/openakita/openakita</a></p>
 <hr>
-<h3>科大讯飞星火 X2-Flash — 基于华为昇腾 910B 的 MoE 模型</h3>
-<p><strong>一句话描述</strong>：30B MoE，总参数量，256K 上下文，首次在国产算力上实现 DSA+MTP 联合训练。</p>
-<p><strong>背景与原理：</strong>
-星火 X2-Flash 是科大讯飞发布的最新旗舰模型，MoE 架构，总参数 30B，最大支持 256K 上下文。该模型基于华为昇腾 910B 集群训练，通过亲和国产芯片的算子和分布式训练策略，将训练效率从同规模 A800 集群的 20% 提升至 90%。</p>
-<p><strong>核心创新：</strong>
-- 首次在国产算力上实现 DSA（稀疏注意力）+ MTP（多 token 预测）联合训练
-- 上下文拓展至 256K，解决智能体长文本在国产芯片训练效率低的问题
-- 智能体、代码等核心能力大幅提升</p>
+<h3>Future AGI — 开源端到端AI评估平台（50+评估指标）</h3>
+<p><strong>一句话描述：</strong> 专注于AI Agent评测的开源平台，支持50+指标、内置LLM网关和18+Guardrails适配器</p>
+<p><strong>深度解读：</strong>
+Future AGI是一个专注于AI系统评估的开源平台，目标用户是AI Agent开发者和AI Safety研究员。与传统评测工具不同，它不只做benchmark排名，而是提供完整的评测工作流：包括数据管理、实验追踪、指标可视化、Guardrails合规检查等。平台内置100+ LLM提供商支持，18+内容安全适配器，对中文模型支持较好，国内开发者可直接使用。</p>
 <p><strong>链接：</strong>
-<a href="https://xinghuo.xfyun.cn" target="_blank" rel="noopener">https://xinghuo.xfyun.cn</a></p>
-<hr>
-<h3>Mistral Voxtral TTS — 开源文本转语音模型</h3>
-<p><strong>一句话描述</strong>：Mistral 首个开源权重 TTS 模型，4B 参数支持9种语言，3秒参考音频即可克隆声音。</p>
-<p><strong>背景与原理：</strong>
-Voxtral TTS 是 Mistral AI 的首个文本转语音开源模型，基于 Ministral 3B 架构构建，参数量仅 40 亿，可在消费级硬件（笔记本、边缘设备）运行。官方表示其"前沿级"性能在人类听力测试中匹配或超越领先商业系统。</p>
-<p><strong>核心创新：</strong>
-- 开源权重：可完全自托管，数据不离开自有基础设施
-- 9种语言支持，本地适应新声音仅需3秒参考音频
-- API 成本 $0.016/千字符，或在 Mistral Studio 免费测试</p>
-<p><strong>链接：</strong>
-<a href="https://mistral.ai/news/voxtral-tts" target="_blank" rel="noopener">https://mistral.ai/news/voxtral-tts</a></p>
+<a href="https://github.com/future-agi/future-agi" target="_blank" rel="noopener">https://github.com/future-agi/future-agi</a></p>
 <hr>
     </div>
     <div class="page-footer">
