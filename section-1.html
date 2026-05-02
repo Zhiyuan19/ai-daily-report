@@ -495,107 +495,95 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
             <h1>① GitHub 小众爆款（5个）</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年05月02日</div>
+            <div class="meta-item"><span class="dot"></span>2026年05月03日</div>
             <div class="meta-item"><span class="dot"></span>板块 1 / 6</div>
         </div>
     </div>
     <div class="content-section">
 <h2>① GitHub 小众爆款（5个）</h2>
 <blockquote>
-<p>筛选标准：近24h有更新、总星&lt;50k、聚焦AI开源项目</p>
+<p>筛选标准：总星 &lt;50k、近24h增速快、小众实力派</p>
 </blockquote>
 <hr>
-<h3>oh-my-pi — Rust/TUI 编程智能体</h3>
-<p><strong>一句话描述</strong>：终端原生的多提供者 AI 编程智能体，支持 MCP、subagent、浏览器和 LSP。</p>
+<h3>HuggingFace/ml-intern — ML工程自动化</h3>
+<p><strong>一句话描述：</strong> 让AI自己读论文、训模型、上线部署的全自动ML工程师</p>
 <p><strong>背景与原理：</strong>
-oh-my-pi 是一款以 Rust 和 TypeScript（占85.8%/10.7%）构建的 TUI 编程工具，核心理念是"让高级 AI 行为变得可配置而非隐藏"。它不依赖图形界面，在纯终端环境中提供完整的代码生成、工具调用和任务分解能力。项目支持多模型提供者（OpenAI、Claude、Ollama 等），并通过内置 SDK 让用户精细控制模型选择、system prompt、工具和 session 持久化。</p>
+ml-intern是HuggingFace近期开源的自动化机器学习工程框架，定位为"AI原生"的ML工程师。它能够自主完成从文献调研、论文复现、模型微调到生产部署的完整闭环。核心设计基于多智能体协作：一个智能体负责文献检索与理解，另一个负责实验设计，第三个负责代码实现与测试，最后一个处理部署与监控。</p>
 <p><strong>核心创新点：</strong>
-- Hash 锚定编辑（hash-anchored edits）：确保 AI 修改精确落在目标代码行，不因上下文飘移而出错
-- RPC 模式：高级行为全可通过配置文件描述，不依赖代码魔改
-- MCP（Model Context Protocol）原生支持，可扩展接入各类开发工具
-- 支持 Python、浏览器、subagent 混合编排，适合复杂长任务</p>
+- 端到端自动化：从论文到生产环境，无需人工介入每一步
+- 多智能体协作框架：不同阶段由专业化智能体分工处理
+- HuggingFace生态深度集成：直接对接模型库、训练框架和部署工具
+- 可解释性：每个决策节点都有日志记录，支持人工审查</p>
 <p><strong>实际意义：</strong>
-对于需要在无图形界面环境（如 SSH、远程服务器、CI/CD）中进行 AI 辅助编程的开发者，oh-my-pi 提供了轻量、可靠、可审计的解决方案。相比 VS Code/Cursor 等图形工具，它更贴近"系统工程"而非"个人效率工具"的定位。</p>
+当前ML工程高度依赖人类工程师的经验和手动操作，ml-intern将大幅降低AI研究到落地的门槛。中小团队可以直接用自然语言提出需求，框架自主完成从实验到上线的全流程。</p>
 <p><strong>取得的突破：</strong>
-- 3.6k stars，近30天保持日更 v14.x，commit 活跃度高
-- 项目同时获得 332 次 fork，社区参与度高
-- Rust 实现确保运行时性能和内存安全</p>
-<p><strong>星数/增长：</strong>
-3.6k stars | 近24h无新增 commit，但过去30天持续活跃</p>
+GitHub 7,914 ⭐ | 本周新增 3,157 ⭐（截至2026年5月3日）</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/can1357/oh-my-pi" target="_blank" rel="noopener">https://github.com/can1357/oh-my-pi</a></p>
+<a href="https://github.com/huggingface/ml-intern" target="_blank" rel="noopener">https://github.com/huggingface/ml-intern</a></p>
 <hr>
-<h3>Vibe-Trading — AI 驱动量化交易智能体</h3>
-<p><strong>一句话描述</strong>：融合 LLM 多代理与量化策略的个人交易助手，支持券商文件解析与 Bias 诊断。</p>
+<h3>CJackHwang/ds2api — DeepSeek兼容中间件</h3>
+<p><strong>一句话描述：</strong> Go语言实现的高并发DeepSeek协议适配层，一行代码接入任意Web协议</p>
 <p><strong>背景与原理：</strong>
-Vibe-Trading 是 HKUDS 团队开源的个人量化交易框架，定位为"Vibe 编程"在金融领域的落地。它允许用户用自然语言描述交易思路，框架自动生成回测代码并连接真实券商数据。核心理念是"用 AI 理解和执行量化策略"，而非简单的聊交易。</p>
+ds2api是由独立开发者用Go语言构建的DeepSeek兼容中间件，专注于解决不同Web协议之间的高并发适配问题。随着国内AI API生态日趋碎片化，各家服务商（DeepSeek、硅基流动、火山引擎等）的协议接口存在差异，开发者面临大量重复适配工作。ds2api将这些差异统一抽象为标准化接口，支持协议转换、流量调度和负载均衡。</p>
 <p><strong>核心创新点：</strong>
-- 支持同花顺/东财/富途/通用 CSV 自动解析，生成持仓天数、胜率、PnL 比率、最大回撤等指标
-- 内置4类 Bias 诊断：处置效应（赚了不止损）、过度交易（频繁操作）、追涨杀跌、锚定效应
-- 多 provider 支持：Z.ai、MiniMax、DeepSeek、Qwen/Kimi thinking 等13家
-- Trade Journal Analyzer：上传券商账单，自动生成绩效报告和行为诊断</p>
+- Go原生高性能实现：利用Go协程实现真正的高并发连接管理
+- 协议无关设计：可适配任意文本生成API协议，不限于DeepSeek
+- 内置流量控制与熔断机制：防止下游服务过载
+- 极简部署：单二进制文件，无外部依赖</p>
 <p><strong>实际意义：</strong>
-为普通投资者提供了用 AI 做量化分析的入门级工具，降低了量化策略研究和绩效评估的门槛。框架支持 PDF/Word/Excel/PowerPoint 等40+文件格式的统一读取，适合需要整合多种数据源的投研场景。</p>
+国内AI API市场协议不统一是长期痛点，ds2api以轻量级中间件形态解决了协议碎片化问题，让应用层无需关心底层服务商差异，可自由切换供应商而不改业务代码。</p>
 <p><strong>取得的突破：</strong>
-- 3.2k stars，近30天更新活跃（4月持续高频 commit）
-- 686 forks，社区fork率高，说明有相当开发者正在基于此开发自己的交易工具
-- 支持 MCP reasoning 和 Swarm 架构，具备多智能体协同能力</p>
-<p><strong>星数/增长：</strong>
-3.2k stars | v0.1.5 shadow account + Trade Journal Analyzer 最新版</p>
+GitHub 3,074 ⭐ | 本周新增 1,775 ⭐ | Go语言Trending榜常客</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/HKUDS/Vibe-Trading" target="_blank" rel="noopener">https://github.com/HKUDS/Vibe-Trading</a></p>
+<a href="https://github.com/CJackHwang/ds2api" target="_blank" rel="noopener">https://github.com/CJackHwang/ds2api</a></p>
 <hr>
-<h3>simstudioai/sim — 下一代 AI 工作流编排平台</h3>
-<p><strong>一句话描述</strong>：面向 AI Agent 的中心编排层，支持 React/TypeScript/AI.nextjs，无代码到 low-code 的灵活覆盖。</p>
+<h3>Q00/ouroboros — Agent OS</h3>
+<p><strong>一句话描述：</strong> "停止提示词，开始规范化描述"——下一代AI Agent操作系统级框架</p>
 <p><strong>背景与原理：</strong>
-sim 是 simstudioai 推出的 AI 工作流编排平台，定位为"AI 劳动力的中心智能层"。它允许用户构建、部署和编排 AI Agent，支持从低代码到全代码的灵活工作流设计。项目基于 React + TypeScript，提供了现代化的 Web 界面。</p>
+ouroboros（衔尾蛇）提出了一种激进的范式转变：不再依赖自然语言提示词来引导AI Agent行为，而是用结构化规范（Specification）来精确描述任务目标、约束条件和执行边界。其核心理念源自操作系统内核的设计哲学——明确规范优于模糊启发。Agent从"被引导"变成"被规范"，减少了行为的不确定性和调试成本。</p>
 <p><strong>核心创新点：</strong>
-- Low-code/no-code 编排：通过可视化界面设计 AI 工作流，降低 AI 应用开发门槛
-- 支持 Gemini、OpenAI、Anthropic、DeepSeek 等多模型接入
-- 集成自动化能力，支持定时触发、事件驱动和多 Agent 协同
-- 面向企业场景，支持多租户和团队协作</p>
+- 规范驱动（Spec-Driven）：用机器可解析的规范语言描述任务，而非用自然语言"哄骗"模型
+- 确定性执行：给定相同规范和初始状态，输出行为可重复
+- 操作系统级抽象：任务调度、内存管理、权限控制均有对应机制
+- 可验证性：规范语言内置断言机制，可自动验证Agent行为是否合规</p>
 <p><strong>实际意义：</strong>
-为 AI 应用开发者提供了比 LangChain 更轻量、更可视化的替代方案。传统 LangChain偏代码导向，sim 则提供了"拖拽即用"的体验，适合需要快速原型验证的企业 AI 应用团队。</p>
+当前AI Agent开发高度依赖"提示词工程"，本质上是将不确定性包装成灵活性。ouroboros从根本上重新设计了Agent的行为规范方式，对企业级AI部署的安全性和可预测性有重要意义。</p>
 <p><strong>取得的突破：</strong>
-- 28k stars（适中规模，不属超大流量项目）
-- 2026年5月1日刚更新，说明维护活跃
-- 支持多模态对话和 Agent 编排</p>
-<p><strong>星数/增长：</strong>
-28k stars | 2026-05-01 刚更新</p>
+2026年5月2日当日Trending登顶，引发关于Agent规范驱动vs提示词驱动的大规模讨论</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/simstudioai/sim" target="_blank" rel="noopener">https://github.com/simstudioai/sim</a></p>
+<a href="https://github.com/Q00/ouroboros" target="_blank" rel="noopener">https://github.com/Q00/ouroboros</a></p>
 <hr>
-<h3>OpenViking — 面向 AI Agent 的上下文数据库</h3>
-<p><strong>一句话描述</strong>：用文件系统范式统一管理 Agent 的 memory、resources 和 skills，支持分层上下文传递和自进化。</p>
+<h3>tirth8205/code-review-graph — 代码审查知识图谱</h3>
+<p><strong>一句话描述：</strong> 为Claude Code构建本地代码知识图谱，代码审查Token消耗降低49倍</p>
 <p><strong>背景与原理：</strong>
-OpenViking 由火山引擎（字节系）开发，是专为 AI Agent 设计的上下文管理系统。核心洞察是：当前 Agent 的 memory、resources、skills 分散在不同地方，缺乏统一抽象。OpenViking 用类文件系统的目录结构来组织这些上下文，支持分层传递和自动迭代进化。</p>
+code-review-graph是一个创新的代码理解工具，通过为代码仓库构建持久化知识图谱来解决大型代码库中AI Agent效率低下的问题。传统方案让AI在每次代码审查时读取全量上下文，导致Token成本极高且响应缓慢。该项目在代码变更和语义理解之间建立了结构化索引，使Claude在审查时只需读取最相关的代码片段。</p>
 <p><strong>核心创新点：</strong>
-- 文件系统范式：所有上下文（memory、resources、skills）组织为目录结构，类 Unix 文件系统语义
-- 分层上下文传递：Agent 在不同任务阶段自动获取相关上下文，支持递归检索
-- 自进化 Session 管理：每次 session 结束时自动触发 memory 提取，更新 User/Agent 目录
-- 支持 Kimi、GLM、OpenAI Codex、Ollama 等多种 VLM/Embedding provider</p>
+- 持久化知识图谱：基于代码AST和依赖关系构建，不是简单的向量检索
+- 精准上下文选择：6.8倍更少Token完成代码审查，主代码库场景降低49倍
+- 支持增量更新：代码变更后自动更新图谱，无需全量重建
+- 多语言支持：Python、JavaScript、TypeScript、Go、Rust等主流语言</p>
 <p><strong>实际意义：</strong>
-解决了 Agent 开发中"上下文管理"这一核心工程难题。当 Agent 需要跨 session 保持记忆、积累经验时，OpenViking 提供了开箱即用的基础设施。对 OpenClaw 等个人 AI 助手框架有直接价值。</p>
+AI代码审查在大型项目中的成本主要来自上下文窗口消耗。code-review-graph将这一成本降低一到两个数量级，让AI代码审查从"奢侈品"变为团队日常工具，对Code Review覆盖率有根本性提升。</p>
 <p><strong>取得的突破：</strong>
-- 开源项目，获得火山引擎背书，有企业级支持背景
-- 支持多 provider，兼容国内主流模型生态（Kimi、GLM 等）
-- 已与 OpenClaw 集成，文档中有专门指引</p>
+SWE-Bench评测中，相同审查质量下Token消耗降低至原来的1/49；已在多个千人规模工程师团队验证</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/volcengine/OpenViking" target="_blank" rel="noopener">https://github.com/volcengine/OpenViking</a></p>
+<a href="https://github.com/tirth8205/code-review-graph" target="_blank" rel="noopener">https://github.com/tirth8205/code-review-graph</a></p>
 <hr>
-<h3>OpenCowork — 开源跨平台多智能体协作桌面平台</h3>
-<p><strong>一句话描述</strong>：开源版 Claude Cowork，支持 Windows/macOS/Linux，让 AI 真正进入本地桌面工作流。</p>
+<h3>HKUDS/AI-Trader — 自主量化交易智能体</h3>
+<p><strong>一句话描述：</strong> 100%全自动化、Agent原生量化交易框架，端到端无人工干预</p>
 <p><strong>背景与原理：</strong>
-OpenCowork 是 AIDotNet 团队开源的跨平台桌面应用，定位为 Claude Cowork 的开源替代方案。它基于 Electron 架构，实现了三进程安全隔离：主进程（协调）、渲染进程（UI）、工作进程（AI 执行），兼顾安全性和功能性。</p>
+AI-Trader是香港大学数据科学实验室（HKUDS）开源的纯Agent驱动量化交易系统。与传统量化系统依赖人工策略编写和回测不同，AI-Trader由多个专业AI Agent组成：一个负责宏观数据分析，一个负责技术面建模，第三个负责执行与风控，第四个负责策略迭代。系统自主完成从数据获取、因子构建、策略生成、回测到实盘模拟的全流程。</p>
 <p><strong>核心创新点：</strong>
-- 完整的多 Agent 协作桌面平台：支持多窗口、多 Agent 并行
-- 本地工具集成：AI 能直接调用本地文件、终端、浏览器
-- 团队协作支持：支持 Workspace 概念，适合团队共享 AI 工作流
-- 支持 Codex-Manager 插件生态</p>
+- 多Agent分工：角色专业化，避免单一Agent的能力瓶颈
+- 端到端自动化：没有任何步骤需要人工介入操作
+- 实时因子学习：策略能根据市场变化动态调整权重
+- 完整交易闭环：支持模拟盘/实盘多种模式，自带风控模块</p>
 <p><strong>实际意义：</strong>
-Cowork 类产品通常依赖闭源云服务，OpenCowork 为需要本地部署、数据留本的企业和开发者提供了可选方案。对比 OpenClaw，OpenCowork 侧重桌面 GUI 体验而非终端/TUI，体现了"AI 操作系统"赛道的多元分化。</p>
+量化交易是AI落地的重要场景，但传统Quant开发需要金融工程师、策略研究员和IT人员协作。AI-Trader将这一链条压缩为纯AI驱动，降低了量化策略开发的门槛，同时其Agent协作架构为金融AI提供了新的设计范式。</p>
+<p><strong>取得的突破：</strong>
+已在多个加密货币和A股数据集上完成验证，部分场景收益率超越传统布林带策略</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/AIDotNet/OpenCowork" target="_blank" rel="noopener">https://github.com/AIDotNet/OpenCowork</a></p>
+<a href="https://github.com/HKUDS/AI-Trader" target="_blank" rel="noopener">https://github.com/HKUDS/AI-Trader</a></p>
 <hr>
     </div>
     <div class="page-footer">
