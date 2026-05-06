@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>四、国内 AI 动态 — 中国 AI 力量 — AI技术情报日报｜2026年5月5日</title>
+<title>④ 开源工具 & 模型更新（3个） — AI 技术情报日报</title>
 <style>
 
 :root {
@@ -492,135 +492,38 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">⚡</div>
-            <h1>四、国内 AI 动态 — 中国 AI 力量</h1>
+            <h1>④ 开源工具 & 模型更新（3个）</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年5月5日</div>
+            <div class="meta-item"><span class="dot"></span>2026年5月4日</div>
             <div class="meta-item"><span class="dot"></span>板块 4 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>四、国内 AI 动态 — 中国 AI 力量</h2>
-<h3>4.1 《时代》杂志2026年十大最具影响力 AI 公司：中国三席</h3>
-<p><strong>字节跳动</strong>：转型"AI 优先"科技巨头
-- AI 助手<strong>豆包</strong>周活用户突破 <strong>1.55 亿</strong>
-- 2026年2月春节期间单日 DAU 突破 1 亿，中国率先实现 AI 助手大规模普及
-- 产品覆盖聊天机器人、图像/音视频生成、云基础设施</p>
-<p><strong>阿里巴巴</strong>：全球开源 AI 核心力量
-- <strong>千问（Qwen）系列累计下载超过 10 亿次</strong>
-- 衍生超过 <strong>20 万个派生模型</strong>，成为全球最受欢迎开源模型家族之一
-- 正以开源模型领先优势打造全栈 AI 帝国</p>
-<p><strong>智谱 AI</strong>：全球大模型第一股 + 国产算力
-- 2026年1月港交所上市，股票代码 2513，IPO 估值超 511 亿港元
-- 旗舰开源模型 <strong>GLM-5</strong> 在多项基准测试中与谷歌、OpenAI、Anthropic 旗舰模型正面竞争
-- <strong>完全基于昇腾设备</strong>全流程训练，标志国产算力平台可用性
-- 同时发布 <strong>GLM-Image</strong>：基于昇腾的图像生成模型</p>
-<blockquote>
-<p>其他上榜公司：OpenAI、Anthropic、Alphabet（谷歌）、亚马逊、Meta、Mistral AI、Hugging Face</p>
-</blockquote>
+<h2>④ 开源工具 &amp; 模型更新（3个）</h2>
+<h3>Mistral Voxtral TTS — 首个混合架构开源语音克隆模型</h3>
+<p><strong>一句话描述：</strong> Mistral首个开源TTS模型，采用自回归+Flow-Matching混合架构，重新定义多语言语音克隆。</p>
+<p><strong>背景与原理：</strong>
+Voxtral是Mistral AI推出的首款文本转语音模型，采用双路径混合架构：自回归生成器负责语义内容表达，Flow-Matching网络负责声学特征生成。两个完全不同的建模范式各司其职，弥补了此前TTS模型在表达力和自然度上的不足。</p>
+<p>该模型同时发布Open Weights（Hugging Face）和API，定位为解决多语言语音合成的"表达力差距"（Expressivity Gap）。</p>
+<p><strong>链接：</strong>
+<a href="https://huggingface.co/mistralai/voxtral" target="_blank" rel="noopener">https://huggingface.co/mistralai/voxtral</a></p>
 <hr>
-<h3>4.2 月之暗面 Kimi 系列新进展</h3>
-<p><strong>创始人杨植麟 2026 GTC 演讲（3月18日）</strong>：
-- Kimi K2.5 定位"开源模型新标准"，推动硬件厂商围绕开源模型优化
-- 核心判断：AI 将更大程度主导研究，每位研究员配备大量 Token 合成新任务与环境
-- Kimi K2 Thinking：支持 200-300 步连续工具调用，是首个在复杂 Agentic 工作流中对标 Claude 4.5 Sonnet 的开源权重模型</p>
+<h3>LangGraph 2.0 — 生产级Agent编排框架重大升级</h3>
+<p><strong>一句话描述：</strong> LangChain核心团队发布LangGraph 2.0，确立三年生产经验的Agent编排标准。</p>
+<p><strong>背景与原理：</strong>
+LangGraph 2.0是LangChain旗下生产级Agent编排框架的重大版本更新，将过去三年生产环境积累的编排模式标准化。新版本引入类型安全流式处理、Deploy CLI一键部署、以及统一的Agent原语（Router/Supervisor/Subagent），终结了手工协调逻辑的混乱时代。</p>
+<p>Checkpoint-resume持久层是最大亮点，支持多日可中断Agent任务的可靠恢复，是Agent即API模式的首选参考实现。</p>
+<p><strong>链接：</strong>
+<a href="https://github.com/langchain/LangGraph" target="_blank" rel="noopener">https://github.com/langchain/LangGraph</a></p>
 <hr>
-<h3>4.3 OpenClaw「养虾」生态爆发</h3>
-<p>2026年3月，国内 8 家主流大模型厂商扎堆围绕 OpenClaw 做产品化封装：</p>
-<table>
-<thead>
-<tr>
-<th>厂商</th>
-<th>产品</th>
-<th>核心特点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>腾讯</td>
-<td>QClaw</td>
-<td>打通微信/企微/QQ/飞书/钉钉五大通道</td>
-</tr>
-<tr>
-<td>阿里</td>
-<td>JVSClaw + JVS Book + JVS Box</td>
-<td>飞书深度适配，延伸至笔记本/迷你主机</td>
-</tr>
-<tr>
-<td>百度</td>
-<td>龙虾全家桶</td>
-<td>云端+手机+桌面全覆盖</td>
-</tr>
-<tr>
-<td>智谱</td>
-<td>AutoClaw（澳龙）</td>
-<td>真·一键安装，预置 50+ Skills</td>
-</tr>
-<tr>
-<td>科大讯飞</td>
-<td>AstronClaw</td>
-<td>沙箱隔离，接入星火/Kimi/GLM 多模型</td>
-</tr>
-<tr>
-<td>字节</td>
-<td>豆包 Agent</td>
-<td>集成抖音生态</td>
-</tr>
-</tbody>
-</table>
-<p><strong>意义</strong>：Agent 产品化门槛被压缩到"几十秒安装"，从极客圈层走向大众工具。</p>
-<hr>
-<h3>4.4 国产 AI 芯片上市潮</h3>
-<p>2025年12月至2026年初，多家国产 AI 芯片企业密集上市：</p>
-<table>
-<thead>
-<tr>
-<th>公司</th>
-<th>上市地</th>
-<th>时间</th>
-<th>背景</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>摩尔线程</td>
-<td>科创板</td>
-<td>2025年12月</td>
-<td>国产 GPU 代表</td>
-</tr>
-<tr>
-<td>沐曦股份</td>
-<td>科创板</td>
-<td>2025年12月</td>
-<td>通用 GPU</td>
-</tr>
-<tr>
-<td>壁仞科技</td>
-<td>港交所</td>
-<td>2025年12月</td>
-<td>"港股国产 GPU 第一股"</td>
-</tr>
-<tr>
-<td>天数智芯</td>
-<td>港交所</td>
-<td>2026年1月8日</td>
-<td>—</td>
-</tr>
-<tr>
-<td>燧原科技</td>
-<td>科创板</td>
-<td>已完成辅导</td>
-<td>—</td>
-</tr>
-<tr>
-<td>昆仑芯（百度）</td>
-<td>赴港 IPO</td>
-<td>启动中</td>
-<td>—</td>
-</tr>
-</tbody>
-</table>
-<p><strong>意义</strong>：国产 AI 算力从"可用"到"规模化落地"的临界点正在到来。</p>
+<h3>Sakana AI KAME — 实时语音到语音翻译架构</h3>
+<p><strong>一句话描述：</strong> Sakana AI推出KAME，一种 Tandem Speech-to-Speech 架构，实现实时将LLM知识注入语音流。</p>
+<p><strong>背景与原理：</strong>
+KAME是Sakana AI发布的创新语音翻译模型，采用Tandem架构——与传统的"语音→文本→LLM推理→文本→语音"级联pipeline不同，KAME在语音流中实时注入LLM知识，实现真正的端到端语音理解和生成，延迟大幅降低。</p>
+<p>该架构特别适合实时对话和跨语言沟通场景，为语音AI应用开辟了新路径。</p>
+<p><strong>链接：</strong>
+<a href="https://github.com/SakanaAI/KAME" target="_blank" rel="noopener">https://github.com/SakanaAI/KAME</a></p>
 <hr>
     </div>
     <div class="page-footer">
