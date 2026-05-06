@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>④ 开源工具 & 模型更新（3个） — AI 技术情报日报</title>
+<title>④ 开源工具 & 模型更新（≥3个） — AI技术情报日报：2026年5月6日</title>
 <style>
 
 :root {
@@ -492,39 +492,21 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">⚡</div>
-            <h1>④ 开源工具 & 模型更新（3个）</h1>
+            <h1>④ 开源工具 & 模型更新（≥3个）</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年5月4日</div>
+            <div class="meta-item"><span class="dot"></span>2026年5月6日</div>
             <div class="meta-item"><span class="dot"></span>板块 4 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>④ 开源工具 &amp; 模型更新（3个）</h2>
-<h3>Mistral Voxtral TTS — 首个混合架构开源语音克隆模型</h3>
-<p><strong>一句话描述：</strong> Mistral首个开源TTS模型，采用自回归+Flow-Matching混合架构，重新定义多语言语音克隆。</p>
-<p><strong>背景与原理：</strong>
-Voxtral是Mistral AI推出的首款文本转语音模型，采用双路径混合架构：自回归生成器负责语义内容表达，Flow-Matching网络负责声学特征生成。两个完全不同的建模范式各司其职，弥补了此前TTS模型在表达力和自然度上的不足。</p>
-<p>该模型同时发布Open Weights（Hugging Face）和API，定位为解决多语言语音合成的"表达力差距"（Expressivity Gap）。</p>
-<p><strong>链接：</strong>
-<a href="https://huggingface.co/mistralai/voxtral" target="_blank" rel="noopener">https://huggingface.co/mistralai/voxtral</a></p>
-<hr>
-<h3>LangGraph 2.0 — 生产级Agent编排框架重大升级</h3>
-<p><strong>一句话描述：</strong> LangChain核心团队发布LangGraph 2.0，确立三年生产经验的Agent编排标准。</p>
-<p><strong>背景与原理：</strong>
-LangGraph 2.0是LangChain旗下生产级Agent编排框架的重大版本更新，将过去三年生产环境积累的编排模式标准化。新版本引入类型安全流式处理、Deploy CLI一键部署、以及统一的Agent原语（Router/Supervisor/Subagent），终结了手工协调逻辑的混乱时代。</p>
-<p>Checkpoint-resume持久层是最大亮点，支持多日可中断Agent任务的可靠恢复，是Agent即API模式的首选参考实现。</p>
-<p><strong>链接：</strong>
-<a href="https://github.com/langchain/LangGraph" target="_blank" rel="noopener">https://github.com/langchain/LangGraph</a></p>
-<hr>
-<h3>Sakana AI KAME — 实时语音到语音翻译架构</h3>
-<p><strong>一句话描述：</strong> Sakana AI推出KAME，一种 Tandem Speech-to-Speech 架构，实现实时将LLM知识注入语音流。</p>
-<p><strong>背景与原理：</strong>
-KAME是Sakana AI发布的创新语音翻译模型，采用Tandem架构——与传统的"语音→文本→LLM推理→文本→语音"级联pipeline不同，KAME在语音流中实时注入LLM知识，实现真正的端到端语音理解和生成，延迟大幅降低。</p>
-<p>该架构特别适合实时对话和跨语言沟通场景，为语音AI应用开辟了新路径。</p>
-<p><strong>链接：</strong>
-<a href="https://github.com/SakanaAI/KAME" target="_blank" rel="noopener">https://github.com/SakanaAI/KAME</a></p>
-<hr>
+<h2>④ 开源工具 &amp; 模型更新（≥3个）</h2>
+<ul>
+<li><strong>Google Gemma 4 MTP Drafter</strong>：Speculative Decoding架构，3倍推理加速，60M+下载，Apache 2.0 | <a href="<a href="https://blog.google/innovation-and-ai/technology/developers-tools/multi-token-prediction-gemma-4/" target="_blank" rel="noopener">https://blog.google/innovation-and-ai/technology/developers-tools/multi-token-prediction-gemma-4/</a>">Google Blog</a> | 亮点：零质量损失，内存带宽瓶颈破解</li>
+<li><strong>Moonshot AI Kimi K2.6</strong>：开源编程模型，SWEBench Pro 58.6分（&gt;GPT-5.4/Claude Opus 4.6），Agent Swarm协调300子Agent | <a href="<a href="https://mlq.ai/news/moonshot-ai-releases-kimi-k26-open-source-coding-model-with-autonomous-multi-day-task-execution/" target="_blank" rel="noopener">https://mlq.ai/news/moonshot-ai-releases-kimi-k26-open-source-coding-model-with-autonomous-multi-day-task-execution/</a>">MLQ</a> | 亮点：自主多日复杂任务执行</li>
+<li><strong>HuggingFace Reachy Mini App Store</strong>：机器人应用商店上线，200+款应用，$299开源物理机器人，ML Intern自动构建 | <a href="<a href="https://venturebeat.com/technology/the-app-store-for-robots-has-arrived-hugging-face-launches-open-source-reachy-mini-app-store-with-200-apps" target="_blank" rel="noopener">https://venturebeat.com/technology/the-app-store-for-robots-has-arrived-hugging-face-launches-open-source-reachy-mini-app-store-with-200-apps</a>">VentureBeat</a> | 亮点：AI应用生态扩展至物理机器人</li>
+<li><strong>Mistral Medium 3.5</strong>：128B参数Dense模型，256K上下文，SWEBench 77.6%，$1.5/M输入tokens | <a href="<a href="https://huggingface.co/mistralai/Mistral-Medium-3.5-128B" target="_blank" rel="noopener">https://huggingface.co/mistralai/Mistral-Medium-3.5-128B</a>">Mistral</a> | 亮点：4 GPU即可自托管</li>
+</ul>
     </div>
     <div class="page-footer">
     <a class="footer-link" href="section-3.html">← 上一板块</a>
