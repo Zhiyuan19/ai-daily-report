@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>③ 官方博客新动态 — AI 技术情报日报</title>
+<title>③ 官方博客新动态（4条） — AI 技术情报日报</title>
 <style>
 
 :root {
@@ -492,7 +492,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">📢</div>
-            <h1>③ 官方博客新动态</h1>
+            <h1>③ 官方博客新动态（4条）</h1>
         </div>
         <div class="section-meta">
             <div class="meta-item"><span class="dot"></span>2026年5月9日</div>
@@ -500,66 +500,56 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
     </div>
     <div class="content-section">
-<h2>③ 官方博客新动态</h2>
-<blockquote>
-<p>国际大厂近24小时内官方发布，聚焦技术突破和产品更新。</p>
-</blockquote>
+<h2>③ 官方博客新动态（4条）</h2>
 <hr>
-<h3>Google DeepMind — Gemini Deep Think 加速数学与科学研究</h3>
-<p><strong>来源：</strong> Google DeepMind Blog | 发布时间：2026-05-08</p>
-<p><strong>核心内容：</strong></p>
-<p>Google DeepMind 发布了关于 Gemini Deep Think 在数学和科学研究中应用的最新进展。Deep Think 是 Gemini 的高级推理模式，专门针对需要深度逻辑推导的复杂问题设计。</p>
-<p>本次更新的关键成果：</p>
-<ol>
-<li><strong>自主研究突破</strong>：Deep Think 生成了完全由 AI 自主完成的数学研究论文（无人类干预），计算了某些算术几何结构常数（特征权重）</li>
-<li><strong>人机协作证明</strong>：与人类数学家合作，成功证明了粒子系统独立集边界问题的相关约束</li>
-<li><strong>大规模开放问题验证</strong>：在包含 700 个开放问题的 Bloom's Erdős Conjectures 数据库上进行了深度评估，自主解决了 4 个开放问题，其中 Erdős-1051 的解决还被推广并发表于正式研究论文</li>
-<li><strong>IMO-Gold 超越</strong>：截至 2026 年 1 月的 Deep Think 最新版本，在奥数级别问题的表现已显著超越 2025 年 7 月的 IMO-Gold 版本</li>
-</ol>
-<p>同时，DeepMind 还发布了 Aletheia——一个在推理质量上实现显著飞跃的新推理框架，使用更少的推理时计算量实现了更高的问题解决能力。所有结果均经过人类专家评级验证。</p>
-<p><strong>链接：</strong>
-<a href="https://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think/" target="_blank" rel="noopener">https://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think/</a></p>
-<hr>
-<h3>Anthropic — Fellows Program 2026 开放申请</h3>
-<p><strong>来源：</strong> Anthropic Alignment Blog | 发布时间：2026-05-07</p>
-<p><strong>核心内容：</strong></p>
-<p>Anthropic 宣布其 Fellows Program 2026 正式开放申请，面向 5 月和 7 月两个入学科研。Fellowship 项目为期四个月，资助研究者与 Anthropic 团队成员合作，解决 AI 安全领域的高优先级问题。</p>
-<p>根据公告，首届学员中超过 80% 产出了学术论文，涵盖主题包括：Agent 错位（Agentic Misalignment）、隐性学习（Subliminal Learning）、对 ASL-3 级越狱的快速响应，以及开源电路分析等。超过 40% 的学员后续转为 Anthropic 全职员工。</p>
-<p>2026 年计划扩大规模，覆盖更广的安全研究方向：</p>
+<h3>OpenAI 发布语音智能 API 更新：长上下文 Agent 利器</h3>
+<p><strong>来源：</strong> OpenAI 官方博客 | 发布时间：2026年5月7日</p>
+<p><strong>核心内容：</strong>
+OpenAI 于5月7日发布语音智能 API 的重大更新，核心提升聚焦于 Agent 工作流。主要特性包括：</p>
 <ul>
-<li>可扩展监督（Scalable Oversight）</li>
-<li>对抗鲁棒性与 AI 控制</li>
-<li>模型有机体（Model Organisms）</li>
-<li>机械可解释性（Mechanistic Interpretability）</li>
-<li>AI 安全</li>
-<li>模型福利（Model Welfare）</li>
+<li><strong>并行工具调用</strong>（Parallel Tool Calls）：模型可同时调用多个工具，并通过"checking your calendar""looking that up now"等语音短语让用户感知正在执行的操作，改善实时交互体验。</li>
+<li><strong>Preambles（引导语）</strong>：开发者可在主响应前插入短句，让 Agent 在工具调用等待期间主动告知用户进展，改善对话节奏感。</li>
+<li><strong>更强恢复能力</strong>：模型在工具调用失败时不再静默中断，而是以"I’m having trouble with that right now"等自然语言解释并提供替代方案。</li>
+<li><strong>上下文窗口从 32K 扩展至 128K</strong>：支持更长周期、更多步骤的 Agent 会话，特别适合需要跨多轮收集信息的复杂任务。</li>
 </ul>
-<p>申请截止日期为 5 月底，候选人需提交研究提案和过往工作成果。</p>
+<p>这是 OpenAI 5月第二波重大发布（GPT-5.5-Cyber 于5月7日同步推出），展现了其在 Agent 基础设施上的密集投入。</p>
 <p><strong>链接：</strong>
-<a href="https://alignment.anthropic.com/2025/anthropic-fellows-program-2026" target="_blank" rel="noopener">https://alignment.anthropic.com/2025/anthropic-fellows-program-2026</a></p>
+<a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/" target="_blank" rel="noopener">https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/</a></p>
 <hr>
-<h3>Anthropic — 推出科学博客（Science Blog）</h3>
-<p><strong>来源：</strong> Anthropic Research Blog | 发布时间：2026-05-07</p>
-<p><strong>核心内容：</strong></p>
-<p>Anthropic 宣布推出全新 Science Blog，专注于 AI 在科学研究中的应用。博客将涵盖三类内容：</p>
-<ol>
-<li><strong>Anthropic 内部研究进展</strong>：分享 AI for Science 项目的早期成果，包括生物、物理、化学等领域的应用案例</li>
-<li><strong>外部合作成果</strong>：介绍与外部研究机构、制药公司、生物技术公司的合作项目</li>
-<li><strong>科学家工作流指南</strong>：面向科研人员提供使用 Claude 进行科学研究的实用教程和工作流设计</li>
-</ol>
-<p>Anthropic 是 Genesis Mission 的核心合作伙伴——这是一项横跨产业界、学术界和政府的多学科合作项目，目标是用 AI 加速美国科学进步。</p>
-<p>首批发布内容包括：物理学家 Matthew Schwartz 的" vibe physics: The AI grad student"（展示如何用 Claude 监督理论物理计算），以及一篇关于编排长时间科学计算任务的技术教程。</p>
+<h3>Anthropic 发布 Claude Security：企业级代码安全扫描全面开放</h3>
+<p><strong>来源：</strong> Anthropic 官方博客 / Releasebot | 发布时间：2026年5月7日</p>
+<p><strong>核心内容：</strong>
+Anthropic 宣布 Claude Security（此前称为 Claude Code Security）向所有 Enterprise 客户全面开放。该产品基于 Claude Opus 4.7，在代码漏洞发现和修复任务中准确率显著领先于其他模型。</p>
+<p>关键更新包括：定时扫描和定向扫描计划、企业审计系统集成、改进的漏洞分类追踪界面、以及与现有 CI/CD 管线的简易集成——<strong>无需 API 集成或自定义 Agent 构建</strong>，任何使用 Claude 的组织均可立即启用。</p>
+<p>Anthropic 还同步更新了其研究博客"Teaching Claude Why"，探讨模型理解行为原因而非仅理解行为本身的重要性，暗示下一代 Claude 将具备更深的自我建模能力。</p>
 <p><strong>链接：</strong>
-<a href="https://www.anthropic.com/research/introducing-anthropic-science" target="_blank" rel="noopener">https://www.anthropic.com/research/introducing-anthropic-science</a></p>
+<a href="https://www.anthropic.com/research/teaching-claude-why" target="_blank" rel="noopener">https://www.anthropic.com/research/teaching-claude-why</a></p>
 <hr>
-<h3>Meta AI — 推出 Muse Spark：迈向个人超级智能</h3>
-<p><strong>来源：</strong> Meta AI Blog | 发布时间：2026-04-08</p>
-<p><strong>核心内容：</strong></p>
-<p>Meta AI 发布博客介绍 Muse Spark 项目，定位为"个人超级智能"（Personal Superintelligence）方向的技术探索。Muse Spark 旨在构建能够"深度理解个人用户意图、持续学习个人偏好、在多场景中主动协助"的 AI 系统。</p>
-<p>同期发布的还有 SAM 3.1（Segment Anything Model 3.1），在实时视频检测和跟踪能力上有显著提升，引入多路复用（Multiplexing）和全局推理（Global Reasoning）机制，显著加快了在连续帧中的目标追踪速度。SAM 3.1 还降低了计算资源需求，使在消费级 GPU 上运行实时视频分析成为可能。</p>
-<p>此外，Meta 披露了过去两年间四代 MTIA 芯片的迭代路线图，展示如何通过自研芯片基础设施支撑大规模 AI 体验的垂直整合思路。</p>
+<h3>Anthropic Institute 发布：自主 Agent 成为正式研究支柱</h3>
+<p><strong>来源：</strong> Anthropic 官方博客 | 发布时间：2026年5月7日</p>
+<p><strong>核心内容：</strong>
+Anthropic Institute（Anthropic 的研究机构）在 Code with Claude 大会上宣布，将<strong>自主 AI Agent</strong> 新增为与"可解释性""对齐"并列的核心研究支柱。研究方向涵盖：</p>
+<ul>
+<li><strong>治理与安全</strong>：自主 Agent 的行为边界和外部监督机制</li>
+<li><strong>可靠性</strong>：Agent 在长时间运行中的决策一致性</li>
+<li><strong>Agent 间交互</strong>：多 Agent 协作的安全协议和信息隔离</li>
+</ul>
+<p>这与 Google 同日发布的 Interactions API 重大架构更新（从 <em>outputs</em> 迁移到 <em>steps</em> 数组）形成呼应，标志着全球主要 AI 实验室正在从"对话式 AI"向"行动式 AI"系统性转型。</p>
 <p><strong>链接：</strong>
-<a href="https://ai.meta.com/blog" target="_blank" rel="noopener">https://ai.meta.com/blog</a></p>
+<a href="https://simonwillison.net/2026/May/6/code-w-claude-2026/" target="_blank" rel="noopener">https://simonwillison.net/2026/May/6/code-w-claude-2026/</a></p>
+<hr>
+<h3>OpenAI 推出 GPT-5.5-Cyber：网络安全专用模型开放预览</h3>
+<p><strong>来源：</strong> OpenAI 官方博客 / CNBC | 发布时间：2026年5月7日</p>
+<p><strong>核心内容：</strong>
+OpenAI 宣布 GPT-5.5-Cyber 向经过审查的网络安全团队开放有限预览。这是一款针对安全任务优化的 GPT-5.5 变体，在以下场景做了差异化训练：</p>
+<ul>
+<li>漏洞识别与分类</li>
+<li>补丁验证</li>
+<li>恶意软件分析</li>
+</ul>
+<p>与通用 GPT-5.5 相比，GPT-5.5-Cyber 在安全相关任务上<strong>更宽松</strong>（less restrictive），以允许研究人员在高风险场景下充分探索模型能力——这是一个有意的设计权衡，表明 OpenAI 正在探索"安全能力释放"的分级授权模式。</p>
+<p><strong>链接：</strong>
+<a href="https://openai.com/index/gpt-5-5-cyber/" target="_blank" rel="noopener">https://openai.com/index/gpt-5-5-cyber/</a></p>
 <hr>
     </div>
     <div class="page-footer">
