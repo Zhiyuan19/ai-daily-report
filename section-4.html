@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>④ 开源工具 & 模型更新 — AI 技术情报日报</title>
+<title>④ 开源工具 & 模型更新（4个） — AI 技术情报日报</title>
 <style>
 
 :root {
@@ -492,7 +492,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">⚡</div>
-            <h1>④ 开源工具 & 模型更新</h1>
+            <h1>④ 开源工具 & 模型更新（4个）</h1>
         </div>
         <div class="section-meta">
             <div class="meta-item"><span class="dot"></span>2026年5月9日</div>
@@ -500,50 +500,46 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
     </div>
     <div class="content-section">
-<h2>④ 开源工具 &amp; 模型更新</h2>
-<blockquote>
-<p>近24小时内新发布或重大更新的开源工具、框架、模型，含国际和国内开源项目。</p>
-</blockquote>
+<h2>④ 开源工具 &amp; 模型更新（4个）</h2>
 <hr>
-<h3>Hugging Face — Chandra-OCR-2 开源发布</h3>
-<p><strong>来源：</strong> Hugging Face Blog | 发布时间：2026-05-08</p>
-<p><strong>核心内容：</strong></p>
-<p>Hugging Face 官方博客披露了其团队使用 OpenAI Codex + Chandra-OCR-2 + Hugging Face Jobs 基础设施，完成对 30,000 篇学术论文的 OCR 处理任务。</p>
-<p>Chandra-OCR-2 是本次实践中的关键开源模型，专为学术文献的扫描版 PDF 设计，在公式识别（LaTeX 还原）和表格结构还原方面表现突出。Hugging Face 使用 vLLM 在其 Serverless GPU 基础设施上批量运行推理，将 27,000 篇此前缺失 Markdown 版本的 arXiv 论文成功转化为可检索、可引用的结构化文本。</p>
-<p>整个流程由 Codex 模型自主编排——开发者仅提供了模型卡链接和 Hugging Face CLI Skill，Codex 自动完成了脚本编写、GPU 调度、错误处理和结果上传的全部流程。这展示了 2026 年 AI 编程工具在科研基础设施自动化中的实际生产能力。</p>
+<h3>DeepSeek V4 — 国产开源模型登顶全球榜单</h3>
+<p><strong>一句话描述：</strong> DeepSeek V4 以 671B 参数、100万上下文、仅 10% KV cache，开源并宣布全面适配华为昇腾芯片，标志着国产 AI 软硬协同生态的实质性突破。</p>
+<p><strong>背景与原理：</strong>
+DeepSeek V4 于 2026年4月24日发布并同步开源，是全球首个在100万 token 场景下将单 Token 推理计算量降低 73%、KV cache 仅为其前代 10% 的开源大模型。架构上引入<strong>混合注意力机制</strong>（压缩稀疏注意力+重度压缩注意力的组合），大幅降低推理计算量。性能方面，V4 在推理、知识、代码能力上比肩 GPT-5.4 和 Claude Opus 4.6 等顶级闭源模型。</p>
+<p><strong>核心突破：</strong>
+- 全球权威开源模型榜单前两名（与 Kimi K2.6 并列）
+- 中国开源模型首次完成华为昇腾芯片全栈适配（训练+推理）
+- 寒武纪、摩尔线程、海光信息等实现"Day 0"同步适配
+- 成本比美国同类产品低 97%
+- 中国大模型全球周 Token 调用量占比超 60%</p>
 <p><strong>链接：</strong>
-<a href="https://huggingface.co/blog/nielsr/ocr-papers-jobs" target="_blank" rel="noopener">https://huggingface.co/blog/nielsr/ocr-papers-jobs</a></p>
+<a href="https://github.com/deepseek-ai/DeepSeek-V4" target="_blank" rel="noopener">https://github.com/deepseek-ai/DeepSeek-V4</a></p>
 <hr>
-<h3>virattt/dexter — 深度金融研究自主 Agent</h3>
-<p><strong>来源：</strong> GitHub Trending | 发布时间：2026-05-08</p>
-<p><strong>核心内容：</strong></p>
-<p>dexter 是一个专注于金融研究场景的自主 Agent 项目，能够自主完成：</p>
-<ul>
-<li>宏观经济数据分析（GDP、CPI、利率走势的跨时期对比）</li>
-<li>公允价值评估（基于 DCF、相对估值、期权定价模型的综合评估）</li>
-<li>新闻情绪与价格联动分析</li>
-<li>投资组合风险归因</li>
-</ul>
-<p>技术层面，dexter 采用了多 Agent 架构：规划 Agent 负责任务拆解，研究 Agent 负责数据获取，分析 Agent 负责建模，报告 Agent 负责输出结构化研报。每个 Agent 有独立的工具集（Web 搜索、Financial API 调用、Python 沙盒）。</p>
-<p><strong>星数/增长：</strong>
-23.4K | 近24小时新增约 409 stars</p>
+<h3>Kimi K2.6 — Moonshot AI 开源编码 Agent 模型</h3>
+<p><strong>一句话描述：</strong> 月之暗面发布的 1T 参数 MoE 架构开源模型，激活 32B，128K 上下文，在全球权威基准测试中比肩 GPT-5.4，重夺开源模型全球第一。</p>
+<p><strong>背景与原理：</strong>
+Kimi K2.6 于 2026年4月20日深夜发布，采用 1 万亿参数 MoE 架构，实际激活 32B。关键技术亮点包括 KV Cache 潜空间压缩（latent KV cache），可将长上下文信息压缩至更小内存占用的潜空间表示，从而在 128K 上下文下保持高效推理。可连续编码 13 小时，Agent 可持续自主运行 5 天。</p>
+<p><strong>核心突破：</strong>
+- 多项全球权威基准测试持平或优于 GPT-5.4、Claude Opus 4.6
+- 开源模型全球第一（Artificial Analysis 智能指数）
+- 中国开源模型首次在编码能力上全面领先
+- 已开源，供社区调用</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/virattt/dexter" target="_blank" rel="noopener">https://github.com/virattt/dexter</a></p>
+<a href="https://github.com/MoonshotAI/kimi-k2" target="_blank" rel="noopener">https://github.com/MoonshotAI/kimi-k2</a></p>
 <hr>
-<h3>ruvnet/ruflo — Claude 多 Agent 编排平台</h3>
-<p><strong>来源：</strong> GitHub Trending | 发布时间：2026-05-08</p>
-<p><strong>核心内容：</strong></p>
-<p>ruflo 是一个主打"多 Agent 蜂群"（Multi-Agent Swarm）概念的 Agent 编排平台，允许用户通过 YAML 配置定义多个专业 Agent 的协作流程。平台核心特性：</p>
-<ul>
-<li><strong>自学习 swarm 智能</strong>：Agent 间通过共享记忆（Shared Memory）实现经验传递，新任务可以复用历史成功的执行路径</li>
-<li><strong>RAG 原生集成</strong>：开箱即用支持向量数据库对接，实现私有知识库的 Agent 增强</li>
-<li><strong>Claude Code / Codex 原生集成</strong>：通过 MCP 协议直接调用 Claude 系列模型进行推理</li>
-</ul>
-<p>适合的场景包括：客服多意图分流（不同意图路由至不同专业 Agent）、复杂代码审查（主 Agent 分解 + 子 Agent 专业审查）、竞品分析（多源数据并行抓取 + 综合报告生成）。</p>
-<p><strong>星数/增长：</strong>
-42.4K | 近24小时新增约 2,598 stars</p>
+<h3>ds4.c — Redis 之父为 DeepSeek V4 Flash 打造的本地推理引擎</h3>
+<p>（已在上方 GitHub 栏目详细介绍，此处略）</p>
+<hr>
+<h3>Mistral Medium 3.5 — Mistral AI 发布远程编码 Agent</h3>
+<p><strong>一句话描述：</strong> Mistral AI 发布 Mistral Medium 3.5，支持 Vibe 平台上的远程编码 Agent，以及 Le Chat 的全新 Work 模式。</p>
+<p><strong>背景与原理：</strong>
+Mistral Medium 3.5 是 Mistral 最新中高端模型，核心亮点是内置了<strong>远程编码 Agent</strong> 能力。通过 Vibe 平台，开发者可以构建能自主连接远程开发环境、读写代码、执行测试的 Agent 实例。Le Chat 新增的 Work 模式则面向复杂长程任务，提供多步骤规划、进度保存和中间结果检查点。</p>
+<p><strong>核心突破：</strong>
+- 首个主流大厂推出的远程编程 Agent 平台
+- 开源 Voxtral TTS（3月23日）形成完整语音-代码 Agent 矩阵
+- Le Chat Work 模式将 AI 对话升级为企业级任务管理工具</p>
 <p><strong>链接：</strong>
-<a href="https://github.com/ruvnet/ruflo" target="_blank" rel="noopener">https://github.com/ruvnet/ruflo</a></p>
+<a href="https://mistral.ai/news" target="_blank" rel="noopener">https://mistral.ai/news</a></p>
 <hr>
     </div>
     <div class="page-footer">
