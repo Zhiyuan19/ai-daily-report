@@ -495,60 +495,71 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
             <h1>③ 官方博客新动态</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年5月8日</div>
+            <div class="meta-item"><span class="dot"></span>2026年5月9日</div>
             <div class="meta-item"><span class="dot"></span>板块 3 / 6</div>
         </div>
     </div>
     <div class="content-section">
 <h2>③ 官方博客新动态</h2>
-<h3>Anthropic 开源对齐工具 Petri 捐赠至 Linux 基金会</h3>
-<p><strong>来源：</strong> Anthropic Research | 发布时间：2026-05-07</p>
-<p><strong>核心内容：</strong>
-Anthropic 宣布将其开源对齐评估工具 Petri 捐赠给 Linux 基金会。Petri 最初于 2025 年 10 月发布，是一套可应用于任意大语言模型的"对齐测试工具箱"，支持快速检测欺骗性、谄媚性和有害请求响应行为。Petri 已被 Anthropic 用于每一代 Claude 模型的内部对齐评估，也被英国 AI Security Institute（AISI）作为模型安全评估的核心框架。</p>
-<p>Anthropic 选择将 Petri 捐赠给 Linux 基金会的逻辑与当年捐赠 MCP（Model Context Protocol）一致：确保关键安全工具独立于任何单一 AI 实验室，使行业能以中性、可信的方式使用这些工具，从而提升整个生态的安全基准。</p>
-<p><strong>链接：</strong>
-<a href="https://www.anthropic.com/research/donating-open-source-petri" target="_blank" rel="noopener">https://www.anthropic.com/research/donating-open-source-petri</a></p>
+<blockquote>
+<p>国际大厂近24小时内官方发布，聚焦技术突破和产品更新。</p>
+</blockquote>
 <hr>
-<h3>OpenAI 发布 GPT-5.5-Cyber：网络安全专用模型</h3>
-<p><strong>来源：</strong> OpenAI | 发布时间：2026-05-07</p>
-<p><strong>核心内容：</strong>
-OpenAI 正式发布 GPT-5.5-Cyber，这是 GPT-5.5 系列中专门针对网络安全任务优化的版本。基于"Trusted Access for Cyber"（TAC）架构，GPT-5.5-Cyber 在漏洞发现、威胁建模和安全代码审查场景中进行了专项强化，可帮助安全团队自动化漏洞检测、生成修复补丁并通过代码级分析识别攻击路径。</p>
-<p>此外，OpenAI 同步宣布 Codex Security 向研究社区开放预览版，后者可帮助团队构建基于代码库的威胁模型、探索现实攻击路径并在隔离环境中验证问题并提出补丁建议。OpenAI 预计 2026 年网络安全 AI 市场将成其为增速最快的垂直领域之一。</p>
+<h3>Google DeepMind — Gemini Deep Think 加速数学与科学研究</h3>
+<p><strong>来源：</strong> Google DeepMind Blog | 发布时间：2026-05-08</p>
+<p><strong>核心内容：</strong></p>
+<p>Google DeepMind 发布了关于 Gemini Deep Think 在数学和科学研究中应用的最新进展。Deep Think 是 Gemini 的高级推理模式，专门针对需要深度逻辑推导的复杂问题设计。</p>
+<p>本次更新的关键成果：</p>
+<ol>
+<li><strong>自主研究突破</strong>：Deep Think 生成了完全由 AI 自主完成的数学研究论文（无人类干预），计算了某些算术几何结构常数（特征权重）</li>
+<li><strong>人机协作证明</strong>：与人类数学家合作，成功证明了粒子系统独立集边界问题的相关约束</li>
+<li><strong>大规模开放问题验证</strong>：在包含 700 个开放问题的 Bloom's Erdős Conjectures 数据库上进行了深度评估，自主解决了 4 个开放问题，其中 Erdős-1051 的解决还被推广并发表于正式研究论文</li>
+<li><strong>IMO-Gold 超越</strong>：截至 2026 年 1 月的 Deep Think 最新版本，在奥数级别问题的表现已显著超越 2025 年 7 月的 IMO-Gold 版本</li>
+</ol>
+<p>同时，DeepMind 还发布了 Aletheia——一个在推理质量上实现显著飞跃的新推理框架，使用更少的推理时计算量实现了更高的问题解决能力。所有结果均经过人类专家评级验证。</p>
 <p><strong>链接：</strong>
-<a href="https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber" target="_blank" rel="noopener">https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber</a></p>
+<a href="https://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think/" target="_blank" rel="noopener">https://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think/</a></p>
 <hr>
-<h3>Meta AI 发布 SAM 3.1：实时视频检测与跟踪</h3>
-<p><strong>来源：</strong> Meta AI Blog | 发布时间：2026-05-07</p>
-<p><strong>核心内容：</strong>
-Meta AI 发布 Segment Anything Model 3.1（SAM 3.1），在原有图像分割能力基础上新增实时视频目标检测与跟踪能力。核心技术升级在于 Multiplexing（多路复用）与 Global Reasoning（全局推理）机制——前者让模型在视频流中同时跟踪多个目标而不互相干扰，后者通过跨帧注意力机制理解目标在时间维度上的变化规律。</p>
-<p>实测 SAM 3.1 在 VOTC 数据集上 FPS（帧率）较 SAM 3.0 提升 2.4 倍，追踪精度（IoU）提升 18%，同时支持零样本迁移至未见过的目标类别。该能力对视频监控、自动驾驶数据标注和 AR 应用有直接价值。Meta 同步开源了相关权重与推理代码。</p>
-<p><strong>链接：</strong>
-<a href="https://ai.meta.com/blog/sam-3-1-video-detection-tracking" target="_blank" rel="noopener">https://ai.meta.com/blog/sam-3-1-video-detection-tracking</a></p>
-<hr>
-<h3>Google DeepMind 公布 AlphaEvolve 产业落地成果</h3>
-<p><strong>来源：</strong> Google DeepMind Blog | 发布时间：2026-05-06</p>
-<p><strong>核心内容：</strong>
-DeepMind 披露 AlphaEvolve（Gemini 驱动的代码智能体）在真实产业场景中的应用成果。关键数据包括：</p>
+<h3>Anthropic — Fellows Program 2026 开放申请</h3>
+<p><strong>来源：</strong> Anthropic Alignment Blog | 发布时间：2026-05-07</p>
+<p><strong>核心内容：</strong></p>
+<p>Anthropic 宣布其 Fellows Program 2026 正式开放申请，面向 5 月和 7 月两个入学科研。Fellowship 项目为期四个月，资助研究者与 Anthropic 团队成员合作，解决 AI 安全领域的高优先级问题。</p>
+<p>根据公告，首届学员中超过 80% 产出了学术论文，涵盖主题包括：Agent 错位（Agentic Misalignment）、隐性学习（Subliminal Learning）、对 ASL-3 级越狱的快速响应，以及开源电路分析等。超过 40% 的学员后续转为 Anthropic 全职员工。</p>
+<p>2026 年计划扩大规模，覆盖更广的安全研究方向：</p>
 <ul>
-<li><strong>物流领域</strong>：FM Logistic 使用 AlphaEvolve 优化复杂路径规划问题，路由效率提升 10.4%，每年节省超过 15,000 公里运输距离</li>
-<li><strong>广告领域</strong>：WPP 利用 AlphaEvolve 优化 AI 模型组件，在高维营销数据上实现 10% 的准确率提升</li>
+<li>可扩展监督（Scalable Oversight）</li>
+<li>对抗鲁棒性与 AI 控制</li>
+<li>模型有机体（Model Organisms）</li>
+<li>机械可解释性（Mechanistic Interpretability）</li>
+<li>AI 安全</li>
+<li>模型福利（Model Welfare）</li>
 </ul>
-<p>AlphaEvolve 已从纯研究项目扩展为可交付企业的商业化产品，标志着 Google 在 AI 代码智能体商业化路径上迈出了实质性一步。</p>
+<p>申请截止日期为 5 月底，候选人需提交研究提案和过往工作成果。</p>
 <p><strong>链接：</strong>
-<a href="https://deepmind.google/blog/alphaevolve-impact/" target="_blank" rel="noopener">https://deepmind.google/blog/alphaevolve-impact/</a></p>
+<a href="https://alignment.anthropic.com/2025/anthropic-fellows-program-2026" target="_blank" rel="noopener">https://alignment.anthropic.com/2025/anthropic-fellows-program-2026</a></p>
 <hr>
-<h3>Hugging Face 发布 QVAC MedPsy：医疗边缘部署专用模型</h3>
-<p><strong>来源：</strong> Hugging Face Blog | 发布时间：2026-05-07</p>
-<p><strong>核心内容：</strong>
-Hugging Face 发布 QVAC MedPsy（Medical &amp; Psychology）系列，这是专为医疗和心理健康场景设计的轻量级边缘部署模型系列。核心亮点：</p>
-<ul>
-<li><strong>参数效率</strong>：QVAC MedPsy-1.7B 在 7 项医学基准测试中平均得分 62.62，超越 Google MedGemma-1.5-4B（51.20）11.42 分，而参数量不到后者的 1/2</li>
-<li><strong>多阶段 RL 训练</strong>：创新性地引入多阶段强化学习 pipeline，显著提升了医疗场景下的指令遵循能力</li>
-<li><strong>端侧支持</strong>：已针对 Qualcomm / Apple Neural Engine / 联发科 NPU 进行了专项优化，1.7B 模型在旗舰手机上可流畅运行</li>
-</ul>
-<p>该系列填补了"HuggingFace 官方医疗大模型"的空白，为边缘医疗 AI 应用提供了高性能开源选择。</p>
+<h3>Anthropic — 推出科学博客（Science Blog）</h3>
+<p><strong>来源：</strong> Anthropic Research Blog | 发布时间：2026-05-07</p>
+<p><strong>核心内容：</strong></p>
+<p>Anthropic 宣布推出全新 Science Blog，专注于 AI 在科学研究中的应用。博客将涵盖三类内容：</p>
+<ol>
+<li><strong>Anthropic 内部研究进展</strong>：分享 AI for Science 项目的早期成果，包括生物、物理、化学等领域的应用案例</li>
+<li><strong>外部合作成果</strong>：介绍与外部研究机构、制药公司、生物技术公司的合作项目</li>
+<li><strong>科学家工作流指南</strong>：面向科研人员提供使用 Claude 进行科学研究的实用教程和工作流设计</li>
+</ol>
+<p>Anthropic 是 Genesis Mission 的核心合作伙伴——这是一项横跨产业界、学术界和政府的多学科合作项目，目标是用 AI 加速美国科学进步。</p>
+<p>首批发布内容包括：物理学家 Matthew Schwartz 的" vibe physics: The AI grad student"（展示如何用 Claude 监督理论物理计算），以及一篇关于编排长时间科学计算任务的技术教程。</p>
 <p><strong>链接：</strong>
-<a href="https://huggingface.co/blog/qvac/medpsy" target="_blank" rel="noopener">https://huggingface.co/blog/qvac/medpsy</a></p>
+<a href="https://www.anthropic.com/research/introducing-anthropic-science" target="_blank" rel="noopener">https://www.anthropic.com/research/introducing-anthropic-science</a></p>
+<hr>
+<h3>Meta AI — 推出 Muse Spark：迈向个人超级智能</h3>
+<p><strong>来源：</strong> Meta AI Blog | 发布时间：2026-04-08</p>
+<p><strong>核心内容：</strong></p>
+<p>Meta AI 发布博客介绍 Muse Spark 项目，定位为"个人超级智能"（Personal Superintelligence）方向的技术探索。Muse Spark 旨在构建能够"深度理解个人用户意图、持续学习个人偏好、在多场景中主动协助"的 AI 系统。</p>
+<p>同期发布的还有 SAM 3.1（Segment Anything Model 3.1），在实时视频检测和跟踪能力上有显著提升，引入多路复用（Multiplexing）和全局推理（Global Reasoning）机制，显著加快了在连续帧中的目标追踪速度。SAM 3.1 还降低了计算资源需求，使在消费级 GPU 上运行实时视频分析成为可能。</p>
+<p>此外，Meta 披露了过去两年间四代 MTIA 芯片的迭代路线图，展示如何通过自研芯片基础设施支撑大规模 AI 体验的垂直整合思路。</p>
+<p><strong>链接：</strong>
+<a href="https://ai.meta.com/blog" target="_blank" rel="noopener">https://ai.meta.com/blog</a></p>
 <hr>
     </div>
     <div class="page-footer">
