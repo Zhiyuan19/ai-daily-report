@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>③ 官方博客新动态（≥3条） — AI技术情报日报：2026年5月7日</title>
+<title>③ 官方博客新动态 — AI 技术情报日报</title>
 <style>
 
 :root {
@@ -492,22 +492,64 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">📢</div>
-            <h1>③ 官方博客新动态（≥3条）</h1>
+            <h1>③ 官方博客新动态</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年5月7日</div>
+            <div class="meta-item"><span class="dot"></span>2026年5月8日</div>
             <div class="meta-item"><span class="dot"></span>板块 3 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>③ 官方博客新动态（≥3条）</h2>
+<h2>③ 官方博客新动态</h2>
+<h3>Anthropic 开源对齐工具 Petri 捐赠至 Linux 基金会</h3>
+<p><strong>来源：</strong> Anthropic Research | 发布时间：2026-05-07</p>
+<p><strong>核心内容：</strong>
+Anthropic 宣布将其开源对齐评估工具 Petri 捐赠给 Linux 基金会。Petri 最初于 2025 年 10 月发布，是一套可应用于任意大语言模型的"对齐测试工具箱"，支持快速检测欺骗性、谄媚性和有害请求响应行为。Petri 已被 Anthropic 用于每一代 Claude 模型的内部对齐评估，也被英国 AI Security Institute（AISI）作为模型安全评估的核心框架。</p>
+<p>Anthropic 选择将 Petri 捐赠给 Linux 基金会的逻辑与当年捐赠 MCP（Model Context Protocol）一致：确保关键安全工具独立于任何单一 AI 实验室，使行业能以中性、可信的方式使用这些工具，从而提升整个生态的安全基准。</p>
+<p><strong>链接：</strong>
+<a href="https://www.anthropic.com/research/donating-open-source-petri" target="_blank" rel="noopener">https://www.anthropic.com/research/donating-open-source-petri</a></p>
+<hr>
+<h3>OpenAI 发布 GPT-5.5-Cyber：网络安全专用模型</h3>
+<p><strong>来源：</strong> OpenAI | 发布时间：2026-05-07</p>
+<p><strong>核心内容：</strong>
+OpenAI 正式发布 GPT-5.5-Cyber，这是 GPT-5.5 系列中专门针对网络安全任务优化的版本。基于"Trusted Access for Cyber"（TAC）架构，GPT-5.5-Cyber 在漏洞发现、威胁建模和安全代码审查场景中进行了专项强化，可帮助安全团队自动化漏洞检测、生成修复补丁并通过代码级分析识别攻击路径。</p>
+<p>此外，OpenAI 同步宣布 Codex Security 向研究社区开放预览版，后者可帮助团队构建基于代码库的威胁模型、探索现实攻击路径并在隔离环境中验证问题并提出补丁建议。OpenAI 预计 2026 年网络安全 AI 市场将成其为增速最快的垂直领域之一。</p>
+<p><strong>链接：</strong>
+<a href="https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber" target="_blank" rel="noopener">https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber</a></p>
+<hr>
+<h3>Meta AI 发布 SAM 3.1：实时视频检测与跟踪</h3>
+<p><strong>来源：</strong> Meta AI Blog | 发布时间：2026-05-07</p>
+<p><strong>核心内容：</strong>
+Meta AI 发布 Segment Anything Model 3.1（SAM 3.1），在原有图像分割能力基础上新增实时视频目标检测与跟踪能力。核心技术升级在于 Multiplexing（多路复用）与 Global Reasoning（全局推理）机制——前者让模型在视频流中同时跟踪多个目标而不互相干扰，后者通过跨帧注意力机制理解目标在时间维度上的变化规律。</p>
+<p>实测 SAM 3.1 在 VOTC 数据集上 FPS（帧率）较 SAM 3.0 提升 2.4 倍，追踪精度（IoU）提升 18%，同时支持零样本迁移至未见过的目标类别。该能力对视频监控、自动驾驶数据标注和 AR 应用有直接价值。Meta 同步开源了相关权重与推理代码。</p>
+<p><strong>链接：</strong>
+<a href="https://ai.meta.com/blog/sam-3-1-video-detection-tracking" target="_blank" rel="noopener">https://ai.meta.com/blog/sam-3-1-video-detection-tracking</a></p>
+<hr>
+<h3>Google DeepMind 公布 AlphaEvolve 产业落地成果</h3>
+<p><strong>来源：</strong> Google DeepMind Blog | 发布时间：2026-05-06</p>
+<p><strong>核心内容：</strong>
+DeepMind 披露 AlphaEvolve（Gemini 驱动的代码智能体）在真实产业场景中的应用成果。关键数据包括：</p>
 <ul>
-<li><strong>Anthropic</strong>：<a href="<a href="https://www.anthropic.com/news/higher-limits-spacex" target="_blank" rel="noopener">https://www.anthropic.com/news/higher-limits-spacex</a>">Higher usage limits for Claude and a compute deal with SpaceX</a> - Claude使用限额大幅提升，同时宣布与SpaceX超算合作，5月6日</li>
-<li><strong>Anthropic</strong>：<a href="<a href="https://www.anthropic.com/news/enterprise-ai-services-company" target="_blank" rel="noopener">https://www.anthropic.com/news/enterprise-ai-services-company</a>">Building a new enterprise AI services company with Blackstone, H&amp;F and Goldman Sachs</a> - 与黑岩、HHF、高盛共建企业AI服务公司，5月4日</li>
-<li><strong>OpenAI</strong>：<a href="<a href="https://openai.com/index/gpt-5-5-instant-system-card/" target="_blank" rel="noopener">https://openai.com/index/gpt-5-5-instant-system-card/</a>">GPT-5.5 Instant System Card Safety</a> - GPT-5.5 Instant安全评估报告发布，5月5日</li>
-<li><strong>OpenAI</strong>：<a href="<a href="https://openai.com/index/new-ways-to-buy-chatgpt-ads/" target="_blank" rel="noopener">https://openai.com/index/new-ways-to-buy-chatgpt-ads/</a>">New ways to buy ChatGPT ads</a> - ChatGPT广告商业化加速，5月5日</li>
-<li><strong>Google</strong>：<a href="<a href="https://blog.google/innovation-and-technology/ai/accelerating-gemma-4-faster-inference-with-multi-token-prediction-drafters/" target="_blank" rel="noopener">https://blog.google/innovation-and-technology/ai/accelerating-gemma-4-faster-inference-with-multi-token-prediction-drafters/</a>">Accelerating Gemma 4: faster inference with multi-token prediction drafters</a> - Gemma 4通过多token预测技术加速推理，5月5日</li>
+<li><strong>物流领域</strong>：FM Logistic 使用 AlphaEvolve 优化复杂路径规划问题，路由效率提升 10.4%，每年节省超过 15,000 公里运输距离</li>
+<li><strong>广告领域</strong>：WPP 利用 AlphaEvolve 优化 AI 模型组件，在高维营销数据上实现 10% 的准确率提升</li>
 </ul>
+<p>AlphaEvolve 已从纯研究项目扩展为可交付企业的商业化产品，标志着 Google 在 AI 代码智能体商业化路径上迈出了实质性一步。</p>
+<p><strong>链接：</strong>
+<a href="https://deepmind.google/blog/alphaevolve-impact/" target="_blank" rel="noopener">https://deepmind.google/blog/alphaevolve-impact/</a></p>
+<hr>
+<h3>Hugging Face 发布 QVAC MedPsy：医疗边缘部署专用模型</h3>
+<p><strong>来源：</strong> Hugging Face Blog | 发布时间：2026-05-07</p>
+<p><strong>核心内容：</strong>
+Hugging Face 发布 QVAC MedPsy（Medical &amp; Psychology）系列，这是专为医疗和心理健康场景设计的轻量级边缘部署模型系列。核心亮点：</p>
+<ul>
+<li><strong>参数效率</strong>：QVAC MedPsy-1.7B 在 7 项医学基准测试中平均得分 62.62，超越 Google MedGemma-1.5-4B（51.20）11.42 分，而参数量不到后者的 1/2</li>
+<li><strong>多阶段 RL 训练</strong>：创新性地引入多阶段强化学习 pipeline，显著提升了医疗场景下的指令遵循能力</li>
+<li><strong>端侧支持</strong>：已针对 Qualcomm / Apple Neural Engine / 联发科 NPU 进行了专项优化，1.7B 模型在旗舰手机上可流畅运行</li>
+</ul>
+<p>该系列填补了"HuggingFace 官方医疗大模型"的空白，为边缘医疗 AI 应用提供了高性能开源选择。</p>
+<p><strong>链接：</strong>
+<a href="https://huggingface.co/blog/qvac/medpsy" target="_blank" rel="noopener">https://huggingface.co/blog/qvac/medpsy</a></p>
+<hr>
     </div>
     <div class="page-footer">
     <a class="footer-link" href="section-2.html">← 上一板块</a>
