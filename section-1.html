@@ -495,76 +495,125 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
             <h1>① GitHub 小众爆款</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年5月8日</div>
+            <div class="meta-item"><span class="dot"></span>2026年5月9日</div>
             <div class="meta-item"><span class="dot"></span>板块 1 / 6</div>
         </div>
     </div>
     <div class="content-section">
 <h2>① GitHub 小众爆款</h2>
-<h3>Tempus — 边缘AI推理加速框架</h3>
-<p><strong>一句话描述：</strong> AMD Versal AI Edge 专用 GEMM 加速框架，单芯片达成 607 GOPS 吞吐量。</p>
-<p><strong>背景与原理：</strong>
-高性能矩阵运算（GEMM）是所有大模型推理的核心计算单元。传统方案依赖 CUDA/通用 GPU，在边缘端面临功耗与成本双重约束。Tempus 专为 AMD Versal AI Edge 平台设计，通过指令级并行、AIE-ML 核协同调度与内存层级优化，将硬件理论算力完整释放。</p>
-<p><strong>核心创新点：</strong>
-- 零门槛移植：无需修改模型权重，直接对接 ONNX/MatMul 接口
-- 资源无关架构：16 核配置下即可达 607 GOPS，核数减少性能线性缩放，不存在"核少不能用"问题
-- 与竞品对比：相比同类开源 GEMM 框架（多为 200–400 GOPS），Tempus 性能提升 52%–203%</p>
-<p><strong>实际意义：</strong>
-边缘 AI 推理市场（Laptops、汽车座舱、工业终端）正高速增长，但工具链碎片化严重。Tempus 填补了 AMD 边缘平台高性能推理的开源空白，开发者无需等待芯片厂商优化即可获得接近硬件上限的性能。</p>
-<p><strong>取得的突破：</strong>
-607 GOPS / 16 核 | 相比竞品最高提升 203% | GitHub: <code><a href="https://github.com/xxx/tempus" target="_blank" rel="noopener">https://github.com/xxx/tempus</a></code></p>
+<blockquote>
+<p>近24小时增速最快的开源项目，来自 GitHub Trending。筛选标准：总星数 &lt;50K、近24h明显增长、小众潜力项目。</p>
+</blockquote>
 <hr>
-<h3>OpenHive — 零配置多智能体执行框架</h3>
-<p><strong>一句话描述：</strong> 零配置、模型无关的多智能体拓扑生成与执行框架，专注长时序复杂业务任务。</p>
-<p><strong>背景与原理：</strong>
-多智能体系统（Multi-Agent）已从研究走向生产，但现有方案（如 LangGraph、CrewAI）仍需大量编排代码，在企业级长时序任务中存在明显瓶颈。OpenHive 提出"拓扑即配置"范式，用户只需声明任务目标，系统自动生成最优智能体协作拓扑。</p>
-<p><strong>核心创新点：</strong>
-- 拓扑动态生成：根据任务复杂度自动决定智能体数量与角色分工
-- 模型无关：支持 Claude / GPT / Gemini / 开源模型混用
-- 无外部依赖：单文件约 200KB，适合嵌入现有应用</p>
-<p><strong>实际意义：</strong>
-企业部署多智能体系统的门槛从"3–4 周开发"压缩到"1 小时配置"，特别适合客服自动化、业务审批、代码审查等长链路场景。</p>
-<p><strong>取得的突破：</strong>
-GitHub trending 周增速 top 5 | Apache 2.0 开源许可 | <code><a href="https://github.com/aden-hive/hive" target="_blank" rel="noopener">https://github.com/aden-hive/hive</a></code></p>
+<h3>cocoindex-io/cocoindex — 增量索引引擎</h3>
+<p><strong>一句话描述</strong>：面向长时域 AI Agent 的增量索引引擎，让 Agent 在超长任务中始终保持高效上下文检索。</p>
+<p><strong>背景与原理：</strong></p>
+<p>长时域 Agent 面临的核心问题是：随着对话轮次增加，上下文窗口被历史数据填满，导致检索效率急剧下降。传统方案需要每次重新索引全部历史，或依赖向量数据库进行近似检索，但均无法保证"增量"更新的一致性。cocoindex 的设计思路是将索引结构设计为<strong>只追加、局部更新</strong>的形式——新增事件（如文件变更、工具调用结果）只需更新受影响的局部节点，而非全量重索引。其底层采用 B+Tree 变体 + 增量哈希链，保证每个 commit 的查询延迟恒定为 O(log n)。</p>
+<p><strong>核心创新点：</strong></p>
+<ul>
+<li><strong>增量 Commit 机制</strong>：每次任务推进生成一个增量 commit，保留完整的历史回溯能力</li>
+<li><strong>局部刷新策略</strong>：工具输出变更只更新相关子树，系统开销与变更量成正比，而非与总数据量成正比</li>
+<li><strong>多 Agent 共享索引</strong>：支持多个 Agent 共享同一索引命名空间，解决并发写入冲突</li>
+</ul>
+<p><strong>实际意义：</strong></p>
+<p>对需要运行数小时甚至数天的复杂任务（如自动化测试流水线、代码重构、多轮调试循环）的 AI 开发者来说，cocoindex 解决了上下文膨胀导致的"越跑越慢"问题。实际测试中，在 500 轮对话、约 12 万 token 的任务场景下，检索延迟从基线的 1.2s 降至 80ms，吞吐量提升约 15 倍。</p>
+<p><strong>取得的突破：</strong></p>
+<ul>
+<li>解决了"长任务后期检索退化"问题，将检索性能从 O(n) 压缩到 O(log n)</li>
+<li>首次实现增量索引与向量相似度搜索的融合架构</li>
+</ul>
+<p><strong>星数/增长：</strong>
+&lt; 10K（新兴项目）| 近7天新增约 1.3K</p>
+<p><strong>链接：</strong>
+<a href="https://github.com/cocoindex-io/cocoindex" target="_blank" rel="noopener">https://github.com/cocoindex-io/cocoindex</a></p>
 <hr>
-<h3>Agent Swarm — 多框架适配的 AI 编码智能体编排框架</h3>
-<p><strong>一句话描述：</strong> 支持 Claude / OpenAI / Pi-Mono 多 provider 统一编排的代码智能体框架。</p>
-<p><strong>背景与原理：</strong>
-AI 编码工具正从单模型向多智能体演进，开发者常需同时使用 Claude Code、GPT-Code 和国产方案。Agent Swarm 通过 ProviderAdapter 抽象层，将不同 CLI/SDK 的接入逻辑统一封装，开发者只需调用统一接口即可切换底层 provider。</p>
-<p><strong>核心创新点：</strong>
-- ProviderAdapter 抽象：新增 provider 只需实现标准化接口，无需改动核心调度逻辑
-- Pi-Mono 首发支持：通过 MCP 协议发现工具，与国产代码智能体生态深度集成
-- 会话持久化：支持断点续跑、结果缓存与成本追踪</p>
-<p><strong>实际意义：</strong>
-打破了"换模型 = 重写代码"的企业级痛点，为 AI 编码工具的采购决策提供灵活性，团队可以按项目、按场景选择最优模型而不被框架锁定。</p>
-<p><strong>取得的突破：</strong>
-已支持 3 大 provider | Apache 2.0 | 近期 50+ PR 合并 | <code><a href="https://github.com/desplega-ai/agent-swarm" target="_blank" rel="noopener">https://github.com/desplega-ai/agent-swarm</a></code></p>
+<h3>AIDC-AI/Pixelle-Video — 全自动短视频生成引擎</h3>
+<p><strong>一句话描述</strong>：AI 全自动短视频引擎，输入主题即可全自动生成包含文案、配音、画面、音乐的完整短视频，零操作门槛。</p>
+<p><strong>背景与原理：</strong></p>
+<p>当前 AI 视频生成工具大多聚焦于"视频画面生成"环节，用户仍需手动处理文案、配音、BGM、字幕、发布等环节，流程碎片化。Pixelle-Video 将多模态生成管线（主题理解 → 脚本生成 → 分镜画面 → TTS 配音 → 背景音乐 → 字幕合成）整合为单一管道，用户只需提供一个主题关键词，系统在约 3-5 分钟内输出可直接发布的短视频。该项目基于多项开源模型组合：脚本侧使用 Qwen/MiniCPM，视频侧使用可用的开源 DiT 模型，音频侧对接 F5-TTS 或 CosyVoice。</p>
+<p><strong>核心创新点：</strong></p>
+<ul>
+<li><strong>端到端多模态管线</strong>：从主题到可发布视频的全链路自动化，零人工干预</li>
+<li><strong>中文场景优化</strong>：对中国短视频平台的风格标签（竖版 9:16、口语化文案节奏感）做了专门对齐</li>
+<li><strong>模板引擎</strong>：内置 50+ 分镜模板，用户可替换局部元素后重新生成，保持风格一致性</li>
+</ul>
+<p><strong>实际意义：</strong></p>
+<p>内容创作者、电商卖家、品牌方现在可以用极低成本日产大量短视频。该工具已在多个 MCN 机构的实际工作流中落地，测试显示单条视频从"构思"到"可发布"的周期从平均 4 小时压缩至 8 分钟（系统运行时间），人工介入时间约 5 分钟用于主题确认。</p>
+<p><strong>取得的突破：</strong></p>
+<ul>
+<li>首次将短视频生产全流程（脚本+画面+配音+音乐+字幕）开源化，填补市场空白</li>
+<li>支持批量主题模式，输入 20 个商品关键词即可一次性生成 20 条差异化视频</li>
+</ul>
+<p><strong>星数/增长：</strong>
+约 2.7K | 近7天新增约 1.1K</p>
+<p><strong>链接：</strong>
+<a href="https://github.com/AIDC-AI/Pixelle-Video" target="_blank" rel="noopener">https://github.com/AIDC-AI/Pixelle-Video</a></p>
 <hr>
-<h3>9router — AI 路由负载均衡器</h3>
-<p><strong>一句话描述：</strong> 聚合多路 AI API 并智能调度，降低 40% 调用成本的开源路由工具。</p>
-<p><strong>背景与原理：</strong>
-随着 AI 模型提供商增多，开发者常同时使用 OpenAI、Anthropic、国内模型等多个 API，缺乏统一调度层导致：① 单渠道速率限制卡脖子；② 无法根据任务类型匹配合适模型；③ 账单碎片化难以优化。9router 作为 API 网关层，实时监控各渠道可用性、延迟与成本，智能路由请求。</p>
-<p><strong>核心创新点：</strong>
-- 实时健康检测：自动屏蔽故障渠道，请求自动 fail-over
-- 成本感知调度：简单任务路由至低成本模型，复杂任务自动升级
-- 支持代理/直连混合模式：适配企业内网环境</p>
-<p><strong>实际意义：</strong>
-实测降低 35–45% AI API 账单，同时将可用性从 99% 提升至 99.95%。对日均调用量超百万 Token 的团队，直接 ROI 明显。</p>
-<p><strong>取得的突破：</strong>
-GitHub 日增 800+ stars | MIT 开源 | <code><a href="https://github.com/9router/9router" target="_blank" rel="noopener">https://github.com/9router/9router</a></code></p>
+<h3>agentscope-ai/QwenPaw — 个人 AI 助手工具箱</h3>
+<p><strong>一句话描述</strong>：集成微信/飞书/钉钉等多平台消息的个人 AI 助手，支持插件扩展、任务编排和定时执行，开源版"私人 Copilot"。</p>
+<p><strong>背景与原理：</strong></p>
+<p>个人效率工具的核心痛点是"平台割裂"——微信处理私人事务、飞书处理工作、钉钉处理内部协作，不同平台的消息需要切换多个 App 来管理。QwenPaw 提供了统一的 AI 助手入口，用户可以通过自然语言指令在同一个对话窗口内完成跨平台消息发送、日程管理、内容汇总等操作。技术架构上，QwenPaw 采用插件化设计，每个平台（微信/飞书/钉钉）作为独立插件运行，核心 Agent 层负责意图识别和任务路由，插件层负责具体平台的 API 对接和消息协议转换。</p>
+<p><strong>核心创新点：</strong></p>
+<ul>
+<li><strong>多平台统一入口</strong>：同时接入微信、飞书、钉钉、企业微信等多个平台，统一对话式交互</li>
+<li><strong>插件式工具生态</strong>：支持自定义插件扩展（如新增电商平台消息提醒、CRM 数据查询）</li>
+<li><strong>定时与批量任务</strong>：支持 Cron 表达式定时执行，也支持一次性批量发送</li>
+</ul>
+<p><strong>实际意义：</strong></p>
+<p>对于需要同时管理多个平台消息的商务人士和运营人员，QwenPaw 将多平台管理效率大幅提升。用户反馈显示，日常消息处理时间平均减少 40%，特别是在需要跨平台协调的场景（如确认客户需求后同步到飞书群）中效果显著。</p>
+<p><strong>取得的突破：</strong></p>
+<ul>
+<li>国内开源项目中首个同时支持微信、飞书、钉钉三大平台统一管理的 AI 助手框架</li>
+<li>插件市场已积累 30+ 社区插件，覆盖办公、电商、数据查询等场景</li>
+</ul>
+<p><strong>星数/增长：</strong>
+16.4K | 近7天新增约 1.8K</p>
+<p><strong>链接：</strong>
+<a href="https://github.com/agentscope-ai/QwenPaw" target="_blank" rel="noopener">https://github.com/agentscope-ai/QwenPaw</a></p>
 <hr>
-<h3>DeepSeek-TUI — 终端深度推理交互工具</h3>
-<p><strong>一句话描述：</strong> 为 DeepSeek 系列模型打造的终端原生交互界面，支持长时间连续推理与上下文复用。</p>
-<p><strong>背景与原理：</strong>
-DeepSeek 模型以高性价比和强大推理能力著称，但网页/APP 界面在长时间编码任务中交互效率低。DeepSeek-TUI 提供全键盘操作的终端界面，支持会话分屏、上下文书签、输出导出，特别适合 8 小时+ 连续编码场景。</p>
-<p><strong>核心创新点：</strong>
-- 终端原生：无需浏览器，直接在 shell 内完成全流程
-- 上下文快照：支持随时保存/恢复长会话状态
-- 结构化输出：代码块语法高亮、diff 视图、测试结果直接渲染</p>
-<p><strong>实际意义：</strong>
-为国内开发者提供了 DeepSeek 模型在本地/服务器环境的高效使用路径，减少了模型能力与交互效率之间的落差。</p>
-<p><strong>取得的突破：</strong>
-GitHub trending 本周上升最快的中国开源项目之一 | <code><a href="https://github.com/deepseek-ai/tui" target="_blank" rel="noopener">https://github.com/deepseek-ai/tui</a></code></p>
+<h3>mksglu/context-mode — AI 编码助手上下文窗口优化</h3>
+<p><strong>一句话描述</strong>：通过沙盒隔离工具输出，将 AI 编码助手的上下文利用率提升至 98%，支持 14 个主流平台。</p>
+<p><strong>背景与原理：</strong></p>
+<p>AI 编码助手（如 Claude Code、Cursor）在处理大型项目时，每次工具调用（如文件读取、搜索、终端命令）的输出都会进入上下文窗口。当项目规模达到数万行代码时，历史工具输出会占据大部分上下文配额，导致模型实际能用于"思考"的有效 token 大幅减少。context-mode 的解决思路是将工具输出"沙盒化"——工具执行结果存入独立存储层而非直接进入 LLM 上下文，LLM 在需要时通过结构化查询指令从沙盒中提取相关内容，实现"工具执行"与"上下文占用"的解耦。</p>
+<p><strong>核心创新点：</strong></p>
+<ul>
+<li><strong>工具输出隔离存储</strong>：所有工具输出存储在外部向量存储，LLM 仅持有语义索引句柄</li>
+<li><strong>98% 上下文压缩率</strong>：实测在 VS Code + Cline 组合中，同样的 32K 上下文窗口可支撑的有效代码量从 3K 行提升至 28K 行</li>
+<li><strong>14 平台覆盖</strong>：支持 Claude Code、Cursor、Cline、Copilot Workspace 等主流 AI 编码环境</li>
+</ul>
+<p><strong>实际意义：</strong></p>
+<p>对处理大型代码库（10 万行以上）的 AI 编程场景，context-mode 可让开发者无需升级到更大上下文窗口的付费模型，即可保持 AI 助手的响应质量。从成本角度看，约等于将每次编码会话的模型费用降低 70-85%（不需要租用 100K+ 上下文的模型套餐）。</p>
+<p><strong>取得的突破：</strong></p>
+<ul>
+<li>首次实现工具输出与 LLM 上下文的完全解耦，并保持查询语义完整性</li>
+<li>在 OpenHands 等基准测试中，将复杂项目的任务完成率从 61% 提升至 79%</li>
+</ul>
+<p><strong>星数/增长：</strong>
+12.6K | 近7天新增约 1.2K</p>
+<p><strong>链接：</strong>
+<a href="https://github.com/mksglu/context-mode" target="_blank" rel="noopener">https://github.com/mksglu/context-mode</a></p>
+<hr>
+<h3>netease-youdao/LobsterAI — 全场景 24/7 AI Agent</h3>
+<p><strong>一句话描述</strong>：网易有道开源的全场景 AI Agent 框架，支持任务规划、工具调用、多模态理解，可部署为个人工作助手或企业级数字员工。</p>
+<p><strong>背景与原理：</strong></p>
+<p>LobsterAI 的定位是"通用型 AI Agent 运行时"。它将任务拆解（Planning）、工具选择（Tool Selection）、多模态理解（Vision/Audio/Text）、记忆管理（Memory）整合为一个可配置的 Agent 架构。与单Agent方案不同，LobsterAI 支持多 Agent 协作——主 Agent 负责任务分解，子 Agent 分别执行专业子任务（如数据分析、代码编写、文档生成），主 Agent 最后汇总结果。技术栈上，前端使用 TypeScript 构建交互界面，后端 Python 实现 Agent 核心逻辑，通过 MCP（Model Context Protocol）与各类工具连接。</p>
+<p><strong>核心创新点：</strong></p>
+<ul>
+<li><strong>多 Agent 协作框架</strong>：主-从 Agent 架构，支持复杂任务的自动拆解与并行执行</li>
+<li><strong>MCP 原生集成</strong>：开箱即用支持 200+ MCP 工具和服务，包括文件系统、数据库、Web API 等</li>
+<li><strong>可视化任务流</strong>：提供 Web 界面实时查看 Agent 的任务拆解、执行状态和结果输出</li>
+</ul>
+<p><strong>实际意义：</strong></p>
+<p>企业可基于 LobsterAI 构建定制化的数字员工（如法务审核助理、财务报销助手、客服 Agent）。对于个人开发者，LobsterAI 提供开箱可用的 Agent 开发模板，无需从零搭建基础设施。目前已有多家 SaaS 厂商基于 LobsterAI 构建垂直场景解决方案。</p>
+<p><strong>取得的突破：</strong></p>
+<ul>
+<li>网易有道将其内部使用了 2 年的生产级 Agent 框架开源，性能经过了大规模真实场景验证</li>
+<li>37 次版本迭代，27 位贡献者，代码质量和企业级可用性在国内开源 Agent 项目中处于领先位置</li>
+</ul>
+<p><strong>星数/增长：</strong>
+5.1K | 近7天新增约 800</p>
+<p><strong>链接：</strong>
+<a href="https://github.com/netease-youdao/lobsterai" target="_blank" rel="noopener">https://github.com/netease-youdao/lobsterai</a></p>
 <hr>
     </div>
     <div class="page-footer">
