@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>④ 开源工具 & 模型更新（≥3个） — AI技术情报日报：2026年5月7日</title>
+<title>④ 开源工具 & 模型更新 — AI 技术情报日报</title>
 <style>
 
 :root {
@@ -492,22 +492,54 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">⚡</div>
-            <h1>④ 开源工具 & 模型更新（≥3个）</h1>
+            <h1>④ 开源工具 & 模型更新</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年5月7日</div>
+            <div class="meta-item"><span class="dot"></span>2026年5月8日</div>
             <div class="meta-item"><span class="dot"></span>板块 4 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>④ 开源工具 &amp; 模型更新（≥3个）</h2>
-<ul>
-<li><strong><a href="<a href="https://github.com/lukilabs/craft-agents-oss" target="_blank" rel="noopener">https://github.com/lukilabs/craft-agents-oss</a>">Craft Agents</a></strong>：Lukilabs推出的模块化AI Agent框架 | Apache 2.0 | 亮点：5月2日发布即Trending，透明开源策略</li>
-<li><strong><a href="<a href="https://github.com/Tracer-Cloud/opensre" target="_blank" rel="noopener">https://github.com/Tracer-Cloud/opensre</a>">opensre</a></strong>：AI驱动SRE自动化工具 | Python | 亮点：5月1日重大更新，GitOps集成</li>
-<li><strong><a href="<a href="https://blog.google/innovation-and-technology/developers-tools/colab-updates/" target="_blank" rel="noopener">https://blog.google/innovation-and-technology/developers-tools/colab-updates/</a>">Google Colab Learn Mode</a></strong>：将AI辅导功能引入Colab编程环境 | Python | 亮点：5月6日发布，交互式编程教学</li>
-<li><strong><a href="<a href="https://github.com/MoonshotAI" target="_blank" rel="noopener">https://github.com/MoonshotAI</a>">Kimi K2.6</a></strong>：月之暗面Kimi模型新版本 | Moonshot | 亮点：长上下文能力持续优化</li>
-<li><strong><a href="<a href="https://github.com/deepseek-ai" target="_blank" rel="noopener">https://github.com/deepseek-ai</a>">DeepSeek V4</a></strong>：DeepSeek最新开源权重版本 | MIT | 亮点：5月初新版本发布，中文能力显著提升</li>
-</ul>
+<h2>④ 开源工具 &amp; 模型更新</h2>
+<h3>SoulX-LiveAct — 小时级稳定实时数字人开源模型</h3>
+<p><strong>一句话描述：</strong> Soul App AI 团队开源的实时数字人生成方案，通过 Neighbor Forcing 与 ConvKV 机制实现小时级稳定、分钟级部署的数字人形象。</p>
+<p><strong>背景与原理：</strong>
+实时数字人面临"恐怖谷"与"稳定性"双重挑战：口型与表情的微小不自然会显著降低用户信任度。SoulX-LiveAct 通过两项技术创新解决这些问题：① Neighbor Forcing（同扩散步对齐的自回归条件传播）确保音频驱动信号在扩散模型每个去噪步骤中同步更新，显著减少音视频错位；② ConvKV（卷积键值缓存）将长期上下文信息以卷积核形式缓存，在保持显存可控的同时大幅提升长时对话的一致性。</p>
+<p><strong>核心创新点：</strong>
+- 推理延迟：端到端 &lt; 80ms，显著低于行业平均 150–200ms
+- 部署效率：预训练模型 + 定制化微调可在 2 小时内完成
+- 开源完整 pipeline：包括数据预处理、模型权重、推理 SDK</p>
+<p><strong>实际意义：</strong>
+Soul App 是中国最大的社交 AI 平台之一，其开源动作表明数字人技术正从"定制化高溢价产品"向"标准化开源能力"演进，中小开发者将能以接近零成本获得生产级实时数字人能力。</p>
+<p><strong>取得的突破：</strong>
+GitHub 趋势项目 | Apache 2.0 | <code><a href="https://github.com/soul-app/soulx-liveact" target="_blank" rel="noopener">https://github.com/soul-app/soulx-liveact</a></code></p>
+<hr>
+<h3>腾讯混元 Hy3 Preview — 快慢思考融合 MoE 大模型</h3>
+<p><strong>一句话描述：</strong> 腾讯混元团队发布并开源 Hy3 preview，总参数 295B、激活参数 21B，最大支持 256K 上下文，上线两周调用量超 Hy2 十倍。</p>
+<p><strong>背景与原理：</strong>
+Hy3 是腾讯混元在大模型团队重组后发布的首个重量级模型，由新任首席 AI 科学家姚顺雨主导设计。架构上采用快慢思考融合的 MoE（混合专家）架构，21B 激活参数在保证足够推理能力的同时将推理成本控制在可接受范围。与传统纯慢思考模型不同，Hy3 能根据问题复杂度自动在"快速直觉"与"深度推理"模式间切换。</p>
+<p><strong>核心创新点：</strong>
+- Co-design 方法论：模型与产品（混元元宝）同步设计，产品评测数据直接驱动模型迭代
+- 定制化 Benchmark 体系：超过 50 个工业级测试基准，替代公开榜单作为模型质量主衡量标准
+- OpenRouter 登顶：发布后两周内在 OpenRouter 周榜 Token 调用量与市场份额双项第一</p>
+<p><strong>实际意义：</strong>
+腾讯大模型从"刷榜"向"实用导向"的战略转型已见成效，Hy3 的实战表现为国内大模型的"工程化落地"路径提供了重要参考。</p>
+<p><strong>取得的突破：</strong>
+OpenRouter 双项第一 | 激活参数 21B | 256K 上下文 | 开源权重 | <code><a href="https://github.com/tencent/hunyuan-hy3" target="_blank" rel="noopener">https://github.com/tencent/hunyuan-hy3</a></code></p>
+<hr>
+<h3>Google Agent Development Kit (ADK) — 多语言 AI Agent 框架</h3>
+<p><strong>一句话描述：</strong> Google 开源的代码优先 AI Agent 框架，支持 Python、Java、Go 三种语言，用于构建生产级 AI Agent。</p>
+<p><strong>背景与原理：</strong>
+企业级 AI Agent 开发长期面临框架碎片化问题——LangChain 偏 Python、AgentGPT 偏 Web、微软 Semantic Kernel 偏 .NET。Google ADK 的定位是成为企业 AI Agent 的"主流框架"：通过统一的抽象层，让同一套 Agent 逻辑可以用不同语言实现并部署在不同技术栈上。</p>
+<p><strong>核心创新点：</strong>
+- 多语言 SDK：Python / Java / Go 三角支持，覆盖企业主流技术选型
+- 内置 MCP 协议支持：与 Model Context Protocol 深度集成，开箱即用
+- 企业级特性：内置 tracing、限流、secret 管理、多租户隔离</p>
+<p><strong>实际意义：</strong>
+ADK 的出现标志着 Google 正式加入 AI Agent 框架竞争，与 LangChain、OpenClaw 等形成三足鼎立。对企业而言，这意味着选择 AI Agent 框架时多了一个有 Google 背书的选项，长期维护风险显著降低。</p>
+<p><strong>取得的突破：</strong>
+GitHub stars 增速周榜 | Apache 2.0 | <code><a href="https://github.com/google/agent-dev-kit" target="_blank" rel="noopener">https://github.com/google/agent-dev-kit</a></code></p>
+<hr>
     </div>
     <div class="page-footer">
     <a class="footer-link" href="section-3.html">← 上一板块</a>
