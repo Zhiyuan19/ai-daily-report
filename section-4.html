@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>④ 开源工具 & 模型更新（4个） — AI 技术情报日报</title>
+<title>板块四：开源工具&模型更新 — AI技术情报日报 | 2026年5月10日</title>
 <style>
 
 :root {
@@ -492,54 +492,107 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">⚡</div>
-            <h1>④ 开源工具 & 模型更新（4个）</h1>
+            <h1>板块四：开源工具&模型更新</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年5月9日</div>
+            <div class="meta-item"><span class="dot"></span>2026年5月10日</div>
             <div class="meta-item"><span class="dot"></span>板块 4 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>④ 开源工具 &amp; 模型更新（4个）</h2>
+<h2>板块四：开源工具&amp;模型更新</h2>
+<h3>🌍 国际开源模型</h3>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>发布方</th>
+<th>亮点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HiDream-O1-Image</strong></td>
+<td>HiDream.ai</td>
+<td>8B参数图像推理模型开源，支持复杂视觉理解</td>
+</tr>
+<tr>
+<td><strong>ZAYA1-74B-Preview</strong></td>
+<td>Zyphra</td>
+<td>Apache 2.0许可，被视为GPT-4强力替代品，价格仅需几分之一</td>
+</tr>
+<tr>
+<td><strong>Kimi K2.6</strong></td>
+<td>月之暗面</td>
+<td>开源，被从业者报告可无缝替换而不降低性能</td>
+</tr>
+</tbody>
+</table>
+<h3>🇨🇳 国内开源模型&amp;工具</h3>
+<table>
+<thead>
+<tr>
+<th>模型/工具</th>
+<th>发布方</th>
+<th>亮点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DeepSeek V4</strong></td>
+<td>DeepSeek</td>
+<td>58页技术报告，近300人署名；创始人梁文锋与所有研究员并列署名</td>
+</tr>
+<tr>
+<td><strong>DeepSeek 识图模式</strong></td>
+<td>DeepSeek</td>
+<td>正式全面开放，网页端和App均可使用，正式进入多模态时代</td>
+</tr>
+<tr>
+<td><strong>DeepSeek V4.1</strong></td>
+<td>DeepSeek</td>
+<td>计划6月发布，重点：加强MCP支持、图像和音频处理能力（输出仍为文本）</td>
+</tr>
+<tr>
+<td><strong>HappyHorse1.0</strong></td>
+<td>阿里巴巴</td>
+<td>视频生成模型开启灰测，720P视频生成0.9元/秒</td>
+</tr>
+<tr>
+<td><strong>腾讯ima copilot</strong></td>
+<td>腾讯</td>
+<td>知识Agent正式推出，内置记忆系统，支持跨场景连续调用</td>
+</tr>
+</tbody>
+</table>
 <hr>
-<h3>DeepSeek V4 — 国产开源模型登顶全球榜单</h3>
-<p><strong>一句话描述：</strong> DeepSeek V4 以 671B 参数、100万上下文、仅 10% KV cache，开源并宣布全面适配华为昇腾芯片，标志着国产 AI 软硬协同生态的实质性突破。</p>
-<p><strong>背景与原理：</strong>
-DeepSeek V4 于 2026年4月24日发布并同步开源，是全球首个在100万 token 场景下将单 Token 推理计算量降低 73%、KV cache 仅为其前代 10% 的开源大模型。架构上引入<strong>混合注意力机制</strong>（压缩稀疏注意力+重度压缩注意力的组合），大幅降低推理计算量。性能方面，V4 在推理、知识、代码能力上比肩 GPT-5.4 和 Claude Opus 4.6 等顶级闭源模型。</p>
-<p><strong>核心突破：</strong>
-- 全球权威开源模型榜单前两名（与 Kimi K2.6 并列）
-- 中国开源模型首次完成华为昇腾芯片全栈适配（训练+推理）
-- 寒武纪、摩尔线程、海光信息等实现"Day 0"同步适配
-- 成本比美国同类产品低 97%
-- 中国大模型全球周 Token 调用量占比超 60%</p>
-<p><strong>链接：</strong>
-<a href="https://github.com/deepseek-ai/DeepSeek-V4" target="_blank" rel="noopener">https://github.com/deepseek-ai/DeepSeek-V4</a></p>
-<hr>
-<h3>Kimi K2.6 — Moonshot AI 开源编码 Agent 模型</h3>
-<p><strong>一句话描述：</strong> 月之暗面发布的 1T 参数 MoE 架构开源模型，激活 32B，128K 上下文，在全球权威基准测试中比肩 GPT-5.4，重夺开源模型全球第一。</p>
-<p><strong>背景与原理：</strong>
-Kimi K2.6 于 2026年4月20日深夜发布，采用 1 万亿参数 MoE 架构，实际激活 32B。关键技术亮点包括 KV Cache 潜空间压缩（latent KV cache），可将长上下文信息压缩至更小内存占用的潜空间表示，从而在 128K 上下文下保持高效推理。可连续编码 13 小时，Agent 可持续自主运行 5 天。</p>
-<p><strong>核心突破：</strong>
-- 多项全球权威基准测试持平或优于 GPT-5.4、Claude Opus 4.6
-- 开源模型全球第一（Artificial Analysis 智能指数）
-- 中国开源模型首次在编码能力上全面领先
-- 已开源，供社区调用</p>
-<p><strong>链接：</strong>
-<a href="https://github.com/MoonshotAI/kimi-k2" target="_blank" rel="noopener">https://github.com/MoonshotAI/kimi-k2</a></p>
-<hr>
-<h3>ds4.c — Redis 之父为 DeepSeek V4 Flash 打造的本地推理引擎</h3>
-<p>（已在上方 GitHub 栏目详细介绍，此处略）</p>
-<hr>
-<h3>Mistral Medium 3.5 — Mistral AI 发布远程编码 Agent</h3>
-<p><strong>一句话描述：</strong> Mistral AI 发布 Mistral Medium 3.5，支持 Vibe 平台上的远程编码 Agent，以及 Le Chat 的全新 Work 模式。</p>
-<p><strong>背景与原理：</strong>
-Mistral Medium 3.5 是 Mistral 最新中高端模型，核心亮点是内置了<strong>远程编码 Agent</strong> 能力。通过 Vibe 平台，开发者可以构建能自主连接远程开发环境、读写代码、执行测试的 Agent 实例。Le Chat 新增的 Work 模式则面向复杂长程任务，提供多步骤规划、进度保存和中间结果检查点。</p>
-<p><strong>核心突破：</strong>
-- 首个主流大厂推出的远程编程 Agent 平台
-- 开源 Voxtral TTS（3月23日）形成完整语音-代码 Agent 矩阵
-- Le Chat Work 模式将 AI 对话升级为企业级任务管理工具</p>
-<p><strong>链接：</strong>
-<a href="https://mistral.ai/news" target="_blank" rel="noopener">https://mistral.ai/news</a></p>
+<h3>🔧 基础设施工具动态</h3>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>更新</th>
+<th>详情</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>vLLM / SGLang</strong></td>
+<td>重大优化</td>
+<td>推理基础设施方面的重大优化</td>
+</tr>
+<tr>
+<td><strong>DCI（直接语料库交互）</strong></td>
+<td>新方法</td>
+<td>用直接系统工具（grep/find/bash）替代RAG，显著提升基准测试</td>
+</tr>
+<tr>
+<td><strong>MCP (Model Context Protocol)</strong></td>
+<td>生态扩展</td>
+<td>DeepSeek V4.1将加强对MCP的支持</td>
+</tr>
+</tbody>
+</table>
 <hr>
     </div>
     <div class="page-footer">
