@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>板块四：开源工具&模型更新 — AI技术情报日报 | 2026年5月10日</title>
+<title>四、开源工具 & 模型更新 — AI技术情报日报</title>
 <style>
 
 :root {
@@ -492,7 +492,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">⚡</div>
-            <h1>板块四：开源工具&模型更新</h1>
+            <h1>四、开源工具 & 模型更新</h1>
         </div>
         <div class="section-meta">
             <div class="meta-item"><span class="dot"></span>2026年5月10日</div>
@@ -500,99 +500,15 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
     </div>
     <div class="content-section">
-<h2>板块四：开源工具&amp;模型更新</h2>
-<h3>🌍 国际开源模型</h3>
-<table>
-<thead>
-<tr>
-<th>模型</th>
-<th>发布方</th>
-<th>亮点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>HiDream-O1-Image</strong></td>
-<td>HiDream.ai</td>
-<td>8B参数图像推理模型开源，支持复杂视觉理解</td>
-</tr>
-<tr>
-<td><strong>ZAYA1-74B-Preview</strong></td>
-<td>Zyphra</td>
-<td>Apache 2.0许可，被视为GPT-4强力替代品，价格仅需几分之一</td>
-</tr>
-<tr>
-<td><strong>Kimi K2.6</strong></td>
-<td>月之暗面</td>
-<td>开源，被从业者报告可无缝替换而不降低性能</td>
-</tr>
-</tbody>
-</table>
-<h3>🇨🇳 国内开源模型&amp;工具</h3>
-<table>
-<thead>
-<tr>
-<th>模型/工具</th>
-<th>发布方</th>
-<th>亮点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>DeepSeek V4</strong></td>
-<td>DeepSeek</td>
-<td>58页技术报告，近300人署名；创始人梁文锋与所有研究员并列署名</td>
-</tr>
-<tr>
-<td><strong>DeepSeek 识图模式</strong></td>
-<td>DeepSeek</td>
-<td>正式全面开放，网页端和App均可使用，正式进入多模态时代</td>
-</tr>
-<tr>
-<td><strong>DeepSeek V4.1</strong></td>
-<td>DeepSeek</td>
-<td>计划6月发布，重点：加强MCP支持、图像和音频处理能力（输出仍为文本）</td>
-</tr>
-<tr>
-<td><strong>HappyHorse1.0</strong></td>
-<td>阿里巴巴</td>
-<td>视频生成模型开启灰测，720P视频生成0.9元/秒</td>
-</tr>
-<tr>
-<td><strong>腾讯ima copilot</strong></td>
-<td>腾讯</td>
-<td>知识Agent正式推出，内置记忆系统，支持跨场景连续调用</td>
-</tr>
-</tbody>
-</table>
+<h2>四、开源工具 &amp; 模型更新</h2>
+<h3>1. HiDream-O1-Image（8B）：推理驱动图像生成新时代</h3>
+<p>字节跳动旗下HiDream团队开源，是首个将思维链推理机制深度融入图像生成的开源模型，支持undistilled原版和distilled Dev加速版，在物理逻辑一致性、复杂场景物体关系处理上实现突破，8B参数可在单卡本地部署。</p>
 <hr>
-<h3>🔧 基础设施工具动态</h3>
-<table>
-<thead>
-<tr>
-<th>工具</th>
-<th>更新</th>
-<th>详情</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>vLLM / SGLang</strong></td>
-<td>重大优化</td>
-<td>推理基础设施方面的重大优化</td>
-</tr>
-<tr>
-<td><strong>DCI（直接语料库交互）</strong></td>
-<td>新方法</td>
-<td>用直接系统工具（grep/find/bash）替代RAG，显著提升基准测试</td>
-</tr>
-<tr>
-<td><strong>MCP (Model Context Protocol)</strong></td>
-<td>生态扩展</td>
-<td>DeepSeek V4.1将加强对MCP的支持</td>
-</tr>
-</tbody>
-</table>
+<h3>2. DeepSeek-V4.1（Preview）：$7B融资后的开源旗舰</h3>
+<p>DeepSeek于2026年5月初发布V4.1 Preview，在模型架构和推理效率上实现重大突破，提供DeepSeek-V4-Pro和DeepSeek-V4-Flash两个版本。V4系列聚焦Agentic Coding能力，复杂编码任务上已可比肩顶级闭源模型，同时定价继续保持极高性价比，试图以开源策略在开发者市场保持领先。</p>
+<hr>
+<h3>3. 腾讯混元Hy3 Preview：MoE架构 + 256K上下文</h3>
+<p>腾讯混元Hy3 Preview采用快慢思考融合的MoE架构，总参数295B，激活参数仅21B，支持256K超长上下文长度。Token调用量已超Hy2十倍，推理效率提升40%，已在腾讯云、元宝、QQ、腾讯文档等核心业务落地，并支持OpenClaw、OpenCode等主流开源Agent框架。</p>
 <hr>
     </div>
     <div class="page-footer">
