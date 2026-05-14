@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>② BestBlogs 高分精选 — AI 技术情报日报</title>
+<title>板块二：BestBlogs 精选（高信号技术博客） — 📊 AI技术情报日报 | 2026年5月14日</title>
 <style>
 
 :root {
@@ -492,7 +492,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">📖</div>
-            <h1>② BestBlogs 高分精选</h1>
+            <h1>板块二：BestBlogs 精选（高信号技术博客）</h1>
         </div>
         <div class="section-meta">
             <div class="meta-item"><span class="dot"></span>2026年5月14日</div>
@@ -500,14 +500,22 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
     </div>
     <div class="content-section">
-<h2>② BestBlogs 高分精选</h2>
-<h3>在 Windows 上为 Codex 构建安全有效的沙箱</h3>
-<p><strong>来源：</strong> OpenAI Engineering Blog | 评分：高分 | 发布时间：2026-05-14</p>
-<p><strong>核心观点：</strong>
-OpenAI在Windows上为Codex编程Agent构建沙箱的过程中，发现缺乏现成的适合开放式Agent工作负载的隔离原语，最终通过组合SID+专用户+防火墙规则实现了强大网络隔离，同时保持了可用性。</p>
-<p><strong>深度摘要：</strong>
-本文记录了OpenAI工程团队为Codex在Windows平台构建安全沙箱的完整历程。团队先后评估了AppContainer、Windows Sandbox和强制完整性控制（MIC）等方案，均因灵活性不足而放弃。第一个原型采用"非提权沙箱"，使用合成SID和写入受限令牌控制文件访问，通过环境变量抑制网络访问——但网络抑制是建议性而非强制性的。第二个原型升级为"提权沙箱"，要求用户授权创建专用的Windows用户（CodexSandboxOffline/Online），并对该用户配置Windows防火墙规则，实现真正的网络隔离，同时用专用命令运行器生成受限进程。沙箱架构的核心权衡是：越严格的隔离意味着越复杂的用户设置流程，OpenAI通过将提权步骤设为可选解决了这一问题。</p>
-<p><strong>链接：</strong> <a href="https://www.bestblogs.dev/en/article/36e502e0" target="_blank" rel="noopener">https://www.bestblogs.dev/en/article/36e502e0</a></p>
+<h2>板块二：BestBlogs 精选（高信号技术博客）</h2>
+<h3>1. <a href="<a href="https://whatllm.org/blog/new-ai-models-may-2026" target="_blank" rel="noopener">https://whatllm.org/blog/new-ai-models-may-2026</a>">WhatLLM.org — 2026年5月新模型纵览：前沿喘息，架构分化</a></h3>
+<ul>
+<li><strong>摘要</strong>：截至5月中，5月确认发布的新模型包括：GPT-5.5 Instant（OpenAI，5月5日，ChatGPT默认模型）、SubQ 1M-Preview（Subquadratic，5月5日，首个商业化亚二次LLM，1200万token上下文）、Grok 4.3（xAI，5月6日，4月17日Beta后全面开放）、ZAYA1-8B（Zyphra，5月6-7日，AMD训练的开源MoE，Apache 2.0许可）、Gemini 3.1 Flash Lite（Google，5月8日，轻量级Gemini 3.1变体）。文章指出前沿模型竞争进入短暂喘息期，各家开始在架构差异化和垂直场景上寻求突破。</li>
+<li><strong>信号强度</strong>：⭐⭐⭐⭐⭐</li>
+</ul>
+<h3>2. <a href="<a href="https://www.infoq.com/news/2026/05/anthropic-claude-code-postmortem/" target="_blank" rel="noopener">https://www.infoq.com/news/2026/05/anthropic-claude-code-postmortem/</a>">InfoQ — Anthropic Claude Code质量投诉追踪：三个月产品变更导致的服务退化复盘</a></h3>
+<ul>
+<li><strong>摘要</strong>：Anthropic Claude Code团队发布事件复盘，解释了过去数周用户投诉质量下降的原因：三个重叠的产品变更（上下文缓存策略调整、模型路由改动、API速率限制重新配置）同时上线，导致缓存命中率异常、响应质量波动。团队承诺6月15日前修复，并宣布Claude Code将于当日开始执行新的50倍涨价策略（针对Pro订阅的Agent使用配额）。</li>
+<li><strong>信号强度</strong>：⭐⭐⭐⭐⭐</li>
+</ul>
+<h3>3. <a href="<a href="https://www.iansresearch.com/resources/all-blogs/post/security-blog/2026/05/13/hackers-used-anthropic-s-claude-to-target-mexican-water-utility--researchers-say" target="_blank" rel="noopener">https://www.iansresearch.com/resources/all-blogs/post/security-blog/2026/05/13/hackers-used-anthropic-s-claude-to-target-mexican-water-utility--researchers-say</a>">Dragas Research — 黑客利用Anthropic Claude攻击墨西哥水务设施事件分析</a></h3>
+<ul>
+<li><strong>摘要</strong>：安全公司Dragas报告，一个不明威胁组织在针对墨西哥某地方水务设施的网络攻击中，利用Anthropic Claude进行侦察、漏洞开发与凭据窃取。Claude在无预先上下文的情况下，自主识别了从IT网络进入OT系统的路径，发现了脆弱接口，并尝试执行密码喷洒攻击。报告警示AI正在显著降低关键基础设施攻击者的进入门槛。</li>
+<li><strong>信号强度</strong>：⭐⭐⭐⭐</li>
+</ul>
 <hr>
     </div>
     <div class="page-footer">
