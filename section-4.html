@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>板块四：开源工具 & 模型更新 — AI技术情报日报</title>
+<title>④ 开源工具 & 模型更新 — AI 技术情报日报</title>
 <style>
 
 :root {
@@ -492,38 +492,29 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">⚡</div>
-            <h1>板块四：开源工具 & 模型更新</h1>
+            <h1>④ 开源工具 & 模型更新</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年4月24日</div>
-            <div class="meta-item"><span class="dot"></span>板块 4 / 7</div>
+            <div class="meta-item"><span class="dot"></span>2026年5月15日</div>
+            <div class="meta-item"><span class="dot"></span>板块 4 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>板块四：开源工具 &amp; 模型更新</h2>
-<blockquote>
-<p>本板块收录国际与国内开源模型及工具的重要更新，≥3个，含国际与国内各方向。</p>
-</blockquote>
+<h2>④ 开源工具 &amp; 模型更新</h2>
+<h3>openai-agents-python — OpenAI官方多Agent框架（见GitHub栏目）</h3>
+<h3>hugohe3/ppt-master — AI生成可编辑PPT</h3>
+<p><strong>一句话描述：</strong> 从任意文档直接生成原生可编辑的PPTX文件，而非图片格式，真正解决企业AI办公最后一公里。</p>
+<p><strong>背景与原理：</strong>
+现有AI生成PPT方案均输出图片或PDF，用户无法二次编辑。ppt-master的创新在于将AI生成的内容直接映射为PowerPoint原生形状（Native Shapes），包括文字框、表格、SmartArt、动画轨迹等均可无损编辑。其技术路径是：先用LLM提取文档结构和关键信息，再用Python-pptx库以结构化方式构建PPTX，而非依赖OfficeOpenXML的暴力注入。</p>
+<p><strong>链接：</strong> <a href="https://github.com/hugohe3/ppt-master" target="_blank" rel="noopener">https://github.com/hugohe3/ppt-master</a></p>
 <hr>
-<h3>更新一：GenericAgent——从3.3K种子代码自进化至全系统控制</h3>
-<p><strong>开源方：lsdefine | MIT许可 | Python</strong></p>
-<p><strong>更新内容：</strong><br>
-GenericAgent是一个自进化AI Agent框架，其核心理念是从极简种子代码（3.3K行）出发，让AI Agent自主扩展自身技能树（Skill Tree），最终实现对完整计算系统的控制。与传统Agent系统预先定义工具集不同，GenericAgent的Agent能够根据任务需求自主生成、评估并部署新工具，理论上具备"无限扩展"能力。</p>
-<p>在Token效率上，GenericAgent实现了"6倍Token降低"——在达到相同系统控制任务完成率的前提下，Token消耗仅为GPT-4o等大型模型的约1/6，这对降低Agent运行成本意义重大。当前GitHub星数6.1k，最近30天保持日均稳定增长，Issues和PR活跃度在同类项目中位居前列。</p>
-<p><strong>项目链接：</strong> <a href="https://github.com/lsdefine/GenericAgent" target="_blank" rel="noopener">https://github.com/lsdefine/GenericAgent</a></p>
-<hr>
-<h3>更新二：Mistral Small 4——22B参数开源模型超越3-5倍尺寸闭源模型</h3>
-<p><strong>开源方：Mistral AI | Apache 2.0许可</strong></p>
-<p><strong>更新内容：</strong><br>
-Mistral AI发布了Small 4，这是一款将推理、多模态和指令跟随能力整合于单一快速包中的开源模型。该模型以仅220亿参数，在多项关键基准测试中超越了参数量为其3-5倍的闭源模型，标志着开源模型在"参数量效率"这一维度上实现了质的飞跃。</p>
-<p>Small 4在Mistral产品线中填补了"轻量级全能"需求：既有Ministral系列（3B/8B/14B）的边缘部署优势，又有Mistral Large的全面能力，适合需要在消费级硬件或边缘设备上运行复杂AI任务的企业场景。结合Mistral Forge（企业自定义模型训练平台，2026年4月发布），Mistral正在构建从"模型调用"到"模型定制"的全栈开源AI能力。</p>
-<hr>
-<h3>更新三：阿里云Qwen3.6-27B正式开源——本地编程Agent新大脑</h3>
-<p><strong>开源方：</strong> 阿里云/通义千问 | 发布时间：2026年4月22日<br>
-<strong>链接：</strong> <a href="https://huggingface.co/Qwen/Qwen3.6-27B" target="_blank" rel="noopener">https://huggingface.co/Qwen/Qwen3.6-27B</a></p>
-<p><strong>更新内容：</strong><br>
-阿里云正式开源Qwen3.6-27B，这是Qwen3.6系列首款正式开源模型，在270亿总参数的硬件高效规格下，实现了与千亿参数级模型相当的智能体编程能力。在SWE-bench、Terminal-Bench 2.0、SkillsBench、QwenWebBench、NL2Repo等多项权威编程基准测试中，Qwen3.6-27B均达到行业第一梯队水平。</p>
-<p>该模型的发布对于"本地部署AI编程助手"场景意义重大：开发者可以在24GB显存的消费级GPU（如RTX 4090）上运行完整的代码智能体，无需依赖云端API。多家Agent框架已宣布将Qwen3.6-27B作为默认本地大脑，包括OpenClaw等开源智能体平台。阿里云同步提供量化版本，将推理内存需求进一步降低。</p>
+<h3>NousResearch/hermes-agent — 伴随式自进化Agent</h3>
+<p><strong>一句话描述：</strong> 随着使用者的任务类型不断扩展，hermes-agent通过内嵌的技能获取机制实现"与用户共成长"的伴随式进化。</p>
+<p><strong>核心创新点：</strong>
+- 被动技能获取：根据用户任务模式自动扩展能力边界
+- 轻量级设计：无需外部知识库或向量数据库
+- 跨会话记忆：在多次会话中积累对用户偏好的理解</p>
+<p><strong>链接：</strong> <a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener">https://github.com/NousResearch/hermes-agent</a></p>
 <hr>
     </div>
     <div class="page-footer">

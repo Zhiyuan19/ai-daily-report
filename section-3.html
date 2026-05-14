@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>板块三：官方博客动态 — AI技术情报日报</title>
+<title>③ 官方博客新动态 — AI 技术情报日报</title>
 <style>
 
 :root {
@@ -492,47 +492,32 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">📢</div>
-            <h1>板块三：官方博客动态</h1>
+            <h1>③ 官方博客新动态</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年4月24日</div>
-            <div class="meta-item"><span class="dot"></span>板块 3 / 7</div>
+            <div class="meta-item"><span class="dot"></span>2026年5月15日</div>
+            <div class="meta-item"><span class="dot"></span>板块 3 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>板块三：官方博客动态</h2>
-<blockquote>
-<p>本板块收录Anthropic、OpenAI、Google DeepMind、Meta、Mistral、HuggingFace等主要AI实验室的官方博客动态，≥3条，每条含官方链接。</p>
-</blockquote>
+<h2>③ 官方博客新动态</h2>
+<h3>Meta AI — SAM 3.1：实时视频检测与跟踪</h3>
+<p><strong>来源：</strong> Meta AI Research | 发布时间：2026-04</p>
+<p><strong>核心内容：</strong>
+Meta发布SAM 3.1（Segment Anything Model 3.1），在实时视频检测和跟踪能力上实现重大突破。SAM 3.1引入了多路复用（Multiplexing）和全局推理（Global Reasoning）机制，可以在视频中同时跟踪多个目标并理解它们之间的空间关系，相比SAM 3.0的逐帧检测，3.1版本将视频处理速度提升3倍，同时将多目标关联误差降低60%。已开源并集成到Meta的Detectron平台。</p>
+<p><strong>链接：</strong> <a href="https://ai.meta.com/blog" target="_blank" rel="noopener">https://ai.meta.com/blog</a></p>
 <hr>
-<h3>动态一：OpenAI发布GPT-5.5——面向真实工作的下一代智能体模型</h3>
-<p><strong>来源：</strong> OpenAI官方博客 | 发布时间：2026年4月24日<br>
-<strong>链接：</strong> <a href="https://openai.com/index/introducing-gpt-5-5/" target="_blank" rel="noopener">https://openai.com/index/introducing-gpt-5-5/</a></p>
-<p><strong>核心内容：</strong><br>
-OpenAI于今日正式发布GPT-5.5，将其定位为"面向实际工作和智能体的新型智能"。这是继GPT-5.4之后的新一代旗舰模型，在Agentic Coding、科学研究和知识工作领域实现显著突破。</p>
-<p>GPT-5.5在Terminal-Bench 2.0（复杂命令行工作流评测）中达到82.7%准确率，超越GPT-5.4的75.1%和Claude Opus 4.7的69.4%；在SWE-Bench Pro（真实GitHub Issue解决）上达到58.6%，在无额外提示的情况下完成率创历史新高。更值得关注的是其效率提升：在Per-token延迟与GPT-5.4持平的前提下，GPT-5.5在完成相同Codex任务时消耗的Token数量显著减少，在Artificial Analysis Coding Index上以竞品一半的成本实现了最优智能水平。</p>
-<p>OpenAI还同步宣布GPT-5.5已与NVIDIA深度整合，运行于GB200 NVL72机架级系统，OpenAI已承诺部署超过10吉瓦的NVIDIA系统用于下一代AI基础设施。首批向Plus、Pro、Business和Enterprise用户开放，API大规模开放预计很快跟进。</p>
+<h3>Meta AI — Four MTIA Chips in Two Years</h3>
+<p><strong>来源：</strong> Meta AI Research | 发布时间：2026-03</p>
+<p><strong>核心内容：</strong>
+Meta披露了MTIA（Meta Training Inference Accelerator）芯片的演进历程：两年内推出4代MTIA芯片，用于支撑Meta全系列AI应用的用户体验优化。MTIA v4相比v1在推理效率上提升14倍，功耗效率提升8倍，成为Meta降低对英伟达依赖的核心自研芯片武器。Meta明确表示，自研芯片是其在AI基础设施上保持竞争优势的关键战略。</p>
+<p><strong>链接：</strong> <a href="https://ai.meta.com/blog" target="_blank" rel="noopener">https://ai.meta.com/blog</a></p>
 <hr>
-<h3>动态二：Anthropic发布Claude Opus 4.7——百万Token上下文的代码智能旗舰</h3>
-<p><strong>来源：</strong> Anthropic官方博客 | 发布时间：2026年4月16日<br>
-<strong>链接：</strong> <a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener">https://www.anthropic.com/news/claude-opus-4-7</a></p>
-<p><strong>核心内容：</strong><br>
-Anthropic发布Claude Opus 4.7，将其定位为"复杂推理与Agentic Coding领域最强可用模型"，定价维持Opus 4.6标准（$5/$25每M Token）。此次更新最重要的变化是原生支持100万Token上下文窗口，并修复了此前Claude Code中Opus 4.7会话"上下文百分比虚高、自动压缩过早"的Bug。</p>
-<p>Claude Code同步推送了大幅更新：大幅提升大会话/slash命令搜索的响应速度，引入内联思考进度显示，优化了MCP启动速度，以及针对macOS、Linux、Windows和API的全平台修复。Anthropic表示，Claude Opus 4.7已在Forge Global等二级市场估值突破1万亿美元，超越OpenAI的8800亿美元，反映出投资者对Anthropic商业化路径的高度认可。</p>
-<hr>
-<h3>动态三：Google DeepMind发布"Image Generators are Generalist Vision Learners"</h3>
-<p><strong>来源：</strong> Google DeepMind官方出版物 | 发布时间：2026年4月22日<br>
-<strong>链接：</strong> <a href="https://deepmind.google/discover/blog/" target="_blank" rel="noopener">https://deepmind.google/discover/blog/</a></p>
-<p><strong>核心内容：</strong><br>
-Google DeepMind发表论文"Image Generators are Generalist Vision Learners"，揭示了图像生成模型在视觉理解任务中展现出的强大跨任务泛化能力。该研究表明，经过大规模图像生成训练的模型，在无需额外微调的情况下，能够在图像分割、深度估计、姿态识别、图像修复等数十种视觉任务上达到或接近专门训练的专项模型水平。</p>
-<p>这一发现对"生成式AI vs 判别式AI"的传统范式提出了挑战：过去业界普遍认为图像理解需要判别式模型，生成式模型仅用于图像创建。DeepMind的工作表明，"生成式预训练"隐式编码了丰富的视觉结构知识，为"一个视觉基础模型服务所有视觉任务"的Geralist VLM路线提供了新的实证支持。</p>
-<hr>
-<h3>动态四：Mistral AI发布Voxtral TTS——开源语音合成新选择</h3>
-<p><strong>来源：</strong> Mistral AI Blog / TechCrunch | 发布时间：2026年3月26日<br>
-<strong>链接：</strong> <a href="https://techcrunch.com/2026/03/26/mistral-releases-a-new-open-source-model-for-speech-generation/" target="_blank" rel="noopener">https://techcrunch.com/2026/03/26/mistral-releases-a-new-open-source-model-for-speech-generation/</a></p>
-<p><strong>核心内容：</strong><br>
-Mistral AI发布了名为Voxtral TTS的开源文本转语音模型，支持9种语言（包括英语、法语、德语、西班牙语、荷兰语、葡萄牙语、意大利语、印地语），是该公司在语音领域的首次正式布局。该模型的突出特点是仅需不到5秒的音频样本即可克隆目标音色，并能够捕捉口音细微差异、语调变化和韵律不规则性。</p>
-<p>Voxtral TTS的定位是挑战ElevenLabs、Deepgram和OpenAI等闭源语音服务商，企业可基于Apache 2.0许可对模型进行本地部署和深度定制，在数据主权和成本控制上有独特优势。结合此前Mistral已发布的批处理和实时转录模型，Mistral正在构建完整的开源语音处理栈。</p>
+<h3>Anthropic — 内部对齐评估工具 Petri 正式开源捐赠</h3>
+<p><strong>来源：</strong> Anthropic Research | 发布时间：2026-05</p>
+<p><strong>核心内容：</strong>
+Anthropic正式将内部对齐评估工具Petri开源并捐赠给Linux Foundation。Petri于2025年10月随Anthropic Fellows计划启动，可对任何大语言模型快速测试欺骗性、谄媚性和有害请求合作倾向。已被Claude全系列模型采用，英国AI安全研究所（AISI）也将Petri纳入模型安全评估体系。这是Anthropic继MCP之后再次向开源社区捐赠关键基础设施工具。</p>
+<p><strong>链接：</strong> <a href="https://www.anthropic.com/research/donating-open-source-petri" target="_blank" rel="noopener">https://www.anthropic.com/research/donating-open-source-petri</a></p>
 <hr>
     </div>
     <div class="page-footer">
