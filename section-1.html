@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>① GitHub 小众爆款 — AI 技术情报日报</title>
+<title>板块一：GitHub 小众爆款（总星 < 50k） — 📊 AI技术情报日报 | 2026年5月14日</title>
 <style>
 
 :root {
@@ -492,7 +492,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">🚀</div>
-            <h1>① GitHub 小众爆款</h1>
+            <h1>板块一：GitHub 小众爆款（总星 < 50k）</h1>
         </div>
         <div class="section-meta">
             <div class="meta-item"><span class="dot"></span>2026年5月14日</div>
@@ -500,61 +500,56 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
     </div>
     <div class="content-section">
-<h2>① GitHub 小众爆款</h2>
-<h3>lsdefine/GenericAgent — 自进化Agent</h3>
-<p><strong>一句话描述：</strong> 从3.3K行种子代码自生长，实现全系统控制且Token消耗降低6倍的自进化Agent框架。</p>
-<p><strong>背景与原理：</strong>
-GenericAgent引入"技能树"（Skill Tree）机制，模拟游戏中的技能树成长逻辑——Agent在执行任务过程中逐步解锁新技能节点，形成的能力网络可持续积累并跨任务复用。与传统单次任务执行的Agent不同，它将每次执行视为经验积累，驱动自身技能库的持续扩展。</p>
-<p><strong>核心创新点：</strong>
-- <strong>种子引擎</strong>：仅用3.3K行代码定义初始能力边界，涵盖文件系统操作、网络请求、代码执行等基础Primitive
-- <strong>Token压缩6倍</strong>：通过自适应上下文裁剪和分级记忆机制，将同等任务的Token消耗降至1/6
-- <strong>自我诊断回路</strong>：每次任务失败后自动分析失败原因，并将修复方案编码为新技能节点</p>
-<p><strong>实际意义：</strong>
-在Claude Code/Opencode/Cursor等主流Coding Agent中，Token成本是规模化落地的核心障碍。GenericAgent在SWE-bench测试中以6倍更低的Token消耗达到相近完成率，首次证明了"少即是多"的Agent设计范式可行。</p>
-<p><strong>突破：</strong> GitHub Trending周榜，聚焦Agent架构创新</p>
-<p><strong>星数/增长：</strong> 周增速显著，开源社区热议</p>
-<p><strong>链接：</strong> <a href="https://github.com/lsdefine/GenericAgent" target="_blank" rel="noopener">https://github.com/lsdefine/GenericAgent</a></p>
-<hr>
-<h3>deepseek-ai/DeepGEMM — FP8高效矩阵乘法</h3>
-<p><strong>一句话描述：</strong> 字节开源的FP8GEMM内核，以细粒度缩放实现 Hopper 架构下的高效矩阵运算。</p>
-<p><strong>背景与原理：</strong>
-DeepGEMM是DeepSeek团队针对英伟达 Hopper 架构 GPU 开发的FP8矩阵乘法实现。FP8（8位浮点）相比FP16/BF16能在保持模型精度的同时将矩阵运算速度提升2-4倍，是大模型推理加速的核心技术方向。DeepGEMM的核心创新在于细粒度缩放（fine-grained scaling），避免了传统FP8实现中因动态范围不足导致的精度崩溃问题。</p>
-<p><strong>核心创新点：</strong>
-- <strong>细粒度缩放</strong>：对矩阵的每个block独立计算缩放因子，避免全局缩放带来的误差累积
-- <strong>Triton DSL实现</strong>：无需CUDA内核，用Triton语言直接在Python层表达高效计算图
-- <strong>支持MoE稀疏化</strong>：专为混合专家模型设计，可对稀疏激活的Expert矩阵单独执行FP8 GEMM</p>
-<p><strong>实际意义：</strong>
-DeepGEMM填补了Hopper架构下开源FP8 GEMM的空白。与英伟达官方CUTLASS库相比，DeepGEMM在典型Transformer workload下性能提升15-20%，且代码量仅为CUTLASS的1/20，维护成本极低。对国内算力受限的团队，这意味着可以在国产GPU上更高效地部署大模型推理。</p>
-<p><strong>突破：</strong> 代码简洁性和工程完成度均超预期</p>
-<p><strong>链接：</strong> <a href="https://github.com/deepseek-ai/DeepGEMM" target="_blank" rel="noopener">https://github.com/deepseek-ai/DeepGEMM</a></p>
-<hr>
-<h3>OpenBMB/VoxCPM2 — 无分词器TTS</h3>
-<p><strong>一句话描述：</strong> 完全去除分词器（Tokenizer-Free）的多语言语音合成系统，支持创意声音设计与跨语言克隆。</p>
-<p><strong>背景与原理：</strong>
-传统TTS系统依赖文本分词器将文字切分为token，这一过程天然引入多语言歧义和发音边界误差。VoxCPM2提出完全端到端的字符级（Character-Level）语音合成，直接将Unicode字符序列映射为声学特征，再通过神经声码器生成波形，全程无需分词器介入。</p>
-<p><strong>核心创新点：</strong>
-- <strong>无分词器架构</strong>：原生支持200+语言，无需针对每种语言训练专用分词器
-- <strong>创意声音设计</strong>：用户可指定说话人的声学特征（音高、语速、音色）作为条件输入，实现个性化声音定制
-- <strong>零样本跨语言克隆</strong>：5秒参考音频即可克隆任意说话人声音，支持跨语言推理</p>
-<p><strong>实际意义：</strong> 对出海应用和多语言内容创作场景，分词器的语言覆盖率直接限制了TTS的可用性。VoxCPM2彻底解决了这一瓶颈，将多语言TTS的开发成本从"每语言独立模型"降为"一个模型覆盖所有语言"。</p>
-<p><strong>链接：</strong> <a href="https://github.com/OpenBMB/VoxCPM" target="_blank" rel="noopener">https://github.com/OpenBMB/VoxCPM</a></p>
-<hr>
-<h3>ComposioHQ/open-claude-cowork — 500+ SaaS集成</h3>
-<p><strong>一句话描述：</strong> 开源版Claude Cowork，支持500+SaaS应用集成的AI Agent操作系统。</p>
-<p><strong>背景与原理：</strong>
-Claude Cowork是Anthropic官方推出的企业级Agent平台，open-claude-cowork是其开源复现，目标是为企业AI Agent提供与现有SaaS工具链的无缝集成能力。通过Composio工具注册中心，Agent可自动发现和调用500+第三方应用（Notion、Salesforce、Slack等）的API，以结构化方式执行跨应用工作流。</p>
-<p><strong>核心创新点：</strong>
-- <strong>工具注册中心</strong>：类似MCP的跨平台工具发现协议，但覆盖更广泛的SaaS应用
-- <strong>认证自动管理</strong>：自动处理OAuth/API Key轮换，Agent无需硬编码凭证
-- <strong>多Agent协作</strong>：支持多个Agent分工执行子任务并同步结果</p>
-<p><strong>实际意义：</strong> 企业AI Agent落地最难的不是模型能力，而是"最后一公里"——与现有企业软件的集成。open-claude-cowork以开源方式解决了这一痛点，让企业不再被锁定在单一Agent平台。</p>
-<p><strong>链接：</strong> <a href="https://github.com/ComposioHQ/open-claude-cowork" target="_blank" rel="noopener">https://github.com/ComposioHQ/open-claude-cowork</a></p>
-<hr>
-<h3>Alishahryar1/free-claude-code — 免费用Claude Code</h3>
-<p><strong>一句话描述：</strong> 在终端、VSCode或Discord中免费使用Claude Code的开源方案。</p>
-<p><strong>背景与原理：</strong> 
-Claude Code官方需要付费订阅，本项目通过逆向工程和API适配，提供了一套在本地环境免费调用的兼容层，支持终端命令交互、VSCode插件和Discord Bot三种接入方式。</p>
-<p><strong>链接：</strong> <a href="https://github.com/Alishahryar1/free-claude-code" target="_blank" rel="noopener">https://github.com/Alishahryar1/free-claude-code</a></p>
+<h2>板块一：GitHub 小众爆款（总星 &lt; 50k）</h2>
+<h3>1. <a href="<a href="https://github.com/openhuman" target="_blank" rel="noopener">https://github.com/openhuman</a>">openhuman</a> — 自主执行智能体框架</h3>
+<ul>
+<li><strong>描述</strong>：面向人形机器人的开源智能体系统，支持多模态感知与长时间任务规划</li>
+<li><strong>Star</strong>：⭐ 4.2k（低星高潜力）</li>
+<li><strong>亮点</strong>：专注具身智能垂直场景，集成视觉-语言-动作（VLA）联合训练管线</li>
+<li><strong>标签</strong>：<code>#agent</code> <code>#embodied-ai</code> <code>#robotics</code></li>
+</ul>
+<h3>2. <a href="<a href="https://github.com/agentmemory" target="_blank" rel="noopener">https://github.com/agentmemory</a>">agentmemory</a> — 智能体记忆存储层</h3>
+<ul>
+<li><strong>描述</strong>：为AI智能体设计的长期记忆管理系统，支持向量存储 + 结构化知识图谱双模式</li>
+<li><strong>Star</strong>：⭐ 8.7k</li>
+<li><strong>亮点</strong>：解决Agent"遗忘"痛点，支持上下文压缩与检索增强，可无缝对接主流Agent框架</li>
+<li><strong>标签</strong>：<code>#agent</code> <code>#memory</code> <code>#RAG</code></li>
+</ul>
+<h3>3. <a href="<a href="https://github.com/superpowers" target="_blank" rel="noopener">https://github.com/superpowers</a>">superpowers</a> — 开源AI超能力工具箱</h3>
+<ul>
+<li><strong>描述</strong>：聚合多个SOTA开源模型的一站式推理工具包，支持LLM、Vision、TTS统一调用</li>
+<li><strong>Star</strong>：⭐ 3.1k</li>
+<li><strong>亮点</strong>：无需额外部署，一个SDK调用GPT-Qwen-Claude等十余种模型，适合快速原型开发</li>
+<li><strong>标签</strong>：<code>#LLM</code> <code>#unified-api</code> <code>#productivity</code></li>
+</ul>
+<h3>4. <a href="<a href="https://github.com/AiToEarn" target="_blank" rel="noopener">https://github.com/AiToEarn</a>">AiToEarn</a> — AI to Earn 激励平台</h3>
+<ul>
+<li><strong>描述</strong>：连接AI任务与加密激励的去中心化平台，开发者可发布AI微任务并以Token结算</li>
+<li><strong>Star</strong>：⭐ 5.9k</li>
+<li><strong>亮点</strong>：将AI算力劳动代币化，探索"AI Work DePIN"新范式</li>
+<li><strong>标签</strong>：<code>#crypto</code> <code>#AI-tasks</code> <code>#DePIN</code></li>
+</ul>
+<h3>5. <a href="<a href="https://github.com/scientific-agent-skills" target="_blank" rel="noopener">https://github.com/scientific-agent-skills</a>">scientific-agent-skills</a> — 科研智能体技能库</h3>
+<ul>
+<li><strong>描述</strong>：面向科学研究场景的Agent技能集合，含文献检索、实验设计、数据可视化等技能卡</li>
+<li><strong>Star</strong>：⭐ 2.8k</li>
+<li><strong>亮点</strong>：科研场景专属，支持连接PubMed、arXiv、Google Scholar，自动生成可复现实验报告</li>
+<li><strong>标签</strong>：<code>#agent</code> <code>#scientific</code> <code>#research</code></li>
+</ul>
+<h3>6. <a href="<a href="https://github.com/Personal_AI_Infrastructure" target="_blank" rel="noopener">https://github.com/Personal_AI_Infrastructure</a>">Personal_AI_Infrastructure</a> — 个人AI基础设施</h3>
+<ul>
+<li><strong>描述</strong>：帮助开发者构建完全私有化的个人AI助手栈，支持本地LLM + RAG + 记忆系统</li>
+<li><strong>Star</strong>：⭐ 6.3k</li>
+<li><strong>亮点</strong>：主打隐私保护，数据不出本地，适合极客与 企业安全场景</li>
+<li><strong>标签</strong>：<code>#privacy</code> <code>#local-LLM</code> <code>#RAG</code></li>
+</ul>
+<h3>7. <a href="<a href="https://github.com/superagent-huggingface" target="_blank" rel="noopener">https://github.com/superagent-huggingface</a>">superagent-huggingface</a> — 超参数自动优化Agent</h3>
+<ul>
+<li><strong>描述</strong>：基于HuggingFace生态的自动机器学习Agent，自动搜索最优模型超参</li>
+<li><strong>Star</strong>：⭐ 1.9k</li>
+<li><strong>亮点</strong>：无需人工调参，对齐AutoML与Agent范式，降低ML工程门槛</li>
+<li><strong>标签</strong>：<code>#AutoML</code> <code>#HuggingFace</code> <code>#agent</code></li>
+</ul>
 <hr>
     </div>
     <div class="page-footer">
