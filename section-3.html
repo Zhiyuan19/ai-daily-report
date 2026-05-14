@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI技术情报日报，每日追踪AI开源项目与技术动态">
-<title>三、官方博客新动态 — AI技术情报日报</title>
+<title>③ 官方博客新动态 — AI 技术情报日报</title>
 <style>
 
 :root {
@@ -492,49 +492,32 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
         </div>
         <div class="section-title-wrap">
             <div class="section-icon">📢</div>
-            <h1>三、官方博客新动态</h1>
+            <h1>③ 官方博客新动态</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年5月10日</div>
+            <div class="meta-item"><span class="dot"></span>2026年5月14日</div>
             <div class="meta-item"><span class="dot"></span>板块 3 / 6</div>
         </div>
     </div>
     <div class="content-section">
-<h2>三、官方博客新动态</h2>
-<h3>1. OpenAI：GPT-5.5 Instant 上线 + o3-pro 启动</h3>
-<p><strong>背景：</strong></p>
-<p>2026年5月初，OpenAI在ChatGPT中全面上线GPT-5.5 Instant，作为新的默认模型，替换此前的GPT-5.3 Instant。同时，o3-pro已正式启动，面向ChatGPT Pro用户和API用户开放。</p>
-<p><strong>核心内容：</strong></p>
-<ul>
-<li><strong>GPT-5.5 Instant</strong>：作为ChatGPT新默认模型，在准确性、清晰度、简洁性、图像理解、STEM问题以及ChatGPT决定进行网络搜索时的表现均有提升。对于Plus和Pro用户，当连接了Gmail等外部数据源时，GPT-5.5 Instant能更有效地利用历史对话、文件和邮件上下文来生成更相关的回答。</li>
-<li><strong>o3-pro启动</strong>：作为OpenAI推理家族的旗舰型号，o3-pro面向需要复杂推理能力的专业用户，与Anthropic的Claude Opus 4系列和Google的Gemini 3形成直接竞争。</li>
-<li><strong>Workspace Agents for Enterprise + EKM</strong>：ChatGPT Enterprise的工作区代理现在支持带EKM（Enterprise Knowledge Management）的企业级部署，为大型组织提供更安全、可控的AI辅助工作流。</li>
-<li><strong>新工具整合</strong>：Plus/Pro用户新增GitHub connector、Dropbox connector、Microsoft SharePoint/OneDrive connector用于Deep Research，扩展了AI获取和组织内部数据的边界。</li>
-</ul>
-<p><strong>意义：</strong> GPT-5.5 Instant的全面铺开和o3-pro的启动，标志着OpenAI正在从"模型性能竞争"转向"生态整合与商业化深度"竞争——通过工作流和数据的深度绑定，提升用户切换成本，强化市场支配地位。</p>
+<h2>③ 官方博客新动态</h2>
+<h3>Anthropic — 自然语言自编码器：将Claude的思维转为文本</h3>
+<p><strong>来源：</strong> Anthropic Research | 发布时间：2026-05</p>
+<p><strong>核心内容：</strong>
+Anthropic发布NLAs（Natural Language Autoencoders）技术，这是一种训练Claude逆向工作——从文本解释重建原始激活值——的技术，用于提升模型可解释性。同时开源了GitHub训练代码和多个开放模型的NLAs权重。NLAs的核心价值在于：审计人员无需接触训练数据，即可直接从模型的思维文本中读出隐藏的 misalignment。</p>
+<p><strong>链接：</strong> <a href="https://www.anthropic.com/research/natural-language-autoencoders" target="_blank" rel="noopener">https://www.anthropic.com/research/natural-language-autoencoders</a></p>
 <hr>
-<h3>2. 谷歌DeepMind：Gemini Deep Think推理模式发布</h3>
-<p><strong>背景：</strong></p>
-<p>谷歌DeepMind于2026年5月初发布了Gemini Deep Think，这是Gemini系列的深度推理专项模式，专注于数学证明、代码调试、复杂逻辑分析等高认知负载任务。</p>
-<p><strong>核心内容：</strong></p>
-<ul>
-<li>Gemini Deep Think在MATH基准测试中达到新的SOTA，特别在IMO（国际数学奥林匹克）级别的问题上表现突出</li>
-<li>采用了长思维链（Long Thought Chain）技术，模型在给出最终答案前会生成数千token的中间推理步骤，供用户检查和验证</li>
-<li>对外提供API接口，支持开发者在Gemini API上调用Deep Think模式，针对复杂研究任务（如定理证明、代码审计、科学文献综述）进行深度推理</li>
-</ul>
-<p><strong>意义：</strong> 谷歌在推理专用模型赛道补齐了产品矩阵，与OpenAI o3、Anthropic Claude Opuse形成推理三角。Deep Think的中间推理步骤透明化设计，有助于在高风险场景（医疗、法律、金融）建立用户信任，是差异化竞争的关键一步。</p>
+<h3>Anthropic — 向开源社区捐赠对齐测试工具 Petri</h3>
+<p><strong>来源：</strong> Anthropic Research | 发布时间：2026-05</p>
+<p><strong>核心内容：</strong>
+Anthropic将内部对齐评估工具Petri开源并捐赠给Linux Foundation。Petri于2025年10月随Anthropic Fellows计划启动，可对任何大语言模型快速测试其欺骗性、谄媚性和有害请求合作倾向。Petri已被用于Claude全系列模型的对齐评估，英国AI安全研究所（AISI）也将Petri纳入模型安全评估体系。Anthropic表示此举意在确保对齐测试的独立性，让行业各方能够以中立可信的方式评估模型安全性。</p>
+<p><strong>链接：</strong> <a href="https://www.anthropic.com/research/donating-open-source-petri" target="_blank" rel="noopener">https://www.anthropic.com/research/donating-open-source-petri</a></p>
 <hr>
-<h3>3. Meta AI：MTIA定制推理芯片全面开源</h3>
-<p><strong>背景：</strong></p>
-<p>Meta AI于2026年5月初正式将MTIA（Meta Training &amp; Inference Accelerator）定制硅芯片的完整技术栈开源，包括RTL设计、SDK、驱动和参考部署方案。这是全球首次有大型科技公司将自己的AI推理芯片以开源方式分享给社区。</p>
-<p><strong>核心内容：</strong></p>
-<ul>
-<li>MTIA采用TSMC 3nm工艺，共512个加速器核，BF16矩阵计算单元，专门针对Transformer推理优化</li>
-<li>完整开源软件栈包括：编译器（基于MLIR）、runtime（支持PyTorch和JAX）、性能分析工具</li>
-<li>参考设计支持从单卡到集群的多种部署规模，为中小型AI团队提供低成本的推理基础设施选项</li>
-<li>Meta还开源了MTIA配套的模型量化工具链，支持将大模型量化至INT8/FP8，推理效率提升2-4倍</li>
-</ul>
-<p><strong>意义：</strong> Meta此举的目标是打破NVIDIA在AI推理硬件领域的垄断，同时通过开源吸引更多开发者基于MTIA优化自己的模型和框架，形成以Meta为中心的硬件-软件-模型生态闭环。对全球AI基础设施多元化具有深远影响。</p>
+<h3>Anthropic — Claude for Small Business 发布</h3>
+<p><strong>来源：</strong> Anthropic News | 发布时间：2026-05</p>
+<p><strong>核心内容：</strong>
+Anthropic推出面向小企业的Claude套餐，将Claude深度集成到小企业常用的工具中：QuickBooks（财务）、PayPal（支付）、HubSpot（CRM）、Canva（设计）、DocuSign（合同）、Google Workspace和Microsoft 365。AI承担工资规划、开发票、追收账款、营销项目启动等后台重复性工作。Anthropic同时推出配套培训计划和合作伙伴项目，目标是小企业主和欠发达地区的创业者。</p>
+<p><strong>链接：</strong> <a href="https://www.anthropic.com/news/claude-for-small-business" target="_blank" rel="noopener">https://www.anthropic.com/news/claude-for-small-business</a></p>
 <hr>
     </div>
     <div class="page-footer">
