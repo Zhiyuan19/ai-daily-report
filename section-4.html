@@ -495,26 +495,26 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
             <h1>④ 开源工具 & 模型更新</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年5月15日</div>
+            <div class="meta-item"><span class="dot"></span>2026年5月16日</div>
             <div class="meta-item"><span class="dot"></span>板块 4 / 6</div>
         </div>
     </div>
     <div class="content-section">
 <h2>④ 开源工具 &amp; 模型更新</h2>
-<h3>openai-agents-python — OpenAI官方多Agent框架（见GitHub栏目）</h3>
-<h3>hugohe3/ppt-master — AI生成可编辑PPT</h3>
-<p><strong>一句话描述：</strong> 从任意文档直接生成原生可编辑的PPTX文件，而非图片格式，真正解决企业AI办公最后一公里。</p>
+<h3>SubQ 1M-Preview — 全球首个1200万Token商用模型（见官方博客栏目）</h3>
+<h3>基于Apple M4本地运行Qwen 3.5-9B：40 token/s</h3>
+<p><strong>一句话描述：</strong> 开发者实测在Apple M4芯片（24GB内存）上运行Qwen 3.5-9B达到40 tokens/秒，128K上下文，Mac端侧AI实用化拐点到来。</p>
 <p><strong>背景与原理：</strong>
-现有AI生成PPT方案均输出图片或PDF，用户无法二次编辑。ppt-master的创新在于将AI生成的内容直接映射为PowerPoint原生形状（Native Shapes），包括文字框、表格、SmartArt、动画轨迹等均可无损编辑。其技术路径是：先用LLM提取文档结构和关键信息，再用Python-pptx库以结构化方式构建PPTX，而非依赖OfficeOpenXML的暴力注入。</p>
-<p><strong>链接：</strong> <a href="https://github.com/hugohe3/ppt-master" target="_blank" rel="noopener">https://github.com/hugohe3/ppt-master</a></p>
+Qwen 3.5系列在M4上通过Metal GPU加速和量化压缩，实现了在消费级硬件上可用的推理速度。40 token/s意味着本地运行的模型已经可以流畅进行日常编程、写作和技术问答，且完全离线、零延迟、无隐私风险。</p>
+<p><strong>链接：</strong> <a href="https://github.com/QwenLM" target="_blank" rel="noopener">https://github.com/QwenLM</a></p>
 <hr>
-<h3>NousResearch/hermes-agent — 伴随式自进化Agent</h3>
-<p><strong>一句话描述：</strong> 随着使用者的任务类型不断扩展，hermes-agent通过内嵌的技能获取机制实现"与用户共成长"的伴随式进化。</p>
+<h3>蚂蚁百灵Ring-2.6-1T万亿参数思考模型</h3>
+<p><strong>一句话描述：</strong> 蚂蚁集团发布万亿参数旗舰思考模型，专为Agent、工程开发等复杂任务设计，创新引入可调节推理强度机制。</p>
 <p><strong>核心创新点：</strong>
-- 被动技能获取：根据用户任务模式自动扩展能力边界
-- 轻量级设计：无需外部知识库或向量数据库
-- 跨会话记忆：在多次会话中积累对用户偏好的理解</p>
-<p><strong>链接：</strong> <a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener">https://github.com/NousResearch/hermes-agent</a></p>
+- <strong>可调节推理强度</strong>：用户可选择"快速思考"（低延迟）或"深度思考"（高质量）
+- <strong>万亿参数</strong>：稀疏激活MoE架构，实际推理成本与百亿参数模型相当
+- <strong>Agent原生</strong>：工具调用、任务拆解、跨步反思均针对Agent场景专项优化</p>
+<p><strong>链接：</strong> <a href="https://antgroup.com" target="_blank" rel="noopener">https://antgroup.com</a></p>
 <hr>
     </div>
     <div class="page-footer">
