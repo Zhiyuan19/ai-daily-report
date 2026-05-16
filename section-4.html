@@ -495,26 +495,29 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
             <h1>④ 开源工具 & 模型更新</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年5月16日</div>
+            <div class="meta-item"><span class="dot"></span>2026年5月17日</div>
             <div class="meta-item"><span class="dot"></span>板块 4 / 6</div>
         </div>
     </div>
     <div class="content-section">
 <h2>④ 开源工具 &amp; 模型更新</h2>
-<h3>SubQ 1M-Preview — 全球首个1200万Token商用模型（见官方博客栏目）</h3>
-<h3>基于Apple M4本地运行Qwen 3.5-9B：40 token/s</h3>
-<p><strong>一句话描述：</strong> 开发者实测在Apple M4芯片（24GB内存）上运行Qwen 3.5-9B达到40 tokens/秒，128K上下文，Mac端侧AI实用化拐点到来。</p>
-<p><strong>背景与原理：</strong>
-Qwen 3.5系列在M4上通过Metal GPU加速和量化压缩，实现了在消费级硬件上可用的推理速度。40 token/s意味着本地运行的模型已经可以流畅进行日常编程、写作和技术问答，且完全离线、零延迟、无隐私风险。</p>
-<p><strong>链接：</strong> <a href="https://github.com/QwenLM" target="_blank" rel="noopener">https://github.com/QwenLM</a></p>
+<h3>Anthropic发布Agent Skills规范库</h3>
+<p><strong>一句话描述：</strong> Anthropic官方发布生产级Agent Engineering Skills规范库，为AI编程Agent提供标准化工程技能定义。</p>
+<p><strong>核心内容：</strong>
+Anthropic的agent-skills库是首个来自基础模型厂商的编程规范标准库，包含30+标准化工程技能定义（代码审查、重构、测试生成、文档编写等），每个技能都有明确的输入输出规范和执行标准。addyosmani维护的社区版本获得更多关注，包含真实Claude Code使用中提炼的最佳实践。</p>
+<p><strong>链接：</strong> <a href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">https://github.com/addyosmani/agent-skills</a></p>
 <hr>
-<h3>蚂蚁百灵Ring-2.6-1T万亿参数思考模型</h3>
-<p><strong>一句话描述：</strong> 蚂蚁集团发布万亿参数旗舰思考模型，专为Agent、工程开发等复杂任务设计，创新引入可调节推理强度机制。</p>
-<p><strong>核心创新点：</strong>
-- <strong>可调节推理强度</strong>：用户可选择"快速思考"（低延迟）或"深度思考"（高质量）
-- <strong>万亿参数</strong>：稀疏激活MoE架构，实际推理成本与百亿参数模型相当
-- <strong>Agent原生</strong>：工具调用、任务拆解、跨步反思均针对Agent场景专项优化</p>
-<p><strong>链接：</strong> <a href="https://antgroup.com" target="_blank" rel="noopener">https://antgroup.com</a></p>
+<h3>OpenAI开源openai-agents-python：轻量多Agent框架</h3>
+<p><strong>一句话描述：</strong> OpenAI官方发布Python多Agent工作流框架，轻量、强大、与OpenAI API深度集成。</p>
+<p><strong>核心内容：</strong>
+openai-agents-python是OpenAI官方的多Agent框架，采用与LangGraph不同的极简设计理念——不需要图构建，任务分配通过简单的函数调用链完成。内置与OpenAI API的无缝集成，支持function calling、streaming和批量任务。适合快速原型验证而非生产级复杂工作流。</p>
+<p><strong>链接：</strong> <a href="https://github.com/openai/openai-agents-python" target="_blank" rel="noopener">https://github.com/openai/openai-agents-python</a></p>
+<hr>
+<h3>Chrome DevTools MCP：AI编程Agent的浏览器调试工具</h3>
+<p><strong>一句话描述：</strong> ChromeDevTools MCP让AI Agent能够通过Chrome DevTools协议控制真实浏览器，实现端到端的Web应用调试。</p>
+<p><strong>核心内容：</strong>
+MCP（MCP Server）协议家族再添新成员：ChromeDevTools MCP让AI Agent直接通过Chrome DevTools协议操控浏览器，执行JavaScript、获取控制台日志、修改DOM、截取网络请求。这对于Web应用开发Agent和自动化测试场景意义重大——AI终于可以在真实浏览器环境中验证自己的代码。</p>
+<p><strong>链接：</strong> <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" target="_blank" rel="noopener">https://github.com/ChromeDevTools/chrome-devtools-mcp</a></p>
 <hr>
     </div>
     <div class="page-footer">
