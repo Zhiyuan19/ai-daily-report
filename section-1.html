@@ -495,7 +495,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
             <h1>① GitHub 小众爆款</h1>
         </div>
         <div class="section-meta">
-            <div class="meta-item"><span class="dot"></span>2026年5月16日</div>
+            <div class="meta-item"><span class="dot"></span>2026年5月17日</div>
             <div class="meta-item"><span class="dot"></span>板块 1 / 6</div>
         </div>
     </div>
@@ -504,58 +504,58 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
 <h3>EvoMap/evolver — GEP驱动自进化引擎</h3>
 <p><strong>一句话描述：</strong> 基于基因表达式编程（GEP）的AI Agent自进化引擎，实现无需人工干预的持续自我优化。</p>
 <p><strong>背景与原理：</strong>
-EvoMap evolver将生物进化的基因表达式编程引入AI Agent的自优化过程。传统Agent的技能获取依赖人工定义和外部知识库，而EvoMap的方案是：让Agent在任务执行中生成"候选策略"，通过类似自然选择的评估函数筛选优秀策略，再通过GEP的遗传操作（交叉、变异）组合生成新策略，形成自动化的能力增长飞轮。</p>
+EvoMap evolver将生物进化的基因表达式编程引入AI Agent的自优化过程。传统Agent的技能获取依赖人工定义和外部知识库，而EvoMap的方案是让Agent在任务执行中生成"候选策略"，通过评估函数筛选优秀策略，再通过GEP的遗传操作（交叉、变异）组合生成新策略，形成自动化的能力增长飞轮。</p>
 <p><strong>核心创新点：</strong>
 - <strong>自动化策略生成</strong>：无需人工定义进化方向，评估函数驱动策略涌现
-- <strong>GEP遗传操作</strong>：交叉+变异组合，产生远超单点改进的策略空间探索
+- <strong>GEP遗传操作</strong>：交叉+变异组合，策略空间探索效率远超单点改进
 - <strong>可解释性</strong>：进化产生的策略以规则形式存储，可追溯来源
 - <strong>低样本成本</strong>：只需少量任务样本即可完成策略进化</p>
-<p><strong>实际意义：</strong> 首次将进化计算引入Agent自我优化，相比强化学习需要大量环境交互，EvoMap大幅降低了自我优化的样本成本。</p>
+<p><strong>实际意义：</strong> 首次将进化计算引入Agent自我优化，相比强化学习需要大量环境交互，大幅降低自优化的样本成本。</p>
 <p><strong>链接：</strong> <a href="https://github.com/EvoMap/evolver" target="_blank" rel="noopener">https://github.com/EvoMap/evolver</a></p>
 <hr>
-<h3>BasedHardware/omi — 屏幕视觉+语音感知AI助手</h3>
-<p><strong>一句话描述：</strong> 能看屏幕、听对话并告诉你该做什么的下一代AI助手硬件/软件集成方案。</p>
+<h3>lsdefine/GenericAgent — 自进化Agent，6x更低Token消耗</h3>
+<p><strong>一句话描述：</strong> 从3300行种子代码自进化出完整技能树，实现全系统控制且Token消耗降低6倍的自进化Agent框架。</p>
 <p><strong>背景与原理：</strong>
-omi是一个端侧AI助手，同时感知屏幕内容（通过视觉API）和麦克风语音输入，实时分析用户当前所处环境和操作上下文，主动给出操作建议。与Siri/Cortana等语音助手不同，omi不是等用户提问，而是主动"看"和"听"之后预判需求。</p>
+GenericAgent的核心创新在于"从种子自然生长出技能树"而非人工构建。起点是一个3300行的基础规范文件，Agent通过自主探索任务空间，逐步扩展技能节点，每个新技能又能触发进一步的技能分化，最终形成完整的技能网络。Token消耗仅为同类方案的1/6，得益于技能复用和层级化的上下文管理。</p>
 <p><strong>核心创新点：</strong>
-- <strong>主动感知</strong>：无需唤醒词，持续感知屏幕和语音
-- <strong>上下文理解</strong>：结合屏幕截图和对话内容，形成完整环境感知
-- <strong>边缘部署</strong>：支持本地推理，保护隐私</p>
-<p><strong>实际意义：</strong> 标志着AI助手从"响应命令"向"主动环境感知"的重要范式转变。</p>
-<p><strong>链接：</strong> <a href="https://github.com/BasedHardware/omi" target="_blank" rel="noopener">https://github.com/BasedHardware/omi</a></p>
+- <strong>自生长技能树</strong>：从种子代码自发扩展，无需人工技能定义
+- <strong>6x Token节省</strong>：层级化上下文压缩，Token消耗降至1/6
+- <strong>全系统控制能力</strong>：覆盖从底层系统到上层应用的完整操作空间
+- <strong>可回滚性</strong>：每次技能扩展都有版本记录，支持回退</p>
+<p><strong>链接：</strong> <a href="https://github.com/lsdefine/GenericAgent" target="_blank" rel="noopener">https://github.com/lsdefine/GenericAgent</a></p>
 <hr>
-<h3>HKUDS/RAG-Anything — 全功能RAG框架</h3>
-<p><strong>一句话描述：</strong> All-in-One RAG框架，一站式解决知识库检索、向量数据库集成和Agent推理的完整RAG工程方案。</p>
+<h3>Donchitos/Claude-Code-Game-Studios — 49个AI Agent的完整游戏工作室</h3>
+<p><strong>一句话描述：</strong> 将Claude Code变成完整游戏开发工作室——49个AI Agent、72个工作流技能，镜像真实游戏公司层级架构。</p>
 <p><strong>背景与原理：</strong>
-RAG（检索增强生成）是企业知识管理的核心技术，但现有方案拼凑感强：向量数据库、检索器、生成模型各自分立，调优困难。RAG-Anything的创新在于提供了从原始文档到可查询知识库、再到Agent推理的完整工程封装，支持PDF、Markdown、数据库等多源输入，自带重排序和混合检索模块。</p>
+传统AI编程工具是单人助理模式，而Claude-Code-Game-Studios引入了公司组织架构：49个专业化Agent分别担任策划、美术、程序、音效、测试等角色，通过72个工作流技能协调任务分配和进度管理。每个Agent专注单一职责，通过层级化的任务分配实现多角色并行协作。</p>
 <p><strong>核心创新点：</strong>
-- <strong>多模态输入</strong>：PDF、Markdown、数据库、网页全支持
-- <strong>混合检索</strong>：向量检索+关键词检索+知识图谱三重融合
-- <strong>Agent推理集成</strong>：内置基于LangChain的Agent推理链，支持流式输出
-- <strong>可观测性</strong>：自带检索效果评估仪表盘</p>
-<p><strong>实际意义：</strong> 填补了从"RAG技术"到"RAG产品"之间工程落地的最后一公里，中小企业5分钟即可搭建完整知识库。</p>
-<p><strong>链接：</strong> <a href="https://github.com/HKUDS/RAG-Anything" target="_blank" rel="noopener">https://github.com/HKUDS/RAG-Anything</a></p>
+- <strong>多Agent协作</strong>：49个专业Agent镜像真实工作室角色分工
+- <strong>72个工作流技能</strong>：覆盖游戏开发完整生命周期
+- <strong>层级化任务分配</strong>：类似真实公司的PM→主程→执行者链条
+- <strong>全流程自动化</strong>：从需求到可发布游戏全程AI驱动</p>
+<p><strong>链接：</strong> <a href="https://github.com/Donchitos/Claude-Code-Game-Studios" target="_blank" rel="noopener">https://github.com/Donchitos/Claude-Code-Game-Studios</a></p>
 <hr>
-<h3>coleam00/Archon — 开源AI Coding Harness</h3>
-<p><strong>一句话描述：</strong> 首个开源AI Coding Harness，让AI编程从"随机生成"走向"确定性工程化"。</p>
+<h3>obra/superpowers — Agentic技能框架与软件开发方法论</h3>
+<p><strong>一句话描述：</strong> 将软件开发从"个体编码"转变为"AI团队协作"的Agentic技能框架，一套可复用的方法论+工具链。</p>
 <p><strong>背景与原理：</strong>
-AI编程工具普遍存在结果不稳定的问题：同一任务两次运行结果可能截然不同，无法满足企业级质量要求。Archon的核心理念是"让AI编程变得可重复、可预测"——通过规范化的Agent工作流定义、内置的代码质量门禁和自动化的测试回归机制，将AI编程从"辅助工具"升级为"半自动化工程流水线"。</p>
+obra/superpowers不只是一个框架，更是一套关于"如何用AI团队开发软件"的方法论。它定义了Agent之间如何通信、如何分工、如何进行代码审查、如何管理依赖关系。核心理念是：软件开发的最大瓶颈不是代码生成速度，而是如何协调多个AI Agent的工作质量。</p>
 <p><strong>核心创新点：</strong>
-- <strong>确定性执行</strong>：同一规范文件+同一模型=相同输出
-- <strong>代码质量门禁</strong>：内置lint、format、测试覆盖率多道关卡
-- <strong>规范驱动</strong>：类似Makefile的Spec文件定义任务边界和验收标准</p>
-<p><strong>实际意义：</strong> 解决了企业AI编程工具"敢不敢用"的核心信任问题，是AI编程从Demo走向生产的里程碑。</p>
-<p><strong>链接：</strong> <a href="https://github.com/coleam00/Archon" target="_blank" rel="noopener">https://github.com/coleam00/Archon</a></p>
+- <strong>方法论驱动</strong>：不仅是工具，更是协调AI团队的协作规范
+- <strong>技能可组合</strong>：将复杂项目拆解为可组合的技能模块
+- <strong>代码质量内建</strong>：内置审查和lint机制，而非事后检查
+- <strong>可扩展架构</strong>：支持自定义Agent角色和工作流</p>
+<p><strong>链接：</strong> <a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">https://github.com/obra/superpowers</a></p>
 <hr>
-<h3>joeseesun/qiaomu-anything-to-NotebookLM — 文档转NotebookLM笔记</h3>
-<p><strong>一句话描述：</strong> 将任意文档一键转换为NotebookLM风格交互式笔记，开源复现Google NotebookLM的音视频生成能力。</p>
+<h3>z-lab/dflash — 块扩散 speculative decoding 新范式</h3>
+<p><strong>一句话描述：</strong> DFlash通过块扩散机制实现Flash speculative decoding，推理速度提升的同时保持输出质量。</p>
 <p><strong>背景与原理：</strong>
-Google NotebookLM的核心能力是"把文档变成会说话的音频"，用户可以与自己的笔记进行语音对话。但NotebookLM只支持Google Drive和本地文件上传。qiaomu-anything-to-NotebookLM的开源复现解决了：支持任意URL内容抓取、PDF、网页、GitHub仓库直接转NotebookLM风格音频笔记，是NotebookLM的开源增强版。</p>
+Speculative decoding是加速大模型推理的热门技术，传统方法用小模型"猜"大模型需要生成的内容。DFlash的创新在于用"块扩散"替代逐token生成——每次同时生成一个token块，然后由大模型一次性验证整个块的质量。在保持输出质量的前提下，显著减少大模型的调用次数。</p>
 <p><strong>核心创新点：</strong>
-- <strong>任意源→NotebookLM</strong>：URL、PDF、GitHub仓库直接转换
-- <strong>中文优化</strong>：NotebookLM官方不支持中文，该项目针对中文文档优化
-- <strong>自托管</strong>：完全本地部署，无数据泄露风险</p>
-<p><strong>链接：</strong> <a href="https://github.com/joeseesun/qiaomu-anything-to-NotebookLM" target="_blank" rel="noopener">https://github.com/joeseesun/qiaomu-anything-to-NotebookLM</a></p>
+- <strong>块级并行验证</strong>：一次验证多个token，减少大模型调用次数
+- <strong>质量无损</strong>：扩散模型生成的内容经大模型验证后质量不下降
+- <strong>端侧友好</strong>：适合算力受限的端侧场景
+- <strong>易集成</strong>：可插入任何speculative decoding管线</p>
+<p><strong>链接：</strong> <a href="https://github.com/z-lab/dflash" target="_blank" rel="noopener">https://github.com/z-lab/dflash</a></p>
 <hr>
     </div>
     <div class="page-footer">
